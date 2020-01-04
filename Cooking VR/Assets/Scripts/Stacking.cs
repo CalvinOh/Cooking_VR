@@ -9,7 +9,11 @@ public class Stacking : MonoBehaviour
 
 
     bool stackable;
+    [SerializeField]
     bool isStacking;
+
+    [SerializeField]
+    GameObject currentParent;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +32,19 @@ public class Stacking : MonoBehaviour
             this.transform.position = this.gameObject.transform.parent.transform.position;
             this.transform.rotation = this.gameObject.transform.parent.transform.rotation;
         }
+  
+  
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.GetComponent<Stacking>().stackable == true)
         {
+            currentParent = collision.gameObject;
             this.gameObject.transform.parent = collision.transform;
             this.transform.position = collision.transform.position;
             this.transform.rotation = collision.transform.rotation;
+
             isStacking = true;
         }
     }
@@ -45,4 +53,6 @@ public class Stacking : MonoBehaviour
         isStacking = false;
 
     }
+
+ 
 }
