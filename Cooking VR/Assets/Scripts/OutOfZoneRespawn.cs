@@ -13,15 +13,20 @@ public class OutOfZoneRespawn : MonoBehaviour
         if(enteredKillZone)
         {
             this.gameObject.transform.position = respawnZone.transform.position;
+            this.gameObject.GetComponent<Rigidbody>().velocity = this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            
             enteredKillZone = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Entering Kill Box");
-        enteredKillZone = true;
-        Debug.Log("Respawning");
+       if(other.CompareTag("KillZone"))
+        {
+            Debug.Log("Entering Kill Box");
+            enteredKillZone = true;
+            Debug.Log("Respawning");
+        }
     }
 
     
