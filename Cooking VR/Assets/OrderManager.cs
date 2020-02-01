@@ -9,6 +9,7 @@ public class OrderManager : MonoBehaviour
     {
         //An order
         public float TimeIssued;
+        public float TimeExpected;
         public List<string> Ingredents;
     }
 

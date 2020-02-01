@@ -32,6 +32,9 @@ public class OrderSpawn : MonoBehaviour
 
         GameObject Order = Instantiate(OrderGO, OrderLocations[0]);
 
+        OrderTicket Ticket = Order.GetComponent<OrderTicket>();
+
+
         OrderManager.Orders.Add(SpawnedOrder);
     }
 
