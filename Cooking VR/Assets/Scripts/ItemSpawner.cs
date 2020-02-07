@@ -14,7 +14,7 @@ namespace Valve.VR.InteractionSystem
 
 
         [SerializeField]
-        private bool handInTrigger;
+        private bool hasSpawned;
         [SerializeField]
         private bool playerClicked;
         [SerializeField]
@@ -26,7 +26,7 @@ namespace Valve.VR.InteractionSystem
         // Start is called before the first frame update
         void Start()
         {
-            handInTrigger = false;
+            hasSpawned = false;
             playerClicked = false;
             isGrabbing.AddOnStateDownListener(TriggerDown, handType);
             isGrabbing.AddOnStateUpListener(TriggerUp, handType);
@@ -36,6 +36,7 @@ namespace Valve.VR.InteractionSystem
         {
             Debug.Log("Release");
             playerClicked = false;
+            hasSpawned = false;
         }
 
         private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -55,10 +56,11 @@ namespace Valve.VR.InteractionSystem
             if (Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position) < 1f)
             {
                
-                if (playerClicked)
+                if (playerClicked && !hasSpawned)
                 {
                     GameObject prefabObject = Instantiate(objectToSpawn) as GameObject;
                     prefabObject.transform.parent = playerHand.transform;
+                    hasSpawned = true;
                 }
             }
         }
