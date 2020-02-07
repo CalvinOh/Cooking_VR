@@ -33,6 +33,7 @@ namespace Valve.VR.InteractionSystem
             playerClicked = false;
             isGrabbing.AddOnStateDownListener(TriggerDown, handType);
             isGrabbing.AddOnStateUpListener(TriggerUp, handType);
+            spawnedObject = null;
         }
 
         private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -63,7 +64,7 @@ namespace Valve.VR.InteractionSystem
                 if (playerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
-                    spawnedObject = Instantiate(objectToSpawn, playerHand.transform) as GameObject;
+                    spawnedObject = Instantiate(objectToSpawn, playerHand.transform);
                     spawnedObject.transform.parent = playerHand.transform;
                     hasSpawned = true;
                    
@@ -74,7 +75,7 @@ namespace Valve.VR.InteractionSystem
 
         void UnParentObject()
         {
-            if(!playerClicked)
+            if(hasSpawned == true)
             {
                 spawnedObject.transform.parent = null;
             }
