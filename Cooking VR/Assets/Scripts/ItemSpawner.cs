@@ -4,74 +4,81 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class ItemSpawner : MonoBehaviour
+namespace Valve.VR.InteractionSystem
 {
-
-    public SteamVR_Action_Boolean isGrabbing;
-    public SteamVR_Input_Sources handType;
-
-
-    [SerializeField]
-    private bool handInTrigger;
-    [SerializeField]
-    private bool playerClicked;
-    [SerializeField]
-    GameObject objectToSpawn;
-
-    [SerializeField]
-    GameObject playerRightHand;
-
-    // Start is called before the first frame update
-    void Start()
+    public class ItemSpawner : MonoBehaviour
     {
-        handInTrigger = false;
-        playerClicked = false;
-        isGrabbing.AddOnStateDownListener(TriggerDown, handType);
-        isGrabbing.AddOnStateUpListener(TriggerUp, handType);
-    }
 
-    private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        Debug.Log("Release");
-        playerClicked = false;
-    }
+        public SteamVR_Action_Boolean isGrabbing;
+        public SteamVR_Input_Sources handType;
 
-    private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        Debug.Log("Clicked");
-        playerClicked = true;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        SpawnObject();
-    }
+        [SerializeField]
+        private bool handInTrigger;
+        [SerializeField]
+        private bool playerClicked;
+        [SerializeField]
+        GameObject objectToSpawn;
 
-    void SpawnObject()
-    {
-        if (Vector3.Distance(this.gameObject.transform.position,playerRightHand.transform.position) < 1f)
+        [SerializeField]
+        Hand playerHand;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            if (playerClicked)
+            handInTrigger = false;
+            playerClicked = false;
+            isGrabbing.AddOnStateDownListener(TriggerDown, handType);
+            isGrabbing.AddOnStateUpListener(TriggerUp, handType);
+        }
+
+        private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+        {
+            Debug.Log("Release");
+            playerClicked = false;
+        }
+
+        private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+        {
+            Debug.Log("Clicked");
+            playerClicked = true;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            SpawnObject();
+        }
+
+        void SpawnObject()
+        {
+            if (Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position) < 1f)
             {
-                GameObject prefabObject = Instantiate(objectToSpawn) as GameObject;
                
+                if (playerClicked)
+                {
+                    GameObject prefabObject = Instantiate(objectToSpawn) as GameObject;
+                    playerHand.AttachObject(prefabObject, GrabTypes.Scripted);
+                }
             }
         }
+
+        //private void OnTriggerEnter(Collider other)
+        //{
+        //    if(other.CompareTag("Hand"))
+        //    {
+        //        handInTrigger = true;
+        //    }
+        //}
+        //private void OnTriggerExit(Collider other)
+        //{
+        //    handInTrigger = false;
+        //}
+
+
+
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if(other.CompareTag("Hand"))
-    //    {
-    //        handInTrigger = true;
-    //    }
-    //}
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    handInTrigger = false;
-    //}
-
-   
-
 }
+
+
