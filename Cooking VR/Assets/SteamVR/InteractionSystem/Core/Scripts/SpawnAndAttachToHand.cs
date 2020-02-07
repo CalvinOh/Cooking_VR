@@ -29,8 +29,8 @@ namespace Valve.VR.InteractionSystem
 			{
 				return;
 			}
-
-			GameObject prefabObject = Instantiate( prefab ) as GameObject;
+           
+			GameObject ;prefabObject = Instantiate( prefab ) as GameObject;
 			handToUse.AttachObject( prefabObject, GrabTypes.Scripted );
 		}
 	}

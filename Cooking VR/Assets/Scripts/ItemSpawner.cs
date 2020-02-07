@@ -21,6 +21,9 @@ namespace Valve.VR.InteractionSystem
         GameObject objectToSpawn;
 
         [SerializeField]
+        private GameObject spawnedObject;
+
+        [SerializeField]
         Hand playerHand;
 
         // Start is called before the first frame update
@@ -49,6 +52,7 @@ namespace Valve.VR.InteractionSystem
         void Update()
         {
             SpawnObject();
+            UnParentObject();
         }
 
         void SpawnObject()
@@ -58,13 +62,23 @@ namespace Valve.VR.InteractionSystem
                
                 if (playerClicked && !hasSpawned)
                 {
-                    GameObject prefabObject = Instantiate(objectToSpawn) as GameObject;
-                    prefabObject.transform.parent = playerHand.transform;
+                    Debug.Log("Plate Spawned");
+                    spawnedObject = Instantiate(objectToSpawn, playerHand.transform) as GameObject;
+                    spawnedObject.transform.parent = playerHand.transform;
                     hasSpawned = true;
+                   
+                    
                 }
             }
         }
 
+        void UnParentObject()
+        {
+            if(!playerClicked)
+            {
+                spawnedObject.transform.parent = null;
+            }
+        }
         //private void OnTriggerEnter(Collider other)
         //{
         //    if(other.CompareTag("Hand"))
