@@ -349,18 +349,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2151158786930570717, guid: aed63a092786ecf44bc22b4c87968c4b, type: 3}
---- !u!114 &91295806 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 820930848}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &119181246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1365,11 +1353,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 545804832}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a03a51c550b92478a559cf694ce118, type: 3}
+  m_Script: {fileID: 11500000, guid: 27991c206a5e66147bb8ee3ef31c8bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 91295806}
-  prefab: {fileID: 1058308477850763977, guid: d06c1853735a5ad4f93d4ea7eba7c25e, type: 3}
+  actionSet:
+    actionSetPath: /actions/default
+  forSources: 0
+  disableAllOtherActionSets: 0
+  activateOnStart: 1
+  deactivateOnDestroy: 1
+--- !u!114 &545804834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545804832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2471b42bd5227e5499376d11c32b924e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrabbing:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  handType: 0
+  handInTrigger: 0
+  playerClicked: 0
+  objectToSpawn: {fileID: 1058308477850763977, guid: d06c1853735a5ad4f93d4ea7eba7c25e,
+    type: 3}
 --- !u!64 &545804835
 MeshCollider:
   m_ObjectHideFlags: 0

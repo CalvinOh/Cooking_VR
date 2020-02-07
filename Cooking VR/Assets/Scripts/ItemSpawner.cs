@@ -10,13 +10,17 @@ public class ItemSpawner : MonoBehaviour
     public SteamVR_Action_Boolean isGrabbing;
     public SteamVR_Input_Sources handType;
 
+
     [SerializeField]
     private bool handInTrigger;
     [SerializeField]
     private bool playerClicked;
     [SerializeField]
     GameObject objectToSpawn;
-    
+
+    [SerializeField]
+    GameObject playerRightHand;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,31 +45,32 @@ public class ItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        SpawnObject();
     }
 
     void SpawnObject()
     {
-        if (handInTrigger)
+        if (Vector3.Distance(this.gameObject.transform.position,playerRightHand.transform.position) < 1f)
         {
             if (playerClicked)
             {
-                GameObject.Instantiate(objectToSpawn);
+                GameObject prefabObject = Instantiate(objectToSpawn) as GameObject;
+               
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Hand"))
-        {
-            handInTrigger = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        handInTrigger = false;
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.CompareTag("Hand"))
+    //    {
+    //        handInTrigger = true;
+    //    }
+    //}
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    handInTrigger = false;
+    //}
 
    
 
