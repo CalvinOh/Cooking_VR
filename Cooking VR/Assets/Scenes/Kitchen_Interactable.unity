@@ -639,12 +639,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266969625}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -147.4, y: -19.802422, z: 1.7999984}
+  m_LocalPosition: {x: -147.1, y: -19.802422, z: 1.7999984}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 1055108811}
   m_Father: {fileID: 2533194015722464602}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &266969627
 MonoBehaviour:
@@ -2777,26 +2777,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: -25.530289}
---- !u!1 &1459530421 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5996235381340290982, guid: bbd3301aaba6a7d42aa7ddeb67de3f36,
-    type: 3}
-  m_PrefabInstance: {fileID: 5681231608578512656}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1459530422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1459530421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea70c78202a6b7544b3fcb5380c733f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnZone: {fileID: 1347110507}
-  enteredKillZone: 0
 --- !u!1 &1518285413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,6 +3427,36 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 3606998225100173133, guid: aed63a092786ecf44bc22b4c87968c4b, type: 3}
+--- !u!1 &1737779928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737779929}
+  m_Layer: 0
+  m_Name: Front_Door_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1737779929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737779928}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.4, y: -19.802422, z: -2.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2533194015722464602}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1794724762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3265161614983547548, guid: c76c9b39ea8fea348bdd500c14e1ab41,
@@ -3810,26 +3820,6 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!1 &1911270335 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8468168150800636686, guid: b5519e2b6e94bb84f92b9ed76c238838,
-    type: 3}
-  m_PrefabInstance: {fileID: 4346557179717455067}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1911270336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911270335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea70c78202a6b7544b3fcb5380c733f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnZone: {fileID: 1347110507}
-  enteredKillZone: 0
 --- !u!1 &1965292696
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,6 +5921,7 @@ Transform:
   - {fileID: 4369348862206515085}
   - {fileID: 5221873425879085566}
   - {fileID: 6916593455669273779}
+  - {fileID: 1737779929}
   - {fileID: 266969626}
   m_Father: {fileID: 5473153249790660529}
   m_RootOrder: 5
@@ -7220,6 +7211,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1911270336, guid: b5519e2b6e94bb84f92b9ed76c238838, type: 3}
+      propertyPath: respawnZone
+      value: 
+      objectReference: {fileID: 1347110507}
     - target: {fileID: 5681491171683535146, guid: b5519e2b6e94bb84f92b9ed76c238838,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8513,6 +8508,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1459530422, guid: bbd3301aaba6a7d42aa7ddeb67de3f36, type: 3}
+      propertyPath: respawnZone
+      value: 
+      objectReference: {fileID: 1347110507}
     - target: {fileID: 2633691598915695667, guid: bbd3301aaba6a7d42aa7ddeb67de3f36,
         type: 3}
       propertyPath: m_LocalPosition.x
