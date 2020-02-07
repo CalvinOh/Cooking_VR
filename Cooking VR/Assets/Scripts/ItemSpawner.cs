@@ -58,7 +58,7 @@ namespace Valve.VR.InteractionSystem
                 if (playerClicked)
                 {
                     GameObject prefabObject = Instantiate(objectToSpawn) as GameObject;
-                    playerHand.AttachObject(prefabObject, GrabTypes.Scripted);
+                    prefabObject.transform.parent = playerHand.transform;
                 }
             }
         }
