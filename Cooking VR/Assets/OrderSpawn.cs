@@ -5,35 +5,73 @@ using UnityEngine;
 public class OrderSpawn : MonoBehaviour
 {
     [SerializeField]
-    private GameObject OrderGO;
+    private GameObject TicketGO;
+    [SerializeField]
+    private GameObject TicketParent;
+
     [SerializeField]
     private List<Transform> OrderLocations;
 
     [SerializeField]
     private List<List<string>> PredeterminedOrders;
+    [SerializeField]
 
     void Start()
     {
+        PredeterminedOrders = new List<List<string>>();
         AddPredeterminedOrders();
-    }
 
+        //List<string> TestBurger = RandomBurger(6);
+        //foreach (string a in TestBurger)
+        //    Debug.Log(a);
+        //SpawnRandomOrder(4);
+        StartCoroutine(SpawnTicketCountDown(2,4));
+        StartCoroutine(SpawnTicketCountDown(4, 4));
+        StartCoroutine(SpawnTicketCountDown(6, 4));
+        StartCoroutine(SpawnTicketCountDown(8, 4));
+        StartCoroutine(SpawnTicketCountDown(10, 4));
+    }
+    private IEnumerator SpawnTicketCountDown(float CountDown, int BurgerSize)
+    {
+        yield return new WaitForSeconds(CountDown);
+        SpawnRandomOrder(BurgerSize);
+    }
 
     void Update()
     {
 
     }
 
-    void Spawnorder()
+    void SpawnPredeterminedOrder()
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
         SpawnedOrder.Ingredents = PredeterminedOrders[Random.Range(0, PredeterminedOrders.Count)];
         SpawnedOrder.TimeIssued = Time.fixedTime;
+        SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
 
-        GameObject Order = Instantiate(OrderGO, OrderLocations[0]);
+        GameObject Ticket = Instantiate(TicketGO, OrderLocations[0]);
 
-        OrderTicket Ticket = Order.GetComponent<OrderTicket>();
+        OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
+        TicketScript.UpdateTicket(SpawnedOrder);
+        Ticket.transform.parent = TicketParent.transform;
 
+        OrderManager.Orders.Add(SpawnedOrder);
+    }
+
+    void SpawnRandomOrder(int Burgersize)
+    {
+        OrderManager.Order SpawnedOrder = new OrderManager.Order();
+
+        SpawnedOrder.Ingredents = RandomBurger(Burgersize);
+        SpawnedOrder.TimeIssued = Time.fixedTime;
+        SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
+
+        GameObject Ticket = Instantiate(TicketGO, OrderLocations[0]);
+
+        OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
+        TicketScript.UpdateTicket(SpawnedOrder);
+        Ticket.transform.parent = TicketParent.transform;
 
         OrderManager.Orders.Add(SpawnedOrder);
     }
@@ -82,9 +120,10 @@ public class OrderSpawn : MonoBehaviour
     List<string> RandomBurger(int AmountOfLayer)
     {
         List<string> TempBurger = new List<string>();
-        TempBurger.Add("Top Bun");
+        
         for (int i = 0; i < AmountOfLayer-1; i++)
         {
+            /*
             switch (Random.Range(0, 8))
             {
                 case 0:
@@ -115,7 +154,46 @@ public class OrderSpawn : MonoBehaviour
                     TempBurger.Add("Lettuce");
                     break;
             }
+            */
+            float Decider = Random.Range(0f, 100f);
+            if (Decider < 5)
+            {
+                TempBurger.Add("Ketchup");
+            }
+            else if (5 <= Decider && Decider < 20)
+            {
+                TempBurger.Add("Tomato");
+            }
+            else if (20 <= Decider && Decider < 35)
+            {
+                TempBurger.Add("Lettuce");
+            }
+            else if (35 <= Decider && Decider < 50)
+            {
+                TempBurger.Add("Pickle");
+            }
+            else if (50 <= Decider && Decider < 60)
+            {
+                TempBurger.Add("Ketchup");
+            }
+            else if (60 <= Decider && Decider < 70)
+            {
+                TempBurger.Add("Mayo");
+            }
+            else if (70 <= Decider && Decider < 80)
+            {
+                TempBurger.Add("Mustard");
+            }
+            else if (80 <= Decider && Decider <= 100)
+            {
+                TempBurger.Add("Cheese");
+            }
+
+
+
         }
+        TempBurger.Insert(AmountOfLayer/2,"Patty");
+        TempBurger.Insert(0,"Top Bun");
         TempBurger.Add("Bottom Bun");
         return TempBurger;
     }
