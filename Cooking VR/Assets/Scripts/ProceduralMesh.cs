@@ -18,6 +18,7 @@ public class ProceduralMesh : MonoBehaviour
     void Start()
     {
         MakeMeshData();
+        CreateMesh();
     }
 
     // Update is called once per frame
@@ -30,7 +31,16 @@ public class ProceduralMesh : MonoBehaviour
     {
         vertices = new Vector3[] { new Vector3(0, 0, 0), new Vector3(0, 0, 1), new Vector3(1, 0, 0), new Vector3(1, 0, 1)};
 
-        triangles = new int[] { 0, 1, 2 };
+        triangles = new int[] { 0, 1, 2, 2, 1 , 3 };
 
+    }
+
+    void CreateMesh()
+    {
+        mesh.Clear();
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+
+        mesh.RecalculateNormals();
     }
 }
