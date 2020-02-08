@@ -54,6 +54,7 @@ namespace Valve.VR.InteractionSystem
         {
             SpawnObject();
             UnParentObject();
+            Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
         }
 
         void SpawnObject()
@@ -64,10 +65,10 @@ namespace Valve.VR.InteractionSystem
                 if (playerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
-                    spawnedObject = Instantiate(objectToSpawn, playerHand.transform);
+                    spawnedObject = Instantiate(objectToSpawn, playerHand.transform.position, playerHand.transform.rotation);
                     spawnedObject.transform.parent = playerHand.transform;
                     hasSpawned = true;
-                   
+                    //Debug.Break();
                     
                 }
             }
