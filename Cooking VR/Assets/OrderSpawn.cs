@@ -14,10 +14,13 @@ public class OrderSpawn : MonoBehaviour
 
     [SerializeField]
     private List<List<string>> PredeterminedOrders;
-    [SerializeField]
+
+    private int SpawnLocationNumber;
 
     void Start()
     {
+        SpawnLocationNumber = 0;
+
         PredeterminedOrders = new List<List<string>>();
         AddPredeterminedOrders();
 
@@ -47,16 +50,18 @@ public class OrderSpawn : MonoBehaviour
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
         SpawnedOrder.Ingredents = PredeterminedOrders[Random.Range(0, PredeterminedOrders.Count)];
+
         SpawnedOrder.TimeIssued = Time.fixedTime;
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
 
-        GameObject Ticket = Instantiate(TicketGO, OrderLocations[0]);
+        GameObject Ticket = Instantiate(TicketGO, OrderLocations[SpawnLocationNumber % OrderLocations.Count]);
 
         OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
         TicketScript.UpdateTicket(SpawnedOrder);
         Ticket.transform.parent = TicketParent.transform;
 
         OrderManager.Orders.Add(SpawnedOrder);
+        SpawnLocationNumber++;
     }
 
     void SpawnRandomOrder(int Burgersize)
@@ -64,16 +69,19 @@ public class OrderSpawn : MonoBehaviour
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
         SpawnedOrder.Ingredents = RandomBurger(Burgersize);
+
         SpawnedOrder.TimeIssued = Time.fixedTime;
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
 
-        GameObject Ticket = Instantiate(TicketGO, OrderLocations[0]);
+        GameObject Ticket = Instantiate(TicketGO, OrderLocations[SpawnLocationNumber%OrderLocations.Count]);
 
         OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
         TicketScript.UpdateTicket(SpawnedOrder);
         Ticket.transform.parent = TicketParent.transform;
 
         OrderManager.Orders.Add(SpawnedOrder);
+        SpawnLocationNumber++;
+
     }
 
     void AddPredeterminedOrders()

@@ -37,7 +37,7 @@ public class OrderTicket : MonoBehaviour
         Debug.Log(MyOrder.TimeExpected);
         int IntTime = 0;
         IntTime = (int)MyOrder.TimeIssued;
-        TimeOrdered.text = "Time Ordered: "+ IntTime /60+":"+IntTime%60;
+        TimeOrdered.text = "Time Ordered: "+ IntTime / 60+":"+IntTime%60;
         IntTime = (int)MyOrder.TimeExpected;
         TimeExpected.text = "Time Expected: " + IntTime / 60 + ":" + IntTime % 60;
         Body.text = "";
@@ -62,6 +62,8 @@ public class OrderTicket : MonoBehaviour
         FunnyNotes.Add("The cake is a lie");
         FunnyNotes.Add("Be a chief they said");
         FunnyNotes.Add("Try Terasphere too!");
+        FunnyNotes.Add("Professionally burnt food");
+
 
     }
 }
