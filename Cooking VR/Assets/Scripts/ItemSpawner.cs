@@ -24,7 +24,7 @@ namespace Valve.VR.InteractionSystem
         private GameObject spawnedObject;
 
         [SerializeField]
-        Hand playerHand;
+        Hand leftPlayerHand, rightPlayerHand;
 
         // Start is called before the first frame update
         void Start()
@@ -54,31 +54,47 @@ namespace Valve.VR.InteractionSystem
         {
             SpawnObject();
             UnParentObject();
-            Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
+           // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
         }
 
         void SpawnObject()
         {
-            if (Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position) < 1f)
+            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.08f )
             {
                
                 if (playerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
-                    spawnedObject = Instantiate(objectToSpawn, playerHand.transform.position, playerHand.transform.rotation);
-                    spawnedObject.transform.parent = playerHand.transform;
+                    spawnedObject = Instantiate(objectToSpawn, leftPlayerHand.transform.position, leftPlayerHand.transform.rotation);
+                    spawnedObject.transform.parent = leftPlayerHand.transform;
+                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
                     hasSpawned = true;
                     //Debug.Break();
                     
+                }
+            }
+            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.08f)
+            {
+
+                if (playerClicked && !hasSpawned)
+                {
+                    Debug.Log("Plate Spawned");
+                    spawnedObject = Instantiate(objectToSpawn, rightPlayerHand.transform.position, rightPlayerHand.transform.rotation);
+                    spawnedObject.transform.parent = rightPlayerHand.transform;
+                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hasSpawned = true;
+                    //Debug.Break();
+
                 }
             }
         }
 
         void UnParentObject()
         {
-            if(hasSpawned == true)
+            if(hasSpawned != true)
             {
                 spawnedObject.transform.parent = null;
+                spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
         //private void OnTriggerEnter(Collider other)

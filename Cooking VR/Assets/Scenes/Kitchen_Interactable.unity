@@ -588,6 +588,18 @@ Transform:
   m_Father: {fileID: 5473153249790660529}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172961938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 820930848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &224803055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,7 +2891,7 @@ PrefabInstance:
     - target: {fileID: 7057225952747170392, guid: fd344254544b7514e9ac36b4a18480fa,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.373
+      value: -0.292
       objectReference: {fileID: 0}
     - target: {fileID: 7057225952747170392, guid: fd344254544b7514e9ac36b4a18480fa,
         type: 3}
@@ -8689,8 +8701,23 @@ PrefabInstance:
     - target: {fileID: 5209061810780703178, guid: 84486f45a65b26442bf6f6cd3c289da2,
         type: 3}
       propertyPath: handType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5209061810780703178, guid: 84486f45a65b26442bf6f6cd3c289da2,
+        type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 1626757057}
+    - target: {fileID: 5209061810780703178, guid: 84486f45a65b26442bf6f6cd3c289da2,
+        type: 3}
+      propertyPath: leftPlayerHand
+      value: 
+      objectReference: {fileID: 1262923244}
+    - target: {fileID: 5209061810780703178, guid: 84486f45a65b26442bf6f6cd3c289da2,
+        type: 3}
+      propertyPath: rightPlayerHand
+      value: 
+      objectReference: {fileID: 172961938}
     - target: {fileID: 5373532038132499217, guid: 84486f45a65b26442bf6f6cd3c289da2,
         type: 3}
       propertyPath: m_LocalPosition.x
