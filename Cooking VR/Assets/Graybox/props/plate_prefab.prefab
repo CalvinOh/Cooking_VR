@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8189220415987743835}
   - component: {fileID: 2493162403812376738}
   - component: {fileID: 2044359618}
-  - component: {fileID: 2044359619}
-  - component: {fileID: 2044359617}
-  - component: {fileID: 2044359620}
-  - component: {fileID: 2044359621}
+  - component: {fileID: 1212063702031791637}
+  - component: {fileID: 1970010934474140505}
+  - component: {fileID: 6974189893997887891}
+  - component: {fileID: 6319595378241282703}
   m_Layer: 0
   m_Name: plate_prefab
   m_TagString: Untagged
@@ -99,7 +99,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &2044359619
+--- !u!64 &1212063702031791637
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +113,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 7072732182189924235, guid: fcb656d39bc699f4481642aee114fe29, type: 3}
---- !u!114 &2044359617
+--- !u!114 &1970010934474140505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
---- !u!114 &2044359620
+--- !u!114 &6974189893997887891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,7 +219,7 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!114 &2044359621
+--- !u!114 &6319595378241282703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
