@@ -24,6 +24,7 @@ public class CondimentBottle : MonoBehaviour
     void SpawnCondiment()
     {
         SpawnPosition.localScale = Condiment.transform.localScale;
-        Instantiate(Condiment, SpawnPosition);
+        GameObject temp = Instantiate(Condiment, SpawnPosition);
+        temp.GetComponent<Rigidbody>().AddForce(new Vector3(900, 900, 900));
     }
 }
