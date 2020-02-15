@@ -41,8 +41,8 @@ public class OrderTicket : MonoBehaviour
         IntTime = (int)MyOrder.TimeExpected;
         TimeExpected.text = "Time Expected: " + IntTime / 60 + ":" + IntTime % 60;
         Body.text = "";
-        foreach (string a in MyOrder.Ingredents)
-            Body.text += a + "\n";
+        foreach (OrderManager.Ingridents a in MyOrder.Ingredents)
+            Body.text += a.ToString() + "\n";
 
 
 

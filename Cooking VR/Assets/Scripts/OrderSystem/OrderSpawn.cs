@@ -13,7 +13,7 @@ public class OrderSpawn : MonoBehaviour
     private List<Transform> OrderLocations;
 
     [SerializeField]
-    private List<List<string>> PredeterminedOrders;
+    private List<List<OrderManager.Ingridents>> PredeterminedOrders;
 
     private int SpawnLocationNumber;
 
@@ -21,7 +21,7 @@ public class OrderSpawn : MonoBehaviour
     {
         SpawnLocationNumber = 0;
 
-        PredeterminedOrders = new List<List<string>>();
+        PredeterminedOrders = new List<List<OrderManager.Ingridents>>();
         AddPredeterminedOrders();
 
         //List<string> TestBurger = RandomBurger(6);
@@ -88,46 +88,25 @@ public class OrderSpawn : MonoBehaviour
     {
         //adds predesigned burger to the possible burger list
         //designed burger 1
-        List<string> TempBurger = new List<string>();
+        List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
 
-        TempBurger.Add("Top Bun");
-        TempBurger.Add("Cheese");
-        TempBurger.Add("Patty");
-        TempBurger.Add("Lettuce");
-        TempBurger.Add("Bottom Bun");
 
         PredeterminedOrders.Add(TempBurger);
 
         //designed burger 2
-        TempBurger = new List<string>();
-
-        TempBurger.Add("Top Bun");
-        TempBurger.Add("Cheese");
-        TempBurger.Add("Pickle");
-        TempBurger.Add("Patty");
-        TempBurger.Add("Tomato");
-        TempBurger.Add("Lettuce");
-        TempBurger.Add("Bottom Bun");
+        TempBurger = new List<OrderManager.Ingridents>();
 
         PredeterminedOrders.Add(TempBurger);
 
         //designed burger 3
-        TempBurger = new List<string>();
-
-        TempBurger.Add("Top Bun");
-        TempBurger.Add("Lettuce");
-        TempBurger.Add("Tomato");
-        TempBurger.Add("Patty");
-        TempBurger.Add("Cheese");
-        TempBurger.Add("Patty");
-        TempBurger.Add("Bottom Bun");
+        TempBurger = new List<OrderManager.Ingridents>();
 
         PredeterminedOrders.Add(TempBurger);
     }
 
-    List<string> RandomBurger(int AmountOfLayer)
+    List<OrderManager.Ingridents> RandomBurger(int AmountOfLayer)
     {
-        List<string> TempBurger = new List<string>();
+        List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
         
         for (int i = 0; i < AmountOfLayer-1; i++)
         {
@@ -135,74 +114,100 @@ public class OrderSpawn : MonoBehaviour
             switch (Random.Range(0, 8))
             {
                 case 0:
-                    TempBurger.Add("Cheese");
+                    TempBurger.Add(OrderManager.Ingridents.Cheese");
                     break;
                 case 1:
-                    TempBurger.Add("Lettuce");
+                    TempBurger.Add(OrderManager.Ingridents.Lettuce");
                     break;
                 case 2:
-                    TempBurger.Add("Tomato");
+                    TempBurger.Add(OrderManager.Ingridents.Tomato");
                     break;
                 case 3:
-                    TempBurger.Add("Pickle");
+                    TempBurger.Add(OrderManager.Ingridents.Pickle");
                     break;
                 case 4:
-                    TempBurger.Add("Mayo");
+                    TempBurger.Add(OrderManager.Ingridents.Mayo");
                     break;
                 case 5:
-                    TempBurger.Add("Mustard");
+                    TempBurger.Add(OrderManager.Ingridents.Mustard");
                     break;
                 case 6:
-                    TempBurger.Add("Ketchup");
+                    TempBurger.Add(OrderManager.Ingridents.Ketchup");
                     break;
                 case 7:
-                    TempBurger.Add("Patty");
+                    TempBurger.Add(OrderManager.Ingridents.Patty");
                     break;
                 default:
-                    TempBurger.Add("Lettuce");
+                    TempBurger.Add(OrderManager.Ingridents.Lettuce");
                     break;
             }
             */
             float Decider = Random.Range(0f, 100f);
             if (Decider < 5)
             {
-                TempBurger.Add("Ketchup");
+                switch (Random.Range(0, 4))
+                {
+                    case 0:
+                        TempBurger.Add(OrderManager.Ingridents.RarePatty);
+                        break;
+                    case 1:
+                    case 2:
+                        TempBurger.Add(OrderManager.Ingridents.MediumPatty);
+                        break;
+                    case 3:
+                        TempBurger.Add(OrderManager.Ingridents.WellDonePatty);
+                        break;
+
+                }
             }
             else if (5 <= Decider && Decider < 20)
             {
-                TempBurger.Add("Tomato");
+                TempBurger.Add(OrderManager.Ingridents.Tomato);
             }
             else if (20 <= Decider && Decider < 35)
             {
-                TempBurger.Add("Lettuce");
+                TempBurger.Add(OrderManager.Ingridents.Lettuce);
             }
             else if (35 <= Decider && Decider < 50)
             {
-                TempBurger.Add("Pickle");
+                TempBurger.Add(OrderManager.Ingridents.Pickle);
             }
             else if (50 <= Decider && Decider < 60)
             {
-                TempBurger.Add("Ketchup");
+                TempBurger.Add(OrderManager.Ingridents.Ketchup);
             }
             else if (60 <= Decider && Decider < 70)
             {
-                TempBurger.Add("Mayo");
+                TempBurger.Add(OrderManager.Ingridents.Mayo);
             }
             else if (70 <= Decider && Decider < 80)
             {
-                TempBurger.Add("Mustard");
+                TempBurger.Add(OrderManager.Ingridents.Mustard);
             }
             else if (80 <= Decider && Decider <= 100)
             {
-                TempBurger.Add("Cheese");
+                TempBurger.Add(OrderManager.Ingridents.Cheese);
             }
 
 
 
         }
-        TempBurger.Insert(AmountOfLayer/2,"Patty");
-        TempBurger.Insert(0,"Top Bun");
-        TempBurger.Add("Bottom Bun");
+        switch (Random.Range(0, 4))
+        {
+            case 0:
+                TempBurger.Insert(AmountOfLayer / 2, OrderManager.Ingridents.RarePatty);
+                break;
+            case 1:
+            case 2:
+                TempBurger.Insert(AmountOfLayer / 2, OrderManager.Ingridents.MediumPatty);
+                break;
+            case 3:
+                TempBurger.Insert(AmountOfLayer / 2, OrderManager.Ingridents.WellDonePatty);
+                break;
+
+        }
+        TempBurger.Insert(0,OrderManager.Ingridents.TopBun);
+        TempBurger.Add(OrderManager.Ingridents.BottomBun);
         return TempBurger;
     }
 }

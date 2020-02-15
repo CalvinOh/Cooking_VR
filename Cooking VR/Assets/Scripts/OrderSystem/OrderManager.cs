@@ -10,7 +10,7 @@ public class OrderManager : MonoBehaviour
         //An order
         public float TimeIssued;
         public float TimeExpected;
-        public List<string> Ingredents;
+        public List<Ingridents> Ingredents;
     }
 
     public class FinishedOrder
@@ -23,6 +23,25 @@ public class OrderManager : MonoBehaviour
 
     }
 
+    public enum Ingridents
+    {
+        RawPatty,
+        RarePatty,
+        MediumPatty,
+        WellDonePatty,
+        BurntPatty,
+        Ketchup,
+        Tomato,
+        Lettuce,
+        Pickle,
+        Mayo,
+        Mustard,
+        Cheese,
+        TopBun,
+        BottomBun
+
+    }
+
     private List<FinishedOrder> finishedOrders = new List<FinishedOrder>();
     public static List<Order> Orders = new List<Order>();
 
@@ -30,7 +49,7 @@ public class OrderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("value: " + (int)Ingridents.RarePatty);
     }
 
     // Update is called once per frame
