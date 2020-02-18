@@ -53,7 +53,11 @@ namespace Valve.VR.InteractionSystem
         void Update()
         {
             SpawnObject();
-            UnParentObject();
+            if(hasSpawned == true)
+            {
+                UnParentObject();
+            }
+            
            // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
         }
 
@@ -93,7 +97,6 @@ namespace Valve.VR.InteractionSystem
         {
             if(hasSpawned != true)
             {
-                spawnedObject.transform.parent = null;
                 spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
             }
         }
