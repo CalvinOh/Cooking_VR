@@ -5,7 +5,10 @@ using UnityEngine;
 public class Stackable : MonoBehaviour
 {
     [SerializeField]
-    public GameObject ThisThingsParentGameobject;
+    public GameObject ParentGameObject;
+
+    [SerializeField]
+    public List<GameObject> ChildrenGameObjects;
 
     /// <summary>
     /// if true, this item will not have a parent and will be the parent for other game objects.
@@ -16,6 +19,7 @@ public class Stackable : MonoBehaviour
     void Start()
     {
         this.IsMasterParent = false;
+        ChildrenGameObjects = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -29,52 +33,75 @@ public class Stackable : MonoBehaviour
         // Check if parenting has already occured between the two objects
         bool alreadyDone = false;
 
-        if (collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject.Equals(this.gameObject) || this.ThisThingsParentGameobject.Equals(collision.gameObject))
+        if (collision.gameObject.GetComponent<Stackable>().ParentGameObject.Equals(this.gameObject) || this.ParentGameObject.Equals(collision.gameObject))
         {
             alreadyDone = true;
         }
 
         if (!alreadyDone)
         {
-            AssignParenthood(collision);
+            CheckPositions(collision);
         }
 
     }
 
-    private void AssignParenthood(Collision collision)
+    private void CheckPositions(Collision collision)
     {
         // If other object is above this.gameObject = this.gameObject is the parent.
         if (collision.gameObject.transform.position.y >= this.gameObject.transform.position.y)
         {
-            if(this.ThisThingsParentGameobject == null) // No other parent
+            if(this.ParentGameObject == null) // No other parent
             {
-                collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject = this.gameObject;
-                collision.gameObject.transform.parent = this.gameObject.transform;
-                this.IsMasterParent = true;
+                collision.gameObject.GetComponent<Stackable>().AssignParent(this.gameObject);
             }
             // There's a Master Parent that isn't this.
             else
             {
-                collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject = this.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject;
-                collision.gameObject.transform.parent = collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject.transform;
+                collision.gameObject.GetComponent<Stackable>().AssignParent(this.gameObject.GetComponent<Stackable>().ParentGameObject);
             }
         }
         // If current object is above other object.
         else // if(collision.gameObject.transform.position.y < this.gameObject.transform.position.y)
         {
-            if(collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject == null)
+            if(collision.gameObject.GetComponent<Stackable>().ParentGameObject == null)
             {
-                this.ThisThingsParentGameobject = collision.gameObject;
-                this.gameObject.transform.parent = this.ThisThingsParentGameobject.transform;
-                collision.gameObject.GetComponent<Stackable>().IsMasterParent = true;
+                this.AssignParent(collision.gameObject);
             }
             // There's a Master Parent that isn't the collision game object.
             else
             {
-                this.ThisThingsParentGameobject = collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject;
-                this.gameObject.transform.parent = collision.gameObject.GetComponent<Stackable>().ThisThingsParentGameobject.transform;
+                this.AssignParent(collision.gameObject.GetComponent<Stackable>().ParentGameObject);
             }
             
         }
+    }
+
+    private void AssignParent(GameObject NewParent)
+    {
+        this.ParentGameObject = NewParent;
+        this.gameObject.transform.parent = NewParent.transform;
+        NewParent.GetComponent<Stackable>().IsMasterParent = true;
+
+        if(!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
+            NewParent.GetComponent<Stackable>().ChildrenGameObjects.Add(this.gameObject);
+
+        if (this.ChildrenGameObjects.Count != 0)
+        {
+            this.ReassignChildrenToNewParent(this.ParentGameObject);
+        }
+
+    }
+
+    public void ReassignChildrenToNewParent(GameObject NewParent)
+    {
+        foreach (GameObject child in ChildrenGameObjects)
+        {
+            child.GetComponent<Stackable>().AssignParent(NewParent);
+
+            //child.GetComponent<Stackable>().ParentGameObject = NewParent;
+            //child.gameObject.transform.parent = child.GetComponent<Stackable>().ParentGameObject.transform;
+            //child.GetComponent<Stackable>().ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Add(child);
+        }
+        this.ChildrenGameObjects.Clear();
     }
 }
