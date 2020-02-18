@@ -140,6 +140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1001 &21278762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,6 +241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1 &32131191 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1926501405409328924, guid: 192a7d40695dec84fa1c2908ee31e1bf,
@@ -259,6 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1 &33018010
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!64 &67076013
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -767,6 +775,12 @@ PrefabInstance:
       propertyPath: rightPlayerHand
       value: 
       objectReference: {fileID: 172961938}
+    - target: {fileID: 6854875929572720100, guid: ed0ca879cd2bc734088c7fda22b133e5,
+        type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 6954135647351981516, guid: b14b0f0172ee5ab419d58dbaad153584,
+        type: 3}
     - target: {fileID: 7415009603246933261, guid: ed0ca879cd2bc734088c7fda22b133e5,
         type: 3}
       propertyPath: m_Name
@@ -1618,6 +1632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1 &644633321
 GameObject:
   m_ObjectHideFlags: 0
@@ -3142,7 +3158,7 @@ PrefabInstance:
     - target: {fileID: 1734818075629124821, guid: 4174f75013ecef74c8666440894df31e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.9
+      value: 5.44
       objectReference: {fileID: 0}
     - target: {fileID: 1734818075629124821, guid: 4174f75013ecef74c8666440894df31e,
         type: 3}
@@ -3687,6 +3703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1 &1627544231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,6 +3954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!64 &1716113378
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4080,6 +4100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1 &1799750765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5076,6 +5098,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 1347110507}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
 --- !u!1 &2027500983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5255,26 +5279,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.64452, y: 24.006458, z: 5.9254203}
   m_Center: {x: -0.102956615, y: 25.973463, z: -2.462711}
---- !u!1 &2080391350 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1273475172883463189, guid: fdc4c57d571d9e748b70694d59cd5a66,
-    type: 3}
-  m_PrefabInstance: {fileID: 7101516881600046758}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2080391351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080391350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea70c78202a6b7544b3fcb5380c733f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnZone: {fileID: 1347110507}
-  enteredKillZone: 0
 --- !u!1 &2138520661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6401,7 +6405,7 @@ GameObject:
   - component: {fileID: 1916161821080137982}
   m_Layer: 0
   m_Name: pCube1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7712,7 +7716,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -4985871732246645686, guid: aed63a092786ecf44bc22b4c87968c4b, type: 3}
 --- !u!33 &3674629741206895822
@@ -10460,6 +10464,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2080391351, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
+      propertyPath: respawnZone
+      value: 
+      objectReference: {fileID: 1347110507}
+    - target: {fileID: 2080391351, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
+      propertyPath: timerOnGround
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1273475172883463189, guid: fdc4c57d571d9e748b70694d59cd5a66,
         type: 3}
       propertyPath: m_Name
@@ -10520,8 +10532,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2080391351, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
 --- !u!23 &7247372415274553682
 MeshRenderer:
