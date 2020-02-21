@@ -73,7 +73,7 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Single Squeeze
+        public virtual SteamVR_Action_Vector2 Squeeze
         {
             get
             {
@@ -102,6 +102,14 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.default_SnapTurnRight;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean SqueezeBottle
+        {
+            get
+            {
+                return SteamVR_Actions.default_SqueezeBottle;
             }
         }
         

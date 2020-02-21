@@ -82,4 +82,14 @@ public class CookScript : MonoBehaviour
             currentlyCooking = false;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Ground Beef joke
+        if(collision.gameObject.CompareTag("Ground") && this.doneness == Doneness.Raw)
+        {
+            this.currentCookAmount = 30;
+            this.doneness = Doneness.WellDone;
+        }
+    }
 }
