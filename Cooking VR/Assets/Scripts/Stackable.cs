@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Stackable : MonoBehaviour
 {
-    [SerializeField]
+    /// <summary>
+    /// The object's parent GameObject
+    /// </summary>
     public GameObject ParentGameObject;
 
-    [SerializeField]
+    /// <summary>
+    /// The object's list of children GameObjects
+    /// </summary>
     public List<GameObject> ChildrenGameObjects;
 
     /// <summary>
-    /// if true, this item will not have a parent and will be the parent for other game objects.
+    /// if true, this object will not have a parent and will be the parent for other game objects.
     /// </summary>
     public bool IsMasterParent;
 
@@ -45,6 +49,10 @@ public class Stackable : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Check the vertical position of the objects that collided
+    /// </summary>
+    /// <param name="collision"></param>
     private void CheckPositions(Collision collision)
     {
         // If other object is above this.gameObject = this.gameObject is the parent.
@@ -74,12 +82,31 @@ public class Stackable : MonoBehaviour
             }
             
         }
+
+        
+        /*
+         * 
+         * PLAY SOUND HERE!!!
+         *
+         */
     }
 
+    /// <summary>
+    /// Assigns a new parent to the object
+    /// </summary>
+    /// <param name="NewParent"></param>
     private void AssignParent(GameObject NewParent)
     {
+
         this.ParentGameObject = NewParent;
         this.gameObject.transform.parent = NewParent.transform;
+
+        this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+        this.transform.localRotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Debug.Break();
+
+        this.IsMasterParent = false;
         NewParent.GetComponent<Stackable>().IsMasterParent = true;
 
         if(!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
@@ -92,15 +119,15 @@ public class Stackable : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Reassigns the parent of the object's children to the parameter sent
+    /// </summary>
+    /// <param name="NewParent"></param>
     public void ReassignChildrenToNewParent(GameObject NewParent)
     {
         foreach (GameObject child in ChildrenGameObjects)
         {
             child.GetComponent<Stackable>().AssignParent(NewParent);
-
-            //child.GetComponent<Stackable>().ParentGameObject = NewParent;
-            //child.gameObject.transform.parent = child.GetComponent<Stackable>().ParentGameObject.transform;
-            //child.GetComponent<Stackable>().ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Add(child);
         }
         this.ChildrenGameObjects.Clear();
     }
