@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2226181200917124325}
   - component: {fileID: 4237854074944656887}
   - component: {fileID: 4771979844431112380}
+  - component: {fileID: 7484658574642772173}
   m_Layer: 0
   m_Name: tomato_prefab
   m_TagString: Untagged
@@ -192,7 +193,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  restoreOriginalParent: 0
+  restoreOriginalParent: 1
   onPickUp:
     m_PersistentCalls:
       m_Calls: []
@@ -203,3 +204,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!64 &7484658574642772173
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8944276417293748790}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2377925705789898242, guid: 6cb040d3624e34649a0bc51667b03f87, type: 3}

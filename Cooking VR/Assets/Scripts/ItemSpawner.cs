@@ -53,10 +53,10 @@ namespace Valve.VR.InteractionSystem
         void Update()
         {
             SpawnObject();
-            if(hasSpawned == true)
-            {
+            //if(hasSpawned == true)
+            //{
                 UnParentObject();
-            }
+            //}
             
            // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
         }
@@ -95,10 +95,13 @@ namespace Valve.VR.InteractionSystem
 
         void UnParentObject()
         {
-            if(hasSpawned != true && SteamVR_Actions._default.GrabPinch.GetStateUp(SteamVR_Input_Sources.Any))
+            if (hasSpawned != true)
             {
+                spawnedObject.transform.parent = null;
                 spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
+                spawnedObject = null;
             }
+
         }
         //private void OnTriggerEnter(Collider other)
         //{

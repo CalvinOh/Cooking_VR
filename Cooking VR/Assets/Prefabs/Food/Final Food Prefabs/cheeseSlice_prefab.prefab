@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2351898885357511345}
   - component: {fileID: 3031400140248041067}
   - component: {fileID: 8029500934819441016}
+  - component: {fileID: -2760960704393222116}
   m_Layer: 0
   m_Name: cheeseSlice_prefab
   m_TagString: Untagged
@@ -203,3 +204,17 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!64 &-2760960704393222116
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911433433333237901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
