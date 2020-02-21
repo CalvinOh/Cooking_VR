@@ -28,14 +28,18 @@ public class OrderSpawn : MonoBehaviour
         //foreach (string a in TestBurger)
         //    Debug.Log(a);
         //SpawnRandomOrder(4);
-        StartCoroutine(SpawnTicketCountDown(2,4));
+        StartCoroutine(SpawnTicketCountDown(1,4));
+        StartCoroutine(SpawnTicketCountDown(5, 4));
+        StartCoroutine(SpawnTicketCountDown(10, 4));
+        StartCoroutine(SpawnTicketCountDown(15, 4));
+        StartCoroutine(SpawnTicketCountDown(20, 6));
 
     }
     private IEnumerator SpawnTicketCountDown(float CountDown, int BurgerSize)
     {
         yield return new WaitForSeconds(CountDown);
         SpawnRandomOrder(BurgerSize);
-        StartCoroutine(SpawnTicketCountDown(1, 4));
+        
     }
 
     void Update()
