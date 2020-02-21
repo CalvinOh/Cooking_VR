@@ -45,6 +45,12 @@ public class Stackable : MonoBehaviour
         if (!alreadyDone)
         {
             CheckPositions(collision);
+            /*
+             * 
+             * PLAY SOUND HERE!!!
+             *
+             */
+            Debug.Log($"Beep! From {this.gameObject.name}");
         }
 
     }
@@ -83,12 +89,6 @@ public class Stackable : MonoBehaviour
             
         }
 
-        
-        /*
-         * 
-         * PLAY SOUND HERE!!!
-         *
-         */
     }
 
     /// <summary>
@@ -97,19 +97,26 @@ public class Stackable : MonoBehaviour
     /// <param name="NewParent"></param>
     private void AssignParent(GameObject NewParent)
     {
-
         this.ParentGameObject = NewParent;
         this.gameObject.transform.parent = NewParent.transform;
+        //this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
+        Quaternion OGRotation = NewParent.transform.rotation;
+        NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
+        float distanceOffset = this.GetComponent<Collider>().bounds.size.y / 2;
+        this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
+        NewParent.transform.rotation = OGRotation;
 
-        this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+        this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
+
         this.transform.localRotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
-        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        Debug.Break();
+        //Debug.Break();
 
         this.IsMasterParent = false;
         NewParent.GetComponent<Stackable>().IsMasterParent = true;
+        //NewParent.GetComponent<Rigidbody>().isKinematic = true;
 
-        if(!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
+        //CheckChildrenList(NewParent.GetComponent<Stackable>(), this.gameObject);
+        if (!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
             NewParent.GetComponent<Stackable>().ChildrenGameObjects.Add(this.gameObject);
 
         if (this.ChildrenGameObjects.Count != 0)
@@ -117,6 +124,23 @@ public class Stackable : MonoBehaviour
             this.ReassignChildrenToNewParent(this.ParentGameObject);
         }
 
+    }
+
+    /// <summary>
+    /// Makes the GameObject kinematic and freezes its' rotation so that appears to be "Glued" to the parent.
+    /// </summary>
+    /// <param name="rb"></param>
+    private void GlueGameObjectToParent(Rigidbody rb)
+    {
+        rb.velocity = Vector3.zero;
+        rb.isKinematic = true;
+        rb.freezeRotation = true;
+    }
+
+    private void CheckChildrenList(Stackable ParentStackScript, GameObject Child)
+    {
+        if (!ParentStackScript.ChildrenGameObjects.Contains(Child))
+            ChildrenGameObjects.Add(Child);
     }
 
     /// <summary>
