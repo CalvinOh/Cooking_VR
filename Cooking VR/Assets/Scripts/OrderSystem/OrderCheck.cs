@@ -20,7 +20,7 @@ public class OrderCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MockBurgerCheck();
+       // MockBurgerCheck();
     }
 
     // Update is called once per frame
