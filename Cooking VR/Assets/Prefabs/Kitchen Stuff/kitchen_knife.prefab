@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7101516880756614424}
   - component: {fileID: 7101516880756614426}
   - component: {fileID: 7101516880756614425}
+  - component: {fileID: 2080391351}
   m_Layer: 0
   m_Name: kitchen_knife
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273475172883463189}
-  m_LocalRotation: {x: -0, y: 0.27438492, z: -0, w: 0.96162003}
+  m_LocalRotation: {x: 0, y: 0.27438718, z: 0, w: 0.9616193}
   m_LocalPosition: {x: -1.245, y: 3.205, z: -0.509}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
@@ -218,3 +219,19 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &2080391351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273475172883463189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea70c78202a6b7544b3fcb5380c733f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnZone: {fileID: 0}
+  enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0

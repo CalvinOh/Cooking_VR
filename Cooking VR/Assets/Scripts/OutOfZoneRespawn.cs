@@ -8,12 +8,25 @@ public class OutOfZoneRespawn : MonoBehaviour
     Transform respawnZone;
     [SerializeField]
     bool enteredKillZone;
+
+    private Rigidbody rb;
+
+    [SerializeField]
+    private float timeSpentOnGround;
+    [SerializeField]
+    private float timerOnGround;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Update()
     {
         if(enteredKillZone)
         {
             this.gameObject.transform.position = respawnZone.transform.position;
-            this.gameObject.GetComponent<Rigidbody>().velocity = this.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
             
             enteredKillZone = false;
         }
@@ -29,5 +42,32 @@ public class OutOfZoneRespawn : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Ground"))
+        {
+            timeSpentOnGround += 0.1f * Time.deltaTime;
+            RespawnOnGround();
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        
+        
+    }
+
+    /// <summary>
+    /// Item Spent too much time on the ground and respawned
+    /// </summary>
+    private void RespawnOnGround()
+    {
+        if (timeSpentOnGround > timerOnGround)
+        {
+            enteredKillZone = true;
+            Debug.Log("Respawning");
+            timeSpentOnGround = 0.0f;
+
+        }
+    }
 }
