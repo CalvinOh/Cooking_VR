@@ -95,7 +95,7 @@ namespace Valve.VR.InteractionSystem
 
         void UnParentObject()
         {
-            if(hasSpawned != true)
+            if(hasSpawned != true && SteamVR_Actions._default.GrabPinch.GetStateUp(SteamVR_Input_Sources.Any))
             {
                 spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
             }
