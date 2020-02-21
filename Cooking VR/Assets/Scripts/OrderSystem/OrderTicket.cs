@@ -33,8 +33,8 @@ public class OrderTicket : MonoBehaviour
     public void UpdateTicket(OrderManager.Order OrderA)
     {
         MyOrder = OrderA;
-        Debug.Log(MyOrder.TimeIssued);
-        Debug.Log(MyOrder.TimeExpected);
+        //Debug.Log(MyOrder.TimeIssued);
+        //Debug.Log(MyOrder.TimeExpected);
         int IntTime = 0;
         IntTime = (int)MyOrder.TimeIssued;
         TimeOrdered.text = "Time Ordered: "+ IntTime / 60+":"+IntTime%60;
@@ -63,6 +63,19 @@ public class OrderTicket : MonoBehaviour
         FunnyNotes.Add("Be a chief they said");
         FunnyNotes.Add("Try Terasphere too!");
         FunnyNotes.Add("Professionally burnt food");
+        FunnyNotes.Add("Look at all those chickens");
+        FunnyNotes.Add("Batteries not included");
+        FunnyNotes.Add("Idiot sandwich not included");
+        FunnyNotes.Add("I'm making fucking mac and cheese, and nobody can stop me!");
+        FunnyNotes.Add("Sombadi toucha ma spaghit");
+        FunnyNotes.Add(".................................................I love refrigerators");
+        FunnyNotes.Add("I'm glad i don't have to hunt for my food, i don't even know where burgers live.");
+        FunnyNotes.Add("Over 1 million burnt");
+        FunnyNotes.Add("Don't drop the patty");
+        FunnyNotes.Add("Rated 5/5 by bear grills");
+        FunnyNotes.Add("Now FDA approved");
+        FunnyNotes.Add("You're the chief here, not chief microwave");
+        FunnyNotes.Add("I'll have the fire department on stand by");
 
 
     }

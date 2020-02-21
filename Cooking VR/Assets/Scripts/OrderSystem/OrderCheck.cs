@@ -20,7 +20,7 @@ public class OrderCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        MockBurgerCheck();
     }
 
     // Update is called once per frame
@@ -46,19 +46,11 @@ public class OrderCheck : MonoBehaviour
 
     int CompareFoodToOrder(List<OrderManager.Ingridents> SubmittedFood, List<OrderManager.Ingridents> Order)
     {
-        //this functin compares the two lists and gives a float for the percentage of correctness
-        int score=Order.Count-2*100;
+        int score=(Order.Count-2)*100;
 
         int IncorrectPositions = 0;
         int LayersTakenOut = 0;
-        //foreach (OrderManager.Ingridents I in Order)
-        //{
-        //    if (SubmittedFood.Contains(I))
-        //    {
-        //        SubmittedFood.Remove(I);
-        //        Order.Remove(I);
-        //    }
-        //}
+
         bool LayerFound = false;
 
         for (int i = 0; i < Order.Count; i++)
@@ -76,48 +68,36 @@ public class OrderCheck : MonoBehaviour
                     Order.RemoveAt(i);
                     LayersTakenOut++;
 
+
                     LayerFound = true;
+                    i--;
                 }
-                else if ((int)Order[i] <= 4 || (int)SubmittedFood[j] <= 4)//didn't find exact ingrident, goes for meat checking
+                else if ((int)Order[i] <= 4 && (int)SubmittedFood[j] <= 4)//didn't find exact ingrident, goes for meat checking
                 {
                     score -= CheckMeat(SubmittedFood[i], Order[j]);
-
                     if (i != j)
                         IncorrectPositions++;
 
                     SubmittedFood.RemoveAt(j);
                     Order.RemoveAt(i);
                     LayersTakenOut++;
+
+
                     LayerFound = true;
+                    i--;
                 }
 
             }
-
-            score -= 10 * IncorrectPositions;// deduct 10 points for each incorrect position but right ingrident
-            score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
-            score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
-
-
-
-
-
-            /*
-            if (Order[i] == SubmittedFood[i+IncorrectPositions])
-            {
-                //the layer is correct, no score is deducted;
-            }
-            else if ((int)Order[i] <= 4|| (int)SubmittedFood[i+IncorrectPositions] <= 4)
-            {
-                score -= CheckMeat(SubmittedFood[i], Order[i+IncorrectPositions]);
-            }
-            else if (Order[i] != SubmittedFood[i])
-            {
-                score -= 100;
-            }
-            */
-
         }
-        
+
+        //Debug.Log("LTO: " + LayersTakenOut);
+        //Debug.Log("IP: "+IncorrectPositions);
+        //Debug.Log("SFC: " + SubmittedFood.Count);
+        //Debug.Log("OC: " + Order.Count);
+        score -= 10 * IncorrectPositions;// deduct 10 points for each incorrect position but right ingrident
+        score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
+        score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
+
 
 
 
@@ -129,6 +109,9 @@ public class OrderCheck : MonoBehaviour
 
     private int CheckMeat(OrderManager.Ingridents Meat, OrderManager.Ingridents Order)
     {
+        if (Meat == Order)
+            return 0;
+
         if (Meat == OrderManager.Ingridents.BurntPatty || Meat == OrderManager.Ingridents.RawPatty)
             return 90;
 
@@ -143,6 +126,44 @@ public class OrderCheck : MonoBehaviour
 
     public void SubmitFood()
     {
+
+    }
+
+    private void MockBurgerCheck()
+    {
+        List<OrderManager.Ingridents> Order = new List<OrderManager.Ingridents>();
+        List < OrderManager.Ingridents>SubmittedFood = new List<OrderManager.Ingridents>();
+
+
+        Order.Add(OrderManager.Ingridents.TopBun);
+        Order.Add(OrderManager.Ingridents.MediumPatty);
+        Order.Add(OrderManager.Ingridents.Cheese);
+        Order.Add(OrderManager.Ingridents.BottomBun);
+
+        SubmittedFood.Add(OrderManager.Ingridents.TopBun);
+        SubmittedFood.Add(OrderManager.Ingridents.Cheese);
+        SubmittedFood.Add(OrderManager.Ingridents.Lettuce);
+        SubmittedFood.Add(OrderManager.Ingridents.MediumPatty);
+        SubmittedFood.Add(OrderManager.Ingridents.BottomBun);
+
+
+        string OrderS = "";
+        string SubmittedS="";
+
+        foreach (OrderManager.Ingridents a in Order)
+        {
+            OrderS += (", " + (int)a);
+        }
+
+        foreach (OrderManager.Ingridents a in SubmittedFood)
+        {
+            SubmittedS += (", " + (int)a);
+        }
+
+        Debug.Log("Order: " + OrderS);
+        Debug.Log("Submitted: "+SubmittedS);
+        Debug.Log("Mock Burger Score: " + CompareFoodToOrder(SubmittedFood, Order));
+
 
     }
 

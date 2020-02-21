@@ -59,6 +59,7 @@ public class OrderSpawn : MonoBehaviour
         OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
         TicketScript.UpdateTicket(SpawnedOrder);
         Ticket.transform.parent = TicketParent.transform;
+        Ticket.GetComponent<Rigidbody>().isKinematic = true;
 
         OrderManager.Orders.Add(SpawnedOrder);
         SpawnLocationNumber++;
@@ -78,6 +79,7 @@ public class OrderSpawn : MonoBehaviour
         OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
         TicketScript.UpdateTicket(SpawnedOrder);
         Ticket.transform.parent = TicketParent.transform;
+        Ticket.GetComponent<Rigidbody>().isKinematic = true;
 
         OrderManager.Orders.Add(SpawnedOrder);
         SpawnLocationNumber++;

@@ -25,36 +25,60 @@ public class OrderManager : MonoBehaviour
 
     public enum Ingridents
     {
-        RawPatty,
-        RarePatty,
-        MediumPatty,
-        WellDonePatty,
-        BurntPatty,
-        Ketchup,
-        Tomato,
-        Lettuce,
-        Pickle,
-        Mayo,
-        Mustard,
-        Cheese,
-        TopBun,
-        BottomBun
+        RawPatty = 0,
+        RarePatty = 1,
+        MediumPatty = 2,
+        WellDonePatty = 3,
+        BurntPatty = 4,
+        Ketchup = 5,
+        Tomato = 6,
+        Lettuce = 7,
+        Pickle = 8,
+        Mayo = 9,
+        Mustard = 10,
+        Cheese = 11,
+        TopBun = 12,
+        BottomBun = 13,
 
     }
 
-    private List<FinishedOrder> finishedOrders = new List<FinishedOrder>();
+    private OrderCheck OrderChecker = new OrderCheck();
+    private OrderSpawn OrderSpawner = new OrderSpawn();
+
+
+    public static List<FinishedOrder> finishedOrders = new List<FinishedOrder>();
     public static List<Order> Orders = new List<Order>();
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("value: " + (int)Ingridents.RarePatty);
+        FindOrderCheck();
+        FindOrderSpawner();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void FindOrderCheck()
+    {
+        OrderChecker = FindObjectOfType<OrderCheck>();
+        if (OrderChecker == null)
+            Debug.Log("OrderManager can't find OrderCheck");
+        else
+            Debug.Log("OrderManager found OrderCheck at: "+OrderChecker.gameObject.name);
+
+    }
+
+    private void FindOrderSpawner()
+    {
+        OrderSpawner = FindObjectOfType<OrderSpawn>();
+        if (OrderSpawner == null)
+            Debug.Log("OrderManager can't find OrderSpawn");
+        else
+            Debug.Log("OrderManager found OrderSpawn at: " + OrderSpawner.gameObject.name);
     }
 }
