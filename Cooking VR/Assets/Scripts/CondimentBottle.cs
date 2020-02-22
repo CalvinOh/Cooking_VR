@@ -29,20 +29,26 @@ namespace Valve.VR.InteractionSystem
         
             if(interactable.attachedToHand)
             {
-                Debug.DrawRay(transform.position, forward, Color.green);
-                if(SteamVR_Actions._default.SqueezeBottle.GetStateUp(SteamVR_Input_Sources.Any))
+                if(SteamVR_Actions._default.SqueezeBottle.GetStateDown(SteamVR_Input_Sources.Any))
                 {
                     SpawnCondiment();
                 }
             }
         }
 
+        private void OnDrawGizmos()
+        {
+            Debug.DrawRay(this.transform.position, this.transform.up, Color.green);
+        }
+
         //This method will spawn the condiment that will than be placed on the Dish
         void SpawnCondiment()
         {
-            SpawnPosition.localScale = Condiment.transform.localScale;
+       
             GameObject temp = Instantiate(Condiment, SpawnPosition);
-            temp.GetComponent<Rigidbody>().AddForce(new Vector3(50, 50, 50));
+            temp.GetComponent<Rigidbody>().AddForce(this.transform.up * 1000);
+            temp.transform.localScale = new Vector3(1, 1, 1);
+            temp.gameObject.transform.parent = null;
         }
     }
 }
