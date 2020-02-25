@@ -25,6 +25,11 @@ public class MainMenuFunctions : MonoBehaviour
         settingsManager.ResetPosition();
     }
 
+    public void SettingSize(int _characterSize)
+    {
+        characterSize = _characterSize;
+    }
+
     public void SaveSettings()
     {
         SettingsManager settingsManager = (SettingsManager)FindObjectOfType(typeof(SettingsManager));
