@@ -23,18 +23,18 @@ public class OutOfZoneRespawn : MonoBehaviour
 
     private void Update()
     {
-        if(enteredKillZone)
+        if (enteredKillZone)
         {
             this.gameObject.transform.position = respawnZone.transform.position;
             this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
-            
+
             enteredKillZone = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.CompareTag("KillZone"))
+        if (other.CompareTag("KillZone"))
         {
             Debug.Log("Entering Kill Box");
             enteredKillZone = true;
@@ -42,32 +42,41 @@ public class OutOfZoneRespawn : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Ground"))
-        {
-            timeSpentOnGround += 0.1f * Time.deltaTime;
-            RespawnOnGround();
-        }
-    }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        
-        
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("On The Ground");
+            RespawnOnGround(collision.gameObject, true);
+        }
+
     }
 
     /// <summary>
     /// Item Spent too much time on the ground and respawned
     /// </summary>
-    private void RespawnOnGround()
+    private void RespawnOnGround(GameObject item, bool onGround = false)
     {
-        if (timeSpentOnGround > timerOnGround)
+        //Bugged, respawning instantly
+        while (onGround)
         {
-            enteredKillZone = true;
-            Debug.Log("Respawning");
-            timeSpentOnGround = 0.0f;
+            timeSpentOnGround += 0.01f * Time.deltaTime;
+            if (timeSpentOnGround > timerOnGround)
+            {
+                enteredKillZone = true;
+                Debug.Log("Respawning from ground");
+                timeSpentOnGround = 0.0f;
+                onGround = false;
 
-        }
+            }
+
+        } 
+
+
+
+
+
+
     }
 }
