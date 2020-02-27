@@ -102,8 +102,26 @@ public class Stackable : MonoBehaviour
         //this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
         Quaternion OGRotation = NewParent.transform.rotation;
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
-        float distanceOffset = this.GetComponent<Collider>().bounds.size.y / 2;
+
+        float distanceOffset = (this.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;// * (3 / 2);
+        float highestChild = 0;
+        foreach (GameObject child in ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects)
+        {
+            if (child.transform.position.y >= highestChild)
+                highestChild = child.transform.position.y;
+        }
+        if (ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count == 0)
+            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);//distanceOffset *= 0.5f;
+        else
+            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);
+
+        //else
+        //    distanceOffset *= 1.5f;
+
+
+        //distanceOffset += highestChild;
         this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
+
         NewParent.transform.rotation = OGRotation;
 
         this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
