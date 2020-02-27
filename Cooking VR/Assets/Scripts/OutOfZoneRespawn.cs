@@ -8,6 +8,8 @@ public class OutOfZoneRespawn : MonoBehaviour
     Transform respawnZone;
     [SerializeField]
     bool enteredKillZone;
+    [SerializeField]
+    bool grounded;
 
     private Rigidbody rb;
 
@@ -19,6 +21,9 @@ public class OutOfZoneRespawn : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        enteredKillZone = grounded = false;
+        timeSpentOnGround = 0;
+        timerOnGround = 3;
     }
 
     private void Update()
@@ -29,6 +34,13 @@ public class OutOfZoneRespawn : MonoBehaviour
             this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
 
             enteredKillZone = false;
+        }
+
+        if(grounded && Time.time >= timeSpentOnGround)
+        {
+            this.gameObject.transform.position = respawnZone.transform.position;
+            this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
+            grounded = false;
         }
     }
 
@@ -42,15 +54,25 @@ public class OutOfZoneRespawn : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("On The Ground");
-            RespawnOnGround(collision.gameObject, true);
+            Debug.Log($"On The Ground - {this.gameObject.name}");
+            grounded = true;
+            timeSpentOnGround = Time.time + timerOnGround;
+            //RespawnOnGround(collision.gameObject, true);
         }
 
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log($"{this.gameObject.name} was picked up From Ground!");
+            grounded = false;
+        }
     }
 
     /// <summary>
@@ -65,7 +87,7 @@ public class OutOfZoneRespawn : MonoBehaviour
             if (timeSpentOnGround > timerOnGround)
             {
                 enteredKillZone = true;
-                Debug.Log("Respawning from ground");
+                Debug.Log($"{this.gameObject.name} is respawning from ground");
                 timeSpentOnGround = 0.0f;
                 onGround = false;
 
