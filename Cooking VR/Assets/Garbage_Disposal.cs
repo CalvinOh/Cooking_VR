@@ -29,13 +29,21 @@ public class Garbage_Disposal : MonoBehaviour
         Debug.Log("Trash has entered the field");
     }
 
-  
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log("KNOW YOUR PLACE TRASH!");
+        DeleteItem(true);
+    }
+
     void DeleteItem(bool isFull = false)
     {
-        foreach(GameObject trash in garbage)
+       if(isFull == true)
         {
-            garbage.Remove(trash);
-            Destroy(trash);
+            foreach (GameObject trash in garbage)
+            {
+                garbage.Remove(trash);
+                Destroy(trash);
+            }
         }
     }
 }
