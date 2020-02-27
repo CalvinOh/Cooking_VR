@@ -6,11 +6,14 @@ public class Garbage_Disposal : MonoBehaviour
 {
     [SerializeField]
     List<GameObject> garbage;
+    [SerializeField]
+    BoxCollider entryCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         garbage = new List<GameObject>();
+       
      
     }
 
@@ -23,15 +26,16 @@ public class Garbage_Disposal : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         garbage.Add(other.gameObject);
+        Debug.Log("Trash has entered the field");
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-       
-    }
-
+  
     void DeleteItem(bool isFull = false)
     {
-
+        foreach(GameObject trash in garbage)
+        {
+            garbage.Remove(trash);
+            Destroy(trash);
+        }
     }
 }
