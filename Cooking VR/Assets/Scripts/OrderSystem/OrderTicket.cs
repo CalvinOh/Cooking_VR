@@ -20,7 +20,7 @@ public class OrderTicket : MonoBehaviour
     private UnityEngine.UI.Text Note;
 
     private List<string> FunnyNotes = new List<string>();
-    private OrderManager.Order MyOrder;
+    public OrderManager.Order MyOrder;
 
     // Start is called before the first frame update
     void Start()
