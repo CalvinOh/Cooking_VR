@@ -14,6 +14,9 @@ public class Stackable : MonoBehaviour
     /// </summary>
     public List<GameObject> ChildrenGameObjects;
 
+    [SerializeField]
+    public OrderManager.Ingridents ingredientName;
+
     /// <summary>
     /// if true, this object will not have a parent and will be the parent for other game objects.
     /// </summary>
@@ -103,17 +106,18 @@ public class Stackable : MonoBehaviour
         Quaternion OGRotation = NewParent.transform.rotation;
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
 
+        // Set distance offset to half the meshCollider's height.
         float distanceOffset = (this.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;// * (3 / 2);
-        float highestChild = 0;
+        float highestChildPosition = 0;
         foreach (GameObject child in ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects)
         {
-            if (child.transform.position.y >= highestChild)
-                highestChild = child.transform.position.y;
+            if (child.transform.position.y >= highestChildPosition)
+                highestChildPosition = child.transform.position.y;
         }
         if (ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count == 0)
             distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);//distanceOffset *= 0.5f;
         else
-            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);
+            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2) + highestChildPosition;
 
         //else
         //    distanceOffset *= 1.5f;
