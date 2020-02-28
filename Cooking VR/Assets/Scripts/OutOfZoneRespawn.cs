@@ -8,6 +8,8 @@ public class OutOfZoneRespawn : MonoBehaviour
     Transform respawnZone;
     [SerializeField]
     bool enteredKillZone;
+    [SerializeField]
+    bool grounded;
 
     private Rigidbody rb;
 
@@ -19,22 +21,32 @@ public class OutOfZoneRespawn : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        enteredKillZone = grounded = false;
+        timeSpentOnGround = 0;
+        timerOnGround = 3;
     }
 
     private void Update()
     {
-        if(enteredKillZone)
+        if (enteredKillZone)
         {
             this.gameObject.transform.position = respawnZone.transform.position;
             this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
-            
+
             enteredKillZone = false;
+        }
+
+        if(grounded && Time.time >= timeSpentOnGround)
+        {
+            this.gameObject.transform.position = respawnZone.transform.position;
+            this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
+            grounded = false;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.CompareTag("KillZone"))
+        if (other.CompareTag("KillZone"))
         {
             Debug.Log("Entering Kill Box");
             enteredKillZone = true;
@@ -42,32 +54,51 @@ public class OutOfZoneRespawn : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            timeSpentOnGround += 0.1f * Time.deltaTime;
-            RespawnOnGround();
+            Debug.Log($"On The Ground - {this.gameObject.name}");
+            grounded = true;
+            timeSpentOnGround = Time.time + timerOnGround;
+            //RespawnOnGround(collision.gameObject, true);
         }
+
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
-        
-        
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log($"{this.gameObject.name} was picked up From Ground!");
+            grounded = false;
+        }
     }
 
     /// <summary>
     /// Item Spent too much time on the ground and respawned
     /// </summary>
-    private void RespawnOnGround()
+    private void RespawnOnGround(GameObject item, bool onGround = false)
     {
-        if (timeSpentOnGround > timerOnGround)
+        //Bugged, respawning instantly
+        while (onGround)
         {
-            enteredKillZone = true;
-            Debug.Log("Respawning");
-            timeSpentOnGround = 0.0f;
+            timeSpentOnGround += 0.01f * Time.deltaTime;
+            if (timeSpentOnGround > timerOnGround)
+            {
+                enteredKillZone = true;
+                Debug.Log($"{this.gameObject.name} is respawning from ground");
+                timeSpentOnGround = 0.0f;
+                onGround = false;
 
-        }
+            }
+
+        } 
+
+
+
+
+
+
     }
 }

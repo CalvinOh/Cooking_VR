@@ -16,7 +16,7 @@ namespace Valve.VR.InteractionSystem
         [SerializeField]
         private bool hasSpawned;
         [SerializeField]
-        private bool playerClicked;
+        private bool leftPlayerClicked, rightPlayerClicked;
         [SerializeField]
         GameObject objectToSpawn;
 
@@ -30,7 +30,8 @@ namespace Valve.VR.InteractionSystem
         void Start()
         {
             hasSpawned = false;
-            playerClicked = false;
+            leftPlayerClicked = false;
+            rightPlayerClicked = false;
             isGrabbing.AddOnStateDownListener(TriggerDown, handType);
             isGrabbing.AddOnStateUpListener(TriggerUp, handType);
             spawnedObject = null;
@@ -39,34 +40,48 @@ namespace Valve.VR.InteractionSystem
         private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
             Debug.Log("Release");
-            playerClicked = false;
+            leftPlayerClicked = false;
+            rightPlayerClicked = false;
             hasSpawned = false;
+            //UnParentObject();
         }
 
         private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
             Debug.Log("Clicked");
-            playerClicked = true;
+            leftPlayerClicked = true;
+            rightPlayerClicked = true;
         }
 
         // Update is called once per frame
         void Update()
         {
-            SpawnObject();
-            if(hasSpawned == true)
+        
+
+            if(spawnedObject != null)
             {
                 UnParentObject();
             }
-            
-           // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
+            else
+            {
+                SpawnObject();
+            }
+
+    
+            //if(hasSpawned == true)
+            //{
+
+            //}
+
+            // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
         }
 
         void SpawnObject()
         {
-            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.08f )
+            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.1f )
             {
                
-                if (playerClicked && !hasSpawned)
+                if (leftPlayerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
                     spawnedObject = Instantiate(objectToSpawn, leftPlayerHand.transform.position, leftPlayerHand.transform.rotation);
@@ -77,10 +92,10 @@ namespace Valve.VR.InteractionSystem
                     
                 }
             }
-            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.08f)
+            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.1f)
             {
 
-                if (playerClicked && !hasSpawned)
+                if (rightPlayerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
                     spawnedObject = Instantiate(objectToSpawn, rightPlayerHand.transform.position, rightPlayerHand.transform.rotation);
@@ -95,10 +110,13 @@ namespace Valve.VR.InteractionSystem
 
         void UnParentObject()
         {
-            if(hasSpawned != true && SteamVR_Actions._default.GrabPinch.GetStateUp(SteamVR_Input_Sources.Any))
+            if (hasSpawned != true && !spawnedObject.GetComponent<Interactable>().attachedToHand)
             {
+                spawnedObject.transform.parent = null;
                 spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
+                spawnedObject = null;
             }
+
         }
         //private void OnTriggerEnter(Collider other)
         //{
