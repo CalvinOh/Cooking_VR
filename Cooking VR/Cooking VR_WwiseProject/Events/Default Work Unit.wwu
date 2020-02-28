@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{95409A04-03F1-43C4-BF41-898D997BDD57}" SchemaVersion="94">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{95409A04-03F1-43C4-BF41-898D997BDD57}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{95409A04-03F1-43C4-BF41-898D997BDD57}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Grab_Bottle_Plastic" ID="{A19F706B-69CA-48DA-A018-2A62FAAB8710}">
+					<ChildrenList>
+						<Action Name="" ID="{469BC6A4-42DA-4D3C-B8FD-9464ADEA0F4C}" ShortID="151366721">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="grabs_bottle_plastic" ID="{AB1FD09F-BA54-4520-A878-32C7C7A18960}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B4688F4A-9788-4CF8-9652-7F6BEDD1849E}" ShortID="22976075">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pour_Bottle_Glass" ID="{CAC606AC-6532-4724-9498-2CA9D5134534}">
+					<ChildrenList>
+						<Action Name="" ID="{C6B11D3C-036B-40CE-B383-F5094D454204}" ShortID="971532235">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="pours_bottle_glass" ID="{18AB7BED-1677-43A3-903A-9B0BCB5D3F59}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Grab_Plate" ID="{805F0B8B-D23F-4E9A-95B6-06DFC9DC3BCB}">
+					<ChildrenList>
+						<Action Name="" ID="{4A5E84A4-9FED-4194-9638-04215E13EBC6}" ShortID="996266035">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E7458392-1934-4646-A822-555774F58084}" ShortID="1010049540">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="grabs_plate" ID="{99FA1F93-C213-4170-95E0-AF775E8064AA}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Grab_Bottle_Glass" ID="{7ABCD792-50AD-4A2A-AAA7-AC50603B0033}">
+					<ChildrenList>
+						<Action Name="" ID="{7C7FDC54-50E1-4644-9EB4-E1DB515D8474}" ShortID="49645698">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="grabs_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{789EAFE9-529F-43DB-98B4-C2DA6B583EA8}" ShortID="747748930">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
