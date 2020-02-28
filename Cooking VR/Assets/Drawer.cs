@@ -7,7 +7,9 @@ public class Drawer : MonoBehaviour
  
     private void OnCollisionEnter(Collision collision)
     {
-        collision.transform.parent = this.gameObject.transform;
+
+        if(!collision.gameObject.CompareTag("Hand"))
+            collision.transform.parent = this.gameObject.transform;
     }
 
    

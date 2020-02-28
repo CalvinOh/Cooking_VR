@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8763,7 +8763,6 @@ GameObject:
   - component: {fileID: 2777419062632808166}
   - component: {fileID: 2777419062632808165}
   - component: {fileID: 2777419062632808169}
-  - component: {fileID: 2777419062632808170}
   - component: {fileID: 2777419062632808171}
   m_Layer: 0
   m_Name: Drawer_1
@@ -8885,18 +8884,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2777419062632808170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2777419062632808164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74df614d4c59d744481499b996d5a9d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2777419062632808171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9186,7 +9173,6 @@ GameObject:
   - component: {fileID: 3181782012625402166}
   - component: {fileID: 3181782012625402170}
   - component: {fileID: 3181782012625402172}
-  - component: {fileID: 3181782012625402171}
   m_Layer: 0
   m_Name: Drawer_2
   m_TagString: Untagged
@@ -9307,18 +9293,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3181782012625402171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3181782012625402165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74df614d4c59d744481499b996d5a9d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3181782012625402172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13874,7 +13848,6 @@ GameObject:
   - component: {fileID: 7904293516909401449}
   - component: {fileID: 7904293516909401453}
   - component: {fileID: 7904293516909401455}
-  - component: {fileID: 7904293516909401454}
   m_Layer: 0
   m_Name: Drawer_3
   m_TagString: Untagged
@@ -13995,18 +13968,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7904293516909401454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7904293516909401448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74df614d4c59d744481499b996d5a9d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &7904293516909401455
 BoxCollider:
   m_ObjectHideFlags: 0
