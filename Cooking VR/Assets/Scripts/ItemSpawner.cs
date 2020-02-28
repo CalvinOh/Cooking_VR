@@ -4,69 +4,136 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class ItemSpawner : MonoBehaviour
+namespace Valve.VR.InteractionSystem
 {
-
-    public SteamVR_Action_Boolean isGrabbing;
-    public SteamVR_Input_Sources handType;
-
-    [SerializeField]
-    private bool handInTrigger;
-    [SerializeField]
-    private bool playerClicked;
-    [SerializeField]
-    GameObject objectToSpawn;
-    
-    // Start is called before the first frame update
-    void Start()
+    public class ItemSpawner : MonoBehaviour
     {
-        handInTrigger = false;
-        playerClicked = false;
-        isGrabbing.AddOnStateDownListener(TriggerDown, handType);
-        isGrabbing.AddOnStateUpListener(TriggerUp, handType);
-    }
 
-    private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        Debug.Log("Release");
-        playerClicked = false;
-    }
+        public SteamVR_Action_Boolean isGrabbing;
+        public SteamVR_Input_Sources handType;
 
-    private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-    {
-        Debug.Log("Clicked");
-        playerClicked = true;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
+        [SerializeField]
+        private bool hasSpawned;
+        [SerializeField]
+        private bool leftPlayerClicked, rightPlayerClicked;
+        [SerializeField]
+        GameObject objectToSpawn;
 
-    void SpawnObject()
-    {
-        if (handInTrigger)
+        [SerializeField]
+        private GameObject spawnedObject;
+
+        [SerializeField]
+        Hand leftPlayerHand, rightPlayerHand;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            if (playerClicked)
+            hasSpawned = false;
+            leftPlayerClicked = false;
+            rightPlayerClicked = false;
+            isGrabbing.AddOnStateDownListener(TriggerDown, handType);
+            isGrabbing.AddOnStateUpListener(TriggerUp, handType);
+            spawnedObject = null;
+        }
+
+        private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+        {
+            Debug.Log("Release");
+            leftPlayerClicked = false;
+            rightPlayerClicked = false;
+            hasSpawned = false;
+            //UnParentObject();
+        }
+
+        private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+        {
+            Debug.Log("Clicked");
+            leftPlayerClicked = true;
+            rightPlayerClicked = true;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+
+            if(spawnedObject != null)
             {
-                GameObject.Instantiate(objectToSpawn);
+                UnParentObject();
+            }
+            else
+            {
+                SpawnObject();
+            }
+
+    
+            //if(hasSpawned == true)
+            //{
+
+            //}
+
+            // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
+        }
+
+        void SpawnObject()
+        {
+            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.1f )
+            {
+               
+                if (leftPlayerClicked && !hasSpawned)
+                {
+                    Debug.Log("Plate Spawned");
+                    spawnedObject = Instantiate(objectToSpawn, leftPlayerHand.transform.position, leftPlayerHand.transform.rotation);
+                    spawnedObject.transform.parent = leftPlayerHand.transform;
+                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hasSpawned = true;
+                    //Debug.Break();
+                    
+                }
+            }
+            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.1f)
+            {
+
+                if (rightPlayerClicked && !hasSpawned)
+                {
+                    Debug.Log("Plate Spawned");
+                    spawnedObject = Instantiate(objectToSpawn, rightPlayerHand.transform.position, rightPlayerHand.transform.rotation);
+                    spawnedObject.transform.parent = rightPlayerHand.transform;
+                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    hasSpawned = true;
+                    //Debug.Break();
+
+                }
             }
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Hand"))
+        void UnParentObject()
         {
-            handInTrigger = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        handInTrigger = false;
-    }
+            if (hasSpawned != true && !spawnedObject.GetComponent<Interactable>().attachedToHand)
+            {
+                spawnedObject.transform.parent = null;
+                spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
+                spawnedObject = null;
+            }
 
-   
+        }
+        //private void OnTriggerEnter(Collider other)
+        //{
+        //    if(other.CompareTag("Hand"))
+        //    {
+        //        handInTrigger = true;
+        //    }
+        //}
+        //private void OnTriggerExit(Collider other)
+        //{
+        //    handInTrigger = false;
+        //}
+
+
+
+    }
 
 }
+
+
