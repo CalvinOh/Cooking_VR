@@ -32,7 +32,7 @@ public class StoveScript : MonoBehaviour
 
     public void TurnOn()
     {
-        StoveIsOn = false;
+        StoveIsOn = true;
         CurrentPanOnStove.StartCooking();
     }
 
