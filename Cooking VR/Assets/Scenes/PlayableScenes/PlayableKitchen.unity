@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 1347110507}
   m_Layer: 0
   m_Name: Respawn Zone
-  m_TagString: Untagged
+  m_TagString: RespawnZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7180,12 +7180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d06c1853735a5ad4f93d4ea7eba7c25e, type: 3}
---- !u!1 &240498339420156826 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1058308477850763977, guid: d06c1853735a5ad4f93d4ea7eba7c25e,
-    type: 3}
-  m_PrefabInstance: {fileID: 240498339420156825}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &249817250304247875
 Transform:
   m_ObjectHideFlags: 0
@@ -10935,7 +10929,8 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 240498339420156826}
+      objectReference: {fileID: 1058308477850763977, guid: d06c1853735a5ad4f93d4ea7eba7c25e,
+        type: 3}
     - target: {fileID: 5209061810780703178, guid: 84486f45a65b26442bf6f6cd3c289da2,
         type: 3}
       propertyPath: leftPlayerHand
