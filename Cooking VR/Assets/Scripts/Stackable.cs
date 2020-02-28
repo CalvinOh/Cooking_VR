@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Stackable : MonoBehaviour
 {
@@ -9,27 +10,47 @@ public class Stackable : MonoBehaviour
     /// </summary>
     public GameObject ParentGameObject;
 
+    Interactable interactable;
+
     /// <summary>
     /// The object's list of children GameObjects
     /// </summary>
     public List<GameObject> ChildrenGameObjects;
+
+    [SerializeField]
+    public OrderManager.Ingridents ingredientName;
 
     /// <summary>
     /// if true, this object will not have a parent and will be the parent for other game objects.
     /// </summary>
     public bool IsMasterParent;
 
+    public bool wasGrabbed = false;
+
     // Start is called before the first frame update
     void Start()
     {
         this.IsMasterParent = false;
         ChildrenGameObjects = new List<GameObject>();
+        this.interactable = this.GetComponent<Interactable>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (this.interactable.attachedToHand)
+        {
+            wasGrabbed = true;
+        }
+
+        if (wasGrabbed && !this.interactable.attachedToHand)
+        {
+            if (this.ParentGameObject != null)
+            {
+                UnassignParent();
+            }
+            this.wasGrabbed = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -92,6 +113,19 @@ public class Stackable : MonoBehaviour
     }
 
     /// <summary>
+    /// Unassigns parent of the child object
+    /// </summary>
+    private void UnassignParent()
+    {
+        //if(ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
+        this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Remove(this.gameObject);
+
+        this.ParentGameObject = null;
+        this.GetComponent<Rigidbody>().freezeRotation = false;
+        this.GetComponent<Rigidbody>().isKinematic = false;
+    }
+
+    /// <summary>
     /// Assigns a new parent to the object
     /// </summary>
     /// <param name="NewParent"></param>
@@ -103,23 +137,29 @@ public class Stackable : MonoBehaviour
         Quaternion OGRotation = NewParent.transform.rotation;
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
 
+        // Set distance offset to half the meshCollider's height.
         float distanceOffset = (this.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;// * (3 / 2);
-        float highestChild = 0;
+        float highestChildPosition = 0;
+        float highestChildHalfThickness = 0;
         foreach (GameObject child in ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects)
         {
-            if (child.transform.position.y >= highestChild)
-                highestChild = child.transform.position.y;
+            if (child.transform.position.y >= highestChildPosition)
+            {
+                highestChildPosition = child.transform.position.y;
+                highestChildHalfThickness = (child.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;
+            }
         }
         if (ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count == 0)
             distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);//distanceOffset *= 0.5f;
         else
-            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);
+            distanceOffset += highestChildPosition + highestChildHalfThickness;
+        //distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2) + highestChildPosition;
 
-        //else
-        //    distanceOffset *= 1.5f;
+            //else
+            //    distanceOffset *= 1.5f;
 
 
-        //distanceOffset += highestChild;
+            //distanceOffset += highestChild;
         this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
 
         NewParent.transform.rotation = OGRotation;
