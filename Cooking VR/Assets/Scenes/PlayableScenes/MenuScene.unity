@@ -377,6 +377,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2151158786930570717, guid: aed63a092786ecf44bc22b4c87968c4b, type: 3}
+--- !u!1 &90550080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1877369528574761777, guid: 636d6308bdde04e4aa47ab65e0efce4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1754214752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &111714630 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4608322669180761294, guid: f7aa251fa7ba0184f9fff7e84ddfc4e8,
@@ -4710,6 +4716,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1877369527681615575, guid: 636d6308bdde04e4aa47ab65e0efce4a,
+        type: 3}
+      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 90550080}
+    - target: {fileID: 1877369527681615575, guid: 636d6308bdde04e4aa47ab65e0efce4a,
+        type: 3}
+      propertyPath: onHandClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
     - target: {fileID: 1877369527776040498, guid: 636d6308bdde04e4aa47ab65e0efce4a,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -4809,6 +4825,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877369528289146177, guid: 636d6308bdde04e4aa47ab65e0efce4a,
+        type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1877369528289146177, guid: 636d6308bdde04e4aa47ab65e0efce4a,
+        type: 3}
+      propertyPath: m_Spacing
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1877369528289146179, guid: 636d6308bdde04e4aa47ab65e0efce4a,
         type: 3}
