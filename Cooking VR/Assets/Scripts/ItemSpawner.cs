@@ -42,7 +42,7 @@ namespace Valve.VR.InteractionSystem
 
         private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
-            Debug.Log("Release");
+           // Debug.Log("Release");
             leftPlayerClicked = false;
             rightPlayerClicked = false;
             hasSpawned = false;
@@ -51,7 +51,7 @@ namespace Valve.VR.InteractionSystem
 
         private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
-            Debug.Log("Clicked");
+           // Debug.Log("Clicked");
             leftPlayerClicked = true;
             rightPlayerClicked = true;
         }
