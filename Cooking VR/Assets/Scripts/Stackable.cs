@@ -133,34 +133,12 @@ public class Stackable : MonoBehaviour
     {
         this.ParentGameObject = NewParent;
         this.gameObject.transform.parent = NewParent.transform;
-        //this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
         Quaternion OGRotation = NewParent.transform.rotation;
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
 
         // Set distance offset to half the meshCollider's height.
-        float distanceOffset = (this.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;// * (3 / 2);
-        float highestChildPosition = 0;
-        float highestChildHalfThickness = 0;
-        foreach (GameObject child in ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects)
-        {
-            if (child.transform.position.y >= highestChildPosition)
-            {
-                highestChildPosition = child.transform.position.y;
-                highestChildHalfThickness = (child.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;
-            }
-        }
-        if (ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count == 0)
-            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);//distanceOffset *= 0.5f;
-        else
-            distanceOffset += highestChildPosition + highestChildHalfThickness;
-        //distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2) + highestChildPosition;
-
-            //else
-            //    distanceOffset *= 1.5f;
-
-
-            //distanceOffset += highestChild;
-        this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
+        float distanceOffset = (this.GetComponent<Collider>().bounds.size.y * this.transform.localScale.y) / 2;
+        this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
 
         NewParent.transform.rotation = OGRotation;
 
@@ -171,9 +149,7 @@ public class Stackable : MonoBehaviour
 
         this.IsMasterParent = false;
         NewParent.GetComponent<Stackable>().IsMasterParent = true;
-        //NewParent.GetComponent<Rigidbody>().isKinematic = true;
-
-        //CheckChildrenList(NewParent.GetComponent<Stackable>(), this.gameObject);
+        
         if (!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
             NewParent.GetComponent<Stackable>().ChildrenGameObjects.Add(this.gameObject);
 
