@@ -35,6 +35,7 @@ public class OrderCheck : MonoBehaviour
         //this function returns a completed order to be achived for the end of the game
         OrderManager.FinishedOrder TheOrder = new OrderManager.FinishedOrder();
         TheOrder.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
+        TheOrder.OriginalOrder = OrderToServe;
         TheOrder.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
         TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
 
@@ -126,8 +127,66 @@ public class OrderCheck : MonoBehaviour
 
     public void SubmitFood()
     {
+        GameObject Burger = null;
+        GameObject Ticket = null;
+
+
+        Collider[] BurgerCheckColliderHitResults = Physics.OverlapSphere(BurgerCheck.position, BurgerCheckRadius);
+        foreach (Collider BurgerC in BurgerCheckColliderHitResults)
+        {
+            if (BurgerC.CompareTag("Plates"))
+            {
+                Burger = BurgerC.gameObject;
+
+            }
+        }
+
+        Collider[] TicketCheckColliderHitResults = Physics.OverlapSphere(TicketCheck.position, TicketCheckRadius);
+        foreach (Collider TicketC in TicketCheckColliderHitResults)
+        {
+            if (TicketC.CompareTag("Ticket"))
+            {
+                Ticket = TicketC.gameObject;
+            }
+        }
+
+
+        if (Burger != null && Ticket != null)
+        {
+            Stackable BurgerS = Burger.GetComponent<Stackable>();
+            OrderTicket TicketS = Ticket.GetComponent<OrderTicket>();
+
+            List<OrderManager.Ingridents> SubmittedBurger = StackableToListOfIngridents(BurgerS);
+            OrderManager.finishedOrders.Add(ArchiveOrder(SubmittedBurger, TicketS.MyOrder));
+
+            Destroy(Burger);
+            Destroy(Ticket);
+            
+            
+            
+
+        }
+
+        
+
+
+
+
 
     }
+
+    private List<OrderManager.Ingridents> StackableToListOfIngridents(Stackable Stack)
+    {
+        List<OrderManager.Ingridents> TheList = new List<OrderManager.Ingridents>();
+        for (int i = 0; i < Stack.ChildrenGameObjects.Count;i++)
+        {
+            TheList.Add(Stack.ChildrenGameObjects[i].GetComponent<Stackable>().ingredientName);
+        }
+        return TheList;
+    }
+
+
+
 
     private void MockBurgerCheck()
     {
@@ -139,6 +198,8 @@ public class OrderCheck : MonoBehaviour
         Order.Add(OrderManager.Ingridents.MediumPatty);
         Order.Add(OrderManager.Ingridents.Cheese);
         Order.Add(OrderManager.Ingridents.BottomBun);
+
+        
 
         SubmittedFood.Add(OrderManager.Ingridents.TopBun);
         SubmittedFood.Add(OrderManager.Ingridents.Cheese);

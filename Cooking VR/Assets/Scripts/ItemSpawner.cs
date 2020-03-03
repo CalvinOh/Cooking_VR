@@ -19,12 +19,15 @@ namespace Valve.VR.InteractionSystem
         private bool leftPlayerClicked, rightPlayerClicked;
         [SerializeField]
         GameObject objectToSpawn;
+        [SerializeField]
+        private string itemName;
 
         [SerializeField]
         private GameObject spawnedObject;
 
         [SerializeField]
         Hand leftPlayerHand, rightPlayerHand;
+
 
         // Start is called before the first frame update
         void Start()
@@ -39,7 +42,7 @@ namespace Valve.VR.InteractionSystem
 
         private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
-            Debug.Log("Release");
+           // Debug.Log("Release");
             leftPlayerClicked = false;
             rightPlayerClicked = false;
             hasSpawned = false;
@@ -48,7 +51,7 @@ namespace Valve.VR.InteractionSystem
 
         private void TriggerDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
-            Debug.Log("Clicked");
+           // Debug.Log("Clicked");
             leftPlayerClicked = true;
             rightPlayerClicked = true;
         }
@@ -87,6 +90,7 @@ namespace Valve.VR.InteractionSystem
                     spawnedObject = Instantiate(objectToSpawn, leftPlayerHand.transform.position, leftPlayerHand.transform.rotation);
                     spawnedObject.transform.parent = leftPlayerHand.transform;
                     spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    spawnedObject.name = itemName;
                     hasSpawned = true;
                     //Debug.Break();
                     
@@ -101,6 +105,7 @@ namespace Valve.VR.InteractionSystem
                     spawnedObject = Instantiate(objectToSpawn, rightPlayerHand.transform.position, rightPlayerHand.transform.rotation);
                     spawnedObject.transform.parent = rightPlayerHand.transform;
                     spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    spawnedObject.name = itemName;
                     hasSpawned = true;
                     //Debug.Break();
 
