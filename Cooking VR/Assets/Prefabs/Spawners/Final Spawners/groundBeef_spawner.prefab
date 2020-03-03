@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2402721915388615871
+--- !u!1 &3116260421623183531
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 926285211253377999}
-  - component: {fileID: 7885799285534418084}
-  - component: {fileID: 4491062721659607133}
-  - component: {fileID: 54194687070991528}
-  - component: {fileID: 1696085966161242524}
-  - component: {fileID: 3826600460766663655}
+  - component: {fileID: 710838730730264709}
+  - component: {fileID: 3483459782999711361}
+  - component: {fileID: 7163878302183416440}
+  - component: {fileID: 8931090331745331715}
+  - component: {fileID: 6712816790204034215}
+  - component: {fileID: 1750594728811088792}
+  - component: {fileID: 8718446491283189665}
   m_Layer: 0
-  m_Name: tomato_Spawner
+  m_Name: groundBeef_spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &926285211253377999
+--- !u!4 &710838730730264709
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402721915388615871}
+  m_GameObject: {fileID: 3116260421623183531}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.537, y: 3.202, z: -2.245}
+  m_LocalPosition: {x: -1.7103852, y: 3.1929, z: -2.1598775}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7885799285534418084
+--- !u!33 &3483459782999711361
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402721915388615871}
-  m_Mesh: {fileID: 2377925705789898242, guid: 6cb040d3624e34649a0bc51667b03f87, type: 3}
---- !u!23 &4491062721659607133
+  m_GameObject: {fileID: 3116260421623183531}
+  m_Mesh: {fileID: -3430761294573367653, guid: b9a5b3ad9c3482e42ae16feab5b7d6fa, type: 3}
+--- !u!23 &7163878302183416440
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402721915388615871}
+  m_GameObject: {fileID: 3116260421623183531}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc064d343a821a9409033c1ee29e866e, type: 2}
+  - {fileID: 2100000, guid: 28771462af883f847a372ab52b0d9c70, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,27 +82,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &54194687070991528
+--- !u!54 &8931090331745331715
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116260421623183531}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6712816790204034215
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402721915388615871}
+  m_GameObject: {fileID: 3116260421623183531}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: 2377925705789898242, guid: 6cb040d3624e34649a0bc51667b03f87, type: 3}
---- !u!114 &1696085966161242524
+  m_Mesh: {fileID: -3430761294573367653, guid: b9a5b3ad9c3482e42ae16feab5b7d6fa, type: 3}
+--- !u!114 &1750594728811088792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402721915388615871}
+  m_GameObject: {fileID: 3116260421623183531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2471b42bd5227e5499376d11c32b924e, type: 3}
@@ -114,19 +131,19 @@ MonoBehaviour:
   hasSpawned: 0
   leftPlayerClicked: 0
   rightPlayerClicked: 0
-  objectToSpawn: {fileID: 8936551678668349565, guid: 6571a095058b79d4098f610a95fe4c1e,
+  objectToSpawn: {fileID: 5493594179008930285, guid: 59dfd6e61d4b835438bcc7c3a3073ee2,
     type: 3}
-  itemName: Tomato
+  itemName: 
   spawnedObject: {fileID: 0}
   leftPlayerHand: {fileID: 0}
   rightPlayerHand: {fileID: 0}
---- !u!114 &3826600460766663655
+--- !u!114 &8718446491283189665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402721915388615871}
+  m_GameObject: {fileID: 3116260421623183531}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27991c206a5e66147bb8ee3ef31c8bac, type: 3}
