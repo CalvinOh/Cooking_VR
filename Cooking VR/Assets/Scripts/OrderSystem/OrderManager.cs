@@ -20,6 +20,7 @@ public class OrderManager : MonoBehaviour
         public float Score;
         public float TimeTaken;
         public string Notes;
+        public Order OriginalOrder;
 
     }
 
@@ -44,7 +45,6 @@ public class OrderManager : MonoBehaviour
 
     private OrderCheck OrderChecker = new OrderCheck();
     private OrderSpawn OrderSpawner = new OrderSpawn();
-
 
     public static List<FinishedOrder> finishedOrders = new List<FinishedOrder>();
     public static List<Order> Orders = new List<Order>();

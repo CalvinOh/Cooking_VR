@@ -24,6 +24,8 @@ public class OutOfZoneRespawn : MonoBehaviour
         enteredKillZone = grounded = false;
         timeSpentOnGround = 0;
         timerOnGround = 3;
+        respawnZone = GameObject.FindGameObjectWithTag("RespawnZone").gameObject.transform;
+
     }
 
     private void Update()
