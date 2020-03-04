@@ -11,32 +11,37 @@ public class PattyScript : MonoBehaviour
     public float currentCookAmount; // The progress of how much the item is cooked
     public const float maxCookAmount = 60; // The max value for currentCookAmount
 
-    private float[] donenessRefs = { 10, 20, 30, 40 };
-
+    private float[] donenessRefs = {0, 10, 20, 30, 40 };
+    private int currentStage;
     private Stackable MyStackScript;
-    [SerializeField]
+    [SerializeField]// serialized for debugging
     private bool currentlyCooking; // Is the object inside a cookBox? If true, will continue cooking.
+
+    [SerializeField]
+    private List<GameObject> VisualObjects = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
+        MyStackScript = this.GetComponent<Stackable>();
         currentCookAmount = 0;
         MyStackScript.ingredientName = OrderManager.Ingridents.RawPatty;
-        MyStackScript = this.GetComponent<Stackable>();
+        currentStage = 0;
+        //MyStackScript.ingredientName = OrderManager.Ingridents.RarePatty;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentlyCooking && currentCookAmount <= maxCookAmount)
+        if (currentStage <= donenessRefs.Length)
         {
-            currentCookAmount += Time.deltaTime;
-
-            for (int i = 0; i < donenessRefs.Length; i++)
+            if (currentlyCooking && currentCookAmount <= maxCookAmount)
             {
-                if (currentCookAmount > donenessRefs[i])
+                currentCookAmount += Time.deltaTime;
+
+                if (currentCookAmount > donenessRefs[currentStage + 1])
                 {
-                    switch (i)
+                    switch (currentStage)
                     {
                         case 0: // Rare
                             {
@@ -59,9 +64,22 @@ public class PattyScript : MonoBehaviour
                                 break;
                             }
                     }
+                    currentStage++;
+                    SwitchVisualObject();
                 }
+
             }
         }
+        
+    }
+
+    private void SwitchVisualObject()
+    {
+        foreach (GameObject VO in VisualObjects)
+        {
+            VO.SetActive(false);
+        }
+        VisualObjects[currentStage].SetActive(true);
     }
 
 
