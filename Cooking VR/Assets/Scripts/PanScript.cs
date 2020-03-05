@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class PanScript : MonoBehaviour
 {
@@ -15,9 +16,15 @@ public class PanScript : MonoBehaviour
     [SerializeField]
     Transform bottomPanPositon;
 
+    Interactable interactable;
+
+    public bool wasGrabbed = false;
+
     private void Start()
     {
-        if(bottomPanPositon == null)
+        this.interactable = this.GetComponent<Interactable>();
+
+        if (bottomPanPositon == null)
             bottomPanPositon = this.GetComponentInChildren<Transform>();// this.GetComponent<SphereCollider>().transform.position;
 
         Vector3 position = bottomPanPositon.TransformVector(bottomPanPositon.position);
@@ -25,6 +32,24 @@ public class PanScript : MonoBehaviour
         Debug.Log($"bottom pan position: {position.ToString()}");
     }
 
+    private void Update()
+    {
+        CheckGrabbed();
+    }
+
+    private void CheckGrabbed()
+    {
+        if (this.interactable.attachedToHand)
+        {
+            wasGrabbed = true;
+        }
+
+        if (wasGrabbed && !this.interactable.attachedToHand)
+        {
+            UnSnap();
+            this.wasGrabbed = false;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -72,10 +97,15 @@ public class PanScript : MonoBehaviour
         }
         else if (other.CompareTag("Burner"))
         {
-            isSnapped = false;
-            this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            UnSnap();
             Debug.Log($"is snapped = {isSnapped.ToString()}");
         }
+    }
+
+    private void UnSnap()
+    {
+        isSnapped = false;
+        this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
 
     public void StartCooking()
