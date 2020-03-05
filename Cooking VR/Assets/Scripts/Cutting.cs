@@ -2,23 +2,80 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cutting : MonoBehaviour
+namespace Valve.VR.InteractionSystem
 {
-    
-    private void OnCollisionEnter(Collision collision)
+    public class Cutting : MonoBehaviour
     {
 
-        if(collision.gameObject.CompareTag("Cutable"))
+        [SerializeField]
+        private bool isCutting;
+
+        [SerializeField]
+        private float cutTime;
+
+        [SerializeField]
+        private float nextCut;
+
+        private void Start()
         {
-            Debug.Log("Cutting");
-           
-            int temp = collision.gameObject.transform.childCount;
-
-            Debug.Log(collision.gameObject.transform.childCount + " & " /*+ collision.gameObject.transform.GetChild(temp - 1).name*/);
-
-            collision.gameObject.transform.GetChild(temp-1).GetComponent<Rigidbody>().isKinematic = false;
-            collision.gameObject.transform.GetChild(temp - 1).transform.parent = null;
+            isCutting = false;
+            nextCut = (1f / 3);
+            cutTime = 0f;
         }
+
+        //private void OnCollisionEnter(Collision collision)
+        //{
+
+        //    if (collision.gameObject.CompareTag("Cutable"))
+        //    {
+        //        Debug.Log("Cutting");
+
+        //        int temp = collision.gameObject.transform.childCount;
+
+        //        Debug.Log(collision.gameObject.transform.childCount + " & " /*+ collision.gameObject.transform.GetChild(temp - 1).name*/);
+
+        //        collision.gameObject.transform.GetChild(temp - 1).GetComponent<Interactable>().enabled = true;
+        //        collision.gameObject.transform.GetChild(temp - 1).GetComponent<Rigidbody>().isKinematic = false;
+        //        collision.gameObject.transform.GetChild(temp - 1).transform.parent = null;
+        //    }
+        //}
+
+
+        private void OnTriggerEnter(Collider other)
+        {
+
+            if (isCutting == false && cutTime <= Time.time)
+            {
+                isCutting = true;
+                Debug.Log(isCutting);
+                cutTime = Time.time + nextCut;
+                if (other.gameObject.CompareTag("Cutable"))
+                {
+                    Debug.Log("Cutting");
+
+                    int temp = other.gameObject.transform.childCount;
+
+                    Debug.Log(other.gameObject.transform.childCount + " & " /*+ collision.gameObject.transform.GetChild(temp - 1).name*/);
+
+                    other.gameObject.transform.GetChild(temp - 1).GetComponent<MeshCollider>().enabled = true;
+                    other.gameObject.transform.GetChild(temp - 1).GetComponent<Interactable>().enabled = true;
+                    other.gameObject.transform.GetChild(temp - 1).GetComponent<Rigidbody>().isKinematic = false;
+                    other.gameObject.transform.GetChild(temp - 1).transform.parent = null;
+                }
+
+            }
+
+           
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            isCutting = false;
+            Debug.Log(isCutting);
+        }
+
     }
 
+
 }
+
