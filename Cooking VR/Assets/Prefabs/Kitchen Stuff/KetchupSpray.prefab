@@ -288,7 +288,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4935,17 +4935,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.008
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.003
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.008
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
@@ -4956,6 +4956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ketchupsplatter
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c34d0b6ed003a747b097b5b3415f8a0, type: 3}

@@ -137,22 +137,25 @@ public class Stackable : MonoBehaviour
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
 
         // Set distance offset to half the meshCollider's height.
-        float distanceOffset = (this.GetComponent<Collider>().bounds.size.y * this.transform.localScale.y) / 2;
+        //float distanceOffset = (this.GetComponent<Collider>().bounds.size.y * this.transform.localScale.y) / 2;
         this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
 
         NewParent.transform.rotation = OGRotation;
 
-        this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
 
-        if (this.ingredientName != OrderManager.Ingridents.Cheese && this.ingredientName != OrderManager.Ingridents.Pickle && this.ingredientName != OrderManager.Ingridents.Tomato)
-            this.transform.localRotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
-        else
-            this.transform.localRotation = new Quaternion(0f, 0f, 90f, transform.rotation.w);
+        // If it's a vertical object like a cheese, pickle, or tomato.
+        if (this.ingredientName == OrderManager.Ingridents.Cheese || this.ingredientName == OrderManager.Ingridents.Pickle || this.ingredientName == OrderManager.Ingridents.Tomato)
+            this.transform.rotation = new Quaternion(0f, transform.rotation.y, 90f, transform.rotation.w);
+        else // Normal stack
+            this.transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
         //Debug.Break();
+
+        this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
+        //this.gameObject.transform.parent = NewParent.transform;
 
         this.IsMasterParent = false;
         NewParent.GetComponent<Stackable>().IsMasterParent = true;
-        
+
         if (!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
             NewParent.GetComponent<Stackable>().ChildrenGameObjects.Add(this.gameObject);
 
@@ -160,6 +163,10 @@ public class Stackable : MonoBehaviour
         {
             this.ReassignChildrenToNewParent(this.ParentGameObject);
         }
+
+        int i = this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count - 1;
+        this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects[(i - 1)].GetComponent<MeshCollider>().enabled = false;
+
 
     }
 
