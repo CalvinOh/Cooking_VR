@@ -216,7 +216,7 @@ MonoBehaviour:
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
   handFollowTransform: 1
-  highlightOnHover: 1
+  highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
 --- !u!114 &8335271
@@ -233,3 +233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 0}
   enteredKillZone: 0
+  grounded: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0

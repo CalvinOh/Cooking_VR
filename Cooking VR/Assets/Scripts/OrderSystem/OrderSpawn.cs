@@ -77,7 +77,7 @@ public class OrderSpawn : MonoBehaviour
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
 
         GameObject Ticket = Instantiate(TicketGO, OrderLocations[SpawnLocationNumber%OrderLocations.Count]);
-
+        Ticket.name = "fuck you";
         OrderTicket TicketScript = Ticket.GetComponent<OrderTicket>();
         TicketScript.UpdateTicket(SpawnedOrder);
         Ticket.transform.parent = TicketParent.transform;
