@@ -144,7 +144,10 @@ public class Stackable : MonoBehaviour
 
         this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
 
-        this.transform.localRotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+        if (this.ingredientName != OrderManager.Ingridents.Cheese && this.ingredientName != OrderManager.Ingridents.Pickle && this.ingredientName != OrderManager.Ingridents.Tomato)
+            this.transform.localRotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+        else
+            this.transform.localRotation = new Quaternion(0f, 0f, 90f, transform.rotation.w);
         //Debug.Break();
 
         this.IsMasterParent = false;

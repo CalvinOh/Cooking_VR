@@ -38,7 +38,9 @@ public class OrderCheck : MonoBehaviour
         TheOrder.OriginalOrder = OrderToServe;
         TheOrder.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
         TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
-
+        
+        //score on the order turned in
+        Debug.Log(TheOrder.Score);
 
         OrderManager.Orders.Remove(OrderToServe);
         return TheOrder;

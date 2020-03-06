@@ -24,7 +24,7 @@ public class OrderSpawn : MonoBehaviour
         PredeterminedOrders = new List<List<OrderManager.Ingridents>>();
         AddPredeterminedOrders();
 
-        SpawnPreDeterminedTicketCountDown(5,0);
+       StartCoroutine( SpawnPreDeterminedTicketCountDown(5,0));
 
         //List<string> TestBurger = RandomBurger(6);
         //foreach (string a in TestBurger)
