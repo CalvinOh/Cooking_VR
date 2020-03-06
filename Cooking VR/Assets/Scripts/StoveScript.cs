@@ -7,8 +7,13 @@ public class StoveScript : MonoBehaviour
     [SerializeField]
     private bool StoveIsOn;
 
+    [SerializeField]//serialized for debugging
     private PanScript CurrentPanOnStove;
 
+    private void Start()
+    {
+        CurrentPanOnStove = null;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

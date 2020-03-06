@@ -8,6 +8,7 @@ public class PanScript : MonoBehaviour
     [SerializeField]
     private bool IsHeated;
 
+    [SerializeField]//serialized for debugging
     private PattyScript CurrentPattyOnPan;
 
     [SerializeField]
