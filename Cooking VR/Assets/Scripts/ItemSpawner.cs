@@ -61,14 +61,14 @@ namespace Valve.VR.InteractionSystem
         {
         
 
-            if(spawnedObject != null)
-            {
-                UnParentObject();
-            }
-            else
-            {
+            //if(spawnedObject != null)
+            //{
+            //    UnParentObject();
+            //}
+            //else
+            //{
                 SpawnObject();
-            }
+          //  }
 
     
             //if(hasSpawned == true)
@@ -88,8 +88,7 @@ namespace Valve.VR.InteractionSystem
                 {
                     Debug.Log("Plate Spawned");
                     spawnedObject = Instantiate(objectToSpawn, leftPlayerHand.transform.position, leftPlayerHand.transform.rotation);
-                    spawnedObject.transform.parent = leftPlayerHand.transform;
-                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    leftPlayerHand.AttachObject(spawnedObject, GrabTypes.Pinch);
                     spawnedObject.name = itemName;
                     hasSpawned = true;
                     //Debug.Break();
@@ -103,8 +102,9 @@ namespace Valve.VR.InteractionSystem
                 {
                     Debug.Log("Plate Spawned");
                     spawnedObject = Instantiate(objectToSpawn, rightPlayerHand.transform.position, rightPlayerHand.transform.rotation);
-                    spawnedObject.transform.parent = rightPlayerHand.transform;
-                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    //spawnedObject.transform.parent = rightPlayerHand.transform;
+                    //spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    rightPlayerHand.AttachObject(spawnedObject, GrabTypes.Pinch);
                     spawnedObject.name = itemName;
                     hasSpawned = true;
                     //Debug.Break();
