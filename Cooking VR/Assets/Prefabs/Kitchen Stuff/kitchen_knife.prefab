@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2080391351}
   - component: {fileID: 861876456}
   - component: {fileID: 861876457}
+  - component: {fileID: 4663960936234578987}
   m_Layer: 0
   m_Name: kitchen_knife
   m_TagString: Item
@@ -128,10 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentFlags: 105
+  attachmentFlags: 116
   attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
-  releaseVelocityStyle: 1
+  releaseVelocityStyle: 2
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   scaleReleaseVelocityThreshold: -1
@@ -268,6 +269,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   antiFlip: []
   defaultHand: 1
+--- !u!114 &4663960936234578987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273475172883463189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 0
 --- !u!1 &2076464806705708978
 GameObject:
   m_ObjectHideFlags: 0
