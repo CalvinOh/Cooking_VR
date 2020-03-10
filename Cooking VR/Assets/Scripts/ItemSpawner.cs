@@ -81,7 +81,7 @@ namespace Valve.VR.InteractionSystem
 
         void SpawnObject()
         {
-            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.1f )
+            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.2f )
             {
                
                 if (leftPlayerClicked && !hasSpawned)
@@ -95,7 +95,7 @@ namespace Valve.VR.InteractionSystem
                     
                 }
             }
-            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.1f)
+            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.2f)
             {
 
                 if (rightPlayerClicked && !hasSpawned)

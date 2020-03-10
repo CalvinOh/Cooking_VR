@@ -7,6 +7,8 @@ public class SettingsManager : MonoBehaviour
 {
     private Scene currentScene;
     private float scale;
+    private GameObject player;
+    Scene sceneCheck;
 
     public int characterSize;
 
@@ -26,9 +28,12 @@ public class SettingsManager : MonoBehaviour
 
     private void CheckSceneMatch()
     {
-        Scene sceneCheck = SceneManager.GetActiveScene();
+        sceneCheck = SceneManager.GetActiveScene();
         if (currentScene != sceneCheck)
+        {
+            Destroy(player.gameObject);
             ApplySettings();
+        }
         currentScene = sceneCheck;
     }
 
@@ -41,7 +46,7 @@ public class SettingsManager : MonoBehaviour
     public void ApplySettings()
     {
         CheckSize();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         player.transform.localScale = new Vector3(scale, scale, scale);
     }
 

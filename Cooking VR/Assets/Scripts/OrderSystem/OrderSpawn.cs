@@ -24,15 +24,19 @@ public class OrderSpawn : MonoBehaviour
         PredeterminedOrders = new List<List<OrderManager.Ingridents>>();
         AddPredeterminedOrders();
 
+       StartCoroutine( SpawnPreDeterminedTicketCountDown(5,0));
+
         //List<string> TestBurger = RandomBurger(6);
         //foreach (string a in TestBurger)
         //    Debug.Log(a);
         //SpawnRandomOrder(4);
+        /*
         StartCoroutine(SpawnTicketCountDown(1,4));
         StartCoroutine(SpawnTicketCountDown(5, 4));
         StartCoroutine(SpawnTicketCountDown(10, 4));
         StartCoroutine(SpawnTicketCountDown(15, 4));
         StartCoroutine(SpawnTicketCountDown(20, 6));
+        */
 
     }
     private IEnumerator SpawnTicketCountDown(float CountDown, int BurgerSize)
@@ -42,16 +46,24 @@ public class OrderSpawn : MonoBehaviour
         
     }
 
+
+    private IEnumerator SpawnPreDeterminedTicketCountDown(float CountDown, int PreTicketNum)
+    {
+        yield return new WaitForSeconds(CountDown);
+        SpawnPredeterminedOrder(PreTicketNum);
+
+    }
+
     void Update()
     {
 
     }
-
-    void SpawnPredeterminedOrder()
+    
+    void SpawnPredeterminedOrder(int PreTicketNum)
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
-        SpawnedOrder.Ingredents = PredeterminedOrders[Random.Range(0, PredeterminedOrders.Count)];
+        SpawnedOrder.Ingredents = PredeterminedOrders[PreTicketNum];
 
         SpawnedOrder.TimeIssued = Time.fixedTime;
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
@@ -66,7 +78,7 @@ public class OrderSpawn : MonoBehaviour
         OrderManager.Orders.Add(SpawnedOrder);
         SpawnLocationNumber++;
     }
-
+    
     void SpawnRandomOrder(int Burgersize)
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
@@ -94,16 +106,10 @@ public class OrderSpawn : MonoBehaviour
         //designed burger 1
         List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
 
-
-        PredeterminedOrders.Add(TempBurger);
-
-        //designed burger 2
-        TempBurger = new List<OrderManager.Ingridents>();
-
-        PredeterminedOrders.Add(TempBurger);
-
-        //designed burger 3
-        TempBurger = new List<OrderManager.Ingridents>();
+        TempBurger.Add(OrderManager.Ingridents.TopBun);
+        TempBurger.Add(OrderManager.Ingridents.Cheese);
+        TempBurger.Add(OrderManager.Ingridents.MediumPatty);
+        TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
         PredeterminedOrders.Add(TempBurger);
     }

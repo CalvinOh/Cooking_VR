@@ -38,7 +38,9 @@ public class OrderCheck : MonoBehaviour
         TheOrder.OriginalOrder = OrderToServe;
         TheOrder.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
         TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
-
+        
+        //score on the order turned in
+        Debug.Log(TheOrder.Score);
 
         OrderManager.Orders.Remove(OrderToServe);
         return TheOrder;
@@ -127,6 +129,7 @@ public class OrderCheck : MonoBehaviour
 
     public void SubmitFood()
     {
+        Debug.Log("Bell rung");
         GameObject Burger = null;
         GameObject Ticket = null;
 
@@ -134,7 +137,7 @@ public class OrderCheck : MonoBehaviour
         Collider[] BurgerCheckColliderHitResults = Physics.OverlapSphere(BurgerCheck.position, BurgerCheckRadius);
         foreach (Collider BurgerC in BurgerCheckColliderHitResults)
         {
-            if (BurgerC.CompareTag("Plates"))
+            if (BurgerC.CompareTag("Plate"))
             {
                 Burger = BurgerC.gameObject;
 
@@ -150,6 +153,8 @@ public class OrderCheck : MonoBehaviour
             }
         }
 
+        Debug.Log("Burger check: "+Burger.name);
+        Debug.Log("Ticket check: "+Ticket.name);
 
         if (Burger != null && Ticket != null)
         {
@@ -226,6 +231,12 @@ public class OrderCheck : MonoBehaviour
         Debug.Log("Mock Burger Score: " + CompareFoodToOrder(SubmittedFood, Order));
 
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(BurgerCheck.position, BurgerCheckRadius);
+        Gizmos.DrawWireSphere(TicketCheck.position, TicketCheckRadius);
     }
 
 }
