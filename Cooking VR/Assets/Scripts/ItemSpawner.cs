@@ -38,6 +38,17 @@ namespace Valve.VR.InteractionSystem
             isGrabbing.AddOnStateDownListener(TriggerDown, handType);
             isGrabbing.AddOnStateUpListener(TriggerUp, handType);
             spawnedObject = null;
+
+            if(leftPlayerHand == null)
+            {
+                leftPlayerHand = GameObject.Find("RightHand").GetComponent<Hand>().otherHand;
+            }
+            if (rightPlayerHand == null)
+            {
+                rightPlayerHand = GameObject.Find("LeftHand").GetComponent<Hand>().otherHand;
+            }
+
+
         }
 
         private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
