@@ -112,13 +112,15 @@ public class PanScript : MonoBehaviour
     public void StartCooking()
     {
         IsHeated = true;
+        if(CurrentPattyOnPan!=null)
         CurrentPattyOnPan.StartCooking();
     }
 
     public void StopCooking()
     {
         IsHeated = false;
-        CurrentPattyOnPan.StopCooking();
+        if (CurrentPattyOnPan != null)
+            CurrentPattyOnPan.StopCooking();
     }
 
 }

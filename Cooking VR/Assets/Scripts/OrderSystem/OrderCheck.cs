@@ -51,6 +51,9 @@ public class OrderCheck : MonoBehaviour
     {
         int score=(Order.Count-2)*100;
 
+        
+
+
         int IncorrectPositions = 0;
         int LayersTakenOut = 0;
 
@@ -187,6 +190,7 @@ public class OrderCheck : MonoBehaviour
         {
             TheList.Add(Stack.ChildrenGameObjects[i].GetComponent<Stackable>().ingredientName);
         }
+        TheList.Remove(OrderManager.Ingridents.Plate);
         return TheList;
     }
 

@@ -43,6 +43,7 @@ public class StoveScript : MonoBehaviour
     {
         Fire.SetActive(true);
         StoveIsOn = true;
+        if(CurrentPanOnStove!=null)
         CurrentPanOnStove.StartCooking();
         
     }
@@ -51,7 +52,8 @@ public class StoveScript : MonoBehaviour
     {
         Fire.SetActive(false);
         StoveIsOn = false;
-        CurrentPanOnStove.StopCooking();
+        if (CurrentPanOnStove != null)
+            CurrentPanOnStove.StopCooking();
         
     }
 }
