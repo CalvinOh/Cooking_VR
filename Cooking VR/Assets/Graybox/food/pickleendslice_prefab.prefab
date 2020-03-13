@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -5178661895559278292}
   - component: {fileID: -1504981713932161579}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: pickleendslice_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5632875719956814425}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.21787633, y: 1.5700914, z: -2.8967166}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalPosition: {x: -0.1348812, y: 1.5700914, z: -2.8967166}
+  m_LocalScale: {x: 0.009239834, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -39,7 +39,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5632875719956814425}
-  m_Mesh: {fileID: 4310039927315586282, guid: b9cc6f24262b1174c866ccd6ab152c04, type: 3}
+  m_Mesh: {fileID: 4310039927315586282, guid: a953ff2de700a93458757c2f32172c3e, type: 3}
 --- !u!23 &-1504981713932161579
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4206844974716134956, guid: b9cc6f24262b1174c866ccd6ab152c04, type: 3}
+  - {fileID: 2100000, guid: 13c95aee73deaea4dbce2dd49422eb0e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
