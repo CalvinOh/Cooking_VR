@@ -10,9 +10,13 @@ public class StoveScript : MonoBehaviour
     [SerializeField]//serialized for debugging
     private PanScript CurrentPanOnStove;
 
+    [SerializeField]
+    private GameObject Fire;
+
     private void Start()
     {
         CurrentPanOnStove = null;
+        Fire.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,13 +41,19 @@ public class StoveScript : MonoBehaviour
 
     public void TurnOn()
     {
+        Fire.SetActive(true);
         StoveIsOn = true;
+        if(CurrentPanOnStove!=null)
         CurrentPanOnStove.StartCooking();
+        
     }
 
     public void TurnOff()
     {
+        Fire.SetActive(false);
         StoveIsOn = false;
-        CurrentPanOnStove.StopCooking();
+        if (CurrentPanOnStove != null)
+            CurrentPanOnStove.StopCooking();
+        
     }
 }

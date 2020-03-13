@@ -12,58 +12,24 @@ public class OrderSpawn : MonoBehaviour
     [SerializeField]
     private List<Transform> OrderLocations;
 
-    [SerializeField]
-    private List<List<OrderManager.Ingridents>> PredeterminedOrders;
-
     private int SpawnLocationNumber;
 
     void Start()
     {
         SpawnLocationNumber = 0;
-
-        PredeterminedOrders = new List<List<OrderManager.Ingridents>>();
-        AddPredeterminedOrders();
-
-       StartCoroutine( SpawnPreDeterminedTicketCountDown(5,0));
-
-        //List<string> TestBurger = RandomBurger(6);
-        //foreach (string a in TestBurger)
-        //    Debug.Log(a);
-        //SpawnRandomOrder(4);
-        /*
-        StartCoroutine(SpawnTicketCountDown(1,4));
-        StartCoroutine(SpawnTicketCountDown(5, 4));
-        StartCoroutine(SpawnTicketCountDown(10, 4));
-        StartCoroutine(SpawnTicketCountDown(15, 4));
-        StartCoroutine(SpawnTicketCountDown(20, 6));
-        */
-
-    }
-    private IEnumerator SpawnTicketCountDown(float CountDown, int BurgerSize)
-    {
-        yield return new WaitForSeconds(CountDown);
-        SpawnRandomOrder(BurgerSize);
-        
     }
 
-
-    private IEnumerator SpawnPreDeterminedTicketCountDown(float CountDown, int PreTicketNum)
-    {
-        yield return new WaitForSeconds(CountDown);
-        SpawnPredeterminedOrder(PreTicketNum);
-
-    }
 
     void Update()
     {
 
     }
     
-    void SpawnPredeterminedOrder(int PreTicketNum)
+    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder)
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
-        SpawnedOrder.Ingredents = PredeterminedOrders[PreTicketNum];
+        SpawnedOrder.Ingredents = NewOrder;
 
         SpawnedOrder.TimeIssued = Time.fixedTime;
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
@@ -79,7 +45,7 @@ public class OrderSpawn : MonoBehaviour
         SpawnLocationNumber++;
     }
     
-    void SpawnRandomOrder(int Burgersize)
+    public void SpawnRandomOrder(int Burgersize)
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
@@ -100,58 +66,12 @@ public class OrderSpawn : MonoBehaviour
 
     }
 
-    void AddPredeterminedOrders()
-    {
-        //adds predesigned burger to the possible burger list
-        //designed burger 1
-        List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
-
-        TempBurger.Add(OrderManager.Ingridents.TopBun);
-        TempBurger.Add(OrderManager.Ingridents.Cheese);
-        TempBurger.Add(OrderManager.Ingridents.MediumPatty);
-        TempBurger.Add(OrderManager.Ingridents.BottomBun);
-
-        PredeterminedOrders.Add(TempBurger);
-    }
-
     List<OrderManager.Ingridents> RandomBurger(int AmountOfLayer)
     {
         List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
         
         for (int i = 0; i < AmountOfLayer-1; i++)
         {
-            /*
-            switch (Random.Range(0, 8))
-            {
-                case 0:
-                    TempBurger.Add(OrderManager.Ingridents.Cheese");
-                    break;
-                case 1:
-                    TempBurger.Add(OrderManager.Ingridents.Lettuce");
-                    break;
-                case 2:
-                    TempBurger.Add(OrderManager.Ingridents.Tomato");
-                    break;
-                case 3:
-                    TempBurger.Add(OrderManager.Ingridents.Pickle");
-                    break;
-                case 4:
-                    TempBurger.Add(OrderManager.Ingridents.Mayo");
-                    break;
-                case 5:
-                    TempBurger.Add(OrderManager.Ingridents.Mustard");
-                    break;
-                case 6:
-                    TempBurger.Add(OrderManager.Ingridents.Ketchup");
-                    break;
-                case 7:
-                    TempBurger.Add(OrderManager.Ingridents.Patty");
-                    break;
-                default:
-                    TempBurger.Add(OrderManager.Ingridents.Lettuce");
-                    break;
-            }
-            */
             float Decider = Random.Range(0f, 100f);
             if (Decider < 5)
             {
