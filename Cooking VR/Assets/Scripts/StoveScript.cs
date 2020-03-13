@@ -41,15 +41,17 @@ public class StoveScript : MonoBehaviour
 
     public void TurnOn()
     {
+        Fire.SetActive(true);
         StoveIsOn = true;
         CurrentPanOnStove.StartCooking();
-        Fire.SetActive(true);
+        
     }
 
     public void TurnOff()
     {
+        Fire.SetActive(false);
         StoveIsOn = false;
         CurrentPanOnStove.StopCooking();
-        Fire.SetActive(true);
+        
     }
 }
