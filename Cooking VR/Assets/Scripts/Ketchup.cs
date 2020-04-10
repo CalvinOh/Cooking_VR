@@ -40,6 +40,7 @@ public class Ketchup : MonoBehaviour
 
         if(Time.time >= timeStored + 5 && hitNotStackable)
         {
+            Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject);
         }
     }
@@ -52,7 +53,7 @@ public class Ketchup : MonoBehaviour
             particle.Stop();
             this.transform.GetChild(0).gameObject.SetActive(true);
             rb.isKinematic = true;
-            this.transform.SetPositionAndRotation(this.transform.position, rb.rotation);
+            this.transform.SetPositionAndRotation(this.transform.position, collision.transform.rotation);
             rb.freezeRotation = true;
             if (!collision.gameObject.GetComponent<Stackable>())
             {
