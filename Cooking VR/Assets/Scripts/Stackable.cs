@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Valve.VR.InteractionSystem;
 
 public class Stackable : MonoBehaviour
@@ -31,6 +32,7 @@ public class Stackable : MonoBehaviour
 
     public float thickness;
     public float scaleRatio;
+    public float distanceOffset;
     private float StackRotationAngle;
 
 
@@ -43,7 +45,7 @@ public class Stackable : MonoBehaviour
 
         topStackPoint = bottomStackPoint = Vector3.zero;
 
-        scaleRatio = 1;//(100 / this.transform.localScale.y);
+        scaleRatio = 5;//(100 / this.transform.localScale.y);
         thickness = (this.GetComponent<Collider>().bounds.size.y * scaleRatio) / 2;
 
         // Accounting for "vertically sliced" ingredients. 
@@ -216,17 +218,28 @@ public class Stackable : MonoBehaviour
         //float distanceOffset = (this.GetComponent<Collider>().bounds.size.y * scaleRatio) / 2;
         //float parentScaleRatio = (100 / NewParent.transform.localScale.y);
         //float parentThickness = (NewParent.GetComponent<Collider>().bounds.size.y * parentScaleRatio) / 2;
-        Stackable stk = NewParent.GetComponent<Stackable>();
-        float distanceOffset = this.thickness + stk.thickness;
+        Stackable ParentLocalReference = NewParent.GetComponent<Stackable>();
+        distanceOffset = this.thickness + ParentLocalReference.thickness;
 
-        for (int j = 0; j < stk.ChildrenGameObjects.Count; j++)
-        {
-            distanceOffset += ((stk.ChildrenGameObjects[j].GetComponent<Stackable>().thickness * 2) * 25);//stk.ChildrenGameObjects[j].transform.lossyScale.y);
-        }
+        if(ParentLocalReference.ChildrenGameObjects.Count > 0)
+            distanceOffset += ParentLocalReference.ChildrenGameObjects[ParentLocalReference.ChildrenGameObjects.Count-1].GetComponent<Stackable>().distanceOffset;
 
+        //for (int j = 0; j < ParentLocalReference.ChildrenGameObjects.Count; j++)
+        //{
+        //    distanceOffset += ((ParentLocalReference.ChildrenGameObjects[j].GetComponent<Stackable>().thickness * 2)); //* ParentLocalReference.ChildrenGameObjects[j].transform.lossyScale.y);
+        //}
+
+        Debug.Log($"{this.gameObject.name} Thickness: {thickness}");
         Debug.Log($"{this.gameObject.name} distance offset: {distanceOffset}");
-        this.transform.localPosition = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
-        
+        //Debug.Log($"Parent: {this.ParentGameObject.name} / Child: {this.gameObject.name} / MostRecentChild: {ParentLocalReference.ChildrenGameObjects[ParentLocalReference.ChildrenGameObjects.Count - 1].gameObject.name}");
+
+        //if (ParentLocalReference.ChildrenGameObjects.Count > 0)
+        //    this.transform.localPosition = new Vector3(this.ParentGameObject.transform.position.x, ParentLocalReference.ChildrenGameObjects[ParentLocalReference.ChildrenGameObjects.Count - 1].transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
+        //else
+        //    this.transform.localPosition = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
+
+        //this.transform.localPosition = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
+
         this.gameObject.transform.rotation = new Quaternion(0, 0, this.StackRotationAngle, OGRotation.w);
         NewParent.transform.rotation = OGRotation;
 
@@ -243,12 +256,12 @@ public class Stackable : MonoBehaviour
 
         this.IsMasterParent = false;
         //NewParent.GetComponent<Stackable>().IsMasterParent = true;
-        stk.IsMasterParent = true;
+        ParentLocalReference.IsMasterParent = true;
         
         //if (!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
         //    NewParent.GetComponent<Stackable>().ChildrenGameObjects.Add(this.gameObject);
-        if (!stk.ChildrenGameObjects.Contains(this.gameObject))
-            stk.ChildrenGameObjects.Add(this.gameObject);
+        if (!ParentLocalReference.ChildrenGameObjects.Contains(this.gameObject))
+            ParentLocalReference.ChildrenGameObjects.Add(this.gameObject);
 
         if (this.ChildrenGameObjects.Count != 0)
         {
@@ -259,9 +272,9 @@ public class Stackable : MonoBehaviour
         //if (ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count > 1)
         //    this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects[(i - 1)].GetComponent<MeshCollider>().enabled = false;
 
-        int i = stk.ChildrenGameObjects.Count - 1;
-        if (stk.ChildrenGameObjects.Count > 1)
-            stk.ChildrenGameObjects[(i - 1)].GetComponent<MeshCollider>().enabled = false;
+        int i = ParentLocalReference.ChildrenGameObjects.Count - 1;
+        if (ParentLocalReference.ChildrenGameObjects.Count > 1)
+            ParentLocalReference.ChildrenGameObjects[(i - 1)].GetComponent<MeshCollider>().enabled = false;
 
     }
 
