@@ -72,6 +72,9 @@ public class CookScript : MonoBehaviour
         //if(other.CompareTag("CookBox"))
         {
             currentlyCooking = true;
+
+            //audio
+            PlaySoundBurgerCook();
         }
     }
 
@@ -80,6 +83,9 @@ public class CookScript : MonoBehaviour
         //if(other.CompareTag("CookBox"))
         {
             currentlyCooking = false;
+
+            //audio
+            StopSoundBurgerCook();
         }
     }
 
@@ -91,5 +97,16 @@ public class CookScript : MonoBehaviour
             this.currentCookAmount = 30;
             this.doneness = Doneness.WellDone;
         }
+    }
+
+    //audio
+    private void PlaySoundBurgerCook()
+    {
+        AkSoundEngine.PostEvent("Burger_Cook", gameObject);
+    }
+
+    private void StopSoundBurgerCook()
+    {
+        AkSoundEngine.PostEvent("Burger_Cook_Stop", gameObject);
     }
 }

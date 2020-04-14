@@ -886,6 +886,72 @@
 						<ActiveSource Name="sx_burger_cook_start" ID="{AB647273-9482-43DA-844F-29247D5A30E2}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="sx_impact_extinguisher" ID="{1072C0F2-C0F2-4773-A55D-492999C6A5D5}" ShortID="677610617">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_impact_extinguisher" ID="{28ECA8E8-95E4-42D1-81A6-B6F1E15CD56A}">
+							<Language>SFX</Language>
+							<AudioFile>sx_impact_extinguisher.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="881847866"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_impact_extinguisher" ID="{28ECA8E8-95E4-42D1-81A6-B6F1E15CD56A}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sx_stove_ignite" ID="{D48DC43A-C73C-4FF6-94EC-D44D4CACD4BE}" ShortID="725189082">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_stove_ignite" ID="{D39BAA68-6A6B-43D0-9690-5DF2E53A4274}">
+							<Language>SFX</Language>
+							<AudioFile>sx_stove_ignite.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="629777204"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_stove_ignite" ID="{D39BAA68-6A6B-43D0-9690-5DF2E53A4274}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sx_stove_loop" ID="{87A0C777-87D6-4BC0-ABE4-44229DF6A592}" ShortID="158213979">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_stove_loop" ID="{579CD063-12C6-44E9-96C4-7E51C23E9D58}">
+							<Language>SFX</Language>
+							<AudioFile>sx_stove_loop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="214031726"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_stove_loop" ID="{579CD063-12C6-44E9-96C4-7E51C23E9D58}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
