@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3721140853300144365}
   - component: {fileID: 3721140853300144366}
   - component: {fileID: -7352510810269466971}
+  - component: {fileID: 7511943264937479729}
   m_Layer: 0
   m_Name: plate_prefab
   m_TagString: Untagged
@@ -233,3 +234,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 0}
   enteredKillZone: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
+--- !u!114 &7511943264937479729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058308477850763977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bebe976d3726ec4a805614011d1710d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentGameObject: {fileID: 0}
+  ChildrenGameObjects: []
+  IsMasterParent: 0
