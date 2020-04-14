@@ -13,10 +13,15 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BELL = 1240512178U;
+        static const AkUniqueID BURGER_COOK = 1158089873U;
+        static const AkUniqueID BURGER_COOK_STOP = 2163080948U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
         static const AkUniqueID GRAB_BOTTLE_PLASTIC = 2416875919U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
+        static const AkUniqueID IMPACT_PLATE = 803254130U;
         static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
+        static const AkUniqueID USE_CONDIMENT = 2484277510U;
     } // namespace EVENTS
 
     namespace BANKS
