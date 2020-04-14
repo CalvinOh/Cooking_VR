@@ -32,6 +32,9 @@ namespace Valve.VR.InteractionSystem
                 if(SteamVR_Actions._default.SqueezeBottle.GetStateDown(SteamVR_Input_Sources.Any))
                 {
                     SpawnCondiment();
+
+                    //audio
+                    PlaySoundUseCondiment();
                 }
             }
         }
@@ -49,6 +52,12 @@ namespace Valve.VR.InteractionSystem
             temp.GetComponent<Rigidbody>().AddForce(this.transform.up * 1000);
             temp.transform.localScale = new Vector3(1, 1, 1);
             temp.gameObject.transform.parent = null;
+        }
+
+        //audio
+        private void PlaySoundUseCondiment()
+        {
+            AkSoundEngine.PostEvent("Use_Condiment", gameObject);
         }
     }
 }

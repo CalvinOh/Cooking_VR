@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Cole Krueger\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Cole Krueger\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Cole Krueger\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Cole Krueger\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -21,89 +21,160 @@
 			<ShortName>Main_Bank</ShortName>
 			<Path>Main_Bank.bnk</Path>
 			<IncludedEvents>
-				<Event Id="1251402355" Name="Grab_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Glass" DurationType="OneShot" DurationMin="0.240295" DurationMax="0.507029"/>
-				<Event Id="2416875919" Name="Grab_Bottle_Plastic" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Plastic" DurationType="OneShot" DurationMin="0.329478" DurationMax="0.563673"/>
-				<Event Id="1863953098" Name="Grab_Plate" ObjectPath="\Events\Default Work Unit\Grab_Plate" DurationType="OneShot" DurationMin="0.443042" DurationMax="0.689042"/>
-				<Event Id="3025511663" Name="Pour_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Pour_Bottle_Glass" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.278526"/>
+				<Event Id="1240512178" Name="Bell" ObjectPath="\Events\Default Work Unit\Bell" DurationType="OneShot" DurationMin="1.862336" DurationMax="1.862336">
+					<IncludedMemoryFiles>
+						<File Id="208594037" Language="SFX">
+							<ShortName>sx_bell.wav</ShortName>
+							<Path>SFX\sx_bell_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1158089873" Name="Burger_Cook" ObjectPath="\Events\Default Work Unit\Burger_Cook" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="233327061" Language="SFX">
+							<ShortName>sx_burger_cook_start.wav</ShortName>
+							<Path>SFX\sx_burger_cook_start_10C4C929.wem</Path>
+						</File>
+						<File Id="352128800" Language="SFX">
+							<ShortName>sx_burger_cook_loop.wav</ShortName>
+							<Path>SFX\sx_burger_cook_loop_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2163080948" Name="Burger_Cook_Stop" ObjectPath="\Events\Default Work Unit\Burger_Cook_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1251402355" Name="Grab_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Glass" DurationType="OneShot" DurationMin="0.240295" DurationMax="0.507029">
+					<IncludedMemoryFiles>
+						<File Id="141457056" Language="SFX">
+							<ShortName>sx_int_glass_bottle_grab_4.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_grab_4_10C4C929.wem</Path>
+						</File>
+						<File Id="460860198" Language="SFX">
+							<ShortName>sx_plr_grab_v2.wav</ShortName>
+							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
+						</File>
+						<File Id="657838990" Language="SFX">
+							<ShortName>sx_int_glass_bottle_grab_5.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_grab_5_10C4C929.wem</Path>
+						</File>
+						<File Id="817823556" Language="SFX">
+							<ShortName>sx_int_glass_bottle_grab_3.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_grab_3_10C4C929.wem</Path>
+						</File>
+						<File Id="838495242" Language="SFX">
+							<ShortName>sx_int_glass_bottle_grab_2.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_grab_2_10C4C929.wem</Path>
+						</File>
+						<File Id="889619142" Language="SFX">
+							<ShortName>sx_int_glass_bottle_grab_1.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_grab_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2416875919" Name="Grab_Bottle_Plastic" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Plastic" DurationType="OneShot" DurationMin="0.329478" DurationMax="0.563673">
+					<IncludedMemoryFiles>
+						<File Id="205173241" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_4.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_4_10C4C929.wem</Path>
+						</File>
+						<File Id="279788534" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_2.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_2_10C4C929.wem</Path>
+						</File>
+						<File Id="378245175" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_3.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_3_10C4C929.wem</Path>
+						</File>
+						<File Id="460860198" Language="SFX">
+							<ShortName>sx_plr_grab_v2.wav</ShortName>
+							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
+						</File>
+						<File Id="1072177874" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_1.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1863953098" Name="Grab_Plate" ObjectPath="\Events\Default Work Unit\Grab_Plate" DurationType="OneShot" DurationMin="0.443042" DurationMax="0.689042">
+					<IncludedMemoryFiles>
+						<File Id="202225013" Language="SFX">
+							<ShortName>sx_int_plate_grab_1.wav</ShortName>
+							<Path>SFX\sx_int_plate_grab_1_10C4C929.wem</Path>
+						</File>
+						<File Id="460860198" Language="SFX">
+							<ShortName>sx_plr_grab_v2.wav</ShortName>
+							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
+						</File>
+						<File Id="716783425" Language="SFX">
+							<ShortName>sx_int_plate_grab_4.wav</ShortName>
+							<Path>SFX\sx_int_plate_grab_4_10C4C929.wem</Path>
+						</File>
+						<File Id="986648341" Language="SFX">
+							<ShortName>sx_int_plate_grab_2.wav</ShortName>
+							<Path>SFX\sx_int_plate_grab_2_10C4C929.wem</Path>
+						</File>
+						<File Id="999296791" Language="SFX">
+							<ShortName>sx_int_plate_grab_3.wav</ShortName>
+							<Path>SFX\sx_int_plate_grab_3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="803254130" Name="Impact_Plate" ObjectPath="\Events\Default Work Unit\Impact_Plate" DurationType="OneShot" DurationMin="0.168604" DurationMax="0.254989">
+					<IncludedMemoryFiles>
+						<File Id="163219809" Language="SFX">
+							<ShortName>sx_impact_plate_3.wav</ShortName>
+							<Path>SFX\sx_impact_plate_3_10C4C929.wem</Path>
+						</File>
+						<File Id="447831562" Language="SFX">
+							<ShortName>sx_impact_plate_1.wav</ShortName>
+							<Path>SFX\sx_impact_plate_1_10C4C929.wem</Path>
+						</File>
+						<File Id="874152463" Language="SFX">
+							<ShortName>sx_impact_plate_2.wav</ShortName>
+							<Path>SFX\sx_impact_plate_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3025511663" Name="Pour_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Pour_Bottle_Glass" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.278526">
+					<IncludedMemoryFiles>
+						<File Id="242308609" Language="SFX">
+							<ShortName>sx_int_glass_bottle_pour_3.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_pour_3_10C4C929.wem</Path>
+						</File>
+						<File Id="406437937" Language="SFX">
+							<ShortName>sx_int_glass_bottle_pour_4.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_pour_4_10C4C929.wem</Path>
+						</File>
+						<File Id="654708033" Language="SFX">
+							<ShortName>sx_int_glass_bottle_pour_2.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_pour_2_10C4C929.wem</Path>
+						</File>
+						<File Id="794740313" Language="SFX">
+							<ShortName>sx_int_glass_bottle_pour_5.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_pour_5_10C4C929.wem</Path>
+						</File>
+						<File Id="1051743148" Language="SFX">
+							<ShortName>sx_int_glass_bottle_pour_1.wav</ShortName>
+							<Path>SFX\sx_int_glass_bottle_pour_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2484277510" Name="Use_Condiment" ObjectPath="\Events\Default Work Unit\Use_Condiment" DurationType="OneShot" DurationMin="0.355714" DurationMax="0.476077">
+					<IncludedMemoryFiles>
+						<File Id="135928796" Language="SFX">
+							<ShortName>sx_condiment_squirt_3.wav</ShortName>
+							<Path>SFX\sx_condiment_squirt_3_10C4C929.wem</Path>
+						</File>
+						<File Id="513087279" Language="SFX">
+							<ShortName>sx_condiment_squirt_2.wav</ShortName>
+							<Path>SFX\sx_condiment_squirt_2_10C4C929.wem</Path>
+						</File>
+						<File Id="865520128" Language="SFX">
+							<ShortName>sx_condiment_squirt_1.wav</ShortName>
+							<Path>SFX\sx_condiment_squirt_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 			</IncludedEvents>
-			<IncludedMemoryFiles>
-				<File Id="141457056" Language="SFX">
-					<ShortName>sx_int_glass_bottle_grab_4.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_grab_4_10C4C929.wem</Path>
-				</File>
-				<File Id="202225013" Language="SFX">
-					<ShortName>sx_int_plate_grab_1.wav</ShortName>
-					<Path>SFX\sx_int_plate_grab_1_10C4C929.wem</Path>
-				</File>
-				<File Id="205173241" Language="SFX">
-					<ShortName>sx_int_plastic_bottle_grab_4.wav</ShortName>
-					<Path>SFX\sx_int_plastic_bottle_grab_4_10C4C929.wem</Path>
-				</File>
-				<File Id="242308609" Language="SFX">
-					<ShortName>sx_int_glass_bottle_pour_3.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_pour_3_10C4C929.wem</Path>
-				</File>
-				<File Id="279788534" Language="SFX">
-					<ShortName>sx_int_plastic_bottle_grab_2.wav</ShortName>
-					<Path>SFX\sx_int_plastic_bottle_grab_2_10C4C929.wem</Path>
-				</File>
-				<File Id="378245175" Language="SFX">
-					<ShortName>sx_int_plastic_bottle_grab_3.wav</ShortName>
-					<Path>SFX\sx_int_plastic_bottle_grab_3_10C4C929.wem</Path>
-				</File>
-				<File Id="406437937" Language="SFX">
-					<ShortName>sx_int_glass_bottle_pour_4.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_pour_4_10C4C929.wem</Path>
-				</File>
-				<File Id="460860198" Language="SFX">
-					<ShortName>sx_plr_grab_v2.wav</ShortName>
-					<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
-				</File>
-				<File Id="654708033" Language="SFX">
-					<ShortName>sx_int_glass_bottle_pour_2.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_pour_2_10C4C929.wem</Path>
-				</File>
-				<File Id="657838990" Language="SFX">
-					<ShortName>sx_int_glass_bottle_grab_5.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_grab_5_10C4C929.wem</Path>
-				</File>
-				<File Id="716783425" Language="SFX">
-					<ShortName>sx_int_plate_grab_4.wav</ShortName>
-					<Path>SFX\sx_int_plate_grab_4_10C4C929.wem</Path>
-				</File>
-				<File Id="794740313" Language="SFX">
-					<ShortName>sx_int_glass_bottle_pour_5.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_pour_5_10C4C929.wem</Path>
-				</File>
-				<File Id="817823556" Language="SFX">
-					<ShortName>sx_int_glass_bottle_grab_3.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_grab_3_10C4C929.wem</Path>
-				</File>
-				<File Id="838495242" Language="SFX">
-					<ShortName>sx_int_glass_bottle_grab_2.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_grab_2_10C4C929.wem</Path>
-				</File>
-				<File Id="889619142" Language="SFX">
-					<ShortName>sx_int_glass_bottle_grab_1.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_grab_1_10C4C929.wem</Path>
-				</File>
-				<File Id="986648341" Language="SFX">
-					<ShortName>sx_int_plate_grab_2.wav</ShortName>
-					<Path>SFX\sx_int_plate_grab_2_10C4C929.wem</Path>
-				</File>
-				<File Id="999296791" Language="SFX">
-					<ShortName>sx_int_plate_grab_3.wav</ShortName>
-					<Path>SFX\sx_int_plate_grab_3_10C4C929.wem</Path>
-				</File>
-				<File Id="1051743148" Language="SFX">
-					<ShortName>sx_int_glass_bottle_pour_1.wav</ShortName>
-					<Path>SFX\sx_int_glass_bottle_pour_1_10C4C929.wem</Path>
-				</File>
-				<File Id="1072177874" Language="SFX">
-					<ShortName>sx_int_plastic_bottle_grab_1.wav</ShortName>
-					<Path>SFX\sx_int_plastic_bottle_grab_1_10C4C929.wem</Path>
-				</File>
-			</IncludedMemoryFiles>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

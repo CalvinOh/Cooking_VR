@@ -12,14 +12,180 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16492c863ae9bb4db0527a95c7396ca, type: 3}
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
-  AcousticTextureWwu: []
-  AuxBusWwu: []
-  BankWwu: []
-  EventWwu: []
-  RtpcWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  TriggerWwu: []
-  ExpandedItems: []
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: d9b5ba3d70a48348ba09d19d012112d9
+    GuidInternal: 
+    m_lastTime: -8586147182461964100
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: a17dab3cd2aa894baaacc9e1f94ac24c
+    GuidInternal: 
+    m_lastTime: -8586147182462926316
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 9406f5248d25dd4ab331669d951f0dac
+    GuidInternal: 
+    m_lastTime: -8586147109004436077
+    List:
+    - name: Main_Bank
+      guid: c7a602ec80a39445adc02196e1e17418
+      id: 3989171651
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main_Bank
+        ObjectType: 7
+      Path: Default Work Unit\Main_Bank
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 049a4095f103c443bf41898d997bdd57
+    GuidInternal: 
+    m_lastTime: -8586147110812174733
+    List:
+    - name: Bell
+      guid: 84e551a65c4ec848900d31280152bdcb
+      id: 1240512178
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Bell
+        ObjectType: 3
+      Path: Default Work Unit\Bell
+      maxAttenuation: 0
+      maxDuration: 1.862336
+      minDuration: 1.862336
+    - name: Burger_Cook
+      guid: 495fbf25e0cbdf49b4aff1c6a326ee7c
+      id: 1158089873
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Burger_Cook
+        ObjectType: 3
+      Path: Default Work Unit\Burger_Cook
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Burger_Cook_Stop
+      guid: bfdd9f0314db654784f61806d6163429
+      id: 2163080948
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Burger_Cook_Stop
+        ObjectType: 3
+      Path: Default Work Unit\Burger_Cook_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Grab_Bottle_Glass
+      guid: 92d7bc7aad502a4aaaa7ac50603b0033
+      id: 1251402355
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Grab_Bottle_Glass
+        ObjectType: 3
+      Path: Default Work Unit\Grab_Bottle_Glass
+      maxAttenuation: 0
+      maxDuration: 0.507029
+      minDuration: 0.240295
+    - name: Grab_Bottle_Plastic
+      guid: 6b709fa1ca69da48a0182a62faab8710
+      id: 2416875919
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Grab_Bottle_Plastic
+        ObjectType: 3
+      Path: Default Work Unit\Grab_Bottle_Plastic
+      maxAttenuation: 0
+      maxDuration: 0.563673
+      minDuration: 0.329478
+    - name: Grab_Plate
+      guid: 8b0b5f803fd29a4e95b606dfc9dc3bcb
+      id: 1863953098
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Grab_Plate
+        ObjectType: 3
+      Path: Default Work Unit\Grab_Plate
+      maxAttenuation: 0
+      maxDuration: 0.689042
+      minDuration: 0.443042
+    - name: Impact_Plate
+      guid: a934361785640c488531ecea6d7c33cf
+      id: 803254130
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Plate
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Plate
+      maxAttenuation: 0
+      maxDuration: 0.254989
+      minDuration: 0.168604
+    - name: Pour_Bottle_Glass
+      guid: ac06c6ca3265244794982ca9d5134534
+      id: 3025511663
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pour_Bottle_Glass
+        ObjectType: 3
+      Path: Default Work Unit\Pour_Bottle_Glass
+      maxAttenuation: 0
+      maxDuration: 0.278526
+      minDuration: 0.152063
+    - name: Use_Condiment
+      guid: 4ae352af53a4654a9bf815b1a5e96336
+      id: 2484277510
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Use_Condiment
+        ObjectType: 3
+      Path: Default Work Unit\Use_Condiment
+      maxAttenuation: 0
+      maxDuration: 0.476077
+      minDuration: 0.355714
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 3d6363d5ce60a041ade2b6e09d2dff36
+    GuidInternal: 
+    m_lastTime: -8586147182462467973
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: f3d7bd6077ed6f48b927fcbc87305ffa
+    GuidInternal: 
+    m_lastTime: -8586147182462757201
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0d1c53af911cf344af2d5cddd2060317
+    GuidInternal: 
+    m_lastTime: -8586147182462787122
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 0d065cb3686f85499960a1d647686265
+    GuidInternal: 
+    m_lastTime: -8586147182462103736
+    List: []
+  ExpandedItems:
+  - /Cooking VR_WwiseProject
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
