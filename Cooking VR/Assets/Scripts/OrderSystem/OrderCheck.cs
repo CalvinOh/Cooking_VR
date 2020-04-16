@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class OrderCheck : MonoBehaviour
 {
@@ -15,11 +16,16 @@ public class OrderCheck : MonoBehaviour
     [SerializeField]
     float TicketCheckRadius = 0.1f;
 
+    public static event Action<string> giveToGianna;
+
+    private List<string> burgerSins; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        burgerSins = new List<string>();
        // MockBurgerCheck();
     }
 
@@ -32,17 +38,30 @@ public class OrderCheck : MonoBehaviour
 
     OrderManager.FinishedOrder ArchiveOrder(List<OrderManager.Ingridents> SubmittedFood,OrderManager.Order OrderToServe)
     {
+        burgerSins.Clear();
         //this function returns a completed order to be achived for the end of the game
         OrderManager.FinishedOrder TheOrder = new OrderManager.FinishedOrder();
         TheOrder.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
         TheOrder.OriginalOrder = OrderToServe;
         TheOrder.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
         TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
-        
+        if (TheOrder.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
+        {
+            burgerSins.Add("fastOrder");
+        }
+        else if (TheOrder.TimeTaken > 1.5f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
+        {
+            burgerSins.Add("slowOrder");
+        }
+        foreach(string sin in burgerSins)
+        {
+            giveToGianna.Invoke(sin);
+        }
         //score on the order turned in
         Debug.Log(TheOrder.Score);
 
         OrderManager.Orders.Remove(OrderToServe);
+        burgerSins.Clear();
         return TheOrder;
     }
 
@@ -119,8 +138,17 @@ public class OrderCheck : MonoBehaviour
             return 0;
 
         if (Meat == OrderManager.Ingridents.BurntPatty || Meat == OrderManager.Ingridents.RawPatty)
+        {
+            if(Meat == OrderManager.Ingridents.BurntPatty)
+            {
+                burgerSins.Add("burntPatty");
+            }
+            else
+            {
+                burgerSins.Add("rawPatty");
+            }
             return 90;
-
+        }
         if (Order == OrderManager.Ingridents.MediumPatty)
             return 20;
 
@@ -169,18 +197,7 @@ public class OrderCheck : MonoBehaviour
 
             Destroy(Burger);
             Destroy(Ticket);
-            
-            
-            
-
         }
-
-        
-
-
-
-
-
     }
 
     private List<OrderManager.Ingridents> StackableToListOfIngridents(Stackable Stack)
@@ -208,14 +225,11 @@ public class OrderCheck : MonoBehaviour
         Order.Add(OrderManager.Ingridents.Cheese);
         Order.Add(OrderManager.Ingridents.BottomBun);
 
-        
-
         SubmittedFood.Add(OrderManager.Ingridents.TopBun);
         SubmittedFood.Add(OrderManager.Ingridents.Cheese);
         SubmittedFood.Add(OrderManager.Ingridents.Lettuce);
         SubmittedFood.Add(OrderManager.Ingridents.MediumPatty);
         SubmittedFood.Add(OrderManager.Ingridents.BottomBun);
-
 
         string OrderS = "";
         string SubmittedS="";
@@ -234,7 +248,6 @@ public class OrderCheck : MonoBehaviour
         Debug.Log("Submitted: "+SubmittedS);
         Debug.Log("Mock Burger Score: " + CompareFoodToOrder(SubmittedFood, Order));
 
-
     }
 
     private void OnDrawGizmos()
@@ -242,5 +255,6 @@ public class OrderCheck : MonoBehaviour
         Gizmos.DrawWireSphere(BurgerCheck.position, BurgerCheckRadius);
         Gizmos.DrawWireSphere(TicketCheck.position, TicketCheckRadius);
     }
+ 
 
 }
