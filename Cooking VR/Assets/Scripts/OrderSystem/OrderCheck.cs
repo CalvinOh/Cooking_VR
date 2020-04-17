@@ -16,16 +16,20 @@ public class OrderCheck : MonoBehaviour
     [SerializeField]
     float TicketCheckRadius = 0.1f;
 
+    private float finalOrderScore;
+
     public static event Action<string> giveToGianna;
 
-    private List<string> burgerSins; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
+    public static event Action<bool> orderComplete;
+
+    private List<string> burgerParts; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        burgerSins = new List<string>();
+        burgerParts = new List<string>();
        // MockBurgerCheck();
     }
 
@@ -38,7 +42,7 @@ public class OrderCheck : MonoBehaviour
 
     OrderManager.FinishedOrder ArchiveOrder(List<OrderManager.Ingridents> SubmittedFood,OrderManager.Order OrderToServe)
     {
-        burgerSins.Clear();
+        burgerParts.Clear();
         //this function returns a completed order to be achived for the end of the game
         OrderManager.FinishedOrder TheOrder = new OrderManager.FinishedOrder();
         TheOrder.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
@@ -47,24 +51,36 @@ public class OrderCheck : MonoBehaviour
         TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
         if (TheOrder.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
-            burgerSins.Add("fastOrder");
+            burgerParts.Add("fastOrder");
         }
         else if (TheOrder.TimeTaken > 1.5f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
-            burgerSins.Add("slowOrder");
+            burgerParts.Add("slowOrder");
         }
-        foreach(string sin in burgerSins)
+        foreach(string sin in burgerParts)
         {
             giveToGianna.Invoke(sin);
         }
+
+        //finalOrderScore = TheOrder.Score/TheOrder.
+        //I need to get the maximum possible points and divide the final score by it in order to get a percentage.
+
+        OrderGrade();
+
+        orderComplete.Invoke(true);
+
         //score on the order turned in
         Debug.Log(TheOrder.Score);
 
         OrderManager.Orders.Remove(OrderToServe);
-        burgerSins.Clear();
+        burgerParts.Clear();
         return TheOrder;
     }
 
+    private void OrderGrade()
+    {
+        //this will contain the if statements for assigning a status to the final percentage grade i.e. bad, okay, good, great
+    }
 
     int CompareFoodToOrder(List<OrderManager.Ingridents> SubmittedFood, List<OrderManager.Ingridents> Order)
     {
@@ -122,13 +138,6 @@ public class OrderCheck : MonoBehaviour
         score -= 10 * IncorrectPositions;// deduct 10 points for each incorrect position but right ingrident
         score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
         score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
-
-
-
-
-
-
-
         return score;
     }
 
@@ -141,11 +150,11 @@ public class OrderCheck : MonoBehaviour
         {
             if(Meat == OrderManager.Ingridents.BurntPatty)
             {
-                burgerSins.Add("burntPatty");
+                burgerParts.Add("burntPatty");
             }
             else
             {
-                burgerSins.Add("rawPatty");
+                burgerParts.Add("rawPatty");
             }
             return 90;
         }
