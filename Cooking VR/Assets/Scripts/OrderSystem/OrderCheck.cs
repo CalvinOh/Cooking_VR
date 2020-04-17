@@ -85,10 +85,6 @@ public class OrderCheck : MonoBehaviour
     int CompareFoodToOrder(List<OrderManager.Ingridents> SubmittedFood, List<OrderManager.Ingridents> Order)
     {
         int score=(Order.Count-2)*100;
-
-        
-
-
         int IncorrectPositions = 0;
         int LayersTakenOut = 0;
 
