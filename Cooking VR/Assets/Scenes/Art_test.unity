@@ -2714,6 +2714,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[3]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1090608339969034413, guid: 276718efb4d05e94eb3fc27c1d8a33af,
+        type: 3}
+      propertyPath: m_BlendShapeWeights.Array.data[6]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 276718efb4d05e94eb3fc27c1d8a33af, type: 3}
 --- !u!1001 &445382062
@@ -8598,6 +8603,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1835757137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1082736089344969170, guid: 276718efb4d05e94eb3fc27c1d8a33af,
+    type: 3}
+  m_PrefabInstance: {fileID: 443901096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1835757139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835757137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca97a03fbb3b1f45a4040de9f43f22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExpressionChangeSpeed: 8
+  BlinkSpeed: 40
 --- !u!1 &1843691110
 GameObject:
   m_ObjectHideFlags: 0
