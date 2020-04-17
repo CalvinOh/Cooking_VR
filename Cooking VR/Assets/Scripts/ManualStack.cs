@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -36,7 +37,7 @@ public class ManualStack : MonoBehaviour
 
     public float thickness;
     public float scaleRatio;
-    public float distanceOffset;
+    public float verDistanceOffset;
     private float StackRotationAngle;
     public bool TestDrop = false;
     public bool falling = false;
@@ -56,6 +57,7 @@ public class ManualStack : MonoBehaviour
         // Gets thickness and rounds it to the nearest thousandth (3 decimal places)
         thickness = (this.GetComponent<Collider>().bounds.size.y * scaleRatio) / 2;
         thickness = (float)(Math.Round(thickness * 1000f) / 1000f);
+        this.verDistanceOffset = this.thickness;
 
         // Accounting for "vertically sliced" ingredients. 
         switch (this.ingredientName)
@@ -78,6 +80,17 @@ public class ManualStack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckFalling();
+        if(this.interactable.attachedToHand.currentAttachedObject.Equals(this.gameObject))
+        {
+            // being grabbed
+            this.Parent.GetComponent<ManualStack>().RemoveChild(this.gameObject);
+            this.UnassignParent();
+        }
+    }
+
+    private void CheckFalling()
+    {
         if (this.Rb.velocity.y > 0 || this.Rb.velocity.y < 0)
         {
             falling = true;
@@ -91,7 +104,7 @@ public class ManualStack : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // If other has manual stack, can stack
-        if (other.gameObject.TryGetComponent(out ManualStack ms))
+        if (other.gameObject.TryGetComponent(out ManualStack ms) && !other.gameObject.Equals(this.gameObject))
         {
             // Check if this is the held item, should be child.
             foreach (Hand h in this.interactable.hoveringHands)
@@ -111,22 +124,62 @@ public class ManualStack : MonoBehaviour
 
     public void AssignParent(GameObject parent)
     {
+        //Check if the parent has a parent.
+        if (parent.GetComponent<ManualStack>().Parent == null)
+        {
+            GlueToParent(parent);
+        }
+        else 
+        {
+            GlueToParent(parent.GetComponent<ManualStack>().Parent);
+        }
+
+    }
+
+    public void UnassignParent()
+    {
+        this.Parent = null;
+        this.Rb.isKinematic = false;
+        //this.gameObject.transform.parent = null;
+    }
+
+    private void GlueToParent(GameObject parent)
+    {
         this.Parent = parent;
         this.Rb.velocity = Vector3.zero;
+        falling = false;
         this.Rb.isKinematic = true;
 
-        Vector3 offset = new Vector3(0, this.thickness + parent.GetComponent<ManualStack>().thickness, 0);
+        //this.verDistanceOffset += parent.GetComponent<ManualStack>().verDistanceOffset;
+        //parent.GetComponent<ManualStack>().verDistanceOffset += this.thickness;
+        //Vector3 vec3offset = new Vector3(0, parent.GetComponent<ManualStack>().verDistanceOffset, 0);
+        Vector3 vec3offset;
+        if(this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
+        {
+            vec3offset = new Vector3(0, this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Last().GetComponent<ManualStack>().thickness + this.thickness, 0);
+            Debug.Log($"{this.gameObject.name} is stacking to {this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Last().gameObject.name}");
+        }
+        else
+        {
+            vec3offset = new Vector3(0, this.Parent.GetComponent<ManualStack>().thickness + this.thickness, 0);
+            Debug.Log($"{this.gameObject.name} is stacking to {this.Parent.gameObject.name}");
+        }
+
         Quaternion ogRot = this.Parent.transform.rotation;
         this.Parent.transform.rotation.Set(0, 0, 0, ogRot.w);
-        Quaternion disOgRot = this.transform.rotation; //this.gameObject.transform.rotation.Set(0, 0, 0, this.transform.rotation.w);
-        disOgRot.x = disOgRot.y = disOgRot.z = 0;
-        this.gameObject.transform.SetPositionAndRotation((this.Parent.transform.position + offset), disOgRot);
+        Quaternion thisOgRot = this.transform.rotation; //this.gameObject.transform.rotation.Set(0, 0, 0, this.transform.rotation.w);
+        thisOgRot.x = thisOgRot.y = thisOgRot.z = 0;
+
+        if (this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
+            this.gameObject.transform.SetPositionAndRotation((this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Last().transform.position + vec3offset), thisOgRot);
+        else
+            this.gameObject.transform.SetPositionAndRotation((this.Parent.transform.position + vec3offset), thisOgRot);
 
         //this.gameObject.transform.position = this.Parent.transform.position + offset;
 
         this.Parent.transform.rotation = ogRot;
 
-        this.gameObject.transform.parent = parent.transform;
+        this.gameObject.transform.parent = this.Parent.transform;
         this.Parent.GetComponent<ManualStack>().AddChild(this.gameObject);
     }
 
@@ -138,7 +191,27 @@ public class ManualStack : MonoBehaviour
     {
         if(!this.ChildrenGameObjects.Contains(child))
         {
+            AlterLastChildHoverAndCollider(false);
             this.ChildrenGameObjects.Add(child);
+            AlterLastChildHoverAndCollider(true);
+        }
+    }
+
+    public void RemoveChild(GameObject child)
+    {
+        if(this.ChildrenGameObjects.Contains(child))
+        {
+            this.ChildrenGameObjects.Remove(child);
+            AlterLastChildHoverAndCollider(true);
+        }
+    }
+
+    private void AlterLastChildHoverAndCollider(bool newValue)
+    {
+        if(this.ChildrenGameObjects.Count > 0)
+        {
+            //this.ChildrenGameObjects.Last().GetComponent<Interactable>().highlightOnHover = newValue;
+            this.ChildrenGameObjects.Last().GetComponent<MeshCollider>().enabled = newValue;
         }
     }
 }
