@@ -82,9 +82,11 @@ namespace Valve.VR.InteractionSystem
             {
                 if (!WasHeld)
                 {
+                    transform.localPosition = new Vector3(0,0,0);
+                    transform.localRotation = Quaternion.Euler(0,0,0);
                     Ray.gameObject.SetActive(true);
                 }
-                if (SteamVR_Actions._default.SqueezeBottle.GetStateDown(SteamVR_Input_Sources.Any))
+                if (SteamVR_Actions._default.TriggerPulled.GetStateDown(SteamVR_Input_Sources.Any))
                 {
                     Fire();
                 }
