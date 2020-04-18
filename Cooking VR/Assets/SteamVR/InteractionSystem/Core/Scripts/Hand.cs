@@ -466,6 +466,7 @@ namespace Valve.VR.InteractionSystem
                 //Parent the object to the hand
                 objectToAttach.transform.parent = this.transform;
                 attachedObject.isParentedToHand = true;
+                
             }
             else
             {

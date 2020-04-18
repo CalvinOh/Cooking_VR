@@ -40,6 +40,7 @@ public class OrderManager : MonoBehaviour
         Cheese = 11,
         TopBun = 12,
         BottomBun = 13,
+        Plate = 14,
 
     }
 

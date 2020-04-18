@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class Stackable : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Stackable : MonoBehaviour
     /// The object's parent GameObject
     /// </summary>
     public GameObject ParentGameObject;
+
+    Interactable interactable;
 
     /// <summary>
     /// The object's list of children GameObjects
@@ -22,17 +25,32 @@ public class Stackable : MonoBehaviour
     /// </summary>
     public bool IsMasterParent;
 
+    public bool wasGrabbed = false;
+
     // Start is called before the first frame update
     void Start()
     {
         this.IsMasterParent = false;
         ChildrenGameObjects = new List<GameObject>();
+        this.interactable = this.GetComponent<Interactable>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (this.interactable.attachedToHand)
+        {
+            wasGrabbed = true;
+        }
+
+        if (wasGrabbed && !this.interactable.attachedToHand)
+        {
+            if (this.ParentGameObject != null)
+            {
+                UnassignParent();
+            }
+            this.wasGrabbed = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -95,6 +113,19 @@ public class Stackable : MonoBehaviour
     }
 
     /// <summary>
+    /// Unassigns parent of the child object
+    /// </summary>
+    private void UnassignParent()
+    {
+        //if(ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
+        this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Remove(this.gameObject);
+
+        this.ParentGameObject = null;
+        this.GetComponent<Rigidbody>().freezeRotation = false;
+        this.GetComponent<Rigidbody>().isKinematic = false;
+    }
+
+    /// <summary>
     /// Assigns a new parent to the object
     /// </summary>
     /// <param name="NewParent"></param>
@@ -102,42 +133,29 @@ public class Stackable : MonoBehaviour
     {
         this.ParentGameObject = NewParent;
         this.gameObject.transform.parent = NewParent.transform;
-        //this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
         Quaternion OGRotation = NewParent.transform.rotation;
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
 
         // Set distance offset to half the meshCollider's height.
-        float distanceOffset = (this.GetComponent<MeshCollider>().bounds.size.y * this.transform.localScale.y) / 2;// * (3 / 2);
-        float highestChildPosition = 0;
-        foreach (GameObject child in ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects)
-        {
-            if (child.transform.position.y >= highestChildPosition)
-                highestChildPosition = child.transform.position.y;
-        }
-        if (ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count == 0)
-            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2);//distanceOffset *= 0.5f;
-        else
-            distanceOffset += ((NewParent.GetComponent<MeshCollider>().bounds.size.y * NewParent.transform.localScale.y) / 2) + highestChildPosition;
-
-        //else
-        //    distanceOffset *= 1.5f;
-
-
-        //distanceOffset += highestChild;
-        this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.ParentGameObject.transform.position.y + distanceOffset, this.ParentGameObject.transform.position.z);
+        //float distanceOffset = (this.GetComponent<Collider>().bounds.size.y * this.transform.localScale.y) / 2;
+        this.transform.position = new Vector3(this.ParentGameObject.transform.position.x, this.transform.position.y, this.ParentGameObject.transform.position.z);
 
         NewParent.transform.rotation = OGRotation;
 
-        this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
 
-        this.transform.localRotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+        // If it's a vertical object like a cheese, pickle, or tomato.
+        if (this.ingredientName == OrderManager.Ingridents.Cheese || this.ingredientName == OrderManager.Ingridents.Pickle || this.ingredientName == OrderManager.Ingridents.Tomato)
+            this.transform.rotation = new Quaternion(0f, transform.rotation.y, 90f, transform.rotation.w);
+        else // Normal stack
+            this.transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
         //Debug.Break();
+
+        this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
+        //this.gameObject.transform.parent = NewParent.transform;
 
         this.IsMasterParent = false;
         NewParent.GetComponent<Stackable>().IsMasterParent = true;
-        //NewParent.GetComponent<Rigidbody>().isKinematic = true;
 
-        //CheckChildrenList(NewParent.GetComponent<Stackable>(), this.gameObject);
         if (!NewParent.GetComponent<Stackable>().ChildrenGameObjects.Contains(this.gameObject))
             NewParent.GetComponent<Stackable>().ChildrenGameObjects.Add(this.gameObject);
 
@@ -145,6 +163,10 @@ public class Stackable : MonoBehaviour
         {
             this.ReassignChildrenToNewParent(this.ParentGameObject);
         }
+
+        int i = this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects.Count - 1;
+        this.ParentGameObject.GetComponent<Stackable>().ChildrenGameObjects[(i - 1)].GetComponent<MeshCollider>().enabled = false;
+
 
     }
 
