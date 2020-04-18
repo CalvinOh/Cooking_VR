@@ -114,10 +114,25 @@ public class PattyScript : MonoBehaviour
     public void StartCooking()
     {
         currentlyCooking = true;
+        //audio
+        PlaySoundBurgerCook();
     }
 
     public void StopCooking()
     {
         currentlyCooking = false;
+        //audio
+        StopSoundBurgerCook();
+    }
+
+    //audio
+    private void PlaySoundBurgerCook()
+    {
+        AkSoundEngine.PostEvent("Burger_Cook", gameObject);
+    }
+
+    private void StopSoundBurgerCook()
+    {
+        AkSoundEngine.PostEvent("Burger_Cook_Stop", gameObject);
     }
 }
