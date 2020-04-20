@@ -101,7 +101,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Burger_Cook" ID="{25BF5F49-CBE0-49DF-B4AF-F1C6A326EE7C}">
+				<Event Name="Burger_Cook_Start" ID="{25BF5F49-CBE0-49DF-B4AF-F1C6A326EE7C}">
 					<ChildrenList>
 						<Action Name="" ID="{5EF68CCE-6A3D-41CF-BC9F-18CFA978AE7E}" ShortID="308578939">
 							<ReferenceList>
@@ -423,6 +423,38 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Stove_On" ID="{646A7C23-257B-4B50-B8DE-337D06F996D1}">
+					<ChildrenList>
+						<Action Name="" ID="{63CF7F07-ECE1-40E4-989F-E3484A5311F9}" ShortID="414236078">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_stove_ignite" ID="{D48DC43A-C73C-4FF6-94EC-D44D4CACD4BE}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{A9F14ADA-C53B-41C8-9F34-D50498AB4A9E}" ShortID="153890779">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_stove_loop" ID="{87A0C777-87D6-4BC0-ABE4-44229DF6A592}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stove_Off" ID="{5E3B569A-5367-4B1E-B63A-DB95A12C16FF}">
+					<ChildrenList>
+						<Action Name="" ID="{DD65F1AD-4E65-40C0-A16E-2559B5AEA5D9}" ShortID="678216372">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_stove_loop" ID="{87A0C777-87D6-4BC0-ABE4-44229DF6A592}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

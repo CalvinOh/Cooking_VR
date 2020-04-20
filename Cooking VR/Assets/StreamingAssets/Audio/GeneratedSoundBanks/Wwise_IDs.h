@@ -14,7 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID BELL = 1240512178U;
-        static const AkUniqueID BURGER_COOK = 1158089873U;
+        static const AkUniqueID BURGER_COOK_START = 3968779560U;
         static const AkUniqueID BURGER_COOK_STOP = 2163080948U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
         static const AkUniqueID GRAB_BOTTLE_PLASTIC = 2416875919U;
@@ -47,6 +47,8 @@ namespace AK
         static const AkUniqueID PLAY_VX_G_2 = 2676438969U;
         static const AkUniqueID PLAY_VX_G_3 = 2676438968U;
         static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
+        static const AkUniqueID STOVE_OFF = 1902865914U;
+        static const AkUniqueID STOVE_ON = 1278791036U;
         static const AkUniqueID USE_CONDIMENT = 2484277510U;
     } // namespace EVENTS
 

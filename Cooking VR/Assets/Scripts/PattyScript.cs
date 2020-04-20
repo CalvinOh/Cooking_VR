@@ -83,10 +83,9 @@ public class PattyScript : MonoBehaviour
     }
 
 
-    /*
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.CompareTag("CookBox"))
+        if(other.CompareTag("CookBox"))
         {
             currentlyCooking = true;
         }
@@ -94,12 +93,11 @@ public class PattyScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if(other.CompareTag("CookBox"))
+        if(other.CompareTag("CookBox"))
         {
             currentlyCooking = false;
         }
     }
-    */
 
     private void OnCollisionEnter(Collision collision)
     {
