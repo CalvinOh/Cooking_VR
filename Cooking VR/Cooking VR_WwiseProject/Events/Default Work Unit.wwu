@@ -456,6 +456,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Ambience_Kitchen" ID="{92E991B8-B67B-4FFA-AF47-6023E266611A}">
+					<ChildrenList>
+						<Action Name="" ID="{3C8E834A-57FD-43F0-BAD4-1C766A4809C8}" ShortID="138307737">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_ambi_kitchen" ID="{C931FEA7-815F-4D36-B1AB-87EFCE9B3AA5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Env_Fridge" ID="{1C7D4213-D337-493F-8EC9-B7634080B8EE}">
+					<ChildrenList>
+						<Action Name="" ID="{5DE48175-5D94-4F5D-BEBF-9B689BD79ED8}" ShortID="662959822">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_env_fridge" ID="{9BA1DCF4-F46B-426D-A14C-81BD26EADA58}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

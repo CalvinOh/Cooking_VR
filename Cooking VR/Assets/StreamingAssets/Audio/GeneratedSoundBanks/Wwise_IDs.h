@@ -13,9 +13,11 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMBIENCE_KITCHEN = 1710825164U;
         static const AkUniqueID BELL = 1240512178U;
         static const AkUniqueID BURGER_COOK_START = 3968779560U;
         static const AkUniqueID BURGER_COOK_STOP = 2163080948U;
+        static const AkUniqueID ENV_FRIDGE = 2806512798U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
         static const AkUniqueID GRAB_BOTTLE_PLASTIC = 2416875919U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
