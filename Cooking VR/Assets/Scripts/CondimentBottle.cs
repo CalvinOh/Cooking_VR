@@ -31,6 +31,7 @@ namespace Valve.VR.InteractionSystem
             {
                 if(SteamVR_Actions._default.SqueezeBottle.GetStateDown(SteamVR_Input_Sources.Any))
                 {
+                    Debug.Log("Squeeze");
                     SpawnCondiment();
 
                     //audio

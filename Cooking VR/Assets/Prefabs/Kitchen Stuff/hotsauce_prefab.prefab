@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1626320610935508482}
   - component: {fileID: 1626320610935508487}
   - component: {fileID: 64177020}
+  - component: {fileID: 225369528125714552}
   m_Layer: 0
   m_Name: hotsauce_prefab
   m_TagString: Untagged
@@ -125,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attachmentFlags: 44
+  attachmentFlags: 124
   attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
-  releaseVelocityStyle: 1
+  releaseVelocityStyle: 2
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   scaleReleaseVelocityThreshold: -1
@@ -216,7 +217,7 @@ MonoBehaviour:
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
   handFollowTransform: 1
-  highlightOnHover: 1
+  highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
 --- !u!114 &64177020
@@ -233,3 +234,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnZone: {fileID: 0}
   enteredKillZone: 0
+  grounded: 0
+  timeSpentOnGround: 0
+  timerOnGround: 0
+--- !u!114 &225369528125714552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328267408998766561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 0

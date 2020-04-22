@@ -29,7 +29,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1158089873" Name="Burger_Cook" ObjectPath="\Events\Default Work Unit\Burger_Cook" DurationType="Infinite">
+				<Event Id="3968779560" Name="Burger_Cook_Start" ObjectPath="\Events\Default Work Unit\Burger_Cook_Start" MaxAttenuation="3.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="233327061" Language="SFX">
 							<ShortName>sx_burger_cook_start.wav</ShortName>
@@ -363,6 +363,19 @@
 						<File Id="1051743148" Language="SFX">
 							<ShortName>sx_int_glass_bottle_pour_1.wav</ShortName>
 							<Path>SFX\sx_int_glass_bottle_pour_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1902865914" Name="Stove_Off" ObjectPath="\Events\Default Work Unit\Stove_Off" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1278791036" Name="Stove_On" ObjectPath="\Events\Default Work Unit\Stove_On" MaxAttenuation="3.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="214031726" Language="SFX">
+							<ShortName>sx_stove_loop.wav</ShortName>
+							<Path>SFX\sx_stove_loop_D79FB2B7.wem</Path>
+						</File>
+						<File Id="629777204" Language="SFX">
+							<ShortName>sx_stove_ignite.wav</ShortName>
+							<Path>SFX\sx_stove_ignite_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
