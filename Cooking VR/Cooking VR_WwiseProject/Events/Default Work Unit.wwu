@@ -12,13 +12,6 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{B4688F4A-9788-4CF8-9652-7F6BEDD1849E}" ShortID="22976075">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Pour_Bottle_Glass" ID="{CAC606AC-6532-4724-9498-2CA9D5134534}">
@@ -34,13 +27,6 @@
 				</Event>
 				<Event Name="Grab_Plate" ID="{805F0B8B-D23F-4E9A-95B6-06DFC9DC3BCB}">
 					<ChildrenList>
-						<Action Name="" ID="{4A5E84A4-9FED-4194-9638-04215E13EBC6}" ShortID="996266035">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
 						<Action Name="" ID="{E7458392-1934-4646-A822-555774F58084}" ShortID="1010049540">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -56,13 +42,6 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="grabs_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{789EAFE9-529F-43DB-98B4-C2DA6B583EA8}" ShortID="747748930">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -461,6 +440,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sx_knife_cut_generic" ID="{103E3686-CEB7-428D-B238-CE4E8A99B5C5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stack" ID="{1EAD5F9D-9D15-42DC-B118-DE4E3F01296E}">
+					<ChildrenList>
+						<Action Name="" ID="{09087966-5766-4CBF-A5D8-4AA07C356EFF}" ShortID="564674492">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_plr_grab_v2" ID="{05A0649C-5286-4C53-B32E-2C4C3C21A9A1}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

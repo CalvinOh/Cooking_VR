@@ -48,6 +48,7 @@ namespace AK
         static const AkUniqueID PLAY_VX_G_2 = 2676438969U;
         static const AkUniqueID PLAY_VX_G_3 = 2676438968U;
         static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
+        static const AkUniqueID STACK = 996591275U;
         static const AkUniqueID STOVE_OFF = 1902865914U;
         static const AkUniqueID STOVE_ON = 1278791036U;
         static const AkUniqueID USE_CONDIMENT = 2484277510U;

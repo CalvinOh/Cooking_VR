@@ -61,16 +61,15 @@ public class Stackable : MonoBehaviour
         if (collision.gameObject.GetComponent<Stackable>().ParentGameObject.Equals(this.gameObject) || this.ParentGameObject.Equals(collision.gameObject))
         {
             alreadyDone = true;
+
+            //audio
+            PlaySoundStack();
         }
 
         if (!alreadyDone)
         {
             CheckPositions(collision);
-            /*
-             * 
-             * PLAY SOUND HERE!!!
-             *
-             */
+
             Debug.Log($"Beep! From {this.gameObject.name}");
         }
 
@@ -198,5 +197,11 @@ public class Stackable : MonoBehaviour
             child.GetComponent<Stackable>().AssignParent(NewParent);
         }
         this.ChildrenGameObjects.Clear();
+    }
+
+    //audio
+    private void PlaySoundStack()
+    {
+        AkSoundEngine.PostEvent("Stack", gameObject);
     }
 }
