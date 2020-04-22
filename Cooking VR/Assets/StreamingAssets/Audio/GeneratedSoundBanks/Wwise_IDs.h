@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID GRAB_BOTTLE_PLASTIC = 2416875919U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
         static const AkUniqueID IMPACT_PLATE = 803254130U;
+        static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
         static const AkUniqueID PLAY_VX_A_2 = 1603068619U;
         static const AkUniqueID PLAY_VX_A_3 = 1603068618U;

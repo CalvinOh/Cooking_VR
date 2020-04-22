@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586141909324844146
+    m_lastTime: -8586140337888354661
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586141909491377540
+    m_lastTime: -8586140340604562000
     List:
     - name: Bell
       guid: 84e551a65c4ec848900d31280152bdcb
@@ -133,6 +133,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.254989
       minDuration: 0.168604
+    - name: Knife_Cut_Generic
+      guid: d98af6638ea9ff4e9d007de248cb8bd9
+      id: 2831748783
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Knife_Cut_Generic
+        ObjectType: 3
+      Path: Default Work Unit\Knife_Cut_Generic
+      maxAttenuation: 2
+      maxDuration: 0.379546
+      minDuration: 0.348046
     - name: Play_vx_a_1
       guid: 9782f120b836f84f95e01d835ac75fb5
       id: 1603068616
@@ -531,8 +543,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Stove_On
       maxAttenuation: 3
-      maxDuration: 4.523265
-      minDuration: 4.523265
+      maxDuration: -1
+      minDuration: -1
     - name: Use_Condiment
       guid: 4ae352af53a4654a9bf815b1a5e96336
       id: 2484277510
@@ -589,7 +601,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Cooking VR_WwiseProject
-  - /Cooking VR_WwiseProject/Events
-  - /Cooking VR_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
