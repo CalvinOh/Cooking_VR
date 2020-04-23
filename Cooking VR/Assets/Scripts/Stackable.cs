@@ -214,6 +214,7 @@ public class Stackable : MonoBehaviour
         NewParent.transform.rotation = new Quaternion(0, 0, 0, OGRotation.w);
 
         // Set distance offset to half the meshCollider's height.
+
         //float scaleRatio = (100 / this.transform.localScale.y);
         //float distanceOffset = (this.GetComponent<Collider>().bounds.size.y * scaleRatio) / 2;
         //float parentScaleRatio = (100 / NewParent.transform.localScale.y);
@@ -223,6 +224,7 @@ public class Stackable : MonoBehaviour
 
         if(ParentLocalReference.ChildrenGameObjects.Count > 0)
             distanceOffset += ParentLocalReference.ChildrenGameObjects[ParentLocalReference.ChildrenGameObjects.Count-1].GetComponent<Stackable>().distanceOffset;
+
 
         //for (int j = 0; j < ParentLocalReference.ChildrenGameObjects.Count; j++)
         //{
@@ -249,6 +251,7 @@ public class Stackable : MonoBehaviour
         //    this.transform.rotation = new Quaternion(0f, transform.rotation.y, 90f, transform.rotation.w);
         //else // Normal stack
         //    this.transform.rotation = new Quaternion(0f, transform.rotation.y, 0f, transform.rotation.w);
+
         //Debug.Break();
 
         this.GlueGameObjectToParent(this.GetComponent<Rigidbody>());
@@ -263,6 +266,7 @@ public class Stackable : MonoBehaviour
         if (!ParentLocalReference.ChildrenGameObjects.Contains(this.gameObject))
             ParentLocalReference.ChildrenGameObjects.Add(this.gameObject);
 
+
         if (this.ChildrenGameObjects.Count != 0)
         {
             this.ReassignChildrenToNewParent(this.ParentGameObject);
@@ -275,6 +279,7 @@ public class Stackable : MonoBehaviour
         int i = ParentLocalReference.ChildrenGameObjects.Count - 1;
         if (ParentLocalReference.ChildrenGameObjects.Count > 1)
             ParentLocalReference.ChildrenGameObjects[(i - 1)].GetComponent<MeshCollider>().enabled = false;
+
 
     }
 

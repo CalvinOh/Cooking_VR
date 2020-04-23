@@ -119,7 +119,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -288,7 +288,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4870,6 +4870,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 1229530412735105584, guid: 1c34d0b6ed003a747b097b5b3415f8a0, type: 3}
+--- !u!114 &5947143582019282253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824684239611841578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bebe976d3726ec4a805614011d1710d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentGameObject: {fileID: 0}
+  ChildrenGameObjects: []
+  ingredientName: 5
+  IsMasterParent: 0
+  wasGrabbed: 0
 --- !u!1001 &672864393742128419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4885,7 +4902,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.045552254
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
@@ -4935,17 +4952,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.008
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.003
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.008
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
         type: 3}
@@ -4956,6 +4973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ketchupsplatter
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 1c34d0b6ed003a747b097b5b3415f8a0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c34d0b6ed003a747b097b5b3415f8a0, type: 3}
