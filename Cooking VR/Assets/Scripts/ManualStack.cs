@@ -17,8 +17,6 @@ public class ManualStack : MonoBehaviour
 
     Interactable interactable;
 
-    public Vector3 topStackPoint, bottomStackPoint;
-
     /// <summary>
     /// The object's list of children GameObjects
     /// </summary>
@@ -33,6 +31,8 @@ public class ManualStack : MonoBehaviour
     public bool IsMasterParent;
 
     public bool isHeld = false;
+    private float lastHeld; // the last time the object was held (measured as seconds since play)
+    private float stackWindowLength; // How long the object should check since it was let go to stack. Measusred in seconds.
 
     [SerializeField]
     public Vector3 vec3offset;
@@ -40,9 +40,11 @@ public class ManualStack : MonoBehaviour
     [SerializeField]
     public float thickness;
     public float scaleRatio;
-    public float verDistanceOffset;
     public bool TestDrop = false; // = true if you'd like to test without going into VR to test.
     public bool falling = false; // This is controlled by the ingredient falling with gravity.
+
+    [SerializeField]
+    private bool canStack = false;
 
 
     // Start is called before the first frame update
@@ -52,8 +54,9 @@ public class ManualStack : MonoBehaviour
         this.IsMasterParent = false;
         ChildrenGameObjects = new List<GameObject>();
         this.interactable = this.GetComponent<Interactable>();
+        lastHeld = 0;
+        stackWindowLength = 0.3f;
 
-        topStackPoint = bottomStackPoint = Vector3.zero;
 
         scaleRatio = 1;// 5;//(100 / this.transform.localScale.y);
                        // Gets thickness and rounds it to the nearest thousandth (3 decimal places)
@@ -84,7 +87,6 @@ public class ManualStack : MonoBehaviour
         {
             thickness = (this.GetComponent<Collider>().bounds.extents.y * scaleRatio);// / 2;
             thickness = (float)(Math.Round(thickness * 1000f) / 1000f);
-            this.verDistanceOffset = this.thickness;
         }
         
     }
@@ -118,6 +120,8 @@ public class ManualStack : MonoBehaviour
         // If other has manual stack, can stack
         if (other.gameObject.TryGetComponent(out ManualStack ms) && !other.gameObject.Equals(this.gameObject))
         {
+            canStack = true;
+
             // Check if this is the held item, should be child.
             foreach (Hand h in this.interactable.hoveringHands)
             {
@@ -141,6 +145,22 @@ public class ManualStack : MonoBehaviour
             }
         }
     }
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if(canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
+    //    {
+    //        this.AssignParent(other.gameObject);
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.TryGetComponent(out ManualStack ms) && !other.gameObject.Equals(this.gameObject))
+    //    {
+    //        canStack = false;
+    //    }
+    //}
 
     public void AssignParent(GameObject parent)
     {
