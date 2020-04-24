@@ -21,6 +21,14 @@
 			<ShortName>Main_Bank</ShortName>
 			<Path>Main_Bank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="1710825164" Name="Ambience_Kitchen" ObjectPath="\Events\Default Work Unit\Ambience_Kitchen" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="93227442" Language="SFX">
+							<ShortName>sx_ambi_kitchen.wav</ShortName>
+							<Path>SFX\sx_ambi_kitchen_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1240512178" Name="Bell" ObjectPath="\Events\Default Work Unit\Bell" DurationType="OneShot" DurationMin="1.862336" DurationMax="1.862336">
 					<IncludedMemoryFiles>
 						<File Id="208594037" Language="SFX">
@@ -42,15 +50,19 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="2163080948" Name="Burger_Cook_Stop" ObjectPath="\Events\Default Work Unit\Burger_Cook_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2806512798" Name="Env_Fridge" ObjectPath="\Events\Default Work Unit\Env_Fridge" MaxAttenuation="3.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="781602913" Language="SFX">
+							<ShortName>sx_env_fridge.wav</ShortName>
+							<Path>SFX\sx_env_fridge_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1251402355" Name="Grab_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Glass" DurationType="OneShot" DurationMin="0.240295" DurationMax="0.507029">
 					<IncludedMemoryFiles>
 						<File Id="141457056" Language="SFX">
 							<ShortName>sx_int_glass_bottle_grab_4.wav</ShortName>
 							<Path>SFX\sx_int_glass_bottle_grab_4_10C4C929.wem</Path>
-						</File>
-						<File Id="460860198" Language="SFX">
-							<ShortName>sx_plr_grab_v2.wav</ShortName>
-							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
 						</File>
 						<File Id="657838990" Language="SFX">
 							<ShortName>sx_int_glass_bottle_grab_5.wav</ShortName>
@@ -84,10 +96,6 @@
 							<ShortName>sx_int_plastic_bottle_grab_3.wav</ShortName>
 							<Path>SFX\sx_int_plastic_bottle_grab_3_10C4C929.wem</Path>
 						</File>
-						<File Id="460860198" Language="SFX">
-							<ShortName>sx_plr_grab_v2.wav</ShortName>
-							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
-						</File>
 						<File Id="1072177874" Language="SFX">
 							<ShortName>sx_int_plastic_bottle_grab_1.wav</ShortName>
 							<Path>SFX\sx_int_plastic_bottle_grab_1_10C4C929.wem</Path>
@@ -99,10 +107,6 @@
 						<File Id="202225013" Language="SFX">
 							<ShortName>sx_int_plate_grab_1.wav</ShortName>
 							<Path>SFX\sx_int_plate_grab_1_10C4C929.wem</Path>
-						</File>
-						<File Id="460860198" Language="SFX">
-							<ShortName>sx_plr_grab_v2.wav</ShortName>
-							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
 						</File>
 						<File Id="716783425" Language="SFX">
 							<ShortName>sx_int_plate_grab_4.wav</ShortName>
@@ -131,6 +135,14 @@
 						<File Id="874152463" Language="SFX">
 							<ShortName>sx_impact_plate_2.wav</ShortName>
 							<Path>SFX\sx_impact_plate_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2831748783" Name="Knife_Cut_Generic" ObjectPath="\Events\Default Work Unit\Knife_Cut_Generic" MaxAttenuation="2.000000" DurationType="OneShot" DurationMin="0.348046" DurationMax="0.379546">
+					<IncludedMemoryFiles>
+						<File Id="947404325" Language="SFX">
+							<ShortName>sx_knife_cut_generic.wav</ShortName>
+							<Path>SFX\sx_knife_cut_generic_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -363,6 +375,14 @@
 						<File Id="1051743148" Language="SFX">
 							<ShortName>sx_int_glass_bottle_pour_1.wav</ShortName>
 							<Path>SFX\sx_int_glass_bottle_pour_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="996591275" Name="Stack" ObjectPath="\Events\Default Work Unit\Stack" MaxAttenuation="2.000000" DurationType="OneShot" DurationMin="0.152083" DurationMax="0.152083">
+					<IncludedMemoryFiles>
+						<File Id="460860198" Language="SFX">
+							<ShortName>sx_plr_grab_v2.wav</ShortName>
+							<Path>SFX\sx_plr_grab_v2_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586141909324844146
+    m_lastTime: -8586140270001141425
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -47,8 +47,20 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586141909491377540
+    m_lastTime: -8586140270203761548
     List:
+    - name: Ambience_Kitchen
+      guid: b891e9927bb6fa4faf476023e266611a
+      id: 1710825164
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience_Kitchen
+        ObjectType: 3
+      Path: Default Work Unit\Ambience_Kitchen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Bell
       guid: 84e551a65c4ec848900d31280152bdcb
       id: 1240512178
@@ -85,6 +97,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Env_Fridge
+      guid: 13427d1c37d33f498ec9b7634080b8ee
+      id: 2806512798
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Env_Fridge
+        ObjectType: 3
+      Path: Default Work Unit\Env_Fridge
+      maxAttenuation: 3
+      maxDuration: -1
+      minDuration: -1
     - name: Grab_Bottle_Glass
       guid: 92d7bc7aad502a4aaaa7ac50603b0033
       id: 1251402355
@@ -133,6 +157,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.254989
       minDuration: 0.168604
+    - name: Knife_Cut_Generic
+      guid: d98af6638ea9ff4e9d007de248cb8bd9
+      id: 2831748783
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Knife_Cut_Generic
+        ObjectType: 3
+      Path: Default Work Unit\Knife_Cut_Generic
+      maxAttenuation: 2
+      maxDuration: 0.379546
+      minDuration: 0.348046
     - name: Play_vx_a_1
       guid: 9782f120b836f84f95e01d835ac75fb5
       id: 1603068616
@@ -509,6 +545,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.278526
       minDuration: 0.152063
+    - name: Stack
+      guid: 9d5fad1e159ddc42b118de4e3f01296e
+      id: 996591275
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stack
+        ObjectType: 3
+      Path: Default Work Unit\Stack
+      maxAttenuation: 2
+      maxDuration: 0.152083
+      minDuration: 0.152083
     - name: Stove_Off
       guid: 9a563b5e67531e4bb63adb95a12c16ff
       id: 1902865914
@@ -531,8 +579,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Stove_On
       maxAttenuation: 3
-      maxDuration: 4.523265
-      minDuration: 4.523265
+      maxDuration: -1
+      minDuration: -1
     - name: Use_Condiment
       guid: 4ae352af53a4654a9bf815b1a5e96336
       id: 2484277510
