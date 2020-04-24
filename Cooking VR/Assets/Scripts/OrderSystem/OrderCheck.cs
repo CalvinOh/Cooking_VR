@@ -212,7 +212,7 @@ public class OrderCheck : MonoBehaviour
 
         if (Burger != null && Ticket != null)
         {
-            Stackable BurgerS = Burger.GetComponent<Stackable>();
+            ManualStack BurgerS = Burger.GetComponent<ManualStack>();
             OrderTicket TicketS = Ticket.GetComponent<OrderTicket>();
 
             List<OrderManager.Ingridents> SubmittedBurger = StackableToListOfIngridents(BurgerS);
@@ -223,12 +223,12 @@ public class OrderCheck : MonoBehaviour
         }
     }
 
-    private List<OrderManager.Ingridents> StackableToListOfIngridents(Stackable Stack)
+    private List<OrderManager.Ingridents> StackableToListOfIngridents(ManualStack Stack)
     {
         List<OrderManager.Ingridents> TheList = new List<OrderManager.Ingridents>();
         for (int i = 0; i < Stack.ChildrenGameObjects.Count;i++)
         {
-            TheList.Add(Stack.ChildrenGameObjects[i].GetComponent<Stackable>().ingredientName);
+            TheList.Add(Stack.ChildrenGameObjects[i].GetComponent<ManualStack>().ingredientName);
         }
         TheList.Remove(OrderManager.Ingridents.Plate);
         return TheList;
