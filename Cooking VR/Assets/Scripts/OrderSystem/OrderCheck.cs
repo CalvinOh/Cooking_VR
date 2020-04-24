@@ -87,6 +87,7 @@ public class OrderCheck : MonoBehaviour
         int score=(Order.Count-2)*100;
         int IncorrectPositions = 0;
         int LayersTakenOut = 0;
+        float CurrentBurgerPercentage = 0;
 
         bool LayerFound = false;
 
@@ -126,16 +127,33 @@ public class OrderCheck : MonoBehaviour
 
             }
         }
-
-        //Debug.Log("LTO: " + LayersTakenOut);
-        //Debug.Log("IP: "+IncorrectPositions);
-        //Debug.Log("SFC: " + SubmittedFood.Count);
-        //Debug.Log("OC: " + Order.Count);
         score -= 10 * IncorrectPositions;// deduct 10 points for each incorrect position but right ingrident
         score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
         score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
+
+        CurrentBurgerPercentage = score / ((Order.Count - 2) * 100);
+        CommentOnBurger(CurrentBurgerPercentage);
         return score;
     }
+
+    private void CommentOnBurger(float BurgerPercent)
+    {
+        if (BurgerPercent > 0.66f)
+        {
+            //best response
+        }
+        else if (BurgerPercent > 0.33f)
+        {
+            //normal response
+        }
+        else if (BurgerPercent <= 0.33f)
+        {
+            //bad response
+        }
+
+    }
+
+
 
     private int CheckMeat(OrderManager.Ingridents Meat, OrderManager.Ingridents Order)
     {
