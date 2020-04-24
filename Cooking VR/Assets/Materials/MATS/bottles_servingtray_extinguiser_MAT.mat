@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: bottles_servingtray_extinguiser_MAT
-  m_Shader: {fileID: -6465566751694194690, guid: bfb9ad57ccfd4174e9892adbaccc5e06,
+  m_Shader: {fileID: -6465566751694194690, guid: 07931449869bbf34a91a90d4482ae6c3,
     type: 3}
   m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 4
@@ -20,12 +20,24 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_245A6098:
+        m_Texture: {fileID: 2800000, guid: de415fe66d04af94d983f887ed15e81c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_4022369D:
         m_Texture: {fileID: 2800000, guid: 23646864e5768144e9bfa16b1d2dd19f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_5AC54769:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_C62B65C9:
+        m_Texture: {fileID: 2800000, guid: 9472941a29759b74f9e4455c741722ae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_DD5EE788:
+        m_Texture: {fileID: 2800000, guid: 23646864e5768144e9bfa16b1d2dd19f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_E782F9EE:
@@ -86,7 +98,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_40310F65: 500
-    - Vector1_CA2DC6AF: 1.03
+    - Vector1_76FC9925: 4.6
+    - Vector1_9D354042: 0
+    - Vector1_A071A03A: 1
+    - Vector1_CA2DC6AF: 1.08
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -115,8 +130,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_40227801: {r: 0, g: 0, b: 0, a: 0}
     - Color_5BED5234: {r: 0, g: 0, b: 0, a: 0}
+    - Color_625BFECB: {r: 1, g: 1, b: 1, a: 0}
     - Color_87AAD221: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_29EDBF36: {r: 0.2, g: 0.11, b: 0, a: 0}
+    - Vector2_9DF2A6E8: {r: 0, g: 0.5, b: 0, a: 0}
     - Vector2_A1FBC1F1: {r: 0.7, g: 0.7, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
