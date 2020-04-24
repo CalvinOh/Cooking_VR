@@ -22,7 +22,7 @@ public class CharacterTriggers : MonoBehaviour
     private float VOTimer;
 
     //this shall be the queue of the dialogue that is to be spoken.
-    private List<string> VOQueue;
+    private List<int> VOQueue;
 
     System.Random rnd = new System.Random();
 
@@ -30,9 +30,71 @@ public class CharacterTriggers : MonoBehaviour
     {
         if(Time.time >= VOTimer)
         {
+            IdleDialogue();
             //where idle lines will be called.
             AddBuffer(0);
         }
+    }
+
+    private void IdleDialogue()
+    {
+        //adds a random voice line to be played at the end of the queue, if something else more important has come up to be mentioned than it shall be inserted at the beginning of VOQueue.
+        VOQueue.Add(rnd.Next(0, 5)); //0 through 5 are lines that require no prerequisite to be spoken.
+        switch (VOQueue[0])
+        {
+            //invokes that are commented out are lines that have yet to be implemented.
+            case 0:
+                //Invoke("Play_vx_i_1", 0);
+                break;
+            case 1:
+                //Invoke("Play_vx_i_2", 0);
+                break;
+            case 2:
+                //Invoke("Play_vx_i_5", 0);
+                break;
+            case 3:
+                //Invoke("Play_vx_i_8", 0);
+                break;
+            case 4:
+                //Invoke("Play_vx_j_4", 0);
+                break;
+            case 5:
+                //Invoke("Play_vx_j_5", 0);
+                break;
+            case 6:
+                // when a bad move is made
+                Invoke("Play_vx_b_6", 0);
+                break;
+            case 7:
+                // when a bad move is made
+                Invoke("Play_vx_b_7", 0);
+                break;
+            case 8:
+                // when a good move is made
+                //Invoke("Play_vx_h_1", 0);
+                break;
+            case 9:
+                // when a good move is made
+                //Invoke("Play_vx_h_2", 0);
+                break;
+            case 10:
+                // when the place is messy
+                //Invoke("Play_vx_i_3", 0);
+                break;
+            case 11:
+                // when the player is idle
+                //Invoke("Play_vx_i_4", 0);
+                break;
+            case 12:
+                // when the top bun is stacked
+                //Invoke("Play_vx_i_7", 0);
+                break;
+            case 13:
+                // when a new ticket spawns
+                //Invoke("Play_vx_i_9", 0);
+                break;
+        }
+        VOQueue.RemoveAt(0);
     }
 
     private void AddBuffer(float extraTime)
@@ -77,7 +139,7 @@ public class CharacterTriggers : MonoBehaviour
             Invoke("Play_vx_g_1", continuousBuffer);
             continuousBuffer += 5;
         }
-        if (isLate)
+        else if (isLate)
         {
             Invoke("Play_vx_f_1", continuousBuffer);
             continuousBuffer += 5;
@@ -87,7 +149,7 @@ public class CharacterTriggers : MonoBehaviour
             Invoke("Play_vx_b_4",continuousBuffer);
             continuousBuffer += 5;
         }
-        if (isBurnt)
+        else if (isBurnt)
         {
             Invoke("Play_vx_b_3", continuousBuffer);
             continuousBuffer += 5;
