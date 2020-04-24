@@ -22,14 +22,14 @@ public class OrderCheck : MonoBehaviour
 
     public static event Action<bool> orderComplete;
 
-    private List<string> burgerParts; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
+    private List<string> burgerPartsForVO; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        burgerParts = new List<string>();
+        burgerPartsForVO = new List<string>();
        // MockBurgerCheck();
     }
 
@@ -42,7 +42,7 @@ public class OrderCheck : MonoBehaviour
 
     OrderManager.FinishedOrder ArchiveOrder(List<OrderManager.Ingridents> SubmittedFood,OrderManager.Order OrderToServe)
     {
-        burgerParts.Clear();
+        burgerPartsForVO.Clear();
         //this function returns a completed order to be achived for the end of the game
         OrderManager.FinishedOrder TheOrder = new OrderManager.FinishedOrder();
         TheOrder.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
@@ -51,13 +51,13 @@ public class OrderCheck : MonoBehaviour
         TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
         if (TheOrder.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
-            burgerParts.Add("fastOrder");
+            burgerPartsForVO.Add("fastOrder");
         }
         else if (TheOrder.TimeTaken > 1.5f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
-            burgerParts.Add("slowOrder");
+            burgerPartsForVO.Add("slowOrder");
         }
-        foreach(string sin in burgerParts)
+        foreach(string sin in burgerPartsForVO)
         {
             giveToGianna.Invoke(sin);
         }
@@ -73,7 +73,7 @@ public class OrderCheck : MonoBehaviour
         Debug.Log(TheOrder.Score);
 
         OrderManager.Orders.Remove(OrderToServe);
-        burgerParts.Clear();
+        burgerPartsForVO.Clear();
         return TheOrder;
     }
 
@@ -138,17 +138,17 @@ public class OrderCheck : MonoBehaviour
 
     private void CommentOnBurger(float BurgerPercent)
     {
-        if (BurgerPercent > 0.66f)
+        if (BurgerPercent > 0.75f)
         {
-            //best response
+            burgerPartsForVO.Add("2");
         }
-        else if (BurgerPercent > 0.33f)
+        else if (BurgerPercent > 0.50f)
         {
-            //normal response
+            burgerPartsForVO.Add("1");
         }
-        else if (BurgerPercent <= 0.33f)
+        else if (BurgerPercent <= 0.50f)
         {
-            //bad response
+            burgerPartsForVO.Add("0");
         }
 
     }
@@ -164,11 +164,11 @@ public class OrderCheck : MonoBehaviour
         {
             if(Meat == OrderManager.Ingridents.BurntPatty)
             {
-                burgerParts.Add("burntPatty");
+                burgerPartsForVO.Add("burntPatty");
             }
             else
             {
-                burgerParts.Add("rawPatty");
+                burgerPartsForVO.Add("rawPatty");
             }
             return 90;
         }
