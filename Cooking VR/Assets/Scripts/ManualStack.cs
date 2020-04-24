@@ -76,6 +76,7 @@ public class ManualStack : MonoBehaviour
         //            break;
         //        }
         //}
+
     }
 
     private void SetThickness()
