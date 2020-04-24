@@ -26,7 +26,7 @@ namespace Valve.VR.InteractionSystem
         private GameObject spawnedObject;
 
         [SerializeField]
-        Hand leftPlayerHand, rightPlayerHand;
+        public static Hand leftPlayerHand, rightPlayerHand;
 
 
         // Start is called before the first frame update
