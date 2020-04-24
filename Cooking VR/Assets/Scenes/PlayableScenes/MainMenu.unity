@@ -587,6 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StoveIsOn: 0
   CurrentPanOnStove: {fileID: 0}
+  Fire: {fileID: 0}
 --- !u!135 &138176644
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2003,6 +2004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StoveIsOn: 0
   CurrentPanOnStove: {fileID: 0}
+  Fire: {fileID: 0}
 --- !u!135 &429245089
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2376,6 +2378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StoveIsOn: 0
   CurrentPanOnStove: {fileID: 0}
+  Fire: {fileID: 0}
 --- !u!135 &572578766
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3891,12 +3894,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 161.85, y: 24.46199, z: 23.561996}
---- !u!4 &1168508281 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5629273213984452026, guid: 9c786cedb0ef8b645b1f1168f4e91116,
-    type: 3}
-  m_PrefabInstance: {fileID: 5087498072066490112}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1196649810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4437,6 +4434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StoveIsOn: 0
   CurrentPanOnStove: {fileID: 0}
+  Fire: {fileID: 0}
 --- !u!135 &1389806887
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5333,7 +5331,7 @@ Transform:
   - {fileID: 879797769}
   - {fileID: 214702160}
   - {fileID: 118838148}
-  - {fileID: 1168508281}
+  - {fileID: 5087498072066490113}
   - {fileID: 495519312}
   m_Father: {fileID: 0}
   m_RootOrder: 37
@@ -10611,6 +10609,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 518819b4111d53e4b9e0742a53e2f784, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c786cedb0ef8b645b1f1168f4e91116, type: 3}
+--- !u!4 &5087498072066490113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 5087498072066490112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5097540564105355868
 GameObject:
   m_ObjectHideFlags: 0

@@ -45,7 +45,9 @@ public class StoveScript : MonoBehaviour
         StoveIsOn = true;
         if(CurrentPanOnStove!=null)
         CurrentPanOnStove.StartCooking();
-        
+
+        //audio
+        PlaySoundStoveOn();
     }
 
     public void TurnOff()
@@ -54,6 +56,23 @@ public class StoveScript : MonoBehaviour
         StoveIsOn = false;
         if (CurrentPanOnStove != null)
             CurrentPanOnStove.StopCooking();
-        
+
+        //audio
+        StopSoundStoveOn();
+    }
+
+    //audio
+    private void PlaySoundStoveOn()
+    {
+        AkSoundEngine.PostEvent("Stove_On", gameObject);
+
+        Debug.Log("Sound: Stove On");
+    }
+
+    private void StopSoundStoveOn()
+    {
+        AkSoundEngine.PostEvent("Stove_Off", gameObject);
+
+        Debug.Log("Sound: Stove Off");
     }
 }

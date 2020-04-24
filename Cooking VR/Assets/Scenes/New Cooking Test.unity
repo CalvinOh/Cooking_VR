@@ -171,6 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsHeated: 0
+  CurrentPattyOnPan: {fileID: 0}
+  isSnapped: 0
+  bottomPanPositon: {fileID: 0}
+  wasGrabbed: 0
 --- !u!135 &266389472
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -430,6 +434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoveIsOn: 1
+  CurrentPanOnStove: {fileID: 0}
+  Fire: {fileID: 0}
 --- !u!23 &358298586
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -559,6 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCookAmount: 0
   currentlyCooking: 0
+  VisualObjects: []
 --- !u!65 &481248743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1032,6 +1039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCookAmount: 0
   currentlyCooking: 0
+  VisualObjects: []
 --- !u!65 &1291790158
 BoxCollider:
   m_ObjectHideFlags: 0

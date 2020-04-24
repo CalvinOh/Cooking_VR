@@ -35,11 +35,12 @@ public class Ketchup : MonoBehaviour
     {
         if (hitNotStackable)
         {
-            timeStored = Time.time;
+            
         }
 
         if(Time.time >= timeStored + 5 && hitNotStackable)
         {
+            Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject);
         }
     }
@@ -57,6 +58,7 @@ public class Ketchup : MonoBehaviour
             if (!collision.gameObject.GetComponent<Stackable>())
             {
                 hitNotStackable = true;
+                timeStored = Time.time;
             }
             hitActive = true;
         }

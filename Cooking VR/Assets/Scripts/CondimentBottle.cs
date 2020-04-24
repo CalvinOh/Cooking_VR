@@ -33,6 +33,9 @@ namespace Valve.VR.InteractionSystem
                 {
                     Debug.Log("Squeeze");
                     SpawnCondiment();
+
+                    //audio
+                    PlaySoundUseCondiment();
                 }
             }
         }
@@ -50,6 +53,12 @@ namespace Valve.VR.InteractionSystem
             temp.GetComponent<Rigidbody>().AddForce(this.transform.up * 1000);
             temp.transform.localScale = new Vector3(1, 1, 1);
             temp.gameObject.transform.parent = null;
+        }
+
+        //audio
+        private void PlaySoundUseCondiment()
+        {
+            AkSoundEngine.PostEvent("Use_Condiment", gameObject);
         }
     }
 }
