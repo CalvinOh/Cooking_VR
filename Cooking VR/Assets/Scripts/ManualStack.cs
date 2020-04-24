@@ -81,6 +81,20 @@ public class ManualStack : MonoBehaviour
 
     }
 
+    private void preventSlicesStacking(ManualStack other)
+    {
+        if(this.ingredientName == OrderManager.Ingridents.Cheese ||
+            this.ingredientName == OrderManager.Ingridents.Pickle || 
+            this.ingredientName == OrderManager.Ingridents.Tomato)
+        {
+            if(this.ingredientName == other.ingredientName)
+            {
+                canStack = false;
+            }
+        }
+        
+    }
+
     private void SetThickness()
     {
         if(thickness == 0)

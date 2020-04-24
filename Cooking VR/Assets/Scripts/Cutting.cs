@@ -61,6 +61,10 @@ namespace Valve.VR.InteractionSystem
 
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<MeshCollider>().enabled = true;
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<Interactable>().enabled = true;
+
+                    if (other.gameObject.transform.GetChild(temp - 1).TryGetComponent(out SphereCollider sc))
+                        sc.enabled = true;
+
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<Rigidbody>().isKinematic = false;
                     other.gameObject.transform.GetChild(temp - 1).transform.parent = null;
                 }
