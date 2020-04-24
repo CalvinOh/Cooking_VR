@@ -207,6 +207,8 @@ public class ManualStack : MonoBehaviour
         this.Parent.gameObject.transform.rotation = Quaternion.identity;//.Set(0, 0, 0, ogRot.w);
         //Quaternion thisOgRot = this.transform.rotation; //this.gameObject.transform.rotation.Set(0, 0, 0, this.transform.rotation.w);
         this.gameObject.transform.rotation = Quaternion.identity;//thisOgRot.x = thisOgRot.y = thisOgRot.z = 0;
+
+
         this.Rb.isKinematic = true;
 
         //this.verDistanceOffset += parent.GetComponent<ManualStack>().verDistanceOffset;
@@ -235,6 +237,9 @@ public class ManualStack : MonoBehaviour
         
         Vector3 newRot = new Vector3(0, UnityEngine.Random.Range(0f,360f), 0);
         this.transform.Rotate(newRot, Space.Self);//Quaternion.Euler(0, r.Next(360), 0);
+        
+        if (this.ingredientName == OrderManager.Ingridents.Cheese)
+            this.gameObject.transform.Rotate(Vector3.forward, 90);
 
         this.gameObject.transform.parent = this.Parent.transform;
         Parent.GetComponent<SphereCollider>().enabled = false;
