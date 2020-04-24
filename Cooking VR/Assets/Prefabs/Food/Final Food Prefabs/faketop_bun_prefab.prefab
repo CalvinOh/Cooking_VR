@@ -231,8 +231,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 17.207298
-  m_Center: {x: 0.000011444092, y: 3.1701617, z: -0.000017166138}
+  m_Radius: 14
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8886649251496530345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +252,7 @@ MonoBehaviour:
   ingredientName: 12
   IsMasterParent: 0
   isHeld: 0
+  vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0
   scaleRatio: 0
   verDistanceOffset: 0

@@ -35,12 +35,15 @@ public class ManualStack : MonoBehaviour
 
     public bool isHeld = false;
 
+    [SerializeField]
+    public Vector3 vec3offset;
+
+    [SerializeField]
     public float thickness;
     public float scaleRatio;
     public float verDistanceOffset;
-    private float StackRotationAngle;
-    public bool TestDrop = false;
-    public bool falling = false;
+    public bool TestDrop = false; // = true if you'd like to test without going into VR to test.
+    public bool falling = false; // This is controlled by the ingredient falling with gravity.
 
 
     // Start is called before the first frame update
@@ -54,44 +57,53 @@ public class ManualStack : MonoBehaviour
         topStackPoint = bottomStackPoint = Vector3.zero;
 
         scaleRatio = 1;// 5;//(100 / this.transform.localScale.y);
-        // Gets thickness and rounds it to the nearest thousandth (3 decimal places)
-        thickness = (this.GetComponent<Collider>().bounds.size.y * scaleRatio) / 2;
-        thickness = (float)(Math.Round(thickness * 1000f) / 1000f);
-        this.verDistanceOffset = this.thickness;
+                       // Gets thickness and rounds it to the nearest thousandth (3 decimal places)
+        SetThickness();
 
         // Accounting for "vertically sliced" ingredients. 
-        switch (this.ingredientName)
+        //switch (this.ingredientName)
+        //{
+        //    case OrderManager.Ingridents.Cheese:
+        //    case OrderManager.Ingridents.Pickle:
+        //    case OrderManager.Ingridents.Tomato:
+        //        {
+        //            this.StackRotationAngle = 90;
+        //            break;
+        //        }
+        //    default:
+        //        {
+        //            this.StackRotationAngle = 0;
+        //            break;
+        //        }
+        //}
+    }
+
+    private void SetThickness()
+    {
+        if(thickness == 0)
         {
-            case OrderManager.Ingridents.Cheese:
-            case OrderManager.Ingridents.Pickle:
-            case OrderManager.Ingridents.Tomato:
-                {
-                    this.StackRotationAngle = 90;
-                    break;
-                }
-            default:
-                {
-                    this.StackRotationAngle = 0;
-                    break;
-                }
+            thickness = (this.GetComponent<Collider>().bounds.extents.y * scaleRatio);// / 2;
+            thickness = (float)(Math.Round(thickness * 1000f) / 1000f);
+            this.verDistanceOffset = this.thickness;
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckFalling();
-        if(this.interactable.attachedToHand.currentAttachedObject.Equals(this.gameObject))
-        {
-            // being grabbed
-            this.Parent.GetComponent<ManualStack>().RemoveChild(this.gameObject);
-            this.UnassignParent();
-        }
+        //if(this.interactable.attachedToHand.currentAttachedObject.Equals(this.gameObject))
+        //{
+        //    // being grabbed
+        //    this.Parent.GetComponent<ManualStack>().RemoveChild(this.gameObject);
+        //    this.UnassignParent();
+        //}
     }
 
     private void CheckFalling()
     {
-        if (this.Rb.velocity.y > 0 || this.Rb.velocity.y < 0)
+        if (this.Rb.velocity.y > 0.1f || this.Rb.velocity.y < -0.1f)
         {
             falling = true;
         }
@@ -117,7 +129,15 @@ public class ManualStack : MonoBehaviour
 
             if ((TestDrop && falling))
             {
-                this.AssignParent(other.gameObject);
+                if(ms.Parent != this.gameObject)
+                {
+                    //other.gameObject.transform.SetPositionAndRotation(other.gameObject.transform.position, Quaternion.identity);
+                    //this.gameObject.transform.SetPositionAndRotation(this.gameObject.transform.position, Quaternion.identity);
+                    //other.gameObject.transform.rotation = Quaternion.identity;//.Set(0, 0, 0, ogRot.w);
+                    ////Quaternion thisOgRot = this.transform.rotation; //this.gameObject.transform.rotation.Set(0, 0, 0, this.transform.rotation.w);
+                    //this.gameObject.transform.rotation = Quaternion.identity;//thisOgRot.x = thisOgRot.y = thisOgRot.z = 0;
+                    this.AssignParent(other.gameObject);
+                }
             }
         }
     }
@@ -148,12 +168,16 @@ public class ManualStack : MonoBehaviour
         this.Parent = parent;
         this.Rb.velocity = Vector3.zero;
         falling = false;
+
+        Quaternion ogRot = this.Parent.transform.rotation;
+        this.Parent.gameObject.transform.rotation = Quaternion.identity;//.Set(0, 0, 0, ogRot.w);
+        //Quaternion thisOgRot = this.transform.rotation; //this.gameObject.transform.rotation.Set(0, 0, 0, this.transform.rotation.w);
+        this.gameObject.transform.rotation = Quaternion.identity;//thisOgRot.x = thisOgRot.y = thisOgRot.z = 0;
         this.Rb.isKinematic = true;
 
         //this.verDistanceOffset += parent.GetComponent<ManualStack>().verDistanceOffset;
         //parent.GetComponent<ManualStack>().verDistanceOffset += this.thickness;
         //Vector3 vec3offset = new Vector3(0, parent.GetComponent<ManualStack>().verDistanceOffset, 0);
-        Vector3 vec3offset;
         if(this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
         {
             vec3offset = new Vector3(0, this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Last().GetComponent<ManualStack>().thickness + this.thickness, 0);
@@ -165,21 +189,21 @@ public class ManualStack : MonoBehaviour
             Debug.Log($"{this.gameObject.name} is stacking to {this.Parent.gameObject.name}");
         }
 
-        Quaternion ogRot = this.Parent.transform.rotation;
-        this.Parent.transform.rotation.Set(0, 0, 0, ogRot.w);
-        Quaternion thisOgRot = this.transform.rotation; //this.gameObject.transform.rotation.Set(0, 0, 0, this.transform.rotation.w);
-        thisOgRot.x = thisOgRot.y = thisOgRot.z = 0;
 
         if (this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
-            this.gameObject.transform.SetPositionAndRotation((this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Last().transform.position + vec3offset), thisOgRot);
+            this.gameObject.transform.SetPositionAndRotation((this.Parent.GetComponent<ManualStack>().ChildrenGameObjects.Last().transform.position + vec3offset), Quaternion.identity);
         else
-            this.gameObject.transform.SetPositionAndRotation((this.Parent.transform.position + vec3offset), thisOgRot);
+            this.gameObject.transform.SetPositionAndRotation((this.Parent.transform.position + vec3offset), Quaternion.identity);
 
         //this.gameObject.transform.position = this.Parent.transform.position + offset;
 
         this.Parent.transform.rotation = ogRot;
+        
+        Vector3 newRot = new Vector3(0, UnityEngine.Random.Range(0f,360f), 0);
+        this.transform.Rotate(newRot, Space.Self);//Quaternion.Euler(0, r.Next(360), 0);
 
         this.gameObject.transform.parent = this.Parent.transform;
+        Parent.GetComponent<SphereCollider>().enabled = false;
         this.Parent.GetComponent<ManualStack>().AddChild(this.gameObject);
     }
 

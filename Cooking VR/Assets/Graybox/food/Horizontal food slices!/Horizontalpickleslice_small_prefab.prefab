@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -1504981713932161579}
   - component: {fileID: 5730491700168905100}
   - component: {fileID: 2398666347204287093}
-  - component: {fileID: 2070584674062302747}
   - component: {fileID: 8501571067217180821}
   - component: {fileID: 2227417315487329279}
+  - component: {fileID: 7009885794867867177}
+  - component: {fileID: 3178092663883398869}
   m_Layer: 0
   m_Name: Horizontalpickleslice_small_prefab
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2479724518342254724}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08299514, y: 1.5703619, z: -2.8963258}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,28 +114,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -7298693479248637319, guid: c0666c3404e420f46ab6e30c105eb151, type: 3}
---- !u!114 &2070584674062302747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2479724518342254724}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bebe976d3726ec4a805614011d1710d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ParentGameObject: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
-  ChildrenGameObjects: []
-  ingredientName: 0
-  IsMasterParent: 0
-  wasGrabbed: 0
-  thickness: 0
-  scaleRatio: 0
-  distanceOffset: 0
 --- !u!114 &8501571067217180821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,3 +220,41 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!114 &7009885794867867177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479724518342254724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Parent: {fileID: 0}
+  topStackPoint: {x: 0, y: 0, z: 0}
+  bottomStackPoint: {x: 0, y: 0, z: 0}
+  ChildrenGameObjects: []
+  ingredientName: 8
+  IsMasterParent: 0
+  isHeld: 0
+  vec3offset: {x: 0, y: 0, z: 0}
+  thickness: 0
+  scaleRatio: 0
+  verDistanceOffset: 0
+  TestDrop: 0
+  falling: 0
+--- !u!135 &3178092663883398869
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2479724518342254724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 3.8452454
+  m_Center: {x: 0, y: 0, z: 0}
