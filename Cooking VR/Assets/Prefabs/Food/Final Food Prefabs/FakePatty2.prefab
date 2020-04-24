@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 8550027380373170974}
   - component: {fileID: 2666688687196310486}
   - component: {fileID: 2690535474677168803}
+  - component: {fileID: 3442252781225642402}
   m_Layer: 0
   m_Name: FakePatty2
   m_TagString: Patty
@@ -605,3 +606,23 @@ MonoBehaviour:
   verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+--- !u!114 &3442252781225642402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8713728912392120430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e66f650049ce444bd2151ea931dfee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCookAmount: 0
+  currentlyCooking: 0
+  VisualObjects:
+  - {fileID: 6603475891553284149}
+  - {fileID: 1057960238141492233}
+  - {fileID: 2828311496538876301}
+  - {fileID: 469263682594616598}
+  - {fileID: 850212008800846304}

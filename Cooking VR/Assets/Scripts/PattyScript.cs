@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Stackable))]
 public class PattyScript : MonoBehaviour
 {
     //Originally prototyped and created by P3DR0, later perfected by Jiening
@@ -13,7 +12,7 @@ public class PattyScript : MonoBehaviour
 
     private float[] donenessRefs = {0, 10, 20, 30, 40 };
     private int currentStage;
-    private Stackable MyStackScript;
+    private ManualStack MyStackScript;
     [SerializeField]// serialized for debugging
     private bool currentlyCooking; // Is the object inside a cookBox? If true, will continue cooking.
 
@@ -23,7 +22,7 @@ public class PattyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MyStackScript = this.GetComponent<Stackable>();
+        MyStackScript = this.GetComponent<ManualStack>();
         currentCookAmount = 0;
         MyStackScript.ingredientName = OrderManager.Ingridents.RawPatty;
         currentStage = 0;
