@@ -57,8 +57,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
@@ -66,9 +64,9 @@ MonoBehaviour:
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &178247951197645250
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -95,18 +93,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
-  thickness: 0.015
+  thickness: 0.014
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &1427842221051670753
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -133,18 +129,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
-  thickness: 0.015
+  thickness: 0.01
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &3515973156847702647
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -171,8 +165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
@@ -180,9 +172,9 @@ MonoBehaviour:
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &9214511841995584216
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -209,8 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
@@ -218,9 +208,9 @@ MonoBehaviour:
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &901027949181161070
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -247,18 +237,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
-  thickness: 0.015
+  thickness: 0.009
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &2735472878074325868
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -285,8 +273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
@@ -294,9 +280,9 @@ MonoBehaviour:
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!135 &1906028435068223325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -323,18 +309,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 11
   IsMasterParent: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
-  thickness: 0.015
+  thickness: 0.014
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!1001 &442524986770303503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,12 +354,12 @@ PrefabInstance:
     - target: {fileID: 858056889117860935, guid: 4935a6271d573404b98312f31c9845f7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 858056889117860935, guid: 4935a6271d573404b98312f31c9845f7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 858056889117860935, guid: 4935a6271d573404b98312f31c9845f7,
         type: 3}
@@ -395,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 858056889117860935, guid: 4935a6271d573404b98312f31c9845f7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 858056889117860935, guid: 4935a6271d573404b98312f31c9845f7,
         type: 3}
