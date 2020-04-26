@@ -22,7 +22,7 @@ public class CharacterTriggers : MonoBehaviour
     private float VOTimer;
 
     //this shall be the queue of the dialogue that is to be spoken.
-    private List<int> VOQueue;
+    private List<int> VOQueue = new List<int>();
 
     System.Random rnd = new System.Random();
 
@@ -38,8 +38,9 @@ public class CharacterTriggers : MonoBehaviour
 
     private void IdleDialogue()
     {
+        int rndLine = rnd.Next(0, 5);
         //adds a random voice line to be played at the end of the queue, if something else more important has come up to be mentioned than it shall be inserted at the beginning of VOQueue.
-        VOQueue.Add(rnd.Next(0, 5)); //0 through 5 are lines that require no prerequisite to be spoken.
+        VOQueue.Add(rndLine); //0 through 5 are lines that require no prerequisite to be spoken.
         switch (VOQueue[0])
         {
             //invokes that are commented out are lines that have yet to be implemented.
