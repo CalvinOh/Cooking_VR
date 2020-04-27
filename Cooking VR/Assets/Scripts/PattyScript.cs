@@ -125,7 +125,7 @@ public class PattyScript : MonoBehaviour
     //audio
     private void PlaySoundBurgerCook()
     {
-        AkSoundEngine.PostEvent("Burger_Cook", gameObject);
+        AkSoundEngine.PostEvent("Burger_Cook_Start", gameObject);
     }
 
     private void StopSoundBurgerCook()
