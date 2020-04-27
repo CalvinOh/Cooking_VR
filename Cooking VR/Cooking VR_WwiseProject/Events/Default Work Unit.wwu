@@ -443,6 +443,26 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{7D298695-C4AF-4AC6-9250-D593AAEA0801}" ShortID="312436358">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_knife_1" ID="{54FAB98A-B625-453A-938C-4AE7319839E0}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{207B99AB-462B-4F68-90F0-0ACE129812DB}" ShortID="997339581">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_knife_2" ID="{505A012C-F310-4DF5-B9E6-A57234C88912}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Stack" ID="{1EAD5F9D-9D15-42DC-B118-DE4E3F01296E}">
@@ -473,6 +493,57 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sx_env_fridge" ID="{9BA1DCF4-F46B-426D-A14C-81BD26EADA58}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Meat" ID="{1D4B9BA7-9B2D-4D61-9F4B-42087331926D}">
+					<ChildrenList>
+						<Action Name="" ID="{97D6D90F-7708-4F43-AF33-CDF104A53378}" ShortID="685632910">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_meat_impact_1" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Extinguisher" ID="{9844A3A9-A087-479E-8687-5CA01AECD403}">
+					<ChildrenList>
+						<Action Name="" ID="{D17B7AE2-965D-480C-8F10-A274FFA853E6}" ShortID="507331990">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_impact_extinguisher" ID="{1072C0F2-C0F2-4773-A55D-492999C6A5D5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Knife" ID="{A8C6902B-8FF6-40FA-907C-71FBAE564D29}">
+					<ChildrenList>
+						<Action Name="" ID="{2DB5494C-49A8-416B-82A0-07A772C3BFC1}" ShortID="581278573">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_knife_1" ID="{54FAB98A-B625-453A-938C-4AE7319839E0}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3FAC888A-DFEA-429B-BB19-B2FE81C80F47}" ShortID="71839660">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_knife_2" ID="{505A012C-F310-4DF5-B9E6-A57234C88912}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Silverware" ID="{4769CBB5-6CA8-4C1C-A009-AAEA35D66F19}">
+					<ChildrenList>
+						<Action Name="" ID="{1EF4F7EF-E922-4D41-A8E0-FF6A432FD90D}" ShortID="772115611">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_silverware" ID="{8F286FBE-72D6-4090-85CC-95222A7BF74C}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

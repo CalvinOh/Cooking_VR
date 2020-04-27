@@ -13804,6 +13804,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4248077888171233819, guid: 7fbf2adcfb016a44e82b798c25fdc4f2,
+        type: 3}
+      propertyPath: enableActionOnEvent
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fbf2adcfb016a44e82b798c25fdc4f2, type: 3}
 --- !u!1 &1907475632
@@ -21457,6 +21462,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5975173268295913965, guid: fdc4c57d571d9e748b70694d59cd5a66,
+        type: 3}
+      propertyPath: triggerObject
+      value: 
+      objectReference: {fileID: 2542598723057055494, guid: e1418570035a6ed4a9e8f2460dc9de24,
+        type: 3}
     - target: {fileID: 7101516880756614425, guid: fdc4c57d571d9e748b70694d59cd5a66,
         type: 3}
       propertyPath: hideHandOnAttach
@@ -21484,6 +21495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 861876457, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
+    - {fileID: 5975173268295913965, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fdc4c57d571d9e748b70694d59cd5a66, type: 3}
 --- !u!4 &7101516881600046759 stripped
 Transform:

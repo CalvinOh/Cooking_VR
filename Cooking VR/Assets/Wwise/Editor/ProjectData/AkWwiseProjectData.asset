@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586140270001141425
+    m_lastTime: -8586135830133831246
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586140270203761548
+    m_lastTime: -8586135829399626824
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -145,6 +145,42 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.689042
       minDuration: 0.443042
+    - name: Impact_Extinguisher
+      guid: a9a3449887a09e4786875ca01aecd403
+      id: 2236363231
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Extinguisher
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Extinguisher
+      maxAttenuation: 3
+      maxDuration: 0.47
+      minDuration: 0.430992
+    - name: Impact_Knife
+      guid: 2b90c6a8f68ffa40907c71fbae564d29
+      id: 2552890829
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Knife
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Knife
+      maxAttenuation: 3
+      maxDuration: 0.522834
+      minDuration: 0.409086
+    - name: Impact_Meat
+      guid: a79b4b1d2d9b614d9f4b42087331926d
+      id: 3360486203
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Meat
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Meat
+      maxAttenuation: 3
+      maxDuration: 0.288396
+      minDuration: 0.288396
     - name: Impact_Plate
       guid: a934361785640c488531ecea6d7c33cf
       id: 803254130
@@ -154,7 +190,7 @@ MonoBehaviour:
       - ElementName: Impact_Plate
         ObjectType: 3
       Path: Default Work Unit\Impact_Plate
-      maxAttenuation: 0
+      maxAttenuation: 3
       maxDuration: 0.254989
       minDuration: 0.168604
     - name: Knife_Cut_Generic
@@ -554,7 +590,7 @@ MonoBehaviour:
       - ElementName: Stack
         ObjectType: 3
       Path: Default Work Unit\Stack
-      maxAttenuation: 2
+      maxAttenuation: 3
       maxDuration: 0.152083
       minDuration: 0.152083
     - name: Stove_Off
