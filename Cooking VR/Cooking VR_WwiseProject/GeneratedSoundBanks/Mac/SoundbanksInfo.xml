@@ -122,7 +122,51 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="803254130" Name="Impact_Plate" ObjectPath="\Events\Default Work Unit\Impact_Plate" DurationType="OneShot" DurationMin="0.168604" DurationMax="0.254989">
+				<Event Id="2236363231" Name="Impact_Extinguisher" ObjectPath="\Events\Default Work Unit\Impact_Extinguisher" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.430992" DurationMax="0.470000">
+					<IncludedMemoryFiles>
+						<File Id="881847866" Language="SFX">
+							<ShortName>sx_impact_extinguisher.wav</ShortName>
+							<Path>SFX\sx_impact_extinguisher_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2552890829" Name="Impact_Knife" ObjectPath="\Events\Default Work Unit\Impact_Knife" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.409086" DurationMax="0.522834">
+					<IncludedMemoryFiles>
+						<File Id="31563926" Language="SFX">
+							<ShortName>sx_impact_knife_Layer_1_C.wav</ShortName>
+							<Path>SFX\sx_impact_knife_Layer_1_C_10C4C929.wem</Path>
+						</File>
+						<File Id="84462139" Language="SFX">
+							<ShortName>sx_impact_knife_Layer_2_B.wav</ShortName>
+							<Path>SFX\sx_impact_knife_Layer_2_B_10C4C929.wem</Path>
+						</File>
+						<File Id="327731463" Language="SFX">
+							<ShortName>sx_impact_knife_Layer_2_C.wav</ShortName>
+							<Path>SFX\sx_impact_knife_Layer_2_C_10C4C929.wem</Path>
+						</File>
+						<File Id="555508597" Language="SFX">
+							<ShortName>sx_impact_knife_Layer_1_B.wav</ShortName>
+							<Path>SFX\sx_impact_knife_Layer_1_B_10C4C929.wem</Path>
+						</File>
+						<File Id="848107566" Language="SFX">
+							<ShortName>sx_impact_knife_Layer_1_A.wav</ShortName>
+							<Path>SFX\sx_impact_knife_Layer_1_A_10C4C929.wem</Path>
+						</File>
+						<File Id="993571655" Language="SFX">
+							<ShortName>sx_impact_knife_Layer_2_A.wav</ShortName>
+							<Path>SFX\sx_impact_knife_Layer_2_A_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3360486203" Name="Impact_Meat" ObjectPath="\Events\Default Work Unit\Impact_Meat" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.288396" DurationMax="0.288396">
+					<IncludedMemoryFiles>
+						<File Id="472009487" Language="SFX">
+							<ShortName>sx_meat_impact_1.wav</ShortName>
+							<Path>SFX\sx_meat_impact_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="803254130" Name="Impact_Plate" ObjectPath="\Events\Default Work Unit\Impact_Plate" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.168604" DurationMax="0.254989">
 					<IncludedMemoryFiles>
 						<File Id="163219809" Language="SFX">
 							<ShortName>sx_impact_plate_3.wav</ShortName>
@@ -378,7 +422,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="996591275" Name="Stack" ObjectPath="\Events\Default Work Unit\Stack" MaxAttenuation="2.000000" DurationType="OneShot" DurationMin="0.152083" DurationMax="0.152083">
+				<Event Id="996591275" Name="Stack" ObjectPath="\Events\Default Work Unit\Stack" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152083" DurationMax="0.152083">
 					<IncludedMemoryFiles>
 						<File Id="460860198" Language="SFX">
 							<ShortName>sx_plr_grab_v2.wav</ShortName>

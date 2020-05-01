@@ -108,6 +108,8 @@ public class Stackable : MonoBehaviour
              * PLAY SOUND HERE!!!
              *
              */
+            //audio: I attempted to put the sound here but it played far too often, even when objects were being set down on the counter or bumped into each other without stacking. I put it on "GlueGameObjectToParent(Rigidbody rb)" instead, and this seems to work best.
+
             //Debug.Log($"Beep! From {this.gameObject.name}");
         }
 
@@ -292,6 +294,9 @@ public class Stackable : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.isKinematic = true;
         rb.freezeRotation = true;
+
+        //audio
+        PlaySoundStack();
     }
 
     private void CheckChildrenList(Stackable ParentStackScript, GameObject Child)
@@ -315,5 +320,11 @@ public class Stackable : MonoBehaviour
             this.ChildrenGameObjects.Clear();
         }
         
+    }
+
+    //audio
+    private void PlaySoundStack()
+    {
+        AkSoundEngine.PostEvent("Stack", gameObject);
     }
 }

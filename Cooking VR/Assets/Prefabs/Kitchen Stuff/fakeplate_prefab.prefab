@@ -126,8 +126,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 27.94001
-  m_Center: {x: -0.0000038146973, y: -1.0106254, z: -0.0000038146973}
+  m_Radius: 23
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &9041396009603713091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,15 +264,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
   ingredientName: 14
   IsMasterParent: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
-  thickness: 0.01
+  thickness: 0.019
   scaleRatio: 1
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
