@@ -8,6 +8,7 @@ public class PanScript : MonoBehaviour
     [SerializeField]
     private bool IsHeated;
 
+    [SerializeField]//serialized for debugging
     private PattyScript CurrentPattyOnPan;
 
     [SerializeField]
@@ -111,13 +112,15 @@ public class PanScript : MonoBehaviour
     public void StartCooking()
     {
         IsHeated = true;
+        if(CurrentPattyOnPan!=null)
         CurrentPattyOnPan.StartCooking();
     }
 
     public void StopCooking()
     {
         IsHeated = false;
-        CurrentPattyOnPan.StopCooking();
+        if (CurrentPattyOnPan != null)
+            CurrentPattyOnPan.StopCooking();
     }
 
 }

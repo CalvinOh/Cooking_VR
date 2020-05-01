@@ -6,7 +6,6 @@ namespace Valve.VR.InteractionSystem
 {
     public class Cutting : MonoBehaviour
     {
-
         [SerializeField]
         private bool isCutting;
 
@@ -43,14 +42,17 @@ namespace Valve.VR.InteractionSystem
 
         private void OnTriggerEnter(Collider other)
         {
-
             if (isCutting == false && cutTime <= Time.time)
             {
                 isCutting = true;
                 Debug.Log(isCutting);
                 cutTime = Time.time + nextCut;
+
                 if (other.gameObject.CompareTag("Cutable"))
                 {
+                    //audio
+                    PlaySoundCutGeneric();
+
                     Debug.Log("Cutting");
 
                     int temp = other.gameObject.transform.childCount;
@@ -59,13 +61,14 @@ namespace Valve.VR.InteractionSystem
 
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<MeshCollider>().enabled = true;
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<Interactable>().enabled = true;
+
+                    if (other.gameObject.transform.GetChild(temp - 1).TryGetComponent(out SphereCollider sc))
+                        sc.enabled = true;
+
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<Rigidbody>().isKinematic = false;
                     other.gameObject.transform.GetChild(temp - 1).transform.parent = null;
                 }
-
             }
-
-           
         }
 
         private void OnTriggerExit(Collider other)
@@ -74,8 +77,10 @@ namespace Valve.VR.InteractionSystem
             Debug.Log(isCutting);
         }
 
+        //audio
+        private void PlaySoundCutGeneric()
+        {
+            AkSoundEngine.PostEvent("Knife_Cut_Generic", gameObject);
+        }
     }
-
-
 }
-

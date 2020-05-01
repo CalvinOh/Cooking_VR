@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435719699035676384}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.136, y: 3.173, z: -2.168}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
   handFollowTransform: 1
-  highlightOnHover: 1
+  highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
 --- !u!54 &4604493382942651830
@@ -232,5 +232,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentGameObject: {fileID: 0}
+  topStackPoint: {x: 0, y: 0, z: 0}
+  bottomStackPoint: {x: 0, y: 0, z: 0}
   ChildrenGameObjects: []
+  ingredientName: 12
   IsMasterParent: 0
+  wasGrabbed: 0
+  thickness: 0
+  scaleRatio: 0
+  distanceOffset: 0

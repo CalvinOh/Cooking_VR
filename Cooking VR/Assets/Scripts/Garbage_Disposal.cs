@@ -49,8 +49,11 @@ public class Garbage_Disposal : MonoBehaviour
             {
                 if (Time.time >= fullCheckTime)
                 {
-                    Debug.Log("KNOW YOUR PLACE TRASH!");
-                    DeleteItem(true);
+                  if(!other.CompareTag("Pan") || !other.CompareTag("Knife") || !other.CompareTag("Item"))
+                    {
+                        Debug.Log("KNOW YOUR PLACE TRASH!");
+                        DeleteItem(true);
+                    }
                 }
                     
             }

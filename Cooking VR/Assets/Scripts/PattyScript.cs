@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(Stackable))]
 public class PattyScript : MonoBehaviour
 {
     //Originally prototyped and created by P3DR0, later perfected by Jiening
@@ -13,7 +12,7 @@ public class PattyScript : MonoBehaviour
 
     private float[] donenessRefs = {0, 10, 20, 30, 40 };
     private int currentStage;
-    private Stackable MyStackScript;
+    private ManualStack MyStackScript;
     [SerializeField]// serialized for debugging
     private bool currentlyCooking; // Is the object inside a cookBox? If true, will continue cooking.
 
@@ -23,7 +22,7 @@ public class PattyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MyStackScript = this.GetComponent<Stackable>();
+        MyStackScript = this.GetComponent<ManualStack>();
         currentCookAmount = 0;
         MyStackScript.ingredientName = OrderManager.Ingridents.RawPatty;
         currentStage = 0;
@@ -83,10 +82,9 @@ public class PattyScript : MonoBehaviour
     }
 
 
-    /*
     private void OnTriggerEnter(Collider other)
     {
-        //if(other.CompareTag("CookBox"))
+        if(other.CompareTag("CookBox"))
         {
             currentlyCooking = true;
         }
@@ -94,12 +92,11 @@ public class PattyScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if(other.CompareTag("CookBox"))
+        if(other.CompareTag("CookBox"))
         {
             currentlyCooking = false;
         }
     }
-    */
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -114,10 +111,25 @@ public class PattyScript : MonoBehaviour
     public void StartCooking()
     {
         currentlyCooking = true;
+        //audio
+        PlaySoundBurgerCook();
     }
 
     public void StopCooking()
     {
         currentlyCooking = false;
+        //audio
+        StopSoundBurgerCook();
+    }
+
+    //audio
+    private void PlaySoundBurgerCook()
+    {
+        AkSoundEngine.PostEvent("Burger_Cook_Start", gameObject);
+    }
+
+    private void StopSoundBurgerCook()
+    {
+        AkSoundEngine.PostEvent("Burger_Cook_Stop", gameObject);
     }
 }

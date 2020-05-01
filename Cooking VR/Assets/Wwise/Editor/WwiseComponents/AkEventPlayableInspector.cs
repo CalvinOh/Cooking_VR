@@ -1,4 +1,5 @@
-﻿#if UNITY_EDITOR && UNITY_2017_1_OR_NEWER
+﻿#if UNITY_EDITOR
+#if !AK_DISABLE_TIMELINE
 
 //////////////////////////////////////////////////////////////////////
 //
@@ -6,6 +7,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
+[System.Obsolete(AkSoundEngine.Deprecation_2019_2_0)]
 [UnityEditor.CustomEditor(typeof(AkEventPlayable))]
 public class AkEventPlayableInspector : UnityEditor.Editor
 {
@@ -21,6 +23,9 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 	public void OnEnable()
 	{
 		m_AkEventPlayable = target as AkEventPlayable;
+		if (m_AkEventPlayable == null)
+			return;
+
 		akEvent = serializedObject.FindProperty("akEvent");
 		emitterObjectRef = serializedObject.FindProperty("emitterObjectRef");
 		retriggerEvent = serializedObject.FindProperty("retriggerEvent");
@@ -32,6 +37,8 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 
 	public override void OnInspectorGUI()
 	{
+		UnityEditor.EditorGUILayout.HelpBox(AkSoundEngine.Deprecation_2019_2_0, UnityEditor.MessageType.Warning);
+
 		serializedObject.Update();
 
 		UnityEngine.GUILayout.Space(UnityEditor.EditorGUIUtility.standardVerticalSpacing);
@@ -51,7 +58,7 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 			if (!UpdateClipInformation(m_AkEventPlayable.owningClip, m_AkEventPlayable.akEvent, serializedObject, UseWwiseEventDuration.boolValue))
 			{
 				UnityEditor.EditorGUILayout.HelpBox(string.Format("The duration of the Wwise event \"{0}\" has not been determined. Playback for this event may be inconsistent. " +
-					"Ensure that the event is associated with a generated Soundbank!", m_AkEventPlayable.akEvent.Name), UnityEditor.MessageType.Warning);
+					"Ensure that the event is associated with a generated SoundBank!", m_AkEventPlayable.akEvent.Name), UnityEditor.MessageType.Warning);
 			}
 
 			if (!UseWwiseEventDuration.boolValue)
@@ -84,8 +91,7 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 	[UnityEditor.InitializeOnLoadMethod]
 	public static void SetupSoundbankSetting()
 	{
-		var WprojPath = AkUtilities.GetFullPath(UnityEngine.Application.dataPath, WwiseSettings.LoadSettings().WwiseProjectPath);
-		AkUtilities.EnableBoolSoundbankSettingInWproj("SoundBankGenerateEstimatedDuration", WprojPath);
+		AkUtilities.EnableBoolSoundbankSettingInWproj("SoundBankGenerateEstimatedDuration", AkWwiseEditorSettings.WwiseProjectAbsolutePath);
 
 		UnityEditor.EditorApplication.update += RunOnce;
 		AkWwiseXMLWatcher.Instance.XMLUpdated += UpdateAllClips;
@@ -188,4 +194,5 @@ public class AkEventPlayableInspector : UnityEditor.Editor
 	}
 }
 
-#endif //#if UNITY_EDITOR && UNITY_2017_1_OR_NEWER
+#endif // !AK_DISABLE_TIMELINE
+#endif //#if UNITY_EDITOR

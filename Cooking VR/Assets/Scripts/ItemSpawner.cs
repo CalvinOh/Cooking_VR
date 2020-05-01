@@ -26,7 +26,7 @@ namespace Valve.VR.InteractionSystem
         private GameObject spawnedObject;
 
         [SerializeField]
-        Hand leftPlayerHand, rightPlayerHand;
+        public static Hand leftPlayerHand, rightPlayerHand;
 
 
         // Start is called before the first frame update
@@ -38,6 +38,17 @@ namespace Valve.VR.InteractionSystem
             isGrabbing.AddOnStateDownListener(TriggerDown, handType);
             isGrabbing.AddOnStateUpListener(TriggerUp, handType);
             spawnedObject = null;
+
+            if(leftPlayerHand == null)
+            {
+                leftPlayerHand = GameObject.Find("RightHand").GetComponent<Hand>().otherHand;
+            }
+            if (rightPlayerHand == null)
+            {
+                rightPlayerHand = GameObject.Find("LeftHand").GetComponent<Hand>().otherHand;
+            }
+
+
         }
 
         private void TriggerUp(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
@@ -60,51 +71,34 @@ namespace Valve.VR.InteractionSystem
         void Update()
         {
         
-
-            if(spawnedObject != null)
-            {
-                UnParentObject();
-            }
-            else
-            {
                 SpawnObject();
-            }
 
-    
-            //if(hasSpawned == true)
-            //{
-
-            //}
-
-            // Debug.Log(Vector3.Distance(this.gameObject.transform.position, playerHand.transform.position).ToString());
         }
 
         void SpawnObject()
         {
-            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.1f )
+            if (Vector3.Distance(this.gameObject.transform.position, leftPlayerHand.transform.position) < 0.2f )
             {
                
                 if (leftPlayerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
                     spawnedObject = Instantiate(objectToSpawn, leftPlayerHand.transform.position, leftPlayerHand.transform.rotation);
-                    spawnedObject.transform.parent = leftPlayerHand.transform;
-                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    leftPlayerHand.AttachObject(spawnedObject, GrabTypes.Pinch);
                     spawnedObject.name = itemName;
                     hasSpawned = true;
                     //Debug.Break();
                     
                 }
             }
-            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.1f)
+            else if (Vector3.Distance(this.gameObject.transform.position, rightPlayerHand.transform.position) < 0.2f)
             {
 
                 if (rightPlayerClicked && !hasSpawned)
                 {
                     Debug.Log("Plate Spawned");
                     spawnedObject = Instantiate(objectToSpawn, rightPlayerHand.transform.position, rightPlayerHand.transform.rotation);
-                    spawnedObject.transform.parent = rightPlayerHand.transform;
-                    spawnedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    rightPlayerHand.AttachObject(spawnedObject, GrabTypes.Pinch);
                     spawnedObject.name = itemName;
                     hasSpawned = true;
                     //Debug.Break();
@@ -112,28 +106,6 @@ namespace Valve.VR.InteractionSystem
                 }
             }
         }
-
-        void UnParentObject()
-        {
-            if (hasSpawned != true && !spawnedObject.GetComponent<Interactable>().attachedToHand)
-            {
-                spawnedObject.transform.parent = null;
-                spawnedObject.GetComponent<Rigidbody>().isKinematic = false;
-                spawnedObject = null;
-            }
-
-        }
-        //private void OnTriggerEnter(Collider other)
-        //{
-        //    if(other.CompareTag("Hand"))
-        //    {
-        //        handInTrigger = true;
-        //    }
-        //}
-        //private void OnTriggerExit(Collider other)
-        //{
-        //    handInTrigger = false;
-        //}
 
 
 

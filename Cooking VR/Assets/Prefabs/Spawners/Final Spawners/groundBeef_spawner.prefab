@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3116260421623183531}
-  m_Mesh: {fileID: -3430761294573367653, guid: b9a5b3ad9c3482e42ae16feab5b7d6fa, type: 3}
+  m_Mesh: {fileID: -3430761294573367653, guid: 7329e87b240f0a74ca2e091b7c6f0e79, type: 3}
 --- !u!23 &7163878302183416440
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
-  m_Mesh: {fileID: -3430761294573367653, guid: b9a5b3ad9c3482e42ae16feab5b7d6fa, type: 3}
+  m_Mesh: {fileID: -3430761294573367653, guid: 7329e87b240f0a74ca2e091b7c6f0e79, type: 3}
 --- !u!114 &1750594728811088792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,12 +131,10 @@ MonoBehaviour:
   hasSpawned: 0
   leftPlayerClicked: 0
   rightPlayerClicked: 0
-  objectToSpawn: {fileID: 5493594179008930285, guid: 59dfd6e61d4b835438bcc7c3a3073ee2,
+  objectToSpawn: {fileID: 8713728912392120430, guid: 9b3eaa0638e81b543a15e5425223fd27,
     type: 3}
-  itemName: 
+  itemName: Patty
   spawnedObject: {fileID: 0}
-  leftPlayerHand: {fileID: 0}
-  rightPlayerHand: {fileID: 0}
 --- !u!114 &8718446491283189665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,4 +152,4 @@ MonoBehaviour:
   forSources: 0
   disableAllOtherActionSets: 0
   activateOnStart: 1
-  deactivateOnDestroy: 1
+  deactivateOnDestroy: 0
