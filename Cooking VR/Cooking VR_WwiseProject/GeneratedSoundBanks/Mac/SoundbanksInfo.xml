@@ -29,7 +29,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1240512178" Name="Bell" ObjectPath="\Events\Default Work Unit\Bell" DurationType="OneShot" DurationMin="1.862336" DurationMax="1.862336">
+				<Event Id="1240512178" Name="Bell" ObjectPath="\Events\Default Work Unit\Bell" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="1.862336" DurationMax="1.862336">
 					<IncludedMemoryFiles>
 						<File Id="208594037" Language="SFX">
 							<ShortName>sx_bell.wav</ShortName>
@@ -179,6 +179,26 @@
 						<File Id="874152463" Language="SFX">
 							<ShortName>sx_impact_plate_2.wav</ShortName>
 							<Path>SFX\sx_impact_plate_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2540397042" Name="Impact_Silverware" ObjectPath="\Events\Default Work Unit\Impact_Silverware" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.397285" DurationMax="0.511111">
+					<IncludedMemoryFiles>
+						<File Id="50696179" Language="SFX">
+							<ShortName>sx_impact_silverware_3.wav</ShortName>
+							<Path>SFX\sx_impact_silverware_3_10C4C929.wem</Path>
+						</File>
+						<File Id="363414120" Language="SFX">
+							<ShortName>sx_impact_silverware_2.wav</ShortName>
+							<Path>SFX\sx_impact_silverware_2_10C4C929.wem</Path>
+						</File>
+						<File Id="444163542" Language="SFX">
+							<ShortName>sx_impact_silverware_4.wav</ShortName>
+							<Path>SFX\sx_impact_silverware_4_10C4C929.wem</Path>
+						</File>
+						<File Id="524998403" Language="SFX">
+							<ShortName>sx_impact_silverware_1.wav</ShortName>
+							<Path>SFX\sx_impact_silverware_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

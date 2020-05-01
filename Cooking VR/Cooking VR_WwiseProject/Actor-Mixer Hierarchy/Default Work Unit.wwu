@@ -575,7 +575,18 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<Sound Name="sx_bell" ID="{C5617843-32DE-4970-AF82-901DDA2C2CFB}" ShortID="859205109">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
 						</Reference>

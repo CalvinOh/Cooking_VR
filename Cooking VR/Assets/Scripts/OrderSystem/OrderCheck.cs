@@ -183,6 +183,9 @@ public class OrderCheck : MonoBehaviour
 
     public void SubmitFood()
     {
+        ////audio
+        //PlaySoundBell();
+
         Debug.Log("Bell rung");
         GameObject Burger = null;
         GameObject Ticket = null;
@@ -278,6 +281,11 @@ public class OrderCheck : MonoBehaviour
         Gizmos.DrawWireSphere(BurgerCheck.position, BurgerCheckRadius);
         Gizmos.DrawWireSphere(TicketCheck.position, TicketCheckRadius);
     }
- 
 
+    ////audio
+    //private void PlaySoundBell()
+    //{
+    //    //add proper GameObject name once bell is implemented
+    //    AkSoundEngine.PostEvent("Bell", GameObject.Find(""));
+    //}
 }

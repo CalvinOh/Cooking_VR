@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586135830133831246
+    m_lastTime: -8586135818669581722
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -47,7 +47,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586135829399626824
+    m_lastTime: -8586135818831354553
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -70,7 +70,7 @@ MonoBehaviour:
       - ElementName: Bell
         ObjectType: 3
       Path: Default Work Unit\Bell
-      maxAttenuation: 0
+      maxAttenuation: 3
       maxDuration: 1.862336
       minDuration: 1.862336
     - name: Burger_Cook_Start
@@ -193,6 +193,18 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: 0.254989
       minDuration: 0.168604
+    - name: Impact_Silverware
+      guid: b5cb6947a86c1c4ca009aaea35d66f19
+      id: 2540397042
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Silverware
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Silverware
+      maxAttenuation: 3
+      maxDuration: 0.511111
+      minDuration: 0.397285
     - name: Knife_Cut_Generic
       guid: d98af6638ea9ff4e9d007de248cb8bd9
       id: 2831748783
