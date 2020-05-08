@@ -48,6 +48,8 @@ public class ManualStack : MonoBehaviour
     [SerializeField]
     private bool canStack = false;
 
+    private ItemSpawner spawner;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,10 +61,16 @@ public class ManualStack : MonoBehaviour
         lastHeld = 0;
         stackWindowLength = 0.3f;
 
+
+        if(spawner == null)
+        {
+            spawner = FindObjectOfType<ItemSpawner>();
+        }
+
         if(leftHand == null || rightHand == null)
         {
-            leftHand = ItemSpawner.leftPlayerHand;
-            rightHand = ItemSpawner.rightPlayerHand;
+            leftHand = spawner.leftPlayerHand;
+            rightHand = spawner.rightPlayerHand;
         }
 
         scaleRatio = 1;// 5;//(100 / this.transform.localScale.y);
