@@ -95,15 +95,11 @@ public class OrderSpawn : MonoBehaviour
 
                 }
             }
-            else if (5 <= Decider && Decider < 20)
+            else if (5 <= Decider && Decider < 27)
             {
                 TempBurger.Add(OrderManager.Ingridents.Tomato);
             }
-            else if (20 <= Decider && Decider < 35)
-            {
-                TempBurger.Add(OrderManager.Ingridents.Lettuce);
-            }
-            else if (35 <= Decider && Decider < 50)
+            else if (27 <= Decider && Decider < 50)
             {
                 TempBurger.Add(OrderManager.Ingridents.Pickle);
             }
