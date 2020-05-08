@@ -42,9 +42,9 @@ public class ArchivedTicket : MonoBehaviour
         Body.text += "Extra: \n ";
         Body.text += "Missing: \n ";
 
-        Body2.text = MyOrder.IncorrectPlacement + "   -----   -" + MyOrder.IncorrectPlacement * 10;
-        Body2.text += MyOrder.ExtraItems + "   -----   -" + MyOrder.ExtraItems * 50;
-        Body2.text += MyOrder.MissingItems + "   -----   -" + MyOrder.MissingItems * 100;
+        Body2.text = MyOrder.IncorrectPlacement + "   -----   -" + MyOrder.IncorrectPlacement * 10 + "\n";
+        Body2.text += MyOrder.ExtraItems + "   -----   -" + MyOrder.ExtraItems * 50 + "\n";
+        Body2.text += MyOrder.MissingItems + "   -----   -" + MyOrder.MissingItems * 100 + "\n";
 
 
 

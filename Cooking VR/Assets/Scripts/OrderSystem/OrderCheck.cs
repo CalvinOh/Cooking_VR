@@ -47,7 +47,8 @@ public class OrderCheck : MonoBehaviour
         //this function returns a completed order to be achived for the end of the game
         OrderManager.FinishedOrder OrderToArchive = new OrderManager.FinishedOrder();
         OrderToArchive.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
-        OrderToArchive.OriginalOrder = OrderToServe;
+        OrderManager.Order OrderToGoWithArchive = OrderToServe;
+        OrderToArchive.OriginalOrder = OrderToGoWithArchive;
         OrderToArchive.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
         OrderToArchive.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
         OrderToArchive.OrderNum = OrderToServe.OrderNum;
