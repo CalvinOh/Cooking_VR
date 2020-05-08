@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class ManualStack : MonoBehaviour
@@ -18,7 +19,8 @@ public class ManualStack : MonoBehaviour
 
     Interactable interactable;
 
-    Hand leftHand, rightHand;
+    static Hand leftHand, rightHand;
+    private Hand[] tempHands;
     /// <summary>
     /// The object's list of children GameObjects
     /// </summary>
@@ -48,7 +50,7 @@ public class ManualStack : MonoBehaviour
     [SerializeField]
     private bool canStack = false;
 
-    private ItemSpawner spawner;
+
 
 
     // Start is called before the first frame update
@@ -62,15 +64,17 @@ public class ManualStack : MonoBehaviour
         stackWindowLength = 0.3f;
 
 
-        if(spawner == null)
-        {
-            spawner = FindObjectOfType<ItemSpawner>();
-        }
-
         if(leftHand == null || rightHand == null)
         {
-            leftHand = spawner.leftPlayerHand;
-            rightHand = spawner.rightPlayerHand;
+            tempHands = FindObjectsOfType<Hand>();
+            foreach (Hand h in tempHands)
+            {
+                if (h.handType == SteamVR_Input_Sources.LeftHand)
+                {
+                    leftHand = h;
+                    rightH = h.otherHand;
+                }
+            }
         }
 
         scaleRatio = 1;// 5;//(100 / this.transform.localScale.y);
