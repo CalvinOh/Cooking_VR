@@ -59,7 +59,7 @@ public class ManualStack : MonoBehaviour
         this.IsMasterParent = false;
         ChildrenGameObjects = new List<GameObject>();
         this.interactable = this.GetComponent<Interactable>();
-        lastHeld = 0;
+        lastHeld = -1;
         stackWindowLength = 0.3f;
 
 
@@ -139,7 +139,7 @@ public class ManualStack : MonoBehaviour
                 }
 
                 isHeld = 0;
-                //this.Rb.isKinematic = false;
+                this.Rb.isKinematic = false;
                 SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetActiveScene());
                 lastHeld = Time.time;
             }
