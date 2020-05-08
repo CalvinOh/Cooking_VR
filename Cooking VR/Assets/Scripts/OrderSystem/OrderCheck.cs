@@ -254,10 +254,8 @@ public class OrderCheck : MonoBehaviour
         Order.Add(OrderManager.Ingridents.MediumPatty);
         Order.Add(OrderManager.Ingridents.Cheese);
         Order.Add(OrderManager.Ingridents.BottomBun);
-
         SubmittedFood.Add(OrderManager.Ingridents.TopBun);
         SubmittedFood.Add(OrderManager.Ingridents.Cheese);
-        SubmittedFood.Add(OrderManager.Ingridents.Lettuce);
         SubmittedFood.Add(OrderManager.Ingridents.MediumPatty);
         SubmittedFood.Add(OrderManager.Ingridents.BottomBun);
 

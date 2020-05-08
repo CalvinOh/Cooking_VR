@@ -38,7 +38,6 @@ public class OrderManager : MonoBehaviour
         BurntPatty = 4,
         Ketchup = 5,
         Tomato = 6,
-        Lettuce = 7,
         Pickle = 8,
         Mayo = 9,
         Mustard = 10,
