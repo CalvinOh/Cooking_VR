@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ILevels : MonoBehaviour
 {
+    [SerializeField]
+    private string LevelHeader;
 
     protected OrderSpawn MyOrderSpawn;
     protected List<List<OrderManager.Ingridents>> PredeterminedOrders;
@@ -28,7 +30,7 @@ public class ILevels : MonoBehaviour
         while (currentOrderNumber < PredeterminedOrders.Count)
         {
             yield return new WaitForSeconds(WaitTimes[currentOrderNumber]);
-            MyOrderSpawn.SpawnPredeterminedOrder(PredeterminedOrders[currentOrderNumber]);
+            MyOrderSpawn.SpawnPredeterminedOrder(PredeterminedOrders[currentOrderNumber],LevelHeader+currentOrderNumber);
             currentOrderNumber++;
         }
         Debug.Log("All orders for the level spawned.");

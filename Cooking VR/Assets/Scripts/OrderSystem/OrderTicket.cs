@@ -26,15 +26,17 @@ public class OrderTicket : MonoBehaviour
     void Start()
     {
         AddFunnyNotes();
-        OrderNumber.text = "Order# "+Random.Range(100000, 999999);
+        
         Note.text = "Note: " + FunnyNotes[Random.Range(0, FunnyNotes.Count)];
     }
 
     public void UpdateTicket(OrderManager.Order OrderA)
     {
+        
         MyOrder = OrderA;
         //Debug.Log(MyOrder.TimeIssued);
         //Debug.Log(MyOrder.TimeExpected);
+        OrderNumber.text = "Order: " + MyOrder.OrderNum;
         int IntTime = 0;
         IntTime = (int)MyOrder.TimeIssued;
         TimeOrdered.text = "Time Ordered: "+ IntTime / 60+":"+IntTime%60;
@@ -44,6 +46,7 @@ public class OrderTicket : MonoBehaviour
         foreach (OrderManager.Ingridents a in MyOrder.Ingredents)
             Body.text += a.ToString() + "\n";
 
+        
 
 
     }

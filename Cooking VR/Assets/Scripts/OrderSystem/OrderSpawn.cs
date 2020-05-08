@@ -12,6 +12,11 @@ public class OrderSpawn : MonoBehaviour
     [SerializeField]
     private List<Transform> OrderLocations;
 
+    [SerializeField]
+    private GameObject ArchivedTicketGO;
+
+    [SerializeField]
+    private GameObject ArchivedTicketsPin;
     private int SpawnLocationNumber;
 
     void Start()
@@ -25,10 +30,10 @@ public class OrderSpawn : MonoBehaviour
 
     }
     
-    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder)
+    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder,string OrderNum)
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
-
+        SpawnedOrder.OrderNum = OrderNum;
         SpawnedOrder.Ingredents = NewOrder;
 
         SpawnedOrder.TimeIssued = Time.fixedTime;
@@ -138,5 +143,14 @@ public class OrderSpawn : MonoBehaviour
         TempBurger.Insert(0,OrderManager.Ingridents.TopBun);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
         return TempBurger;
+    }
+
+    public void SpawnArchivedOrder(OrderManager.FinishedOrder a)
+    {
+        GameObject ArchivedTicket = Instantiate(ArchivedTicketGO, OrderLocations[SpawnLocationNumber % OrderLocations.Count]);
+        ArchivedTicket.GetComponent<ArchivedTicket>().UpdateTicket(a);
+
+
+
     }
 }
