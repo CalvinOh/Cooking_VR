@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
@@ -34,7 +35,7 @@ public class ManualStack : MonoBehaviour
     /// </summary>
     public bool IsMasterParent;
 
-    public bool isHeld = false;
+    public int isHeld = 0; //0 = notHeld, 1 = rightHandHolding, 2 = leftHandHolding
     private float lastHeld; // the last time the object was held (measured as seconds since play)
     private float stackWindowLength; // How long the object should check since it was let go to stack. Measusred in seconds.
 
@@ -49,8 +50,6 @@ public class ManualStack : MonoBehaviour
 
     [SerializeField]
     private bool canStack = false;
-
-
 
 
     // Start is called before the first frame update
@@ -72,7 +71,7 @@ public class ManualStack : MonoBehaviour
                 if (h.handType == SteamVR_Input_Sources.LeftHand)
                 {
                     leftHand = h;
-                    rightH = h.otherHand;
+                    rightHand = h.otherHand;
                 }
             }
         }
@@ -111,17 +110,9 @@ public class ManualStack : MonoBehaviour
     void Update()
     {
         CheckFalling();
-        if(this.transform.parent == leftHand.transform || this.transform.parent == rightHand.transform)//if (this.StackParent != null && this.transform.parent.gameObject != this.StackParent)
-        {
-            isHeld = true;
-            UnassignParent();
-        }
+        CheckHeld();
 
-        if (this.transform.parent.gameObject == null)
-        {
-            isHeld = false;
-            lastHeld = Time.time;
-        }
+        CheckLetGo();
 
 
         //if (this.interactable.attachedToHand.currentAttachedObject.Equals(this.gameObject))
@@ -130,6 +121,48 @@ public class ManualStack : MonoBehaviour
         //    this.Parent.GetComponent<ManualStack>().RemoveChild(this.gameObject);
         //    this.UnassignParent();
         //}
+    }
+
+    private void CheckLetGo()
+    {
+        if (this.gameObject != leftHand.currentAttachedObject && this.gameObject != rightHand.currentAttachedObject)//.transform.parent != leftHand.transform && this.transform.parent != rightHand.transform)
+        {
+            if (isHeld != 0 && lastHeld < Time.time)
+            {
+                if (isHeld == 1)
+                {
+                    rightHand.DetachObject(this.gameObject);
+                }
+                else if (isHeld == 2)
+                {
+                    leftHand.DetachObject(this.gameObject);
+                }
+
+                isHeld = 0;
+                //this.Rb.isKinematic = false;
+                SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetActiveScene());
+                lastHeld = Time.time;
+            }
+
+        }
+    }
+
+    private void CheckHeld()
+    {
+        if (this.gameObject == leftHand.currentAttachedObject)//this.transform.parent == rightHand.transform)//if (this.StackParent != null && this.transform.parent.gameObject != this.StackParent)
+        {
+            isHeld = 2;
+
+            if (this.StackParent != null)
+                UnassignParent();
+        }
+        else if (this.gameObject == rightHand.currentAttachedObject)
+        {
+            isHeld = 1;
+
+            if (this.StackParent != null)
+                UnassignParent();
+        }
     }
 
     private void CheckFalling()
@@ -152,13 +185,25 @@ public class ManualStack : MonoBehaviour
             canStack = true;
 
             // Check if this is the held item, should be child.
-            foreach (Hand h in this.interactable.hoveringHands)
-            {
-                if (h.currentAttachedObject.Equals(this.gameObject))
-                {
-                    this.AssignParent(other.gameObject);
-                }
-            }
+            //Hand hand;
+            //if (this.transform.parent == leftHand.transform)
+            //{
+            //    hand = leftHand;
+            //}
+            //else if (this.transform.parent = rightHand.transform)
+            //{
+            //    hand = rightHand;
+            //}
+
+
+
+            //foreach (Hand h in this.interactable.hoveringHands)
+            //{
+            //    if (h.currentAttachedObject.Equals(this.gameObject))
+            //    {
+            //        this.AssignParent(other.gameObject);
+            //    }
+            //}
 
             if ((TestDrop && falling))
             {
@@ -170,21 +215,21 @@ public class ManualStack : MonoBehaviour
         }
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
-    //    {
-    //        this.AssignParent(other.gameObject);
-    //    }
-    //}
+    private void OnTriggerStay(Collider other)
+    {
+        if (canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
+        {
+            this.AssignParent(other.gameObject);
+        }
+    }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.TryGetComponent(out ManualStack ms) && !other.gameObject.Equals(this.gameObject))
-    //    {
-    //        canStack = false;
-    //    }
-    //}
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out ManualStack ms) && !other.gameObject.Equals(this.gameObject))
+        {
+            canStack = false;
+        }
+    }
 
     public void AssignParent(GameObject parent)
     {
@@ -202,13 +247,10 @@ public class ManualStack : MonoBehaviour
 
     public void UnassignParent()
     {
-        if(this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
-        {
-            this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Last().GetComponent<Collider>().enabled = true;
-            this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Last().GetComponent<SphereCollider>().enabled = true;
-        }
+        this.StackParent.GetComponent<ManualStack>().RemoveChild(this.gameObject);
+        
         this.StackParent = null;
-        this.Rb.isKinematic = false;
+        //this.Rb.isKinematic = false;
         this.GetComponent<SphereCollider>().enabled = true;
         this.GetComponent<Collider>().enabled = true;
         //this.gameObject.transform.parent = null;
@@ -292,6 +334,8 @@ public class ManualStack : MonoBehaviour
         {
             //this.ChildrenGameObjects.Last().GetComponent<Interactable>().highlightOnHover = newValue;
             this.ChildrenGameObjects.Last().GetComponent<MeshCollider>().enabled = newValue;
+            //this.ChildrenGameObjects.Last().GetComponent<Collider>().enabled = newValue;
+            this.ChildrenGameObjects.Last().GetComponent<SphereCollider>().enabled = newValue;
         }
     }
 }
