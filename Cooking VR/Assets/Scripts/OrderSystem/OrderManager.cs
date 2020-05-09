@@ -8,6 +8,7 @@ public class OrderManager : MonoBehaviour
     public class Order
     {
         //An order
+        public string OrderNum;
         public float TimeIssued;
         public float TimeExpected;
         public List<Ingridents> Ingredents;
@@ -16,9 +17,13 @@ public class OrderManager : MonoBehaviour
     public class FinishedOrder
     {
         //Completed order that is saved
+        public string OrderNum;
         public int TotalAmountOfIngredients;
         public float Score;
         public float TimeTaken;
+        public int IncorrectPlacement;
+        public int ExtraItems;
+        public int MissingItems;
         public string Notes;
         public Order OriginalOrder;
 
@@ -33,7 +38,6 @@ public class OrderManager : MonoBehaviour
         BurntPatty = 4,
         Ketchup = 5,
         Tomato = 6,
-        Lettuce = 7,
         Pickle = 8,
         Mayo = 9,
         Mustard = 10,
@@ -81,5 +85,10 @@ public class OrderManager : MonoBehaviour
             Debug.Log("OrderManager can't find OrderSpawn");
         else
             Debug.Log("OrderManager found OrderSpawn at: " + OrderSpawner.gameObject.name);
+    }
+
+    public void SpawnArchivedOrder()
+    {
+
     }
 }

@@ -24,6 +24,7 @@ public class OrderCheck : MonoBehaviour
 
     private List<string> burgerPartsForVO; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
 
+    OrderManager.FinishedOrder OrderToArchive = new OrderManager.FinishedOrder();
 
 
     // Start is called before the first frame update
@@ -44,16 +45,18 @@ public class OrderCheck : MonoBehaviour
     {
         burgerPartsForVO.Clear();
         //this function returns a completed order to be achived for the end of the game
-        OrderManager.FinishedOrder TheOrder = new OrderManager.FinishedOrder();
-        TheOrder.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
-        TheOrder.OriginalOrder = OrderToServe;
-        TheOrder.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
-        TheOrder.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
-        if (TheOrder.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
+        OrderManager.FinishedOrder OrderToArchive = new OrderManager.FinishedOrder();
+        OrderToArchive.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
+        OrderManager.Order OrderToGoWithArchive = OrderToServe;
+        OrderToArchive.OriginalOrder = OrderToGoWithArchive;
+        OrderToArchive.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
+        OrderToArchive.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
+        OrderToArchive.OrderNum = OrderToServe.OrderNum;
+        if (OrderToArchive.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
             burgerPartsForVO.Add("fastOrder");
         }
-        else if (TheOrder.TimeTaken > 1.5f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
+        else if (OrderToArchive.TimeTaken > 1.5f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
             burgerPartsForVO.Add("slowOrder");
         }
@@ -62,7 +65,7 @@ public class OrderCheck : MonoBehaviour
             giveToGianna.Invoke(sin);
         }
 
-        //finalOrderScore = TheOrder.Score/TheOrder.
+        //finalOrderScore = OrderToArchive.Score/OrderToArchive.
         //I need to get the maximum possible points and divide the final score by it in order to get a percentage.
 
         OrderGrade();
@@ -70,11 +73,11 @@ public class OrderCheck : MonoBehaviour
         orderComplete.Invoke(true);
 
         //score on the order turned in
-        Debug.Log(TheOrder.Score);
+        Debug.Log(OrderToArchive.Score);
 
         OrderManager.Orders.Remove(OrderToServe);
         burgerPartsForVO.Clear();
-        return TheOrder;
+        return OrderToArchive;
     }
 
     private void OrderGrade()
@@ -127,6 +130,10 @@ public class OrderCheck : MonoBehaviour
 
             }
         }
+
+        OrderToArchive.IncorrectPlacement = IncorrectPositions;
+        OrderToArchive.ExtraItems = SubmittedFood.Count;
+        OrderToArchive.MissingItems = Order.Count;
         score -= 10 * IncorrectPositions;// deduct 10 points for each incorrect position but right ingrident
         score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
         score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
@@ -247,10 +254,8 @@ public class OrderCheck : MonoBehaviour
         Order.Add(OrderManager.Ingridents.MediumPatty);
         Order.Add(OrderManager.Ingridents.Cheese);
         Order.Add(OrderManager.Ingridents.BottomBun);
-
         SubmittedFood.Add(OrderManager.Ingridents.TopBun);
         SubmittedFood.Add(OrderManager.Ingridents.Cheese);
-        SubmittedFood.Add(OrderManager.Ingridents.Lettuce);
         SubmittedFood.Add(OrderManager.Ingridents.MediumPatty);
         SubmittedFood.Add(OrderManager.Ingridents.BottomBun);
 
