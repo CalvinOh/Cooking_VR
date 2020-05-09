@@ -60,6 +60,7 @@ public class OrderManager : MonoBehaviour
     {
         FindOrderCheck();
         FindOrderSpawner();
+        OrderChecker.RecieveOrderSpawn(OrderSpawner);
     }
 
     // Update is called once per frame
@@ -87,8 +88,4 @@ public class OrderManager : MonoBehaviour
             Debug.Log("OrderManager found OrderSpawn at: " + OrderSpawner.gameObject.name);
     }
 
-    public void SpawnArchivedOrder()
-    {
-
-    }
 }

@@ -25,13 +25,18 @@ public class OrderCheck : MonoBehaviour
     private List<string> burgerPartsForVO; //this checks the issues and the grade of the burger and holds onto it to hand off to CharacterTriggers
 
     OrderManager.FinishedOrder OrderToArchive = new OrderManager.FinishedOrder();
-
+    private OrderSpawn MyOrderSpawn;
 
     // Start is called before the first frame update
     void Start()
     {
         burgerPartsForVO = new List<string>();
        // MockBurgerCheck();
+    }
+
+    public void RecieveOrderSpawn(OrderSpawn a)
+    {
+        MyOrderSpawn = a;
     }
 
     // Update is called once per frame
@@ -45,13 +50,14 @@ public class OrderCheck : MonoBehaviour
     {
         burgerPartsForVO.Clear();
         //this function returns a completed order to be achived for the end of the game
-        OrderManager.FinishedOrder OrderToArchive = new OrderManager.FinishedOrder();
+        OrderToArchive = new OrderManager.FinishedOrder();
         OrderToArchive.TotalAmountOfIngredients = OrderToServe.Ingredents.Count;
         OrderManager.Order OrderToGoWithArchive = OrderToServe;
         OrderToArchive.OriginalOrder = OrderToGoWithArchive;
         OrderToArchive.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
         OrderToArchive.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
         OrderToArchive.OrderNum = OrderToServe.OrderNum;
+
         if (OrderToArchive.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
         {
             burgerPartsForVO.Add("fastOrder");
@@ -62,7 +68,7 @@ public class OrderCheck : MonoBehaviour
         }
         foreach(string sin in burgerPartsForVO)
         {
-            giveToGianna.Invoke(sin);
+//            giveToGianna.Invoke(sin);
         }
 
         //finalOrderScore = OrderToArchive.Score/OrderToArchive.
@@ -70,7 +76,7 @@ public class OrderCheck : MonoBehaviour
 
         OrderGrade();
 
-        orderComplete.Invoke(true);
+        //orderComplete.Invoke(true);
 
         //score on the order turned in
         Debug.Log(OrderToArchive.Score);
@@ -134,6 +140,8 @@ public class OrderCheck : MonoBehaviour
         OrderToArchive.IncorrectPlacement = IncorrectPositions;
         OrderToArchive.ExtraItems = SubmittedFood.Count;
         OrderToArchive.MissingItems = Order.Count;
+
+        Debug.Log(IncorrectPositions + "|" + SubmittedFood.Count + "|" + Order.Count);
         score -= 10 * IncorrectPositions;// deduct 10 points for each incorrect position but right ingrident
         score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
         score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
@@ -224,6 +232,7 @@ public class OrderCheck : MonoBehaviour
 
             List<OrderManager.Ingridents> SubmittedBurger = StackableToListOfIngridents(BurgerS);
             OrderManager.finishedOrders.Add(ArchiveOrder(SubmittedBurger, TicketS.MyOrder));
+            MyOrderSpawn.SpawnArchivedOrder(OrderManager.finishedOrders[OrderManager.finishedOrders.Count-1]);
 
             Destroy(Burger);
             Destroy(Ticket);

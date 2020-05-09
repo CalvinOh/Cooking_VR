@@ -72,7 +72,7 @@ public class ManualStack : MonoBehaviour
                 if (h.handType == SteamVR_Input_Sources.LeftHand)
                 {
                     leftHand = h;
-                    rightH = h.otherHand;
+                    rightHand = h.otherHand;
                 }
             }
         }
