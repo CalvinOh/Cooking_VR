@@ -10,6 +10,8 @@ public class OrderCheck : MonoBehaviour
     private Transform BurgerCheck;
     [SerializeField]
     private Transform TicketCheck;
+    [SerializeField]
+    private GameObject bell;
 
     [SerializeField]
     float BurgerCheckRadius = 0.3f;
@@ -66,9 +68,13 @@ public class OrderCheck : MonoBehaviour
         {
             burgerPartsForVO.Add("slowOrder");
         }
-        foreach(string sin in burgerPartsForVO)
+
+        if (burgerPartsForVO!=null)
         {
-//            giveToGianna.Invoke(sin);
+            foreach (string sin in burgerPartsForVO)
+            {
+                giveToGianna.Invoke(sin);
+            }
         }
 
         //finalOrderScore = OrderToArchive.Score/OrderToArchive.
@@ -76,7 +82,7 @@ public class OrderCheck : MonoBehaviour
 
         OrderGrade();
 
-        //orderComplete.Invoke(true);
+        orderComplete.Invoke(true);
 
         //score on the order turned in
         Debug.Log(OrderToArchive.Score);
@@ -201,7 +207,7 @@ public class OrderCheck : MonoBehaviour
         Debug.Log("Bell rung");
         GameObject Burger = null;
         GameObject Ticket = null;
-
+        PlaySoundBell();
 
         Collider[] BurgerCheckColliderHitResults = Physics.OverlapSphere(BurgerCheck.position, BurgerCheckRadius);
         foreach (Collider BurgerC in BurgerCheckColliderHitResults)
@@ -292,6 +298,11 @@ public class OrderCheck : MonoBehaviour
         Gizmos.DrawWireSphere(BurgerCheck.position, BurgerCheckRadius);
         Gizmos.DrawWireSphere(TicketCheck.position, TicketCheckRadius);
     }
- 
+
+    private void PlaySoundBell()
+    {
+        //add proper GameObject name once bell is implemented
+        AkSoundEngine.PostEvent("Bell", bell);
+    }
 
 }
