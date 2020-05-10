@@ -40,11 +40,14 @@ public class FacialExpressions : MonoBehaviour
         Blink = true;
         StartCoroutine(ConstantBlink());
 
+        /*
         Talking = true;
         StartCoroutine(Talk());
-
+        */
         BlendShapeSize = MySkin.sharedMesh.blendShapeCount;
         SetStates = new float[BlendShapeSize];
+
+        //Smile(5);
 
     }
 
@@ -105,7 +108,7 @@ public class FacialExpressions : MonoBehaviour
     {
         while (Blink)
         { 
-        yield return new WaitForSeconds(Random.Range(0.5f, 3.5f));
+        yield return new WaitForSeconds(Random.Range(1f, 3.5f));
         SetStates[1] = 100;
         yield return new WaitForSeconds(0.2f);
         SetStates[1] = 0;
