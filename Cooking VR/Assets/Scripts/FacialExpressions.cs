@@ -222,6 +222,13 @@ public class FacialExpressions : MonoBehaviour
         StartCoroutine(Express(7, duration));
     }
 
+    public void MouthWShape(float duration)
+    {
+        StartCoroutine(Express(8, duration));
+    }
 
-
+    public void Grin(float duration)
+    {
+        StartCoroutine(Express(9, duration));
+    }
 }
