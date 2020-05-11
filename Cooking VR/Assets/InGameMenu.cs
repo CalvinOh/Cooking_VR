@@ -7,6 +7,7 @@ public class InGameMenu : MonoBehaviour
 {
     public void BackToMainMenu()
     {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene(0);
     }
 }
