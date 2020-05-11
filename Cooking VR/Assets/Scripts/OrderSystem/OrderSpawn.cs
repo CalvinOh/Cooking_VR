@@ -12,7 +12,14 @@ public class OrderSpawn : MonoBehaviour
     [SerializeField]
     private List<Transform> OrderLocations;
 
+    [SerializeField]
+    private GameObject ArchivedTicketGO;
+
+    [SerializeField]
+    private GameObject ArchivedTicketsPin;
     private int SpawnLocationNumber;
+    [SerializeField]
+    private float ArchivedTicketSpacing = 1;
 
     void Start()
     {
@@ -25,10 +32,10 @@ public class OrderSpawn : MonoBehaviour
 
     }
     
-    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder)
+    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder,string OrderNum)
     {
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
-
+        SpawnedOrder.OrderNum = OrderNum;
         SpawnedOrder.Ingredents = NewOrder;
 
         SpawnedOrder.TimeIssued = Time.fixedTime;
@@ -89,15 +96,11 @@ public class OrderSpawn : MonoBehaviour
 
                 }
             }
-            else if (5 <= Decider && Decider < 20)
+            else if (5 <= Decider && Decider < 27)
             {
                 TempBurger.Add(OrderManager.Ingridents.Tomato);
             }
-            else if (20 <= Decider && Decider < 35)
-            {
-                TempBurger.Add(OrderManager.Ingridents.Lettuce);
-            }
-            else if (35 <= Decider && Decider < 50)
+            else if (27 <= Decider && Decider < 50)
             {
                 TempBurger.Add(OrderManager.Ingridents.Pickle);
             }
@@ -138,5 +141,16 @@ public class OrderSpawn : MonoBehaviour
         TempBurger.Insert(0,OrderManager.Ingridents.TopBun);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
         return TempBurger;
+    }
+
+    public void SpawnArchivedOrder(OrderManager.FinishedOrder a)
+    {
+        GameObject ArchivedTicket = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform.position,ArchivedTicketsPin.transform.rotation);
+        ArchivedTicket.GetComponent<ArchivedTicket>().UpdateTicket(a);
+        ArchivedTicket.transform.parent = ArchivedTicketsPin.transform;
+        ArchivedTicket.transform.Translate(new Vector3(0,ArchivedTicketSpacing,0),Space.Self);
+
+
+
     }
 }
