@@ -1,19 +1,23 @@
 ﻿using UnityEngine;
-using UnityEditor.SceneManagement;
-using System.Runtime.CompilerServices;
 using UnityEngine.SceneManagement;
 
 public class FadeSceneChanger : MonoBehaviour
 {
-    public Animator animator;
-    private int SceneToLoad;
+    public static Animator animator;
+    private static int SceneToLoad;
 
-    public void FadeToNextScene()
+    public static void FadeToNextScene()
     {
         FadeToScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void FadeToScene(int SceneIndex)
+    public static void FadeToMainMenu()
+    {
+        // Return To Main Menu /IF/ the main menu's build index is 0!
+        FadeToScene(0);
+    }
+
+    public static void FadeToScene(int SceneIndex)
     {
         SceneToLoad = SceneIndex;
         animator.SetTrigger("FadeOut");
