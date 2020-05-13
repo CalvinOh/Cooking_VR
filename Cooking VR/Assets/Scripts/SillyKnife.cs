@@ -37,7 +37,7 @@ public class SillyKnife : MonoBehaviour
         ChangeBladeSize();
         ChangeHandleSize();
 
-        BladePoint.position = HandlePoint.position;
+        BladePoint.position = HandlePoint.position; //blade needs to be below the handlepoint 
     }
 
     private void ChangeBladeSize()
