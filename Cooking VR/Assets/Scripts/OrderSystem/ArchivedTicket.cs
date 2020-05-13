@@ -34,8 +34,8 @@ public class ArchivedTicket : MonoBehaviour
         MyOrder = OrderA;
         //Debug.Log(MyOrder.TimeIssued);
         //Debug.Log(MyOrder.TimeExpected);
-        OrderNumber.text = "Order: " + MyOrder.OrderNum;
-        TotalScore.text = "Total Score: " + (MyOrder.TotalAmountOfIngredients - 2 * 100);
+        OrderNumber.text = "Order#: " + MyOrder.OriginalOrder.OrderNum;
+        TotalScore.text = "Total Score: " + ((MyOrder.OriginalOrder.Ingredents.Count - 2) * 100);
         ActualScore.text = "Actual Score: " + MyOrder.Score;
         TimeTaken.text = "Time Taken: " + MyOrder.TimeTaken;
         Body.text = "Misplaced: \n";

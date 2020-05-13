@@ -31,7 +31,6 @@ public class SettingsManager : MonoBehaviour
         sceneCheck = SceneManager.GetActiveScene();
         if (currentScene != sceneCheck)
         {
-            Destroy(player.gameObject);
             ApplySettings();
         }
         currentScene = sceneCheck;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7459482508467099703}
   - component: {fileID: -5178661895559278292}
   - component: {fileID: -1504981713932161579}
+  - component: {fileID: 8545724430315803776}
   m_Layer: 0
   m_Name: Knifeblock_prefab
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4446721051049327014}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2613975, y: 1.57282, z: 0.3612813}
+  m_LocalPosition: {x: -1.2613975, y: 1.511, z: 0.3612813}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,3 +79,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8545724430315803776
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446721051049327014}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.699791, y: 33.00467, z: 33.004684}
+  m_Center: {x: 0, y: 0, z: 0}

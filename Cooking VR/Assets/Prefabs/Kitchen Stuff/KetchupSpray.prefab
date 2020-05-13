@@ -4870,7 +4870,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 1229530412735105584, guid: 1c34d0b6ed003a747b097b5b3415f8a0, type: 3}
---- !u!114 &5947143582019282253
+--- !u!114 &4527015195235953619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4879,14 +4879,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8824684239611841578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bebe976d3726ec4a805614011d1710d, type: 3}
+  m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParentGameObject: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 5
   IsMasterParent: 0
-  wasGrabbed: 0
+  isHeld: 0
+  vec3offset: {x: 0, y: 0, z: 0}
+  thickness: 0
+  scaleRatio: 0
+  TestDrop: 0
+  falling: 0
+  canStack: 0
 --- !u!1001 &672864393742128419
 PrefabInstance:
   m_ObjectHideFlags: 0

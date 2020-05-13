@@ -18,6 +18,7 @@ public class OrderSpawn : MonoBehaviour
     [SerializeField]
     private GameObject ArchivedTicketsPin;
     private int SpawnLocationNumber;
+    [SerializeField]
     private float ArchivedTicketSpacing = 1;
 
     void Start()
@@ -144,8 +145,9 @@ public class OrderSpawn : MonoBehaviour
 
     public void SpawnArchivedOrder(OrderManager.FinishedOrder a)
     {
-        GameObject ArchivedTicket = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform);
+        GameObject ArchivedTicket = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform.position,ArchivedTicketsPin.transform.rotation);
         ArchivedTicket.GetComponent<ArchivedTicket>().UpdateTicket(a);
+        ArchivedTicket.transform.parent = ArchivedTicketsPin.transform;
         ArchivedTicket.transform.Translate(new Vector3(0,ArchivedTicketSpacing,0),Space.Self);
 
 
