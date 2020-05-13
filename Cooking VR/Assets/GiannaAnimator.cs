@@ -13,7 +13,7 @@ public class GiannaAnimator : MonoBehaviour
         Face = GetComponentInChildren<FacialExpressions>();
         MyAnimator = GetComponent<Animator>();
 
-        StartCoroutine(AnimationsShowcase(2));
+        //StartCoroutine(AnimationsShowcase(2));
 
         //Debug.Log(Face.gameObject.name);
     }
@@ -74,5 +74,52 @@ public class GiannaAnimator : MonoBehaviour
         Face.Neutral(MyAnimator.GetCurrentAnimatorStateInfo(0).length, 40);
     }
 
+    public void PlayImpressed(float Delay)
+    {
+        StartCoroutine(DelayedAnimation(0, Delay));
+    }
+
+    public void PlayAngry(float Delay)
+    {
+        StartCoroutine(DelayedAnimation(1, Delay));
+    }
+
+    public void PlaySassy(float Delay)
+    {
+        StartCoroutine(DelayedAnimation(2, Delay));
+    }
+
+    public void PlayDisgust(float Delay)
+    {
+        StartCoroutine(DelayedAnimation(3, Delay));
+    }
+
+    public void PlayDisappointed(float Delay)
+    {
+        StartCoroutine(DelayedAnimation(4, Delay));
+    }
+
+    private IEnumerator DelayedAnimation(int AnimationNum ,float Delay)
+    {
+        yield return new WaitForSeconds(Delay);
+        switch (AnimationNum)
+        {
+            case 0:
+                PlayImpressed();
+                break;
+            case 1:
+                PlayAngry();
+                break;
+            case 2:
+                PlaySassy();
+                break;
+            case 3:
+                PlayDisgust();
+                break;
+            case 4:
+                PlayDisappointed();
+                break;
+        }
+    }
 
 }

@@ -147,4 +147,26 @@ public class VoTriggers : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_vx_g_3", gameObject);
     }
+
+    private void PlayVoiceClip(string ClipName, float Delay)
+    {
+        StartCoroutine(DelayedPlay(ClipName,Delay));
+    }
+
+    private IEnumerator DelayedPlay(string ClipName,float Delay)
+    {
+        yield return new WaitForSeconds(Delay);
+        AkSoundEngine.PostEvent(ClipName, gameObject);
+    }
+
+    private void OnEnable()
+    {
+        CharacterTriggers.VOTrigger += PlayVoiceClip;
+    }
+
+    private void OnDisable()
+    {
+        CharacterTriggers.VOTrigger -= PlayVoiceClip;
+    }
+
 }
