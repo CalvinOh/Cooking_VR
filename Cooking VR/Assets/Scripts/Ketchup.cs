@@ -14,9 +14,11 @@ public class Ketchup : MonoBehaviour
 
     bool hitNotStackable = false;
 
+    [SerializeField]
     float timeStored;
 
-    float timeToDelete = 5;
+    [SerializeField]
+    float timeToDelete;
 
     // Start is called before the first frame update
     void Start()
@@ -28,10 +30,21 @@ public class Ketchup : MonoBehaviour
 
     private void Update()
     {
-        if(Time.time >= timeStored + 5 && hitNotStackable)
+        if(timeStored >= timeToDelete)
         {
             Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject);
+        }
+        else
+        {
+            if(this.transform.parent == null)
+            {
+                timeStored += Time.deltaTime;
+            }
+            else
+            {
+                timeStored = 0;
+            }
         }
     }
 
