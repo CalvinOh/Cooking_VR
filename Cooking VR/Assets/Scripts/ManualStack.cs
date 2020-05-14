@@ -219,7 +219,8 @@ public class ManualStack : MonoBehaviour
     {
         if (canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
         {
-            this.AssignParent(other.gameObject);
+            if(this.StackParent != other.gameObject)
+                this.AssignParent(other.gameObject);
         }
     }
 
@@ -259,6 +260,8 @@ public class ManualStack : MonoBehaviour
     private void GlueToParent(GameObject parent)
     {
         this.StackParent = parent;
+
+        Debug.Log($"this {this.gameObject.name}'s StackParent is {this.StackParent.gameObject.name}");
         this.Rb.velocity = Vector3.zero;
         falling = false;
 

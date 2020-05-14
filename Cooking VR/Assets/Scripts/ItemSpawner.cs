@@ -61,7 +61,7 @@ namespace Valve.VR.InteractionSystem
                 //}
 
                 //leftPlayerHand = GameObject.Find("RightHand").GetComponent<Hand>().otherHand;
-                Debug.Log("Call me, maybe?");
+                //Debug.Log("Call me, maybe?");
             }
             //if (rightPlayerHand == null)
             //{
