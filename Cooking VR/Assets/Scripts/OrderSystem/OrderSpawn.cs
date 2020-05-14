@@ -6,6 +6,7 @@ public class OrderSpawn : MonoBehaviour
 {
     [SerializeField]
     private GameObject TicketGO;
+
     [SerializeField]
     private GameObject TicketParent;
 
@@ -14,6 +15,9 @@ public class OrderSpawn : MonoBehaviour
 
     [SerializeField]
     private GameObject ArchivedTicketGO;
+
+    [SerializeField]
+    private GameObject CompleteTicketGO;
 
     [SerializeField]
     private GameObject ArchivedTicketsPin;
@@ -149,8 +153,12 @@ public class OrderSpawn : MonoBehaviour
         ArchivedTicket.GetComponent<ArchivedTicket>().UpdateTicket(a);
         ArchivedTicket.transform.parent = ArchivedTicketsPin.transform;
         ArchivedTicket.transform.Translate(new Vector3(0,ArchivedTicketSpacing,0),Space.Self);
+    }
 
-
-
+    public void SpawnLevelCompleteOrder(int NSTL)
+    {
+        GameObject CompleteTicket = Instantiate(CompleteTicketGO, OrderLocations[SpawnLocationNumber % OrderLocations.Count]);
+        CompleteTicket.GetComponent<LevelCompleteOrder>().SetUp(NSTL);
+        CompleteTicket.transform.parent = TicketParent.transform;
     }
 }
