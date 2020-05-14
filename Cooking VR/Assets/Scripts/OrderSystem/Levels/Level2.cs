@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1 : ILevels
+public class Level2 : ILevels
 {
 
+    // Start is called before the first frame update
     protected override void AddPredeterminedOrders()
     {
 
@@ -14,9 +15,10 @@ public class Level1 : ILevels
         TempBurger.Add(OrderManager.Ingridents.TopBun);
         TempBurger.Add(OrderManager.Ingridents.Cheese);
         TempBurger.Add(OrderManager.Ingridents.MediumPatty);
+        TempBurger.Add(OrderManager.Ingridents.Cheese);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(2);
+        base.WaitTimes.Add(1);
         PredeterminedOrders.Add(TempBurger);
 
         //burger 2
@@ -24,10 +26,11 @@ public class Level1 : ILevels
 
         TempBurger.Add(OrderManager.Ingridents.TopBun);
         TempBurger.Add(OrderManager.Ingridents.Cheese);
+        TempBurger.Add(OrderManager.Ingridents.Pickle);
         TempBurger.Add(OrderManager.Ingridents.MediumPatty);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(2);
+        base.WaitTimes.Add(15);
         PredeterminedOrders.Add(TempBurger);
 
         //burger 3
@@ -38,19 +41,31 @@ public class Level1 : ILevels
         TempBurger.Add(OrderManager.Ingridents.RarePatty);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(5);
+        base.WaitTimes.Add(15);
         PredeterminedOrders.Add(TempBurger);
 
-        //burger 2
+        //burger 4
         TempBurger = new List<OrderManager.Ingridents>();
 
         TempBurger.Add(OrderManager.Ingridents.TopBun);
         TempBurger.Add(OrderManager.Ingridents.Cheese);
         TempBurger.Add(OrderManager.Ingridents.Pickle);
         TempBurger.Add(OrderManager.Ingridents.WellDonePatty);
+        TempBurger.Add(OrderManager.Ingridents.Cheese);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(5);
+        base.WaitTimes.Add(35);
+        PredeterminedOrders.Add(TempBurger);
+
+        //burger 5
+        TempBurger = new List<OrderManager.Ingridents>();
+
+        TempBurger.Add(OrderManager.Ingridents.TopBun);
+        TempBurger.Add(OrderManager.Ingridents.Cheese);
+        TempBurger.Add(OrderManager.Ingridents.WellDonePatty);
+        TempBurger.Add(OrderManager.Ingridents.BottomBun);
+
+        base.WaitTimes.Add(0);
         PredeterminedOrders.Add(TempBurger);
 
 

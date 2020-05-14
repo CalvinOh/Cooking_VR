@@ -53,11 +53,13 @@ public class OrderManager : MonoBehaviour
 
     public static List<FinishedOrder> finishedOrders = new List<FinishedOrder>();
     public static List<Order> Orders = new List<Order>();
-
+    public static bool LastOrderSpawned;
+    public static int NextSceneToLoad;
 
     // Start is called before the first frame update
     void Start()
     {
+        LastOrderSpawned = false;
         FindOrderCheck();
         FindOrderSpawner();
         OrderChecker.RecieveOrderSpawn(OrderSpawner);
@@ -88,4 +90,11 @@ public class OrderManager : MonoBehaviour
             Debug.Log("OrderManager found OrderSpawn at: " + OrderSpawner.gameObject.name);
     }
 
+    private void LevelFinishCheck()
+    {
+        if (Orders.Count == 0)
+        {
+            OrderSpawner.SpawnLevelCompleteOrder(NextSceneToLoad);
+        }
+    }
 }
