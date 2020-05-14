@@ -19,9 +19,9 @@ public class KnifeBlock : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         Debug.Log("OnCollisionExit");
-        if(other.gameObject.transform.parent.gameObject.GetComponent<SillyKnife>() == true)
+        if(other.GetComponent<SillyKnife>() == true)
         {
-            other.gameObject.transform.parent.gameObject.GetComponent<SillyKnife>().ChangeSize();
+            other.GetComponent<SillyKnife>().ChangeSize();
         }
     }
 }

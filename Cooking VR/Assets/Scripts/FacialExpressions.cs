@@ -40,11 +40,14 @@ public class FacialExpressions : MonoBehaviour
         Blink = true;
         StartCoroutine(ConstantBlink());
 
+        /*
         Talking = true;
         StartCoroutine(Talk());
-
+        */
         BlendShapeSize = MySkin.sharedMesh.blendShapeCount;
         SetStates = new float[BlendShapeSize];
+
+        //Smile(5);
 
     }
 
@@ -105,7 +108,7 @@ public class FacialExpressions : MonoBehaviour
     {
         while (Blink)
         { 
-        yield return new WaitForSeconds(Random.Range(0.5f, 3.5f));
+        yield return new WaitForSeconds(Random.Range(1f, 3.5f));
         SetStates[1] = 100;
         yield return new WaitForSeconds(0.2f);
         SetStates[1] = 0;
@@ -164,9 +167,9 @@ public class FacialExpressions : MonoBehaviour
 
 
 
-    private IEnumerator Express(int i, float duration)
+    private IEnumerator Express(int i, float duration,float Amount)
     {
-        SetStates[i] = 100;
+        SetStates[i] = Amount;
         yield return new WaitForSeconds(duration);
         SetStates[i] = 0;
     }
@@ -177,48 +180,55 @@ public class FacialExpressions : MonoBehaviour
             SetStates[i] = 0;
     }
 
-    public void Smile(float duration)
+    public void Smile(float duration,float Amount)
     {
-        StartCoroutine(Express(0,duration));
+        StartCoroutine(Express(0,duration, Amount));
     }
 
 
-    public void CloseEyes(float duration)
+    public void CloseEyes(float duration, float Amount)
     {
-        StartCoroutine(Express(1,duration));
+        StartCoroutine(Express(1,duration, Amount));
     }
 
 
-    public void Smirk(float duration)
+    public void Smirk(float duration, float Amount)
     {
-        StartCoroutine(Express(2,duration));
+        StartCoroutine(Express(2,duration, Amount));
     }
 
-    public void Question(float duration)
+    public void Question(float duration, float Amount)
     {
-        StartCoroutine(Express(3, duration));
+        StartCoroutine(Express(3, duration, Amount));
     }
 
-    public void Neutral(float duration)
+    public void Neutral(float duration, float Amount)
     {
-        StartCoroutine(Express(4, duration));
+        StartCoroutine(Express(4, duration, Amount));
     }
 
-    public void Surprised(float duration)
+    public void Surprised(float duration, float Amount)
     {
-        StartCoroutine(Express(5, duration));
+        StartCoroutine(Express(5, duration, Amount));
     }
 
-    public void MouthO(float duration)
+    public void MouthO(float duration, float Amount)
     {
-        StartCoroutine(Express(6, duration));
+        StartCoroutine(Express(6, duration, Amount));
     }
 
-    public void MouthOpenFrown(float duration)
+    public void MouthOpenFrown(float duration, float Amount)
     {
-        StartCoroutine(Express(7, duration));
+        StartCoroutine(Express(7, duration, Amount));
     }
 
+    public void MouthWShape(float duration, float Amount)
+    {
+        StartCoroutine(Express(8, duration, Amount));
+    }
 
-
+    public void Grin(float duration, float Amount)
+    {
+        StartCoroutine(Express(9, duration, Amount));
+    }
 }
