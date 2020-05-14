@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -156,29 +156,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24980554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea70c78202a6b7544b3fcb5380c733f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnZone: {fileID: 1347110507}
-  enteredKillZone: 0
-  grounded: 0
-  timeSpentOnGround: 0
-  timerOnGround: 0
---- !u!1 &32131191 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1926501405409328924, guid: 192a7d40695dec84fa1c2908ee31e1bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 7610419008131763508}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &32131192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32131191}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea70c78202a6b7544b3fcb5380c733f9, type: 3}
@@ -12511,11 +12488,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1439664916, guid: bbd3301aaba6a7d42aa7ddeb67de3f36, type: 3}
-      propertyPath: Condiment
-      value: 
-      objectReference: {fileID: 1135282836498670504, guid: 7dddff65c85c68b44b5243d667ba3600,
-        type: 3}
     - target: {fileID: 1459530422, guid: bbd3301aaba6a7d42aa7ddeb67de3f36, type: 3}
       propertyPath: respawnZone
       value: 
@@ -12579,11 +12551,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ketchupBottle_Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 5996235381340290982, guid: bbd3301aaba6a7d42aa7ddeb67de3f36,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbd3301aaba6a7d42aa7ddeb67de3f36, type: 3}
@@ -13815,11 +13782,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MustardBottle_Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4091206171532758984, guid: c8b47183a97cb75448614ef5332d7afa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b47183a97cb75448614ef5332d7afa, type: 3}
 --- !u!1001 &7290050092371716207
@@ -14127,19 +14089,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 32131192, guid: 192a7d40695dec84fa1c2908ee31e1bf, type: 3}
-      propertyPath: respawnZone
-      value: 
-      objectReference: {fileID: 1347110507}
     - target: {fileID: 1926501405409328924, guid: 192a7d40695dec84fa1c2908ee31e1bf,
         type: 3}
       propertyPath: m_Name
       value: Mayo_bottle_prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 1926501405409328924, guid: 192a7d40695dec84fa1c2908ee31e1bf,
-        type: 3}
-      propertyPath: m_TagString
-      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 3235580192615320847, guid: 192a7d40695dec84fa1c2908ee31e1bf,
         type: 3}
@@ -14196,10 +14149,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7610419008989947410, guid: 192a7d40695dec84fa1c2908ee31e1bf,
+    - target: {fileID: 8943180226525655406, guid: 192a7d40695dec84fa1c2908ee31e1bf,
         type: 3}
-      propertyPath: highlightOnHover
-      value: 0
+      propertyPath: Automatic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8943180226525655406, guid: 192a7d40695dec84fa1c2908ee31e1bf,
+        type: 3}
+      propertyPath: SetTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 192a7d40695dec84fa1c2908ee31e1bf, type: 3}
