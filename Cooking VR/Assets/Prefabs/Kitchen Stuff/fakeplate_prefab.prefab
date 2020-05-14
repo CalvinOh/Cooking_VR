@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 9041396009603713088}
   - component: {fileID: 6281389532434488843}
   - component: {fileID: 8857041242341204101}
+  - component: {fileID: 942272951}
   m_Layer: 0
   m_Name: fakeplate_prefab
   m_TagString: Plate
@@ -266,7 +267,7 @@ MonoBehaviour:
   StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 14
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.025
@@ -274,3 +275,16 @@ MonoBehaviour:
   TestDrop: 1
   falling: 0
   canStack: 0
+--- !u!65 &942272951
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4643921313082253927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.62507, y: 2.8960466, z: 33.551216}
+  m_Center: {x: 0.15200227, y: -1.2528062, z: -0.43992996}
