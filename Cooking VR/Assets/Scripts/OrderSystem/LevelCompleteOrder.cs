@@ -49,7 +49,9 @@ public class LevelCompleteOrder : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-        SceneManager.LoadScene(NextSceneToLoad);
+        FadeSceneChanger.FadeToScene(NextSceneToLoad);
+
+       // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+       // SceneManager.LoadScene(NextSceneToLoad);
     }
 }

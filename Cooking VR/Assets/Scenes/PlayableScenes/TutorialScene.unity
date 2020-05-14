@@ -4751,6 +4751,11 @@ PrefabInstance:
       propertyPath: ArchivedTicketsPin
       value: 
       objectReference: {fileID: 5115169465416996345}
+    - target: {fileID: 8533471515825389044, guid: deb5a5a217386e54eb4ac6499d7323b4,
+        type: 3}
+      propertyPath: TutorialLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8533471516181110196, guid: deb5a5a217386e54eb4ac6499d7323b4,
         type: 3}
       propertyPath: bell
@@ -4770,6 +4775,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042365c77d70c8644b2c1530842369ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1657534124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8533471515825389047, guid: deb5a5a217386e54eb4ac6499d7323b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1657534122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1657534125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657534124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589cd9b8afbd826468f76f91797ae45b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelHeader: Tu
+  NextSceneToLoad: 2
 --- !u!1 &1689347452
 GameObject:
   m_ObjectHideFlags: 0
