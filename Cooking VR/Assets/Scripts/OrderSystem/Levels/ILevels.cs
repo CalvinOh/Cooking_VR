@@ -34,6 +34,7 @@ public class ILevels : MonoBehaviour
         {
             yield return new WaitForSeconds(WaitTimes[currentOrderNumber]);
             MyOrderSpawn.SpawnPredeterminedOrder(PredeterminedOrders[currentOrderNumber],LevelHeader+"-"+(currentOrderNumber+1));
+            Debug.Log("Spawning Order Number: " + currentOrderNumber);
             currentOrderNumber++;
         }
         OrderManager.LastOrderSpawned = true;

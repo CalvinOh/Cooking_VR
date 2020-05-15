@@ -242,6 +242,7 @@ public class OrderCheck : MonoBehaviour
 
             Destroy(Burger);
             Destroy(Ticket);
+            Debug.Log("Judged");
         }
     }
 
