@@ -31,9 +31,9 @@ public class MainMenuFunctions : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
-        //audio
-        //stops all currently playing audio events so that they do not overlap into the next scene.
-        AkSoundEngine.StopAll();
+        //stop looping sounds while next scene loads
+        //THIS INTERFERES WITH MUSIC AND AMBIENCE. FIND BETTER SOLUTION LATER -CK
+        //AkSoundEngine.StopAll();
 
         SceneManager.LoadScene(sceneNum);
     }
