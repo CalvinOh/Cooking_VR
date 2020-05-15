@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class OrderSpawn : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class OrderSpawn : MonoBehaviour
 
     [SerializeField]
     private GameObject ArchivedTicketsPin;
+    private int ArchivedSpawnLocationNumber=0;
     private int SpawnLocationNumber;
     [SerializeField]
     private float ArchivedTicketSpacing = 1;
@@ -28,9 +30,12 @@ public class OrderSpawn : MonoBehaviour
     [SerializeField]
     private bool TutorialLevel;
 
+    public static event Action<bool> OrderSpawnedEvent;
+
     void Start()
     {
         SpawnLocationNumber = 0;
+        ArchivedSpawnLocationNumber = 0;
     }
 
 
@@ -41,6 +46,8 @@ public class OrderSpawn : MonoBehaviour
     
     public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder,string OrderNum)
     {
+        OrderSpawnedEvent.Invoke(true);
+
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
         SpawnedOrder.OrderNum = OrderNum;
         SpawnedOrder.Ingredents = NewOrder;
@@ -61,6 +68,8 @@ public class OrderSpawn : MonoBehaviour
     
     public void SpawnRandomOrder(int Burgersize)
     {
+        OrderSpawnedEvent.Invoke(true);
+
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
         SpawnedOrder.Ingredents = RandomBurger(Burgersize);
@@ -85,10 +94,10 @@ public class OrderSpawn : MonoBehaviour
         
         for (int i = 0; i < AmountOfLayer-1; i++)
         {
-            float Decider = Random.Range(0f, 100f);
+            float Decider = UnityEngine.Random.Range(0f, 100f);
             if (Decider < 5)
             {
-                switch (Random.Range(0, 4))
+                switch (UnityEngine.Random.Range(0, 4))
                 {
                     case 0:
                         TempBurger.Add(OrderManager.Ingridents.RarePatty);
@@ -131,7 +140,7 @@ public class OrderSpawn : MonoBehaviour
 
 
         }
-        switch (Random.Range(0, 4))
+        switch (UnityEngine.Random.Range(0, 4))
         {
             case 0:
                 TempBurger.Insert(AmountOfLayer / 2, OrderManager.Ingridents.RarePatty);
@@ -154,10 +163,12 @@ public class OrderSpawn : MonoBehaviour
     {
         if (!TutorialLevel)
         {
-            GameObject ArchivedTicket = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform.position, ArchivedTicketsPin.transform.rotation);
-            ArchivedTicket.GetComponent<ArchivedTicket>().UpdateTicket(a);
-            ArchivedTicket.transform.parent = ArchivedTicketsPin.transform;
-            ArchivedTicket.transform.Translate(new Vector3(0, ArchivedTicketSpacing, 0), Space.Self);
+            GameObject ArchivedTicketObject = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform.position, ArchivedTicketsPin.transform.rotation);
+            ArchivedTicketObject.GetComponent<ArchivedTicket>().UpdateTicket(a);
+            ArchivedTicketObject.transform.parent = ArchivedTicketsPin.transform;
+            ArchivedTicketObject.transform.Translate(new Vector3(0, ArchivedTicketSpacing+ArchivedSpawnLocationNumber*ArchivedTicketSpacing*0.1f, 0), Space.Self);
+            ArchivedTicketObject.transform.Rotate(Vector3.up, UnityEngine.Random.Range(0f, 360f), Space.Self);
+            ArchivedSpawnLocationNumber++;
         }
     }
 
@@ -166,5 +177,6 @@ public class OrderSpawn : MonoBehaviour
         GameObject CompleteTicket = Instantiate(CompleteTicketGO, OrderLocations[SpawnLocationNumber % OrderLocations.Count]);
         CompleteTicket.GetComponent<LevelCompleteOrder>().SetUp(NSTL);
         CompleteTicket.transform.parent = TicketParent.transform;
+
     }
 }

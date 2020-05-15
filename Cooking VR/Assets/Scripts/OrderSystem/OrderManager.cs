@@ -50,6 +50,7 @@ public class OrderManager : MonoBehaviour
 
     private OrderCheck OrderChecker = new OrderCheck();
     private OrderSpawn OrderSpawner = new OrderSpawn();
+    private bool LevelCompleted;
 
     public static List<FinishedOrder> finishedOrders = new List<FinishedOrder>();
     public static List<Order> Orders = new List<Order>();
@@ -59,7 +60,10 @@ public class OrderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        finishedOrders.Clear();
+        Orders.Clear();
         LastOrderSpawned = false;
+        LevelCompleted = false;
         FindOrderCheck();
         FindOrderSpawner();
         OrderChecker.RecieveOrderSpawn(OrderSpawner);
@@ -68,7 +72,8 @@ public class OrderManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(LastOrderSpawned)
+        LevelFinishCheck();
     }
 
     private void FindOrderCheck()
@@ -92,9 +97,10 @@ public class OrderManager : MonoBehaviour
 
     private void LevelFinishCheck()
     {
-        if (Orders.Count == 0)
+        if (Orders.Count == 0&&!LevelCompleted)
         {
             OrderSpawner.SpawnLevelCompleteOrder(NextSceneToLoad);
+            LevelCompleted = true;
         }
     }
 }

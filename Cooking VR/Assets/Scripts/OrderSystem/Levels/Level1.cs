@@ -20,6 +20,7 @@ public class Level1 : ILevels
         PredeterminedOrders.Add(TempBurger);
 
         //burger 2
+        /*
         TempBurger = new List<OrderManager.Ingridents>();
 
         TempBurger.Add(OrderManager.Ingridents.TopBun);
@@ -53,6 +54,6 @@ public class Level1 : ILevels
         base.WaitTimes.Add(20);
         PredeterminedOrders.Add(TempBurger);
 
-
+    */
     }
 }

@@ -37,6 +37,7 @@ public class LevelCompleteOrder : MonoBehaviour
             LeftText += "Order#: " + a.OriginalOrder.OrderNum+"\n";
             RightText +=  a.Score+"/"+(a.OriginalOrder.Ingredents.Count - 2) * 100+"\n";
         }
+        Debug.Log(OrderManager.finishedOrders.Count);
         BodyLeft.text = LeftText;
         BodyRight.text = RightText;
 
@@ -49,7 +50,7 @@ public class LevelCompleteOrder : MonoBehaviour
 
     public void NextLevel()
     {
-        FadeSceneChanger.FadeToScene(NextSceneToLoad);
+        FindObjectOfType<FadeSceneChanger>().FadeToScene(NextSceneToLoad);
 
        // SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
        // SceneManager.LoadScene(NextSceneToLoad);

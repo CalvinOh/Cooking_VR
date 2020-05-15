@@ -292,7 +292,14 @@ public class ManualStack : MonoBehaviour
         }
         else
         {
-            vec3offset = new Vector3(0, this.StackParent.GetComponent<ManualStack>().thickness + this.thickness, 0);
+            if (this.StackParent.name.Contains("Plate") && this.name.Contains("BottomBun"))
+            {
+                Debug.Log("using fake thickness");
+                vec3offset = new Vector3(0, (0.029f + this.thickness), 0);
+            }
+            else
+                vec3offset = new Vector3(0, this.StackParent.GetComponent<ManualStack>().thickness + this.thickness, 0);
+
             Debug.Log($"{this.gameObject.name} is stacking to {this.StackParent.gameObject.name}");
         }
 
