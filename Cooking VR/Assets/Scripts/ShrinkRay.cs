@@ -33,6 +33,12 @@ namespace Valve.VR.InteractionSystem
         [SerializeField]
         private Material LaserNo;
 
+        [SerializeField]
+        private bool AutomatedFire = false;
+
+        [SerializeField]
+        private float TBS = 1;
+
         private RaycastHit Hit;
         private GameObject PreviousHitObject;
         private bool PreviousHit;
@@ -82,9 +88,13 @@ namespace Valve.VR.InteractionSystem
             {
                 if (!WasHeld)
                 {
-                    transform.localPosition = new Vector3(0,0,0);
-                    transform.localRotation = Quaternion.Euler(0,0,0);
+                    //transform.localPosition = new Vector3(0,0,0);
+                    //transform.localRotation = Quaternion.Euler(0,0,0);
                     Ray.gameObject.SetActive(true);
+                    if (AutomatedFire)
+                    {
+                        StartCoroutine(AutomaticFire(TBS));
+                    }
                 }
                 if (SteamVR_Actions._default.TriggerPulled.GetStateDown(SteamVR_Input_Sources.Any))
                 {
@@ -124,6 +134,7 @@ namespace Valve.VR.InteractionSystem
             else if (WasHeld)
             { 
                     Ray.gameObject.SetActive(false);
+                StopAllCoroutines();
             }
 
 
@@ -151,6 +162,13 @@ namespace Valve.VR.InteractionSystem
             Fire();
         }
 
+        private IEnumerator AutomaticFire(float TBS)
+        {
+            yield return new WaitForSeconds(TBS);
+            Fire();
+            StartCoroutine(AutomaticFire(TBS));
+
+        }
 
     }
 }

@@ -33,7 +33,7 @@ public class ManualStack : MonoBehaviour
     /// <summary>
     /// if true, this object will not have a parent and will be the parent for other game objects.
     /// </summary>
-    public bool IsMasterParent;
+    public bool IsStacked;
 
     public int isHeld = 0; //0 = notHeld, 1 = rightHandHolding, 2 = leftHandHolding
     private float lastHeld; // the last time the object was held (measured as seconds since play)
@@ -56,7 +56,7 @@ public class ManualStack : MonoBehaviour
     void Start()
     {
         this.Rb = this.gameObject.GetComponent<Rigidbody>();
-        this.IsMasterParent = false;
+        this.IsStacked = false;
         ChildrenGameObjects = new List<GameObject>();
         this.interactable = this.GetComponent<Interactable>();
         lastHeld = -1;
@@ -113,7 +113,10 @@ public class ManualStack : MonoBehaviour
         CheckHeld();
 
         CheckLetGo();
-
+        if (Time.time >= lastHeld + stackWindowLength)
+        {
+            canStack = false;
+        }
 
         //if (this.interactable.attachedToHand.currentAttachedObject.Equals(this.gameObject))
         //{
@@ -132,10 +135,12 @@ public class ManualStack : MonoBehaviour
                 if (isHeld == 1)
                 {
                     rightHand.DetachObject(this.gameObject);
+                    this.Rb.isKinematic = false;
                 }
                 else if (isHeld == 2)
                 {
                     leftHand.DetachObject(this.gameObject);
+                    this.Rb.isKinematic = false;
                 }
 
                 isHeld = 0;
@@ -217,9 +222,10 @@ public class ManualStack : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
+        if (other.gameObject.TryGetComponent(out ManualStack ms) && canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
         {
-            this.AssignParent(other.gameObject);
+            if(this.StackParent != other.gameObject && this.StackParent != this.gameObject)
+                this.AssignParent(other.gameObject);
         }
     }
 
@@ -233,15 +239,19 @@ public class ManualStack : MonoBehaviour
 
     public void AssignParent(GameObject parent)
     {
-        //Check if the parent has a parent.
-        if (parent.GetComponent<ManualStack>().StackParent == null)
+        if (this.StackParent == null && !this.gameObject.name.Equals(parent.name))
         {
-            GlueToParent(parent);
+            //Check if the parent has a parent.
+            if (parent.GetComponent<ManualStack>().StackParent == null)
+            {
+                GlueToParent(parent);
+            }
+            else
+            {
+                GlueToParent(parent.GetComponent<ManualStack>().StackParent);
+            }
         }
-        else 
-        {
-            GlueToParent(parent.GetComponent<ManualStack>().StackParent);
-        }
+       
 
     }
 
@@ -259,6 +269,8 @@ public class ManualStack : MonoBehaviour
     private void GlueToParent(GameObject parent)
     {
         this.StackParent = parent;
+
+        Debug.Log($"this {this.gameObject.name}'s StackParent is {this.StackParent.gameObject.name}");
         this.Rb.velocity = Vector3.zero;
         falling = false;
 

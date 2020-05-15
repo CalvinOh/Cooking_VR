@@ -9,6 +9,9 @@ public class ILevels : MonoBehaviour
     [SerializeField]
     private string LevelHeader;
 
+    [SerializeField]
+    private int NextSceneToLoad;
+
     protected OrderSpawn MyOrderSpawn;
     protected List<List<OrderManager.Ingridents>> PredeterminedOrders;
     protected List<float> WaitTimes;
@@ -33,6 +36,8 @@ public class ILevels : MonoBehaviour
             MyOrderSpawn.SpawnPredeterminedOrder(PredeterminedOrders[currentOrderNumber],LevelHeader+"-"+(currentOrderNumber+1));
             currentOrderNumber++;
         }
+        OrderManager.LastOrderSpawned = true;
+        OrderManager.NextSceneToLoad = NextSceneToLoad;
         Debug.Log("All orders for the level spawned.");
         
 

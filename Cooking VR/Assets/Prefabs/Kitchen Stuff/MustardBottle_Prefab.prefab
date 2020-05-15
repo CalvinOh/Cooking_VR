@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 6768233030519964578}
   m_Layer: 0
   m_Name: MustardBottle_Prefab
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca7566fc9a9e0a545bce797b30149a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Condiment: {fileID: 2509151884166145850, guid: c97205caea0c72e4095cddca6a360f20,
+  Automatic: 1
+  SetTime: 5
+  Condiment: {fileID: 7511454739227187095, guid: d4b310cc3adeae846ab480b95d2b5f73,
     type: 3}
   SpawnPosition: {fileID: 6334187920636480527}
   interactable: {fileID: 7265321698254421169}
+  CountdownTime: 0
