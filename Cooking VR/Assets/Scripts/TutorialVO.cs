@@ -18,8 +18,8 @@ public class TutorialVO : MonoBehaviour
 
     private void Start()
     {
-        VOTrigger.Invoke("Play_a_1",2);
-        VOTrigger.Invoke("Play_a_2",40);
+        VOTrigger.Invoke("Play_vx_a_1", 2);
+        VOTrigger.Invoke("Play_vx_a_2", 40);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -39,7 +39,7 @@ public class TutorialVO : MonoBehaviour
             }
             else if(!topBunOn && ingredientName == "Top Bun")
             {
-               /VOTrigger.Invoke("Play_vx_a_5", 0);
+               VOTrigger.Invoke("Play_vx_a_5", 0);
                 topBunOn = true;
             }
         }

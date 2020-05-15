@@ -167,7 +167,7 @@ public class OrderSpawn : MonoBehaviour
             ArchivedTicketObject.GetComponent<ArchivedTicket>().UpdateTicket(a);
             ArchivedTicketObject.transform.parent = ArchivedTicketsPin.transform;
             ArchivedTicketObject.transform.Translate(new Vector3(0, ArchivedTicketSpacing+ArchivedSpawnLocationNumber*ArchivedTicketSpacing*0.1f, 0), Space.Self);
-            ArchivedTicketObject.transform.Rotate(Vector3.up, Random.Range(0f, 360f), Space.Self);
+            ArchivedTicketObject.transform.Rotate(Vector3.up, UnityEngine.Random.Range(0f, 360f), Space.Self);
             ArchivedSpawnLocationNumber++;
         }
     }
