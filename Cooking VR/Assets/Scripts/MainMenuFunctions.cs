@@ -30,6 +30,11 @@ public class MainMenuFunctions : MonoBehaviour
     public void GoToScene(int sceneNum)
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+
+        //audio
+        //stops all currently playing audio events so that they do not overlap into the next scene.
+        AkSoundEngine.StopAll();
+
         SceneManager.LoadScene(sceneNum);
     }
 

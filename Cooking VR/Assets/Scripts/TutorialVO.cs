@@ -18,8 +18,8 @@ public class TutorialVO : MonoBehaviour
 
     private void Start()
     {
-        //VOTrigger.Invoke("Play_a_1,2");
-        //VOTrigger.Invoke("Play_a_2,40");
+        VOTrigger.Invoke("Play_a_1",2);
+        VOTrigger.Invoke("Play_a_2",40);
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -29,17 +29,17 @@ public class TutorialVO : MonoBehaviour
             string ingredientName = i.GetComponent<ManualStack>().ingredientName.ToString();
             if(!pattyOn && ingredientName == "Medium Patty")
             {
-                //VOTrigger.Invoke("Play_vx_a_3", 0);
+                VOTrigger.Invoke("Play_vx_a_3", 0);
                 pattyOn = true;
             }
             else if(!cheeseOn && ingredientName == "Cheese")
             {
-                //VOTrigger.Invoke("Play_vx_a_4", 0);
+                VOTrigger.Invoke("Play_vx_a_4", 0);
                 cheeseOn = true;
             }
             else if(!topBunOn && ingredientName == "Top Bun")
             {
-                //VOTrigger.Invoke("Play_vx_a_5", 0);
+               /VOTrigger.Invoke("Play_vx_a_5", 0);
                 topBunOn = true;
             }
         }

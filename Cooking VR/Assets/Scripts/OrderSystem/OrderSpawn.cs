@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class OrderSpawn : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class OrderSpawn : MonoBehaviour
     [SerializeField]
     private bool TutorialLevel;
 
+    public static event Action<bool> OrderSpawnedEvent;
+
     void Start()
     {
         SpawnLocationNumber = 0;
@@ -43,6 +46,8 @@ public class OrderSpawn : MonoBehaviour
     
     public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder,string OrderNum)
     {
+        OrderSpawnedEvent.Invoke(true);
+
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
         SpawnedOrder.OrderNum = OrderNum;
         SpawnedOrder.Ingredents = NewOrder;
@@ -63,6 +68,8 @@ public class OrderSpawn : MonoBehaviour
     
     public void SpawnRandomOrder(int Burgersize)
     {
+        OrderSpawnedEvent.Invoke(true);
+
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
         SpawnedOrder.Ingredents = RandomBurger(Burgersize);
@@ -87,10 +94,10 @@ public class OrderSpawn : MonoBehaviour
         
         for (int i = 0; i < AmountOfLayer-1; i++)
         {
-            float Decider = Random.Range(0f, 100f);
+            float Decider = UnityEngine.Random.Range(0f, 100f);
             if (Decider < 5)
             {
-                switch (Random.Range(0, 4))
+                switch (UnityEngine.Random.Range(0, 4))
                 {
                     case 0:
                         TempBurger.Add(OrderManager.Ingridents.RarePatty);
@@ -133,7 +140,7 @@ public class OrderSpawn : MonoBehaviour
 
 
         }
-        switch (Random.Range(0, 4))
+        switch (UnityEngine.Random.Range(0, 4))
         {
             case 0:
                 TempBurger.Insert(AmountOfLayer / 2, OrderManager.Ingridents.RarePatty);

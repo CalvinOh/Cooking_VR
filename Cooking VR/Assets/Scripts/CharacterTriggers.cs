@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CharacterTriggers : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CharacterTriggers : MonoBehaviour
     private bool isLate = false;
     private int grade; //0 is bad, 1 is okay, and 2 is good.
     private bool isMessy = false; //is the countertop messy?
+    private bool isTutorialScene = false;
 
     //For when lines are spoken continuously, this adds time until the line is spoken so that lines do not overlap.
     private float continuousBuffer;
@@ -32,7 +34,10 @@ public class CharacterTriggers : MonoBehaviour
 
     private void Start()
     {
-        MyAnimator = GetComponentInChildren<GiannaAnimator>();
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+            isTutorialScene = true;
+        if(!isTutorialScene)
+            MyAnimator = GetComponentInChildren<GiannaAnimator>();
 
 
        // VOTrigger.Invoke("Play_vx_b_6", 3);
@@ -40,7 +45,7 @@ public class CharacterTriggers : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(Time.time >= VOTimer)
+        if(Time.time >= VOTimer && !isTutorialScene)
         {
             IdleDialogue();
             //where idle lines will be called.
@@ -57,22 +62,22 @@ public class CharacterTriggers : MonoBehaviour
         {
             //VOTrigger.Invokes that are commented out are lines that have yet to be implemented.
             case 0:
-                //VOTrigger.Invoke("Play_vx_i_1", 0);
+                VOTrigger.Invoke("Play_vx_i_1", 0);
                 break;
             case 1:
-                //VOTrigger.Invoke("Play_vx_i_2", 0);
+                VOTrigger.Invoke("Play_vx_i_2", 0);
                 break;
             case 2:
-                //VOTrigger.Invoke("Play_vx_i_5", 0);
+                VOTrigger.Invoke("Play_vx_i_5", 0);
                 break;
             case 3:
-                //VOTrigger.Invoke("Play_vx_i_8", 0);
+                VOTrigger.Invoke("Play_vx_i_8", 0);
                 break;
             case 4:
-                //VOTrigger.Invoke("Play_vx_j_4", 0);
+                VOTrigger.Invoke("Play_vx_j_4", 0);
                 break;
             case 5:
-                //VOTrigger.Invoke("Play_vx_j_5", 0);
+                VOTrigger.Invoke("Play_vx_j_5", 0);
                 break;
             case 6:
                 // when a bad move is made
@@ -85,33 +90,33 @@ public class CharacterTriggers : MonoBehaviour
                 break;
             case 8:
                 // when a good move is made
-                //VOTrigger.Invoke("Play_vx_h_1", 0);
-                //MyAnimator.Face.Smile(4.5f, 70);
+                VOTrigger.Invoke("Play_vx_h_1", 0);
+                MyAnimator.Face.Smile(4.5f, 70);
                 break;
             case 9:
                 // when a good move is made
-                //VOTrigger.Invoke("Play_vx_h_2", 0);
-                //MyAnimator.Face.Smile(4.5f, 70);
+                VOTrigger.Invoke("Play_vx_h_2", 0);
+                MyAnimator.Face.Smile(4.5f, 70);
                 break;
             case 10:
                 // when the place is messy
-                //VOTrigger.Invoke("Play_vx_i_3", 0);
-                //MyAnimator.Face.Question(4.5f, 100);
+                VOTrigger.Invoke("Play_vx_i_3", 0);
+                MyAnimator.Face.Question(4.5f, 100);
                 break;
             case 11:
                 // when the player is idle
-                //VOTrigger.Invoke("Play_vx_i_4", 0);
-                //MyAnimator.PlaySassy();
-                //MyAnimator.Face.RessetFace();
-                //MyAnimator.Face.Neutral(4.5f,100);
+                VOTrigger.Invoke("Play_vx_i_4", 0);
+                MyAnimator.PlaySassy();
+                MyAnimator.Face.RessetFace();
+                MyAnimator.Face.Neutral(4.5f, 100);
                 break;
             case 12:
                 // when the top bun is stacked
-                //VOTrigger.Invoke("Play_vx_i_7", 0);
+                VOTrigger.Invoke("Play_vx_i_7", 0);
                 break;
             case 13:
                 // when a new ticket spawns
-                //VOTrigger.Invoke("Play_vx_i_9", 0);
+                VOTrigger.Invoke("Play_vx_i_9", 0);
                 break;
         }
         VOQueue.RemoveAt(0);
@@ -153,98 +158,109 @@ public class CharacterTriggers : MonoBehaviour
 
     private void BurgerComplete(bool isComplete)
     {
-        float rndLine = rnd.Next(0, 2);
-        if (isEarly)
+        if (!isTutorialScene)
         {
-            VOTrigger.Invoke("Play_vx_g_1", continuousBuffer);
-            continuousBuffer += 5;
-        }
-        else if (isLate)
-        {
-            VOTrigger.Invoke("Play_vx_f_1", continuousBuffer);
-            continuousBuffer += 5;
-        }
-        if (isRaw)
-        {
-            MyAnimator.PlayAngry(continuousBuffer);
-            VOTrigger.Invoke("Play_vx_b_4",continuousBuffer);
-            continuousBuffer += 5;
-        }
-        else if (isBurnt)
-        {
-            MyAnimator.PlayAngry(continuousBuffer);
-            VOTrigger.Invoke("Play_vx_b_3", continuousBuffer);
-            continuousBuffer += 5;
-        }
-        if(grade == 0)
-        {
-            switch (rndLine)
+            float rndLine = rnd.Next(0, 2);
+            if (isEarly)
             {
-                case 0:
-                    VOTrigger.Invoke("Play_vx_e_1", continuousBuffer);
-                    MyAnimator.PlayDisappointed(continuousBuffer);
-                    break;
-                case 1:
-                    VOTrigger.Invoke("Play_vx_e_2", continuousBuffer);
-                    MyAnimator.PlayAngry(continuousBuffer);
-                    break;
-                case 2:
-                    VOTrigger.Invoke("Play_vx_e_3", continuousBuffer);
-                    MyAnimator.PlaySassy(continuousBuffer);
-                    break;
+                VOTrigger.Invoke("Play_vx_g_1", continuousBuffer);
+                continuousBuffer += 5;
             }
-        }
-        else if (grade == 1)
-        {
-            switch (rndLine)
+            else if (isLate)
             {
-                case 0:
-                    VOTrigger.Invoke("Play_vx_c_1", continuousBuffer);
-                    MyAnimator.PlaySassy(continuousBuffer);
-                    break;
-                case 1:
-                    VOTrigger.Invoke("Play_vx_c_2", continuousBuffer);
-                    break;
-                case 2:
-                    VOTrigger.Invoke("Play_vx_c_3", continuousBuffer);
-                    break;
+                VOTrigger.Invoke("Play_vx_f_1", continuousBuffer);
+                continuousBuffer += 5;
             }
-        }
-        else if (grade == 2)
-        {
-            switch (rndLine)
+            if (isRaw)
             {
-                case 0:
-                    VOTrigger.Invoke("Play_vx_d_1", continuousBuffer);
-                    MyAnimator.PlayImpressed(continuousBuffer);
-                    break;
-                case 1:
-                    VOTrigger.Invoke("Play_vx_d_2", continuousBuffer);
-                    MyAnimator.PlayImpressed(continuousBuffer);
-                    break;
-                case 2:
-                    VOTrigger.Invoke("Play_vx_d_3", continuousBuffer);
-
-                    break;
+                MyAnimator.PlayAngry(continuousBuffer);
+                VOTrigger.Invoke("Play_vx_b_4", continuousBuffer);
+                continuousBuffer += 5;
             }
+            else if (isBurnt)
+            {
+                MyAnimator.PlayAngry(continuousBuffer);
+                VOTrigger.Invoke("Play_vx_b_3", continuousBuffer);
+                continuousBuffer += 5;
+            }
+            if (grade == 0)
+            {
+                switch (rndLine)
+                {
+                    case 0:
+                        VOTrigger.Invoke("Play_vx_e_1", continuousBuffer);
+                        MyAnimator.PlayDisappointed(continuousBuffer);
+                        break;
+                    case 1:
+                        VOTrigger.Invoke("Play_vx_e_2", continuousBuffer);
+                        MyAnimator.PlayAngry(continuousBuffer);
+                        break;
+                    case 2:
+                        VOTrigger.Invoke("Play_vx_e_3", continuousBuffer);
+                        MyAnimator.PlaySassy(continuousBuffer);
+                        break;
+                }
+            }
+            else if (grade == 1)
+            {
+                switch (rndLine)
+                {
+                    case 0:
+                        VOTrigger.Invoke("Play_vx_c_1", continuousBuffer);
+                        MyAnimator.PlaySassy(continuousBuffer);
+                        break;
+                    case 1:
+                        VOTrigger.Invoke("Play_vx_c_2", continuousBuffer);
+                        break;
+                    case 2:
+                        VOTrigger.Invoke("Play_vx_c_3", continuousBuffer);
+                        break;
+                }
+            }
+            else if (grade == 2)
+            {
+                switch (rndLine)
+                {
+                    case 0:
+                        VOTrigger.Invoke("Play_vx_d_1", continuousBuffer);
+                        MyAnimator.PlayImpressed(continuousBuffer);
+                        break;
+                    case 1:
+                        VOTrigger.Invoke("Play_vx_d_2", continuousBuffer);
+                        MyAnimator.PlayImpressed(continuousBuffer);
+                        break;
+                    case 2:
+                        VOTrigger.Invoke("Play_vx_d_3", continuousBuffer);
+
+                        break;
+                }
+            }
+
+
+
+            //this is where the lines will be sequenced and said in the order we desire. if it's early/late then raw or burnt and finally the grade.
+            AddBuffer(continuousBuffer);
+            continuousBuffer = 0;
         }
-
-
-
-        //this is where the lines will be sequenced and said in the order we desire. if it's early/late then raw or burnt and finally the grade.
-        AddBuffer(continuousBuffer);
-        continuousBuffer = 0;
     }
+
+    private void OrderSpawned(bool obj)
+    {
+        VOQueue.Insert(0, 9);
+    }
+
 
     private void OnEnable()
     {
         OrderCheck.giveToGianna += RecieveFinalBurgerParts;
         OrderCheck.orderComplete += BurgerComplete;
+        OrderSpawn.OrderSpawnedEvent += OrderSpawned;
     }
 
     private void OnDisable()
     {
         OrderCheck.giveToGianna -= RecieveFinalBurgerParts;
         OrderCheck.orderComplete -= BurgerComplete;
+        OrderSpawn.OrderSpawnedEvent -= OrderSpawned;
     }
 }

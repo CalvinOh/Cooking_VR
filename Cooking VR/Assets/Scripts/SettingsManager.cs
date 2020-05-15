@@ -32,6 +32,16 @@ public class SettingsManager : MonoBehaviour
         if (currentScene != sceneCheck)
         {
             ApplySettings();
+            SettingsManager[] managers = FindObjectsOfType<SettingsManager>();
+            foreach (SettingsManager sm in managers)
+            {
+                if (!sm.Equals(this))
+                {
+                    SceneManager.MoveGameObjectToScene(sm.gameObject, SceneManager.GetActiveScene());
+                    Destroy(sm.gameObject);
+                }
+
+            }
         }
         currentScene = sceneCheck;
     }
