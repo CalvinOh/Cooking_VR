@@ -62,22 +62,22 @@ public class CharacterTriggers : MonoBehaviour
         {
             //VOTrigger.Invokes that are commented out are lines that have yet to be implemented.
             case 0:
-                //VOTrigger.Invoke("Play_vx_i_1", 0);
+                VOTrigger.Invoke("Play_vx_i_1", 0);
                 break;
             case 1:
-                //VOTrigger.Invoke("Play_vx_i_2", 0);
+                VOTrigger.Invoke("Play_vx_i_2", 0);
                 break;
             case 2:
-                //VOTrigger.Invoke("Play_vx_i_5", 0);
+                VOTrigger.Invoke("Play_vx_i_5", 0);
                 break;
             case 3:
-                //VOTrigger.Invoke("Play_vx_i_8", 0);
+                VOTrigger.Invoke("Play_vx_i_8", 0);
                 break;
             case 4:
-                //VOTrigger.Invoke("Play_vx_j_4", 0);
+                VOTrigger.Invoke("Play_vx_j_4", 0);
                 break;
             case 5:
-                //VOTrigger.Invoke("Play_vx_j_5", 0);
+                VOTrigger.Invoke("Play_vx_j_5", 0);
                 break;
             case 6:
                 // when a bad move is made
@@ -90,33 +90,33 @@ public class CharacterTriggers : MonoBehaviour
                 break;
             case 8:
                 // when a good move is made
-                //VOTrigger.Invoke("Play_vx_h_1", 0);
-                //MyAnimator.Face.Smile(4.5f, 70);
+                VOTrigger.Invoke("Play_vx_h_1", 0);
+                MyAnimator.Face.Smile(4.5f, 70);
                 break;
             case 9:
                 // when a good move is made
-                //VOTrigger.Invoke("Play_vx_h_2", 0);
-                //MyAnimator.Face.Smile(4.5f, 70);
+                VOTrigger.Invoke("Play_vx_h_2", 0);
+                MyAnimator.Face.Smile(4.5f, 70);
                 break;
             case 10:
                 // when the place is messy
-                //VOTrigger.Invoke("Play_vx_i_3", 0);
-                //MyAnimator.Face.Question(4.5f, 100);
+                VOTrigger.Invoke("Play_vx_i_3", 0);
+                MyAnimator.Face.Question(4.5f, 100);
                 break;
             case 11:
                 // when the player is idle
-                //VOTrigger.Invoke("Play_vx_i_4", 0);
-                //MyAnimator.PlaySassy();
-                //MyAnimator.Face.RessetFace();
-                //MyAnimator.Face.Neutral(4.5f,100);
+                VOTrigger.Invoke("Play_vx_i_4", 0);
+                MyAnimator.PlaySassy();
+                MyAnimator.Face.RessetFace();
+                MyAnimator.Face.Neutral(4.5f, 100);
                 break;
             case 12:
                 // when the top bun is stacked
-                //VOTrigger.Invoke("Play_vx_i_7", 0);
+                VOTrigger.Invoke("Play_vx_i_7", 0);
                 break;
             case 13:
                 // when a new ticket spawns
-                //VOTrigger.Invoke("Play_vx_i_9", 0);
+                VOTrigger.Invoke("Play_vx_i_9", 0);
                 break;
         }
         VOQueue.RemoveAt(0);
