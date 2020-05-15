@@ -268,11 +268,13 @@ public class VoTriggers : MonoBehaviour
     private void OnEnable()
     {
         CharacterTriggers.VOTrigger += PlayVoiceClip;
+        TutorialVO.VOTrigger += PlayVoiceClip;
     }
 
     private void OnDisable()
     {
         CharacterTriggers.VOTrigger -= PlayVoiceClip;
+        TutorialVO.VOTrigger -= PlayVoiceClip;
     }
 
 }

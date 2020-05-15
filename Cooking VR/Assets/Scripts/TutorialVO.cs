@@ -19,7 +19,7 @@ public class TutorialVO : MonoBehaviour
     private void Start()
     {
         VOTrigger.Invoke("Play_vx_a_1", 2);
-        VOTrigger.Invoke("Play_vx_a_2", 40);
+        VOTrigger.Invoke("Play_vx_a_2", 18);
     }
     // Update is called once per frame
     void FixedUpdate()
