@@ -204,6 +204,9 @@ public class OrderCheck : MonoBehaviour
 
     public void SubmitFood()
     {
+        ////audio
+        //PlaySoundBell();
+
         Debug.Log("Bell rung");
         GameObject Burger = null;
         GameObject Ticket = null;
@@ -305,5 +308,4 @@ public class OrderCheck : MonoBehaviour
         //add proper GameObject name once bell is implemented
         AkSoundEngine.PostEvent("Bell", bell);
     }
-
 }
