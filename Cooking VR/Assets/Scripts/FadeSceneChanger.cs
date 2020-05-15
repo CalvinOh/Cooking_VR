@@ -33,6 +33,7 @@ public class FadeSceneChanger : MonoBehaviour
 
     public void OnFadeComplete()
     {
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene(SceneToLoad);
         
     }

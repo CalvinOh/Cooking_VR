@@ -37,6 +37,7 @@ public class LevelCompleteOrder : MonoBehaviour
             LeftText += "Order#: " + a.OriginalOrder.OrderNum+"\n";
             RightText +=  a.Score+"/"+(a.OriginalOrder.Ingredents.Count - 2) * 100+"\n";
         }
+        Debug.Log(OrderManager.finishedOrders.Count);
         BodyLeft.text = LeftText;
         BodyRight.text = RightText;
 

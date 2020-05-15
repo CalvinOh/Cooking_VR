@@ -60,6 +60,8 @@ public class OrderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        finishedOrders.Clear();
+        Orders.Clear();
         LastOrderSpawned = false;
         LevelCompleted = false;
         FindOrderCheck();

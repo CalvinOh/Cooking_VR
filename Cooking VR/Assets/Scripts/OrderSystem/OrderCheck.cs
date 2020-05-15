@@ -33,7 +33,7 @@ public class OrderCheck : MonoBehaviour
     void Start()
     {
         burgerPartsForVO = new List<string>();
-       // MockBurgerCheck();
+        MockBurgerCheck();
     }
 
     public void RecieveOrderSpawn(OrderSpawn a)
@@ -97,8 +97,18 @@ public class OrderCheck : MonoBehaviour
         //this will contain the if statements for assigning a status to the final percentage grade i.e. bad, okay, good, great
     }
 
-    int CompareFoodToOrder(List<OrderManager.Ingridents> SubmittedFood, List<OrderManager.Ingridents> Order)
+    int CompareFoodToOrder(List<OrderManager.Ingridents> OriginalSubmittedFood, List<OrderManager.Ingridents> OriginalOrder)
     {
+        List<OrderManager.Ingridents> SubmittedFood = new List<OrderManager.Ingridents>();
+        List<OrderManager.Ingridents> Order = new List<OrderManager.Ingridents>();
+        foreach (OrderManager.Ingridents a in OriginalSubmittedFood)
+        {
+            SubmittedFood.Add(a);
+        }
+        foreach (OrderManager.Ingridents a in OriginalOrder)
+        {
+            Order.Add(a);
+        }
         int score=(Order.Count-2)*100;
         int IncorrectPositions = 0;
         int LayersTakenOut = 0;
@@ -152,7 +162,8 @@ public class OrderCheck : MonoBehaviour
         score -= 50 * SubmittedFood.Count;// deduct 50 points for each extra ingrident not on the order
         score -= 100 * Order.Count;// deduct 100 points for every missing ingrident
 
-        CurrentBurgerPercentage = score / ((Order.Count - 2) * 100);
+        CurrentBurgerPercentage = score / ((OriginalOrder.Count - 2) * 100);
+        Debug.Log(CurrentBurgerPercentage);
         CommentOnBurger(CurrentBurgerPercentage);
         return score;
     }
@@ -254,6 +265,7 @@ public class OrderCheck : MonoBehaviour
             TheList.Add(Stack.ChildrenGameObjects[i].GetComponent<ManualStack>().ingredientName);
         }
         TheList.Remove(OrderManager.Ingridents.Plate);
+        TheList.Reverse();
         return TheList;
     }
 
@@ -263,7 +275,7 @@ public class OrderCheck : MonoBehaviour
     private void MockBurgerCheck()
     {
         List<OrderManager.Ingridents> Order = new List<OrderManager.Ingridents>();
-        List < OrderManager.Ingridents>SubmittedFood = new List<OrderManager.Ingridents>();
+        List<OrderManager.Ingridents> SubmittedFood = new List<OrderManager.Ingridents>();
 
 
         Order.Add(OrderManager.Ingridents.TopBun);
@@ -271,8 +283,8 @@ public class OrderCheck : MonoBehaviour
         Order.Add(OrderManager.Ingridents.Cheese);
         Order.Add(OrderManager.Ingridents.BottomBun);
         SubmittedFood.Add(OrderManager.Ingridents.TopBun);
-        SubmittedFood.Add(OrderManager.Ingridents.Cheese);
         SubmittedFood.Add(OrderManager.Ingridents.MediumPatty);
+        SubmittedFood.Add(OrderManager.Ingridents.Cheese);
         SubmittedFood.Add(OrderManager.Ingridents.BottomBun);
 
         string OrderS = "";

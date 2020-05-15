@@ -21,6 +21,7 @@ public class OrderSpawn : MonoBehaviour
 
     [SerializeField]
     private GameObject ArchivedTicketsPin;
+    private int ArchivedSpawnLocationNumber=0;
     private int SpawnLocationNumber;
     [SerializeField]
     private float ArchivedTicketSpacing = 1;
@@ -31,6 +32,7 @@ public class OrderSpawn : MonoBehaviour
     void Start()
     {
         SpawnLocationNumber = 0;
+        ArchivedSpawnLocationNumber = 0;
     }
 
 
@@ -154,10 +156,12 @@ public class OrderSpawn : MonoBehaviour
     {
         if (!TutorialLevel)
         {
-            GameObject ArchivedTicket = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform.position, ArchivedTicketsPin.transform.rotation);
-            ArchivedTicket.GetComponent<ArchivedTicket>().UpdateTicket(a);
-            ArchivedTicket.transform.parent = ArchivedTicketsPin.transform;
-            ArchivedTicket.transform.Translate(new Vector3(0, ArchivedTicketSpacing, 0), Space.Self);
+            GameObject ArchivedTicketObject = Instantiate(ArchivedTicketGO, ArchivedTicketsPin.transform.position, ArchivedTicketsPin.transform.rotation);
+            ArchivedTicketObject.GetComponent<ArchivedTicket>().UpdateTicket(a);
+            ArchivedTicketObject.transform.parent = ArchivedTicketsPin.transform;
+            ArchivedTicketObject.transform.Translate(new Vector3(0, ArchivedTicketSpacing+ArchivedSpawnLocationNumber*ArchivedTicketSpacing*0.1f, 0), Space.Self);
+            ArchivedTicketObject.transform.Rotate(Vector3.up, Random.Range(0f, 360f), Space.Self);
+            ArchivedSpawnLocationNumber++;
         }
     }
 
@@ -166,5 +170,6 @@ public class OrderSpawn : MonoBehaviour
         GameObject CompleteTicket = Instantiate(CompleteTicketGO, OrderLocations[SpawnLocationNumber % OrderLocations.Count]);
         CompleteTicket.GetComponent<LevelCompleteOrder>().SetUp(NSTL);
         CompleteTicket.transform.parent = TicketParent.transform;
+
     }
 }
