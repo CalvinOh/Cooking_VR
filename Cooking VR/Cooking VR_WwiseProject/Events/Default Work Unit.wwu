@@ -802,6 +802,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Music" ID="{E1CF99FD-8BCA-40E0-B4EB-31CC6ADAA79F}">
+					<ChildrenList>
+						<Action Name="" ID="{BD58C1D6-95BD-4BEC-863C-578CD2911A81}" ShortID="260383224">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Main Music Switch" ID="{9BDDD94B-5AC4-4444-9DB7-8844DEDEF55F}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

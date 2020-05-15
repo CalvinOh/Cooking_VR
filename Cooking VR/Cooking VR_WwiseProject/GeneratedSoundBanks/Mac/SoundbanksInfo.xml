@@ -210,6 +210,39 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="108253935" Language="SFX">
+							<ShortName>HYB_Lvl2_[LOOP]_05.07.20_v02.wav</ShortName>
+							<Path>SFX\HYB_Lvl2_[LOOP]_05.07.20_v02_D79FB2B7.wem</Path>
+						</File>
+						<File Id="518395074" Language="SFX">
+							<ShortName>HYB_Lvl3_[LOOP]_MainTheme_05.07.20_v02.wav</ShortName>
+							<Path>SFX\HYB_Lvl3_[LOOP]_MainTheme_05.07.20_v02_D79FB2B7.wem</Path>
+						</File>
+						<File Id="526915538" Language="SFX">
+							<ShortName>HYB_Lvl1_[LOOP]_05.07.20_v01.wav</ShortName>
+							<Path>SFX\HYB_Lvl1_[LOOP]_05.07.20_v01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{4E7F316C-B27C-4209-8AB0-8395AC865741}">
+							<Media>
+								<File Id="526915538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{1DDBA1B0-D8AF-4BD9-97C5-33D38871BE6F}">
+							<Media>
+								<File Id="108253935"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}">
+							<Media>
+								<File Id="518395074"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="1603068616" Name="Play_vx_a_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_1" DurationType="OneShot" DurationMin="15.639206" DurationMax="15.639206">
 					<IncludedMemoryFiles>
 						<File Id="217978393" Language="SFX">
@@ -756,6 +789,15 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2470328564" Name="Intensity" ObjectPath="\Switches\Default Work Unit\Intensity">
+					<Switches>
+						<Switch Id="3554859804" Name="Tutorial_Level_1" ObjectPath="\Switches\Default Work Unit\Intensity\Tutorial_Level_1"/>
+						<Switch Id="1290008370" Name="Level_2" ObjectPath="\Switches\Default Work Unit\Intensity\Level_2"/>
+						<Switch Id="1290008371" Name="Level_3" ObjectPath="\Switches\Default Work Unit\Intensity\Level_3"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

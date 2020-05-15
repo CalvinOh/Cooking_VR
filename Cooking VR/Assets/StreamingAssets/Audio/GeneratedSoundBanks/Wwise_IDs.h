@@ -27,6 +27,7 @@ namespace AK
         static const AkUniqueID IMPACT_PLATE = 803254130U;
         static const AkUniqueID IMPACT_SILVERWARE = 2540397042U;
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
+        static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
         static const AkUniqueID PLAY_VX_A_2 = 1603068619U;
         static const AkUniqueID PLAY_VX_A_3 = 1603068618U;
@@ -82,6 +83,27 @@ namespace AK
         static const AkUniqueID STOVE_ON = 1278791036U;
         static const AkUniqueID USE_CONDIMENT = 2484277510U;
     } // namespace EVENTS
+
+    namespace SWITCHES
+    {
+        namespace INTENSITY
+        {
+            static const AkUniqueID GROUP = 2470328564U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID LEVEL_1 = 1290008369U;
+                static const AkUniqueID LEVEL_2 = 1290008370U;
+                static const AkUniqueID LEVEL_3 = 1290008371U;
+            } // namespace SWITCH
+        } // namespace INTENSITY
+
+    } // namespace SWITCHES
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID GAMEPARAMETERINTENSITY = 964045659U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
