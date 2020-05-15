@@ -38,7 +38,7 @@ public class CharacterTriggers : MonoBehaviour
             isTutorialScene = true;
         if(!isTutorialScene)
             MyAnimator = GetComponentInChildren<GiannaAnimator>();
-
+        VOTimer = 5;
 
        // VOTrigger.Invoke("Play_vx_b_6", 3);
         //MyAnimator.PlayAngry(3);

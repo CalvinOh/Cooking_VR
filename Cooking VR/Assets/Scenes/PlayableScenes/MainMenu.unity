@@ -1717,7 +1717,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2081526431}
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3012,6 +3013,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: -0.00000333786, z: -25.530308}
+--- !u!1001 &790654633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 287206880}
+    m_Modifications:
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3984925866411268714, guid: 07bf04a33a6d0a94eb918658506160d8,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio - Music_Environ.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 07bf04a33a6d0a94eb918658506160d8, type: 3}
 --- !u!1 &798574909
 GameObject:
   m_ObjectHideFlags: 0
@@ -6522,6 +6592,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.64452, y: 24.006458, z: 5.9254203}
   m_Center: {x: -0.102956615, y: 25.973463, z: -2.462711}
+--- !u!4 &2081526431 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 898066504547227109, guid: 07bf04a33a6d0a94eb918658506160d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 790654633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &35091608100048585
 MeshRenderer:
   m_ObjectHideFlags: 0
