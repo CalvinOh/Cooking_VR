@@ -68,7 +68,7 @@ public class CharacterTriggers : MonoBehaviour
                 VOTrigger.Invoke("Play_vx_i_2", 0);
                 break;
             case 2:
-                VOTrigger.Invoke("Play_vx_i_5", 0);
+                VOTrigger.Invoke("Play_vx_l_2", 0);
                 break;
             case 3:
                 VOTrigger.Invoke("Play_vx_i_8", 0);
@@ -105,7 +105,7 @@ public class CharacterTriggers : MonoBehaviour
                 break;
             case 11:
                 // when the player is idle
-                VOTrigger.Invoke("Play_vx_i_4", 0);
+                VOTrigger.Invoke("Play_vx_i_5", 0);
                 MyAnimator.PlaySassy();
                 MyAnimator.Face.RessetFace();
                 MyAnimator.Face.Neutral(4.5f, 100);
