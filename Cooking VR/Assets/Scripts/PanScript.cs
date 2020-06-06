@@ -56,6 +56,7 @@ public class PanScript : MonoBehaviour
     {
         if (other.CompareTag("Patty"))
         {
+            CurrentPattyOnPan.StopCooking();
             CurrentPattyOnPan = other.GetComponent<PattyScript>();
             if(IsHeated)
             CurrentPattyOnPan.StartCooking();
