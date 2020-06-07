@@ -27,7 +27,7 @@ public class MusicSystem : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_Music", gameObject);
 
-        musicIsPlaying = true;
+        smusicIsPlaying = true;
     }
 
     //determine intensity of music based on scene name
