@@ -816,6 +816,25 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_All_Except" ID="{5FE7D298-6AB2-4604-9B9A-3897EC4B03A3}">
+					<ChildrenList>
+						<Action Name="" ID="{F37751C0-3D2A-4CD5-9251-1E1BFD1C060B}" ShortID="882520585">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+							<ChildrenList>
+								<EventActionException Name="" ID="{4F168C5B-9E94-494B-9AD1-72556CE98AE0}">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Music Switch" ID="{9BDDD94B-5AC4-4444-9DB7-8844DEDEF55F}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}"/>
+										</Reference>
+									</ReferenceList>
+								</EventActionException>
+							</ChildrenList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
