@@ -22,6 +22,9 @@ public class FadeSceneChanger : MonoBehaviour
     {
         // Return To Main Menu /IF/ the main menu's build index is 0!
         FadeToScene(0);
+
+        // audio
+        AkSoundEngine.StopAll();
     }
 
     public void FadeToScene(int SceneIndex)
@@ -35,6 +38,5 @@ public class FadeSceneChanger : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene(SceneToLoad);
-        
     }
 }
