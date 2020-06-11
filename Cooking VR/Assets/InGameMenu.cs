@@ -10,7 +10,8 @@ public class InGameMenu : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
         // audio
-        AkSoundEngine.StopAll();
+        AkSoundEngine.PostEvent("Stop_All_Except", gameObject);
+        Debug.Log("Stopped All Except");
 
         SceneManager.LoadScene(0);
     }

@@ -14,24 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: d9b5ba3d70a48348ba09d19d012112d9
     GuidInternal: 
-    m_lastTime: -8586147182461964100
+    m_lastTime: -8586115684092076372
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: a17dab3cd2aa894baaacc9e1f94ac24c
     GuidInternal: 
-    m_lastTime: -8586147182462926316
-    List: []
+    m_lastTime: -8586115684109104103
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586120971446847784
+    m_lastTime: -8586101277025691438
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -47,7 +56,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586120972021489399
+    m_lastTime: -8586097731148396943
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -939,6 +948,18 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: 0.152083
       minDuration: 0.152083
+    - name: Stop_All_Except
+      guid: 98d2e75fb26a04469b9a3897ec4b03a3
+      id: 3016745319
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_All_Except
+        ObjectType: 3
+      Path: Default Work Unit\Stop_All_Except
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stove_Off
       guid: 9a563b5e67531e4bb63adb95a12c16ff
       id: 1902865914
@@ -994,7 +1015,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3d6363d5ce60a041ade2b6e09d2dff36
     GuidInternal: 
-    m_lastTime: -8586120978310960600
+    m_lastTime: -8586115684117816087
     List:
     - name: GameParameterIntensity
       guid: e5ffca10bc0da841b9f3fc1df08f2e04
@@ -1007,17 +1028,17 @@ MonoBehaviour:
       Path: Default Work Unit\GameParameterIntensity
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: f3d7bd6077ed6f48b927fcbc87305ffa
     GuidInternal: 
-    m_lastTime: -8586147182462757201
+    m_lastTime: -8586115684092086380
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPath: Default Work Unit
     guid: 0d1c53af911cf344af2d5cddd2060317
     GuidInternal: 
-    m_lastTime: -8586120921095645480
+    m_lastTime: -8586115684092076372
     List:
     - name: Intensity
       guid: f8e9661ec2179d48ab29430ec5291603
@@ -1052,10 +1073,10 @@ MonoBehaviour:
       valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: 0d065cb3686f85499960a1d647686265
     GuidInternal: 
-    m_lastTime: -8586147182462103736
+    m_lastTime: -8586115684092076372
     List: []
   ExpandedItems:
   - /Cooking VR_WwiseProject

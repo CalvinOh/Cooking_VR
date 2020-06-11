@@ -60,6 +60,7 @@
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
+													<ReferenceList/>
 													<TransitionInfo/>
 												</MusicTransition>
 											</TransitionList>
@@ -95,8 +96,10 @@
 									<PropertyList>
 										<Property Name="IsFolder" Type="bool" Value="True"/>
 									</PropertyList>
+									<ReferenceList/>
 									<ChildrenList>
 										<MusicTransition Name="Transition" ID="{28ECBAD7-6AD1-4258-A1DA-992FBD52ADEB}">
+											<ReferenceList/>
 											<TransitionInfo/>
 										</MusicTransition>
 									</ChildrenList>
@@ -163,6 +166,7 @@
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
+													<ReferenceList/>
 													<TransitionInfo/>
 												</MusicTransition>
 											</TransitionList>
@@ -198,8 +202,10 @@
 									<PropertyList>
 										<Property Name="IsFolder" Type="bool" Value="True"/>
 									</PropertyList>
+									<ReferenceList/>
 									<ChildrenList>
 										<MusicTransition Name="Transition" ID="{45D9D3CF-A6A7-41E9-8120-52EE1737BAA0}">
+											<ReferenceList/>
 											<TransitionInfo/>
 										</MusicTransition>
 									</ChildrenList>
@@ -266,6 +272,7 @@
 													<PropertyList>
 														<Property Name="IsFolder" Type="bool" Value="True"/>
 													</PropertyList>
+													<ReferenceList/>
 													<TransitionInfo/>
 												</MusicTransition>
 											</TransitionList>
@@ -301,8 +308,10 @@
 									<PropertyList>
 										<Property Name="IsFolder" Type="bool" Value="True"/>
 									</PropertyList>
+									<ReferenceList/>
 									<ChildrenList>
 										<MusicTransition Name="Transition" ID="{8F73EC28-E691-4792-9671-D6595D97A25F}">
+											<ReferenceList/>
 											<TransitionInfo/>
 										</MusicTransition>
 									</ChildrenList>
@@ -331,12 +340,14 @@
 							<PropertyList>
 								<Property Name="IsFolder" Type="bool" Value="True"/>
 							</PropertyList>
+							<ReferenceList/>
 							<ChildrenList>
 								<MusicTransition Name="Transition" ID="{9300CE66-4964-4F0F-8926-3FA61113CABA}">
 									<PropertyList>
 										<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 										<Property Name="ExitSourceAt" Type="int16" Value="1"/>
 									</PropertyList>
+									<ReferenceList/>
 									<TransitionInfo>
 										<SourceFadeOut>
 											<MusicFade Name="Source Fade-out" ID="{3C41028B-C6C0-460D-A30E-9D2663B1E979}">
@@ -360,10 +371,10 @@
 					<EntryList>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Level_1" ID="{4E7F316C-B27C-4209-8AB0-8395AC865741}"/>
+								<PathElementRef Name="Level_3" ID="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}"/>
 							</Path>
 							<AudioNodeInfo>
-								<AudioNodeRef Name="Level_1" ID="{65A2BBCE-B9D8-4814-8CD1-6179EFFE3AD7}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
+								<AudioNodeRef Name="Level_3" ID="{CD9793F1-6079-476F-A566-7CF899ADBA2D}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 						<Entry>
@@ -376,10 +387,10 @@
 						</Entry>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Level_3" ID="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}"/>
+								<PathElementRef Name="Level_1" ID="{4E7F316C-B27C-4209-8AB0-8395AC865741}"/>
 							</Path>
 							<AudioNodeInfo>
-								<AudioNodeRef Name="Level_3" ID="{CD9793F1-6079-476F-A566-7CF899ADBA2D}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
+								<AudioNodeRef Name="Level_1" ID="{65A2BBCE-B9D8-4814-8CD1-6179EFFE3AD7}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>
