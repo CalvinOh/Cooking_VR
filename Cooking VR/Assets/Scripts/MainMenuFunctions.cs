@@ -30,6 +30,11 @@ public class MainMenuFunctions : MonoBehaviour
     public void GoToScene(int sceneNum)
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+
+        //stop looping sounds while next scene loads
+        //THIS INTERFERES WITH MUSIC AND AMBIENCE. FIND BETTER SOLUTION LATER -CK
+        //AkSoundEngine.StopAll();
+
         SceneManager.LoadScene(sceneNum);
     }
 

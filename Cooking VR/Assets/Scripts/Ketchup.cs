@@ -14,9 +14,11 @@ public class Ketchup : MonoBehaviour
 
     bool hitNotStackable = false;
 
+    [SerializeField]
     float timeStored;
 
-    float timeToDelete = 5;
+    [SerializeField]
+    float timeToDelete;
 
     // Start is called before the first frame update
     void Start()
@@ -24,24 +26,25 @@ public class Ketchup : MonoBehaviour
         //Grabs the ketchup's components
         rb = GetComponent<Rigidbody>();
         particle = GetComponent<ParticleSystem>();
-
-        //Test force on ketchup
-        //rb.AddForce(Vector3.forward * 300);
-        //rb.AddForce(Vector3.up * 50);
-        //rb.AddForce(Vector3.right * 50);
     }
 
     private void Update()
     {
-        if (hitNotStackable)
-        {
-            
-        }
-
-        if(Time.time >= timeStored + 5 && hitNotStackable)
+        if(timeStored >= timeToDelete)
         {
             Destroy(gameObject.transform.GetChild(0).gameObject);
             Destroy(gameObject);
+        }
+        else
+        {
+            if(this.transform.parent == null)
+            {
+                timeStored += Time.deltaTime;
+            }
+            else
+            {
+                timeStored = 0;
+            }
         }
     }
 
@@ -55,7 +58,7 @@ public class Ketchup : MonoBehaviour
             rb.isKinematic = true;
             this.transform.SetPositionAndRotation(this.transform.position, rb.rotation);
             rb.freezeRotation = true;
-            if (!collision.gameObject.GetComponent<Stackable>())
+            if (!collision.gameObject.GetComponent<ManualStack>())
             {
                 hitNotStackable = true;
                 timeStored = Time.time;

@@ -133,7 +133,7 @@ MonoBehaviour:
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
   handFollowTransform: 1
-  highlightOnHover: 1
+  highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
 --- !u!54 &961774361750439422
@@ -245,9 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 12
   IsMasterParent: 0
@@ -255,6 +253,6 @@ MonoBehaviour:
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.01
   scaleRatio: 0
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
