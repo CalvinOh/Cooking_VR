@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
 	<RootPaths>
-		<ProjectRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Mac\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ProjectRoot>D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\krueg\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -82,26 +82,6 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="2416875919" Name="Grab_Bottle_Plastic" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Plastic" DurationType="OneShot" DurationMin="0.329478" DurationMax="0.563673">
-					<IncludedMemoryFiles>
-						<File Id="205173241" Language="SFX">
-							<ShortName>sx_int_plastic_bottle_grab_4.wav</ShortName>
-							<Path>SFX\sx_int_plastic_bottle_grab_4_10C4C929.wem</Path>
-						</File>
-						<File Id="279788534" Language="SFX">
-							<ShortName>sx_int_plastic_bottle_grab_2.wav</ShortName>
-							<Path>SFX\sx_int_plastic_bottle_grab_2_10C4C929.wem</Path>
-						</File>
-						<File Id="378245175" Language="SFX">
-							<ShortName>sx_int_plastic_bottle_grab_3.wav</ShortName>
-							<Path>SFX\sx_int_plastic_bottle_grab_3_10C4C929.wem</Path>
-						</File>
-						<File Id="1072177874" Language="SFX">
-							<ShortName>sx_int_plastic_bottle_grab_1.wav</ShortName>
-							<Path>SFX\sx_int_plastic_bottle_grab_1_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
 				<Event Id="1863953098" Name="Grab_Plate" ObjectPath="\Events\Default Work Unit\Grab_Plate" DurationType="OneShot" DurationMin="0.443042" DurationMax="0.689042">
 					<IncludedMemoryFiles>
 						<File Id="202225013" Language="SFX">
@@ -119,6 +99,26 @@
 						<File Id="999296791" Language="SFX">
 							<ShortName>sx_int_plate_grab_3.wav</ShortName>
 							<Path>SFX\sx_int_plate_grab_3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="433980135" Name="Impact_Bottle_Plastic" ObjectPath="\Events\Default Work Unit\Impact_Bottle_Plastic" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.329478" DurationMax="0.563673">
+					<IncludedMemoryFiles>
+						<File Id="205173241" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_4.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_4_10C4C929.wem</Path>
+						</File>
+						<File Id="279788534" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_2.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_2_10C4C929.wem</Path>
+						</File>
+						<File Id="378245175" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_3.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_3_10C4C929.wem</Path>
+						</File>
+						<File Id="1072177874" Language="SFX">
+							<ShortName>sx_int_plastic_bottle_grab_1.wav</ShortName>
+							<Path>SFX\sx_int_plastic_bottle_grab_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -226,9 +226,9 @@
 						</File>
 					</IncludedMemoryFiles>
 					<SwitchContainers>
-						<SwitchContainer SwitchValue="{4E7F316C-B27C-4209-8AB0-8395AC865741}">
+						<SwitchContainer SwitchValue="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}">
 							<Media>
-								<File Id="526915538"/>
+								<File Id="518395074"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{1DDBA1B0-D8AF-4BD9-97C5-33D38871BE6F}">
@@ -236,9 +236,9 @@
 								<File Id="108253935"/>
 							</Media>
 						</SwitchContainer>
-						<SwitchContainer SwitchValue="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}">
+						<SwitchContainer SwitchValue="{4E7F316C-B27C-4209-8AB0-8395AC865741}">
 							<Media>
-								<File Id="518395074"/>
+								<File Id="526915538"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -759,6 +759,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3016745319" Name="Stop_All_Except" ObjectPath="\Events\Default Work Unit\Stop_All_Except" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1902865914" Name="Stove_Off" ObjectPath="\Events\Default Work Unit\Stove_Off" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1278791036" Name="Stove_On" ObjectPath="\Events\Default Work Unit\Stove_On" MaxAttenuation="3.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
