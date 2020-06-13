@@ -4194,6 +4194,11 @@
 								<Value>True</Value>
 							</ValueList>
 						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -4583,6 +4588,240 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
+				<Sound Name="sx_timer_beep_standard" ID="{4EE50780-3D70-408D-9894-05BAFD915A9B}" ShortID="721904261">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_timer_beep_standard" ID="{00D1D8A1-3CD6-42FC-865D-599E262E0AC2}">
+							<Language>SFX</Language>
+							<AudioFile>sx_timer_beep_standard.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="535249554"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_timer_beep_standard" ID="{00D1D8A1-3CD6-42FC-865D-599E262E0AC2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sx_timer_gaintime" ID="{7A89AA0E-CB9A-4D9A-83F9-7B071E2E0293}" ShortID="912589139">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Gianna VO" ID="{EA9A9D89-1AF3-4556-ACFF-3EAAF271FD14}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_timer_gaintime" ID="{BFB65449-DF92-4CAC-98D8-791C85AC0E67}">
+							<Language>SFX</Language>
+							<AudioFile>sx_timer_gaintime.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="616589309"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_timer_gaintime" ID="{BFB65449-DF92-4CAC-98D8-791C85AC0E67}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sx_impact_pan" ID="{E3493BC8-B00D-47F3-8E17-C49D093CADE4}" ShortID="917664794">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{8ACB8285-9EC1-441F-9F32-7E0C3D4590F1}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="76"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_impact_pan" ID="{F563C8DF-A274-4613-A16F-57507B4ED431}">
+							<Language>SFX</Language>
+							<AudioFile>sx_impact_pan.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1068727662"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_impact_pan" ID="{F563C8DF-A274-4613-A16F-57507B4ED431}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="claps" ID="{C3A2E2F1-E655-4574-A195-57E502BE748B}" ShortID="281455014">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Highpass" Type="int16">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{BEB7369E-BF78-409A-96B0-4B5986AFF0BB}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="8"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{88D68A37-AC24-46DB-A0C7-D1337BF7144E}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="101"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-6</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sx_clap_1" ID="{D705F998-86B2-4C51-AA77-FFD7C8A741D6}" ShortID="57747402">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_clap_1" ID="{6FAF7F2E-8E90-4EC3-8D5F-C3C1D0C44072}">
+									<Language>SFX</Language>
+									<AudioFile>sx_clap_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="650014327"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_clap_1" ID="{6FAF7F2E-8E90-4EC3-8D5F-C3C1D0C44072}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sx_clap_2" ID="{0D8A393C-A424-4E90-9AC9-CC826101EB17}" ShortID="79307259">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_clap_2" ID="{846B21B7-E824-4C5A-B7D1-1FD4D526EC6E}">
+									<Language>SFX</Language>
+									<AudioFile>sx_clap_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1060264638"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_clap_2" ID="{846B21B7-E824-4C5A-B7D1-1FD4D526EC6E}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sx_clap_3" ID="{12E1BF77-8A38-4904-9A74-572B0B6ED621}" ShortID="242120459">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_clap_3" ID="{BB309301-1B6A-4253-92B3-6BCD32E459C1}">
+									<Language>SFX</Language>
+									<AudioFile>sx_clap_3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="336770053"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_clap_3" ID="{BB309301-1B6A-4253-92B3-6BCD32E459C1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

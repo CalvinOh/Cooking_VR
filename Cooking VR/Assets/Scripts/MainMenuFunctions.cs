@@ -30,8 +30,8 @@ public class MainMenuFunctions : MonoBehaviour
     public void GoToScene(int sceneNum)
     {
         // audio
-        AkSoundEngine.PostEvent("Stop_All_Except", gameObject);
-        Debug.Log("Stopped all except");
+        AkSoundEngine.PostEvent("Stop_All_Except", null);
+        Debug.Log("Stopped all except (null)");
 
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 
