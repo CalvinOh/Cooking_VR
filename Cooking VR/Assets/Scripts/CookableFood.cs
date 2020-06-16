@@ -12,13 +12,15 @@ public abstract class CookableFood : MonoBehaviour
     public byte stages;
     public ushort[] stageRefs;
     [SerializeField]
-    private List<GameObject> VisualObjects = new List<GameObject>();
+    protected List<GameObject> VisualObjects;// = new List<GameObject>();
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         manualStack = this.GetComponent<ManualStack>();
         this.ingridentName = manualStack.ingredientName;
+        if (VisualObjects.Count == 0)
+            VisualObjects = new List<GameObject>();
     }
 
     protected virtual void OnEnable()

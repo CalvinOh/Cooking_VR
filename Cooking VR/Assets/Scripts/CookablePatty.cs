@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.VFX;
 
 public class CookablePatty : CookableFood
 {
@@ -25,7 +26,7 @@ public class CookablePatty : CookableFood
 
     protected override void AssignStageRefs()
     {
-        this.stages = 5;
+        this.stages = (byte)VisualObjects.Count;//5;
         this.stageRefs = new ushort[] { stage1, stage2, stage3, stage4, stage5};
     }
 }
