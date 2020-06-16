@@ -63,7 +63,7 @@ public abstract class CookableFood : MonoBehaviour
 
     protected virtual void AssignStageRefs()
     {
-
+        this.stages = (byte)VisualObjects.Count;
     }
 
     protected void SwitchVisualObject()
