@@ -1,15 +1,13 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class PanScript : MonoBehaviour
+public class PanScript : MonoBehaviour, IGrabbable
 {
     [SerializeField]
-    private bool IsHeated;
-
-    [SerializeField]//serialized for debugging
-    private PattyScript CurrentPattyOnPan;
+    public bool IsHeated { get { return IsHeated; } private set { IsHeated = value; BroadcastBurner();} }
 
     [SerializeField]
     private bool isSnapped = false;
@@ -17,13 +15,15 @@ public class PanScript : MonoBehaviour
     [SerializeField]
     Transform bottomPanPositon;
 
-    Interactable interactable;
+    private List<CookableFood> itemsInTrigger;
 
-    public bool wasGrabbed = false;
+    public Interactable interactable { get; set; }
+
+    public bool wasGrabbed { get; set; }
 
     private void Start()
     {
-        this.interactable = this.GetComponent<Interactable>();
+        InitGrabbable();
 
         if (bottomPanPositon == null)
             bottomPanPositon = this.GetComponentInChildren<Transform>();// this.GetComponent<SphereCollider>().transform.position;
@@ -33,12 +33,18 @@ public class PanScript : MonoBehaviour
         Debug.Log($"bottom pan position: {position.ToString()}");
     }
 
+    public void InitGrabbable()
+    {
+        this.interactable = this.GetComponent<Interactable>();
+        wasGrabbed = false;
+    }
+
     private void Update()
     {
         CheckGrabbed();
     }
 
-    private void CheckGrabbed()
+    public void CheckGrabbed()
     {
         if (this.interactable.attachedToHand)
         {
@@ -52,18 +58,34 @@ public class PanScript : MonoBehaviour
         }
     }
 
+    public void AddItemInTrigger(CookableFood item)
+    {
+        if(!itemsInTrigger.Contains(item))
+            itemsInTrigger.Add(item);
+    }
+
+    public void RemoveItemInTrigger(CookableFood item)
+    {
+        if (itemsInTrigger.Contains(item))
+            itemsInTrigger.Remove(item);
+    }
+
+    public void BroadcastBurner()
+    {
+        foreach(var v in itemsInTrigger)
+        {
+            if (IsHeated)
+                v.StartCook();
+            else
+                v.stopCook();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Patty"))
-        {
-            CurrentPattyOnPan = other.GetComponent<PattyScript>();
-            if(IsHeated)
-            CurrentPattyOnPan.StartCooking();
-        }
-        else if(other.CompareTag("Burner") && !isSnapped)
+        if(other.CompareTag("Burner") && !isSnapped)
         {
             isSnapped = true;
-            Debug.Log($"is snapped = {isSnapped.ToString()}");
             SnapToBurner(other);
         }
     }
@@ -91,15 +113,9 @@ public class PanScript : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Patty"))
-        {
-            CurrentPattyOnPan.StopCooking();
-            CurrentPattyOnPan = null;
-        }
-        else if (other.CompareTag("Burner"))
+        if (other.CompareTag("Burner"))
         {
             UnSnap();
-            Debug.Log($"is snapped = {isSnapped.ToString()}");
         }
     }
 
@@ -112,15 +128,11 @@ public class PanScript : MonoBehaviour
     public void StartCooking()
     {
         IsHeated = true;
-        if(CurrentPattyOnPan!=null)
-        CurrentPattyOnPan.StartCooking();
     }
 
     public void StopCooking()
     {
         IsHeated = false;
-        if (CurrentPattyOnPan != null)
-            CurrentPattyOnPan.StopCooking();
     }
 
 }

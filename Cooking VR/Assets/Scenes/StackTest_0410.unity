@@ -8789,6 +8789,19 @@ MonoBehaviour:
   grounded: 0
   timeSpentOnGround: 0
   timerOnGround: 0
+--- !u!65 &2021786597
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021786595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 37.8, y: 7.2, z: 37.29}
+  m_Center: {x: 41.8, y: 1.16, z: 0}
 --- !u!1 &2027500983
 GameObject:
   m_ObjectHideFlags: 0
@@ -30918,6 +30931,14 @@ PrefabInstance:
       propertyPath: respawnZone
       value: 
       objectReference: {fileID: 1347110507}
+    - target: {fileID: 2021786606, guid: 1bac13a5e3e372e4ca45eab4b8bcc9f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021786606, guid: 1bac13a5e3e372e4ca45eab4b8bcc9f2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1043589606303710179, guid: 1bac13a5e3e372e4ca45eab4b8bcc9f2,
         type: 3}
       propertyPath: m_LocalPosition.x
