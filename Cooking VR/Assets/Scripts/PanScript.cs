@@ -17,9 +17,14 @@ public class PanScript : MonoBehaviour
     [SerializeField]
     Transform bottomPanPositon;
 
+
+    
+
     Interactable interactable;
 
     public bool wasGrabbed = false;
+    private GameObject Vapors;
+
 
     private void Start()
     {
@@ -31,6 +36,9 @@ public class PanScript : MonoBehaviour
         Vector3 position = bottomPanPositon.TransformVector(bottomPanPositon.position);
 
         Debug.Log($"bottom pan position: {position.ToString()}");
+
+        Vapors = GetComponentInChildren<ParticleSystem>().gameObject;
+        Vapors.SetActive(false);
     }
 
     private void Update()
@@ -114,6 +122,7 @@ public class PanScript : MonoBehaviour
         IsHeated = true;
         if(CurrentPattyOnPan!=null)
         CurrentPattyOnPan.StartCooking();
+        Vapors.SetActive(true);
     }
 
     public void StopCooking()
@@ -121,6 +130,7 @@ public class PanScript : MonoBehaviour
         IsHeated = false;
         if (CurrentPattyOnPan != null)
             CurrentPattyOnPan.StopCooking();
+        Vapors.SetActive(false);
     }
 
 }

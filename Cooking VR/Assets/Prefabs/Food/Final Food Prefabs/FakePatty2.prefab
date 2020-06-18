@@ -489,7 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activateActionSetOnAttach:
     actionSetPath: 
-  hideHandOnAttach: 1
+  hideHandOnAttach: 0
   hideSkeletonOnAttach: 0
   hideControllerOnAttach: 0
   handAnimationOnPickup: 0
@@ -593,19 +593,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 0
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.02
   scaleRatio: 1
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
+  canStack: 0
 --- !u!114 &3442252781225642402
 MonoBehaviour:
   m_ObjectHideFlags: 0
