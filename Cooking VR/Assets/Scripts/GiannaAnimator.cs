@@ -8,10 +8,13 @@ public class GiannaAnimator : MonoBehaviour
 
     private Animator MyAnimator;
     public FacialExpressions Face;
+    private LookingEyes Eyes;
+
     void Start()
     {
         Face = GetComponentInChildren<FacialExpressions>();
         MyAnimator = GetComponent<Animator>();
+        Eyes = GetComponent<LookingEyes>();
 
         //StartCoroutine(AnimationsShowcase(2));
 
