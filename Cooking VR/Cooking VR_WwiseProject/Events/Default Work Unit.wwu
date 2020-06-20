@@ -869,12 +869,23 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Impact_Pan" ID="{8D89CA39-DFD1-4EA1-A3A7-838FC4539E24}">
+				<Event Name="Impact_pan" ID="{6D0CB405-6467-457D-9953-53EB291FC32C}">
 					<ChildrenList>
-						<Action Name="" ID="{741A83F4-D7CE-4977-AA69-E4949E8B0698}" ShortID="1006937261">
+						<Action Name="" ID="{41C297FE-FD14-4218-8B75-F9BDF02E54B2}" ShortID="293195147">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sx_impact_pan" ID="{E3493BC8-B00D-47F3-8E17-C49D093CADE4}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+									<ObjectRef Name="impacts_pan_stove" ID="{11AD174C-AC51-4A33-9905-787A1BCFF560}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Teleport_item" ID="{7B2176E3-9FE2-4A90-BD94-8248181AD975}">
+					<ChildrenList>
+						<Action Name="" ID="{D60EECED-9580-4A0A-B460-1084017936D1}" ShortID="335853015">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_item_teleport" ID="{38D753E7-E4AD-4D8E-8290-E97D6553FBFE}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

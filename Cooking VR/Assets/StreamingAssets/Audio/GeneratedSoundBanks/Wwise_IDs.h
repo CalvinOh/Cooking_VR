@@ -84,6 +84,7 @@ namespace AK
         static const AkUniqueID STOP_ALL_EXCEPT = 3016745319U;
         static const AkUniqueID STOVE_OFF = 1902865914U;
         static const AkUniqueID STOVE_ON = 1278791036U;
+        static const AkUniqueID TELEPORT_ITEM = 3988014274U;
         static const AkUniqueID TIMER_BEEP = 630201347U;
         static const AkUniqueID TIMER_GAINTIME = 1679284313U;
         static const AkUniqueID USE_CONDIMENT = 2484277510U;

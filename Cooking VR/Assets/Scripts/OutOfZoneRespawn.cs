@@ -36,6 +36,9 @@ public class OutOfZoneRespawn : MonoBehaviour
             this.rb.velocity = this.rb.angularVelocity = Vector3.zero;
 
             enteredKillZone = false;
+
+            // audio
+            AkSoundEngine.PostEvent("Teleport_item", this.gameObject);
         }
 
         if(grounded && Time.time >= timeSpentOnGround)
@@ -94,13 +97,6 @@ public class OutOfZoneRespawn : MonoBehaviour
                 onGround = false;
 
             }
-
         } 
-
-
-
-
-
-
     }
 }

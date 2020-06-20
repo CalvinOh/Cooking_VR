@@ -182,11 +182,19 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1453273807" Name="Impact_Pan" ObjectPath="\Events\Default Work Unit\Impact_Pan" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.280257" DurationMax="0.292834">
+				<Event Id="1453273807" Name="Impact_pan" ObjectPath="\Events\Default Work Unit\Impact_pan" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.261266" DurationMax="0.510522">
 					<IncludedMemoryFiles>
-						<File Id="1068727662" Language="SFX">
-							<ShortName>sx_impact_pan.wav</ShortName>
-							<Path>SFX\sx_impact_pan_10C4C929.wem</Path>
+						<File Id="430869697" Language="SFX">
+							<ShortName>sx_impact_pan_stove_2.wav</ShortName>
+							<Path>SFX\sx_impact_pan_stove_2_10C4C929.wem</Path>
+						</File>
+						<File Id="743450891" Language="SFX">
+							<ShortName>sx_impact_pan_stove_3.wav</ShortName>
+							<Path>SFX\sx_impact_pan_stove_3_10C4C929.wem</Path>
+						</File>
+						<File Id="974499853" Language="SFX">
+							<ShortName>sx_impact_pan_stove_1.wav</ShortName>
+							<Path>SFX\sx_impact_pan_stove_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -794,6 +802,14 @@
 						<File Id="629777204" Language="SFX">
 							<ShortName>sx_stove_ignite.wav</ShortName>
 							<Path>SFX\sx_stove_ignite_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3988014274" Name="Teleport_item" ObjectPath="\Events\Default Work Unit\Teleport_item" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.393005" DurationMax="0.429070">
+					<IncludedMemoryFiles>
+						<File Id="145439059" Language="SFX">
+							<ShortName>sx_item_teleport.wav</ShortName>
+							<Path>SFX\sx_item_teleport_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
