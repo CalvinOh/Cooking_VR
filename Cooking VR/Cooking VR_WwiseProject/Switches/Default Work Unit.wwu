@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AF531C0D-1C91-44F3-AF2D-5CDDD2060317}" SchemaVersion="97">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{AF531C0D-1C91-44F3-AF2D-5CDDD2060317}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AF531C0D-1C91-44F3-AF2D-5CDDD2060317}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="Intensity" ID="{1E66E9F8-17C2-489D-AB29-430EC5291603}">
+					<ChildrenList>
+						<Switch Name="Level_1" ID="{4E7F316C-B27C-4209-8AB0-8395AC865741}"/>
+						<Switch Name="Level_2" ID="{1DDBA1B0-D8AF-4BD9-97C5-33D38871BE6F}"/>
+						<Switch Name="Level_3" ID="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}"/>
+					</ChildrenList>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

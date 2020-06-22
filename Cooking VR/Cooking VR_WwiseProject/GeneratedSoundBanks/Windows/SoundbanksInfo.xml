@@ -29,7 +29,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1240512178" Name="Bell" ObjectPath="\Events\Default Work Unit\Bell" DurationType="OneShot" DurationMin="1.862336" DurationMax="1.862336">
+				<Event Id="1240512178" Name="Bell" ObjectPath="\Events\Default Work Unit\Bell" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="1.862336" DurationMax="1.862336">
 					<IncludedMemoryFiles>
 						<File Id="208594037" Language="SFX">
 							<ShortName>sx_bell.wav</ShortName>
@@ -210,6 +210,39 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="108253935" Language="SFX">
+							<ShortName>HYB_Lvl2_[LOOP]_05.07.20_v02.wav</ShortName>
+							<Path>SFX\HYB_Lvl2_[LOOP]_05.07.20_v02_D79FB2B7.wem</Path>
+						</File>
+						<File Id="518395074" Language="SFX">
+							<ShortName>HYB_Lvl3_[LOOP]_MainTheme_05.07.20_v02.wav</ShortName>
+							<Path>SFX\HYB_Lvl3_[LOOP]_MainTheme_05.07.20_v02_D79FB2B7.wem</Path>
+						</File>
+						<File Id="526915538" Language="SFX">
+							<ShortName>HYB_Lvl1_[LOOP]_05.07.20_v01.wav</ShortName>
+							<Path>SFX\HYB_Lvl1_[LOOP]_05.07.20_v01_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{4E7F316C-B27C-4209-8AB0-8395AC865741}">
+							<Media>
+								<File Id="526915538"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{1DDBA1B0-D8AF-4BD9-97C5-33D38871BE6F}">
+							<Media>
+								<File Id="108253935"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}">
+							<Media>
+								<File Id="518395074"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="1603068616" Name="Play_vx_a_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_1" DurationType="OneShot" DurationMin="15.639206" DurationMax="15.639206">
 					<IncludedMemoryFiles>
 						<File Id="217978393" Language="SFX">
@@ -218,27 +251,27 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1603068619" Name="Play_vx_a_2" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_2" DurationType="OneShot" DurationMin="7.786576" DurationMax="7.786576">
+				<Event Id="1603068619" Name="Play_vx_a_2" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_2" DurationType="OneShot" DurationMin="10.845193" DurationMax="10.845193">
 					<IncludedMemoryFiles>
-						<File Id="767507173" Language="SFX">
-							<ShortName>vx_a_2.wav</ShortName>
-							<Path>SFX\vx_a_2_10C4C929.wem</Path>
+						<File Id="474374849" Language="SFX">
+							<ShortName>vx_a_2_b.wav</ShortName>
+							<Path>SFX\vx_a_2_b_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1603068618" Name="Play_vx_a_3" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_3" DurationType="OneShot" DurationMin="5.260136" DurationMax="5.260136">
+				<Event Id="1603068618" Name="Play_vx_a_3" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_3" DurationType="OneShot" DurationMin="10.080476" DurationMax="10.080476">
 					<IncludedMemoryFiles>
-						<File Id="608761177" Language="SFX">
-							<ShortName>vx_a_3.wav</ShortName>
-							<Path>SFX\vx_a_3_10C4C929.wem</Path>
+						<File Id="569838462" Language="SFX">
+							<ShortName>vx_a_3_b.wav</ShortName>
+							<Path>SFX\vx_a_3_b_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="1603068621" Name="Play_vx_a_4" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_4" DurationType="OneShot" DurationMin="3.535102" DurationMax="3.535102">
+				<Event Id="1603068621" Name="Play_vx_a_4" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_4" DurationType="OneShot" DurationMin="2.073968" DurationMax="2.073968">
 					<IncludedMemoryFiles>
-						<File Id="690678546" Language="SFX">
-							<ShortName>vx_a_4.wav</ShortName>
-							<Path>SFX\vx_a_4_10C4C929.wem</Path>
+						<File Id="814098630" Language="SFX">
+							<ShortName>vx_a_4_b.wav</ShortName>
+							<Path>SFX\vx_a_4_b_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -378,6 +411,14 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1602377129" Name="Play_vx_e_4" ObjectPath="\Events\Default Work Unit\VO\Play_vx_e_4" DurationType="OneShot" DurationMin="3.283764" DurationMax="3.283764">
+					<IncludedMemoryFiles>
+						<File Id="806246708" Language="SFX">
+							<ShortName>vx_e_4.wav</ShortName>
+							<Path>SFX\vx_e_4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1602921555" Name="Play_vx_f_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_f_1" DurationType="OneShot" DurationMin="4.996871" DurationMax="4.996871">
 					<IncludedMemoryFiles>
 						<File Id="725862485" Language="SFX">
@@ -415,6 +456,274 @@
 						<File Id="312095112" Language="SFX">
 							<ShortName>vx_g_3.wav</ShortName>
 							<Path>SFX\vx_g_3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1604495737" Name="Play_vx_h_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_h_1" DurationType="OneShot" DurationMin="4.296327" DurationMax="4.296327">
+					<IncludedMemoryFiles>
+						<File Id="634934258" Language="SFX">
+							<ShortName>vx_h_1.wav</ShortName>
+							<Path>SFX\vx_h_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1604495738" Name="Play_vx_h_2" ObjectPath="\Events\Default Work Unit\VO\Play_vx_h_2" DurationType="OneShot" DurationMin="2.548435" DurationMax="2.548435">
+					<IncludedMemoryFiles>
+						<File Id="560762037" Language="SFX">
+							<ShortName>vx_h_2.wav</ShortName>
+							<Path>SFX\vx_h_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1604495739" Name="Play_vx_h_3" ObjectPath="\Events\Default Work Unit\VO\Play_vx_h_3" DurationType="OneShot" DurationMin="1.393016" DurationMax="1.661179">
+					<IncludedMemoryFiles>
+						<File Id="605405818" Language="SFX">
+							<ShortName>vx_h_3_a.wav</ShortName>
+							<Path>SFX\vx_h_3_a_10C4C929.wem</Path>
+						</File>
+						<File Id="612696344" Language="SFX">
+							<ShortName>vx_h_3_b.wav</ShortName>
+							<Path>SFX\vx_h_3_b_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116160" Name="Play_vx_i_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_1" DurationType="OneShot" DurationMin="2.191814" DurationMax="2.191814">
+					<IncludedMemoryFiles>
+						<File Id="328395501" Language="SFX">
+							<ShortName>vx_i_1.wav</ShortName>
+							<Path>SFX\vx_i_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116163" Name="Play_vx_i_2" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_2" DurationType="OneShot" DurationMin="3.016712" DurationMax="3.016712">
+					<IncludedMemoryFiles>
+						<File Id="612175400" Language="SFX">
+							<ShortName>vx_i_2.wav</ShortName>
+							<Path>SFX\vx_i_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116162" Name="Play_vx_i_3" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_3" DurationType="OneShot" DurationMin="4.376258" DurationMax="4.376258">
+					<IncludedMemoryFiles>
+						<File Id="900935680" Language="SFX">
+							<ShortName>vx_i_3.wav</ShortName>
+							<Path>SFX\vx_i_3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116165" Name="Play_vx_i_4" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_4" DurationType="OneShot" DurationMin="4.573197" DurationMax="4.573197">
+					<IncludedMemoryFiles>
+						<File Id="837826000" Language="SFX">
+							<ShortName>vx_i_4.wav</ShortName>
+							<Path>SFX\vx_i_4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116164" Name="Play_vx_i_5" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_5" DurationType="OneShot" DurationMin="2.675828" DurationMax="3.848912">
+					<IncludedMemoryFiles>
+						<File Id="78736221" Language="SFX">
+							<ShortName>vx_i_5_b.wav</ShortName>
+							<Path>SFX\vx_i_5_b_10C4C929.wem</Path>
+						</File>
+						<File Id="640329144" Language="SFX">
+							<ShortName>vx_i_5_a.wav</ShortName>
+							<Path>SFX\vx_i_5_a_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116166" Name="Play_vx_i_7" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_7" DurationType="OneShot" DurationMin="0.426213" DurationMax="0.461746">
+					<IncludedMemoryFiles>
+						<File Id="363543208" Language="SFX">
+							<ShortName>vx_i_7_b.wav</ShortName>
+							<Path>SFX\vx_i_7_b_10C4C929.wem</Path>
+						</File>
+						<File Id="375737692" Language="SFX">
+							<ShortName>vx_i_7_a.wav</ShortName>
+							<Path>SFX\vx_i_7_a_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116169" Name="Play_vx_i_8" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_8" DurationType="OneShot" DurationMin="0.989252" DurationMax="1.881814">
+					<IncludedMemoryFiles>
+						<File Id="573590118" Language="SFX">
+							<ShortName>vx_i_8_b.wav</ShortName>
+							<Path>SFX\vx_i_8_b_10C4C929.wem</Path>
+						</File>
+						<File Id="974650106" Language="SFX">
+							<ShortName>vx_i_8_a.wav</ShortName>
+							<Path>SFX\vx_i_8_a_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678116168" Name="Play_vx_i_9" ObjectPath="\Events\Default Work Unit\VO\Play_vx_i_9" DurationType="OneShot" DurationMin="0.793787" DurationMax="0.869093">
+					<IncludedMemoryFiles>
+						<File Id="272309235" Language="SFX">
+							<ShortName>vx_i_9_a.wav</ShortName>
+							<Path>SFX\vx_i_9_a_10C4C929.wem</Path>
+						</File>
+						<File Id="318910764" Language="SFX">
+							<ShortName>vx_i_9_b.wav</ShortName>
+							<Path>SFX\vx_i_9_b_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557447" Name="Play_vx_j_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_1" DurationType="OneShot" DurationMin="0.464422" DurationMax="1.061134">
+					<IncludedMemoryFiles>
+						<File Id="461070262" Language="SFX">
+							<ShortName>vx_j_1_d.wav</ShortName>
+							<Path>SFX\vx_j_1_d_10C4C929.wem</Path>
+						</File>
+						<File Id="503534022" Language="SFX">
+							<ShortName>vx_j_1_a.wav</ShortName>
+							<Path>SFX\vx_j_1_a_10C4C929.wem</Path>
+						</File>
+						<File Id="741746257" Language="SFX">
+							<ShortName>vx_j_1_c.wav</ShortName>
+							<Path>SFX\vx_j_1_c_10C4C929.wem</Path>
+						</File>
+						<File Id="1062525474" Language="SFX">
+							<ShortName>vx_j_1_b.wav</ShortName>
+							<Path>SFX\vx_j_1_b_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557444" Name="Play_vx_j_2" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_2" DurationType="OneShot" DurationMin="0.480181" DurationMax="0.715737">
+					<IncludedMemoryFiles>
+						<File Id="65981410" Language="SFX">
+							<ShortName>vx_j_2_c.wav</ShortName>
+							<Path>SFX\vx_j_2_c_10C4C929.wem</Path>
+						</File>
+						<File Id="356501855" Language="SFX">
+							<ShortName>vx_j_2_b.wav</ShortName>
+							<Path>SFX\vx_j_2_b_10C4C929.wem</Path>
+						</File>
+						<File Id="510687302" Language="SFX">
+							<ShortName>vx_j_2_a.wav</ShortName>
+							<Path>SFX\vx_j_2_a_10C4C929.wem</Path>
+						</File>
+						<File Id="595400625" Language="SFX">
+							<ShortName>vx_j_2_d.wav</ShortName>
+							<Path>SFX\vx_j_2_d_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557445" Name="Play_vx_j_3" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_3" DurationType="OneShot" DurationMin="2.627959" DurationMax="3.543696">
+					<IncludedMemoryFiles>
+						<File Id="343031953" Language="SFX">
+							<ShortName>vx_j_3_b.wav</ShortName>
+							<Path>SFX\vx_j_3_b_10C4C929.wem</Path>
+						</File>
+						<File Id="536081949" Language="SFX">
+							<ShortName>vx_j_3_a.wav</ShortName>
+							<Path>SFX\vx_j_3_a_10C4C929.wem</Path>
+						</File>
+						<File Id="891193525" Language="SFX">
+							<ShortName>vx_j_3_c.wav</ShortName>
+							<Path>SFX\vx_j_3_c_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557442" Name="Play_vx_j_4" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_4" DurationType="OneShot" DurationMin="8.232835" DurationMax="11.066757">
+					<IncludedMemoryFiles>
+						<File Id="319996600" Language="SFX">
+							<ShortName>vx_j_4_c.wav</ShortName>
+							<Path>SFX\vx_j_4_c_10C4C929.wem</Path>
+						</File>
+						<File Id="950755339" Language="SFX">
+							<ShortName>vx_j_4_b.wav</ShortName>
+							<Path>SFX\vx_j_4_b_10C4C929.wem</Path>
+						</File>
+						<File Id="973670549" Language="SFX">
+							<ShortName>vx_j_4_a.wav</ShortName>
+							<Path>SFX\vx_j_4_a_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557443" Name="Play_vx_j_5" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_5" DurationType="OneShot" DurationMin="5.558027" DurationMax="8.463016">
+					<IncludedMemoryFiles>
+						<File Id="512838790" Language="SFX">
+							<ShortName>vx_j_5_a.wav</ShortName>
+							<Path>SFX\vx_j_5_a_10C4C929.wem</Path>
+						</File>
+						<File Id="749957467" Language="SFX">
+							<ShortName>vx_j_5_b.wav</ShortName>
+							<Path>SFX\vx_j_5_b_10C4C929.wem</Path>
+						</File>
+						<File Id="970089154" Language="SFX">
+							<ShortName>vx_j_5_c.wav</ShortName>
+							<Path>SFX\vx_j_5_c_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557440" Name="Play_vx_j_6" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_6" DurationType="OneShot" DurationMin="0.461224" DurationMax="1.153719">
+					<IncludedMemoryFiles>
+						<File Id="203355376" Language="SFX">
+							<ShortName>vx_j_6_e.wav</ShortName>
+							<Path>SFX\vx_j_6_e_10C4C929.wem</Path>
+						</File>
+						<File Id="401096079" Language="SFX">
+							<ShortName>vx_j_6_d.wav</ShortName>
+							<Path>SFX\vx_j_6_d_10C4C929.wem</Path>
+						</File>
+						<File Id="854541657" Language="SFX">
+							<ShortName>vx_j_6_b.wav</ShortName>
+							<Path>SFX\vx_j_6_b_10C4C929.wem</Path>
+						</File>
+						<File Id="975986493" Language="SFX">
+							<ShortName>vx_j_6_a.wav</ShortName>
+							<Path>SFX\vx_j_6_a_10C4C929.wem</Path>
+						</File>
+						<File Id="1001016546" Language="SFX">
+							<ShortName>vx_j_6_c.wav</ShortName>
+							<Path>SFX\vx_j_6_c_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2678557441" Name="Play_vx_j_7" ObjectPath="\Events\Default Work Unit\VO\Play_vx_j_7" DurationType="OneShot" DurationMin="0.213492" DurationMax="0.270363">
+					<IncludedMemoryFiles>
+						<File Id="29292050" Language="SFX">
+							<ShortName>vx_j_7_c.wav</ShortName>
+							<Path>SFX\vx_j_7_c_10C4C929.wem</Path>
+						</File>
+						<File Id="714975463" Language="SFX">
+							<ShortName>vx_j_7_a.wav</ShortName>
+							<Path>SFX\vx_j_7_a_10C4C929.wem</Path>
+						</File>
+						<File Id="775294745" Language="SFX">
+							<ShortName>vx_j_7_b.wav</ShortName>
+							<Path>SFX\vx_j_7_b_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2677571741" Name="Play_vx_l_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_l_1" DurationType="OneShot" DurationMin="2.087891" DurationMax="2.087891">
+					<IncludedMemoryFiles>
+						<File Id="60957674" Language="SFX">
+							<ShortName>vx_l_1.wav</ShortName>
+							<Path>SFX\vx_l_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2677571742" Name="Play_vx_l_2" ObjectPath="\Events\Default Work Unit\VO\Play_vx_l_2" DurationType="OneShot" DurationMin="2.053243" DurationMax="2.053243">
+					<IncludedMemoryFiles>
+						<File Id="569485155" Language="SFX">
+							<ShortName>vx_l_2.wav</ShortName>
+							<Path>SFX\vx_l_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2677571738" Name="Play_vx_l_6" ObjectPath="\Events\Default Work Unit\VO\Play_vx_l_6" DurationType="OneShot" DurationMin="2.175601" DurationMax="2.175601">
+					<IncludedMemoryFiles>
+						<File Id="354167258" Language="SFX">
+							<ShortName>vx_l_6.wav</ShortName>
+							<Path>SFX\vx_l_6_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2677571732" Name="Play_vx_l_8" ObjectPath="\Events\Default Work Unit\VO\Play_vx_l_8" DurationType="OneShot" DurationMin="4.257098" DurationMax="4.257098">
+					<IncludedMemoryFiles>
+						<File Id="549140607" Language="SFX">
+							<ShortName>vx_l_8.wav</ShortName>
+							<Path>SFX\vx_l_8_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -480,6 +789,15 @@
 					</IncludedMemoryFiles>
 				</Event>
 			</IncludedEvents>
+			<SwitchGroups>
+				<SwitchGroup Id="2470328564" Name="Intensity" ObjectPath="\Switches\Default Work Unit\Intensity">
+					<Switches>
+						<Switch Id="1290008369" Name="Level_1" ObjectPath="\Switches\Default Work Unit\Intensity\Level_1"/>
+						<Switch Id="1290008370" Name="Level_2" ObjectPath="\Switches\Default Work Unit\Intensity\Level_2"/>
+						<Switch Id="1290008371" Name="Level_3" ObjectPath="\Switches\Default Work Unit\Intensity\Level_3"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>

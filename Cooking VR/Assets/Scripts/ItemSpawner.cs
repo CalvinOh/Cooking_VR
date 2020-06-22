@@ -26,7 +26,8 @@ namespace Valve.VR.InteractionSystem
         private GameObject spawnedObject;
 
         [SerializeField]
-        public static Hand leftPlayerHand, rightPlayerHand;
+        public Hand leftPlayerHand, rightPlayerHand;
+        private Hand[] tempHands;
 
 
         // Start is called before the first frame update
@@ -39,14 +40,33 @@ namespace Valve.VR.InteractionSystem
             isGrabbing.AddOnStateUpListener(TriggerUp, handType);
             spawnedObject = null;
 
-            if(leftPlayerHand == null)
+            if(leftPlayerHand == null || rightPlayerHand == null)
             {
-                leftPlayerHand = GameObject.Find("RightHand").GetComponent<Hand>().otherHand;
+                tempHands = FindObjectsOfType<Hand>();
+                //FindObjectOfType<Hand>();
+
+                foreach(Hand h in tempHands)
+                {
+                    if(h.handType == SteamVR_Input_Sources.LeftHand)
+                    {
+                        leftPlayerHand = h;
+                        rightPlayerHand = h.otherHand;
+                    }
+                }
+
+                //if(leftPlayerHand.handType != SteamVR_Input_Sources.LeftHand)
+                //{
+                //    rightPlayerHand = leftPlayerHand;
+                //    leftPlayerHand = rightPlayerHand.otherHand;
+                //}
+
+                //leftPlayerHand = GameObject.Find("RightHand").GetComponent<Hand>().otherHand;
+                //Debug.Log("Call me, maybe?");
             }
-            if (rightPlayerHand == null)
-            {
-                rightPlayerHand = GameObject.Find("LeftHand").GetComponent<Hand>().otherHand;
-            }
+            //if (rightPlayerHand == null)
+            //{
+            //    rightPlayerHand = GameObject.Find("LeftHand").GetComponent<Hand>().otherHand;
+            //}
 
 
         }
