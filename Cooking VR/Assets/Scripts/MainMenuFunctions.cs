@@ -30,8 +30,8 @@ public class MainMenuFunctions : MonoBehaviour
     public void GoToScene(int sceneNum)
     {
         // audio
+        // stops all Wwise audio events except the music
         AkSoundEngine.PostEvent("Stop_All_Except", null);
-        Debug.Log("Stopped all except (null)");
 
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
 

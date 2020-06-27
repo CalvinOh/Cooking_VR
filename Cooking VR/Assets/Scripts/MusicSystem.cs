@@ -11,10 +11,7 @@ public class MusicSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //if (!musicIsPlaying)
-        //{
-        //    PlayMusic();
-        //}
+        PlayMusic();
     }
 
     // Update is called once per frame
@@ -23,12 +20,10 @@ public class MusicSystem : MonoBehaviour
         SetMusicIntensity();
     }
 
-    //private void PlayMusic()
-    //{
-    //    AkSoundEngine.PostEvent("Play_Music", gameObject);
-
-    //    musicIsPlaying = true;
-    //}
+    private void PlayMusic()
+    {
+        AkSoundEngine.PostEvent("Play_Music", gameObject);
+    }
 
     //determine intensity of music based on scene name
     private void SetMusicIntensity()
