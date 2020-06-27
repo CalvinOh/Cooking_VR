@@ -6,11 +6,15 @@ using UnityEngine.SceneManagement;
 public class MusicSystem : MonoBehaviour
 {
     private string sceneName;
+    public bool musicIsPlaying;
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayMusic();
+        //if (!musicIsPlaying)
+        //{
+        //    PlayMusic();
+        //}
     }
 
     // Update is called once per frame
@@ -19,10 +23,12 @@ public class MusicSystem : MonoBehaviour
         SetMusicIntensity();
     }
 
-    private void PlayMusic()
-    {
-        AkSoundEngine.PostEvent("Play_Music", gameObject);
-    }
+    //private void PlayMusic()
+    //{
+    //    AkSoundEngine.PostEvent("Play_Music", gameObject);
+
+    //    musicIsPlaying = true;
+    //}
 
     //determine intensity of music based on scene name
     private void SetMusicIntensity()

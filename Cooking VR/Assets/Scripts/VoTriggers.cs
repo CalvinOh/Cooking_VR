@@ -9,7 +9,7 @@ public class VoTriggers : MonoBehaviour
     // the syntax for calling a voice line is: "Play_vx_(index letter)_(index number)();"
     //
     // for example: "Play_vx_a_4();" or "Play_vx_f_1();"
-    
+
 
     // VO index A
     private void Play_vx_a_1()

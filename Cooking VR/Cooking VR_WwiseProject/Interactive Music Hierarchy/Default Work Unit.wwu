@@ -6,6 +6,11 @@
 				<MusicSwitchContainer Name="Main Music Switch" ID="{9BDDD94B-5AC4-4444-9DB7-8844DEDEF55F}" ShortID="744736143">
 					<PropertyList>
 						<Property Name="Tempo" Type="Real64" Value="146"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -360,10 +365,10 @@
 					<EntryList>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Level_1" ID="{4E7F316C-B27C-4209-8AB0-8395AC865741}"/>
+								<PathElementRef Name="Level_3" ID="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}"/>
 							</Path>
 							<AudioNodeInfo>
-								<AudioNodeRef Name="Level_1" ID="{65A2BBCE-B9D8-4814-8CD1-6179EFFE3AD7}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
+								<AudioNodeRef Name="Level_3" ID="{CD9793F1-6079-476F-A566-7CF899ADBA2D}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 						<Entry>
@@ -376,10 +381,10 @@
 						</Entry>
 						<Entry>
 							<Path>
-								<PathElementRef Name="Level_3" ID="{359B949B-9A64-47BC-8BEF-7B5A02E3B81B}"/>
+								<PathElementRef Name="Level_1" ID="{4E7F316C-B27C-4209-8AB0-8395AC865741}"/>
 							</Path>
 							<AudioNodeInfo>
-								<AudioNodeRef Name="Level_3" ID="{CD9793F1-6079-476F-A566-7CF899ADBA2D}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
+								<AudioNodeRef Name="Level_1" ID="{65A2BBCE-B9D8-4814-8CD1-6179EFFE3AD7}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}" Platform="Linked"/>
 							</AudioNodeInfo>
 						</Entry>
 					</EntryList>

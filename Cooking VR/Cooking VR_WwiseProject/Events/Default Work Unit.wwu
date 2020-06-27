@@ -3,12 +3,12 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{95409A04-03F1-43C4-BF41-898D997BDD57}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="Grab_Bottle_Plastic" ID="{A19F706B-69CA-48DA-A018-2A62FAAB8710}">
+				<Event Name="Impact_Bottle_Plastic" ID="{A19F706B-69CA-48DA-A018-2A62FAAB8710}">
 					<ChildrenList>
 						<Action Name="" ID="{469BC6A4-42DA-4D3C-B8FD-9464ADEA0F4C}" ShortID="151366721">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="grabs_bottle_plastic" ID="{AB1FD09F-BA54-4520-A878-32C7C7A18960}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+									<ObjectRef Name="impacts_bottle_plastic" ID="{AB1FD09F-BA54-4520-A878-32C7C7A18960}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -811,6 +811,81 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Main Music Switch" ID="{9BDDD94B-5AC4-4444-9DB7-8844DEDEF55F}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_All_Except" ID="{5FE7D298-6AB2-4604-9B9A-3897EC4B03A3}">
+					<ChildrenList>
+						<Action Name="" ID="{F37751C0-3D2A-4CD5-9251-1E1BFD1C060B}" ShortID="882520585">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+							<ChildrenList>
+								<EventActionException Name="" ID="{4F168C5B-9E94-494B-9AD1-72556CE98AE0}">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Main Music Switch" ID="{9BDDD94B-5AC4-4444-9DB7-8844DEDEF55F}" WorkUnitID="{716C4600-C4E1-402A-B77F-6364228315B1}"/>
+										</Reference>
+									</ReferenceList>
+								</EventActionException>
+							</ChildrenList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Timer_GainTime" ID="{CBADD613-279F-4DC7-8CD4-70323044C877}">
+					<ChildrenList>
+						<Action Name="" ID="{DB1251D5-05AB-4A09-A691-6ADE1D75D62E}" ShortID="907480625">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_timer_gaintime" ID="{7A89AA0E-CB9A-4D9A-83F9-7B071E2E0293}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Timer_Beep" ID="{746C6C75-AD3D-4F09-82EA-8D3F49419664}">
+					<ChildrenList>
+						<Action Name="" ID="{03A86FDA-28C4-4FC6-BA86-46122DD1F0A7}" ShortID="717362968">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_timer_beep_standard" ID="{4EE50780-3D70-408D-9894-05BAFD915A9B}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gianna_Clap" ID="{85AB5412-99DF-4082-A3AA-F4C01EE0036A}">
+					<ChildrenList>
+						<Action Name="" ID="{0401ECA5-CF84-4EA4-B770-26241900664E}" ShortID="581515880">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="claps" ID="{C3A2E2F1-E655-4574-A195-57E502BE748B}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_pan" ID="{6D0CB405-6467-457D-9953-53EB291FC32C}">
+					<ChildrenList>
+						<Action Name="" ID="{41C297FE-FD14-4218-8B75-F9BDF02E54B2}" ShortID="293195147">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_pan_stove" ID="{11AD174C-AC51-4A33-9905-787A1BCFF560}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Teleport_item" ID="{7B2176E3-9FE2-4A90-BD94-8248181AD975}">
+					<ChildrenList>
+						<Action Name="" ID="{D60EECED-9580-4A0A-B460-1084017936D1}" ShortID="335853015">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_item_teleport" ID="{38D753E7-E4AD-4D8E-8290-E97D6553FBFE}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

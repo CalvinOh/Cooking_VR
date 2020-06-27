@@ -18,12 +18,14 @@ namespace AK
         static const AkUniqueID BURGER_COOK_START = 3968779560U;
         static const AkUniqueID BURGER_COOK_STOP = 2163080948U;
         static const AkUniqueID ENV_FRIDGE = 2806512798U;
+        static const AkUniqueID GIANNA_CLAP = 822788948U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
-        static const AkUniqueID GRAB_BOTTLE_PLASTIC = 2416875919U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
+        static const AkUniqueID IMPACT_BOTTLE_PLASTIC = 433980135U;
         static const AkUniqueID IMPACT_EXTINGUISHER = 2236363231U;
         static const AkUniqueID IMPACT_KNIFE = 2552890829U;
         static const AkUniqueID IMPACT_MEAT = 3360486203U;
+        static const AkUniqueID IMPACT_PAN = 1453273807U;
         static const AkUniqueID IMPACT_PLATE = 803254130U;
         static const AkUniqueID IMPACT_SILVERWARE = 2540397042U;
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
@@ -79,8 +81,12 @@ namespace AK
         static const AkUniqueID PLAY_VX_L_8 = 2677571732U;
         static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
         static const AkUniqueID STACK = 996591275U;
+        static const AkUniqueID STOP_ALL_EXCEPT = 3016745319U;
         static const AkUniqueID STOVE_OFF = 1902865914U;
         static const AkUniqueID STOVE_ON = 1278791036U;
+        static const AkUniqueID TELEPORT_ITEM = 3988014274U;
+        static const AkUniqueID TIMER_BEEP = 630201347U;
+        static const AkUniqueID TIMER_GAINTIME = 1679284313U;
         static const AkUniqueID USE_CONDIMENT = 2484277510U;
     } // namespace EVENTS
 
