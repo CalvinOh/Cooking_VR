@@ -70,6 +70,9 @@ namespace Valve.VR.InteractionSystem
                 {
                     Hitinfo.transform.localScale *= ShrinkScale;
                     Debug.Log("Shrunk: " + Hitinfo.transform.gameObject.name);
+
+                    // audio
+                    AkSoundEngine.PostEvent("Use_Shrinkray", gameObject);
                 }
                 else
                 {
