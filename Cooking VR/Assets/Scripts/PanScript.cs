@@ -7,7 +7,21 @@ using Valve.VR.InteractionSystem;
 public class PanScript : MonoBehaviour, IGrabbable
 {
     [SerializeField]
-    public bool IsHeated { get { return IsHeated; } private set { IsHeated = value; BroadcastBurner();} }
+    private bool _IsHeated;
+    public bool IsHeated
+    {
+        get
+        { 
+            return _IsHeated; 
+        } 
+        private set 
+        { 
+            _IsHeated = value; 
+            BroadcastBurner();
+        } 
+    }
+
+    public byte testHeated;
 
     [SerializeField]
     private bool isSnapped = false;
@@ -15,6 +29,7 @@ public class PanScript : MonoBehaviour, IGrabbable
     [SerializeField]
     Transform bottomPanPositon;
 
+    [SerializeField]
     private List<CookableFood> itemsInTrigger;
 
     public Interactable interactable { get; set; }
@@ -30,7 +45,7 @@ public class PanScript : MonoBehaviour, IGrabbable
 
         Vector3 position = bottomPanPositon.TransformVector(bottomPanPositon.position);
 
-        Debug.Log($"bottom pan position: {position.ToString()}");
+        itemsInTrigger = new List<CookableFood>();
     }
 
     public void InitGrabbable()
@@ -42,6 +57,21 @@ public class PanScript : MonoBehaviour, IGrabbable
     private void Update()
     {
         CheckGrabbed();
+        //if(testHeated == 1)
+        //{
+        //    //"just turned it on"
+        //    StartCooking();
+        //    testHeated++;
+
+        //}
+        //else if (testHeated == 2)
+        //{
+        //    // stayed on
+        //}
+        //else if(testHeated == 0)
+        //{
+        //    StopCooking();
+        //}
     }
 
     public void CheckGrabbed()
@@ -61,13 +91,25 @@ public class PanScript : MonoBehaviour, IGrabbable
     public void AddItemInTrigger(CookableFood item)
     {
         if(!itemsInTrigger.Contains(item))
+        {
             itemsInTrigger.Add(item);
+            Debug.Log($"{item.gameObject.name} was added to the panScript's list of items in trigger");
+            if (this._IsHeated)
+            {
+                item.StartCook();
+                Debug.Log($"{item.gameObject.name} was told to start cooking");
+            }
+        }
     }
 
     public void RemoveItemInTrigger(CookableFood item)
     {
         if (itemsInTrigger.Contains(item))
+        {
             itemsInTrigger.Remove(item);
+            item.stopCook();
+        }
+        
     }
 
     public void BroadcastBurner()
@@ -103,12 +145,7 @@ public class PanScript : MonoBehaviour, IGrabbable
         //Vector3.Distance(this.gameObject.transform.position, bottomPanPositon);
         //Debug.Log($"Distance is {distanceToOffsetZ}");
 
-        Debug.Log($"Collider position: {other.transform.position.ToString()}");
-        Debug.Log($"bottom pan position: {bottomPanPositon.position.ToString()}");
-
         this.transform.position = new Vector3(this.transform.position.x + distanceToOffsetX, this.gameObject.transform.position.y + distanceToOffsetY, this.transform.position.z + distanceToOffsetZ);
-
-        Debug.Log($"frying pan position: {this.transform.position.ToString()}");
     }
 
     private void OnTriggerExit(Collider other)

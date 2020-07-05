@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class CookableFood : MonoBehaviour
@@ -41,11 +42,11 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
     
-    protected virtual void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<PanScript>().IsHeated)
+        if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
         {
-            this.StartCook();
+            other.gameObject.GetComponent<PanScript>().AddItemInTrigger(this);
         }
     }
 
