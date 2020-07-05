@@ -1100,7 +1100,7 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Impact_pan" ID="{6D0CB405-6467-457D-9953-53EB291FC32C}">
+				<Event Name="Impact_Pan" ID="{6D0CB405-6467-457D-9953-53EB291FC32C}">
 					<ChildrenList>
 						<Action Name="" ID="{41C297FE-FD14-4218-8B75-F9BDF02E54B2}" ShortID="293195147">
 							<ReferenceList>
@@ -1117,6 +1117,28 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sx_item_teleport" ID="{38D753E7-E4AD-4D8E-8290-E97D6553FBFE}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Spatula" ID="{A1F4ACA0-BA7A-4378-99C6-B5F92E226A97}">
+					<ChildrenList>
+						<Action Name="" ID="{744EFC68-68A9-49D0-B2D8-D9554DFAC2A5}" ShortID="47906967">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_spatula" ID="{B60224E9-51F2-4B87-A501-58D8B786807A}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Mug" ID="{E3E0AE79-1EF9-432F-BE9B-20D8E81E6FFD}">
+					<ChildrenList>
+						<Action Name="" ID="{5855536D-5B0A-4307-807B-ABDE842A21E5}" ShortID="115499505">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_mug" ID="{4FF9FB2D-E405-423A-AA3C-D676DB2FD439}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
