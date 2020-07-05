@@ -41,7 +41,7 @@
 						<Action Name="" ID="{7C7FDC54-50E1-4644-9EB4-E1DB515D8474}" ShortID="49645698">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="grabs_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+									<ObjectRef Name="splash_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -1139,6 +1139,35 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="impacts_mug" ID="{4FF9FB2D-E405-423A-AA3C-D676DB2FD439}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Bottle_Glass" ID="{9EAD7739-7507-4125-8082-A23EB955D74D}">
+					<ChildrenList>
+						<Action Name="" ID="{60A55EC8-7C98-48E4-A40F-EF62763CC4F6}" ShortID="462007025">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_bottle_glass" ID="{9943C4A3-D6C6-4BBB-AB8B-27E304714C20}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Impact_Bottle_Glass_Liquid" ID="{8B3A9A5B-23B9-4319-9930-249025E17BB8}">
+					<ChildrenList>
+						<Action Name="" ID="{AA689C25-D611-4B0C-851D-E4C59945EB6B}" ShortID="746939321">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="impacts_bottle_glass" ID="{9943C4A3-D6C6-4BBB-AB8B-27E304714C20}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E1FC3E1D-20C4-4A54-8535-BB137CC69278}" ShortID="13990574">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="splash_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

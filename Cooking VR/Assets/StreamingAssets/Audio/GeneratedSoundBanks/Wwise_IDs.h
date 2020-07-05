@@ -21,6 +21,8 @@ namespace AK
         static const AkUniqueID GIANNA_CLAP = 822788948U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
+        static const AkUniqueID IMPACT_BOTTLE_GLASS = 2487494075U;
+        static const AkUniqueID IMPACT_BOTTLE_GLASS_LIQUID = 3024290838U;
         static const AkUniqueID IMPACT_BOTTLE_PLASTIC = 433980135U;
         static const AkUniqueID IMPACT_EXTINGUISHER = 2236363231U;
         static const AkUniqueID IMPACT_KNIFE = 2552890829U;

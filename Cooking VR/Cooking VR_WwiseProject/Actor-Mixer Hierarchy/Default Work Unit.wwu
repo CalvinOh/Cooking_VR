@@ -140,13 +140,35 @@
 						<ActiveSource Name="sx_plr_grab_v2" ID="{3D478B63-4891-433D-A6F7-5C8A5A22B407}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<RandomSequenceContainer Name="grabs_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" ShortID="771318534">
+				<RandomSequenceContainer Name="splash_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" ShortID="771318534">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+							<ObjectRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -263,6 +285,19 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="pours_bottle_glass" ID="{18AB7BED-1677-43A3-903A-9B0BCB5D3F59}" ShortID="585518877">
+					<PropertyList>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
@@ -392,6 +427,7 @@
 								<Value>37</Value>
 							</ValueList>
 						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -772,6 +808,12 @@
 								<Value>9</Value>
 							</ValueList>
 						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -783,6 +825,11 @@
 									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -865,6 +912,7 @@
 				<RandomSequenceContainer Name="impacts_plate" ID="{F885AA4B-4AC3-4CD1-A575-1F7C7EA1AAB8}" ShortID="61180102">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -4791,6 +4839,7 @@
 				<RandomSequenceContainer Name="impacts_silverware" ID="{8F286FBE-72D6-4090-85CC-95222A7BF74C}" ShortID="829017507">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -4950,6 +4999,7 @@
 						<RandomSequenceContainer Name="impacts_knife_1" ID="{54FAB98A-B625-453A-938C-4AE7319839E0}" ShortID="620015535">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>1</Value>
@@ -5074,6 +5124,7 @@
 						<RandomSequenceContainer Name="impacts_knife_2" ID="{505A012C-F310-4DF5-B9E6-A57234C88912}" ShortID="183398026">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>1</Value>
@@ -5548,6 +5599,12 @@
 				<RandomSequenceContainer Name="impacts_mug" ID="{4FF9FB2D-E405-423A-AA3C-D676DB2FD439}" ShortID="399336529">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -5561,9 +5618,14 @@
 							</ModifierList>
 						</Property>
 						<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>12</Value>
+								<Value>4</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5640,6 +5702,12 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -5651,6 +5719,11 @@
 									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
@@ -5774,6 +5847,11 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -5785,6 +5863,11 @@
 									</Modifier>
 								</ModifierInfo>
 							</ModifierList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
 						</Property>
 					</PropertyList>
 					<ReferenceList>
@@ -5885,6 +5968,123 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="sx_shrinkray_4" ID="{772A3F0D-C37F-4CAF-ADE4-2A8BFD2A34E6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="impacts_bottle_glass" ID="{9943C4A3-D6C6-4BBB-AB8B-27E304714C20}" ShortID="635824103">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sx_impact_glassbottle_1" ID="{F6B88666-4CBA-42A3-B1F4-D8023B3F0449}" ShortID="249297291">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_impact_glassbottle_1" ID="{38D0792D-BE6A-4761-B707-DEC745AB8FB7}">
+									<Language>SFX</Language>
+									<AudioFile>sx_impact_glassbottle_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="47360813"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_impact_glassbottle_1" ID="{38D0792D-BE6A-4761-B707-DEC745AB8FB7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sx_impact_glassbottle_2" ID="{96E6C9E0-18C7-40A8-9035-998D362681BD}" ShortID="828625915">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_impact_glassbottle_2" ID="{FA29168D-5ED3-4495-AB32-56F38DB1C771}">
+									<Language>SFX</Language>
+									<AudioFile>sx_impact_glassbottle_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="638066385"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_impact_glassbottle_2" ID="{FA29168D-5ED3-4495-AB32-56F38DB1C771}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sx_impact_glassbottle_3" ID="{0CFDD785-82E6-42CC-9951-FA3F0C41F73A}" ShortID="1021246759">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_impact_glassbottle_3" ID="{D1410969-C980-4E23-A417-EF2FC3DD8D19}">
+									<Language>SFX</Language>
+									<AudioFile>sx_impact_glassbottle_3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="349833069"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_impact_glassbottle_3" ID="{D1410969-C980-4E23-A417-EF2FC3DD8D19}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sx_impact_glassbottle_4" ID="{9DFCF4EF-3C20-4851-8562-6F14F34F2FB2}" ShortID="439014823">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sx_impact_glassbottle_4" ID="{1CBEE77D-44E7-45F2-B096-8B2BFA87B2BC}">
+									<Language>SFX</Language>
+									<AudioFile>sx_impact_glassbottle_4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="292480851"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sx_impact_glassbottle_4" ID="{1CBEE77D-44E7-45F2-B096-8B2BFA87B2BC}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
