@@ -39,15 +39,28 @@ public abstract class CookableFood : MonoBehaviour
         if(currentlyCooking)
         {
             cookedTime += Time.deltaTime;
+            CheckIfSwitchVisual();
         }
     }
-    
+
+    private void CheckIfSwitchVisual()
+    {
+        if (currentStage < (stageRefs.Length - 2)) // Check if reached final stage
+        {
+            if (cookedTime > stageRefs[(currentStage + 1)])
+            {
+                currentStage++;
+                SwitchVisualObject();
+            }
+        }
+    }
+
     protected void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
-        {
-            other.gameObject.GetComponent<PanScript>().AddItemInTrigger(this);
-        }
+        //if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
+        //{
+        //    other.gameObject.GetComponent<PanScript>().AddItemInTrigger(this);
+        //}
     }
 
     public void StartCook()

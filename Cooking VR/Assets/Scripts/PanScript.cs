@@ -130,6 +130,10 @@ public class PanScript : MonoBehaviour, IGrabbable
             isSnapped = true;
             SnapToBurner(other);
         }
+        else if(other.TryGetComponent<CookableFood>(out CookableFood cf))
+        {
+            this.AddItemInTrigger(cf);
+        }
     }
 
     private void SnapToBurner(Collider other)
@@ -153,6 +157,10 @@ public class PanScript : MonoBehaviour, IGrabbable
         if (other.CompareTag("Burner"))
         {
             UnSnap();
+        }
+        else if (other.TryGetComponent<CookableFood>(out CookableFood cf))
+        {
+            this.RemoveItemInTrigger(cf);
         }
     }
 

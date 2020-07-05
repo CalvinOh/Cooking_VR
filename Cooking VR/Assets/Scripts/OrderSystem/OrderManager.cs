@@ -119,13 +119,18 @@ public class OrderManager : MonoBehaviour
             highScoreNums = new float[highScores.Length];
             for (int i = 0; i < highScores.Length; i++)
             {
-                highScoreNums[i] = Convert.ToInt32(highScores[i]);
+                if (Convert.ToInt32(highScores[i]) != 0)
+                    highScoreNums[i] = Convert.ToInt32(highScores[i]);
+                else
+                    highScoreNums[i] = 0;
             }
         }
         catch (Exception e)
         {
             highScores = new string[3];
             highScoreNums = new float[highScores.Length];
+            for (int i = 0; i < highScoreNums.Length; i++)
+                highScoreNums[i] = 0;
         }
 
         string levelName = SceneManager.GetActiveScene().name;

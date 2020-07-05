@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookableFry : CookableFood
+public class CookableOnionRing : CookableFood
 {
     byte stage1 = 0;
     byte stage2 = 10;
@@ -11,8 +11,7 @@ public class CookableFry : CookableFood
     // Start is called before the first frame update
     void Start()
     {
-        base.Start();
-        AssignStageRefs();
+        
     }
 
     // Update is called once per frame
