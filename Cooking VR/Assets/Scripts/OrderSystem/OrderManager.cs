@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrderManager : MonoBehaviour
 {
-
     public class Order
     {
         //An order
@@ -56,6 +58,7 @@ public class OrderManager : MonoBehaviour
     public static List<Order> Orders = new List<Order>();
     public static bool LastOrderSpawned;
     public static int NextSceneToLoad;
+    private string saveLoc = AppDomain.CurrentDomain.DynamicDirectory + "HighScores.txt";
 
     // Start is called before the first frame update
     void Start()
@@ -99,8 +102,71 @@ public class OrderManager : MonoBehaviour
     {
         if (Orders.Count == 0&&!LevelCompleted)
         {
+            SaveHighScore();
+
             OrderSpawner.SpawnLevelCompleteOrder(NextSceneToLoad);
             LevelCompleted = true;
+        }
+    }
+
+    private void SaveHighScore()
+    {
+        string[] highScores;
+        float[] highScoreNums;
+        try
+        {
+            highScores = File.ReadAllLines(saveLoc);
+            highScoreNums = new float[highScores.Length];
+            for (int i = 0; i < highScores.Length; i++)
+            {
+                if (Convert.ToInt32(highScores[i]) != 0)
+                    highScoreNums[i] = Convert.ToInt32(highScores[i]);
+                else
+                    highScoreNums[i] = 0;
+            }
+        }
+        catch (Exception e)
+        {
+            highScores = new string[3];
+            highScoreNums = new float[highScores.Length];
+            for (int i = 0; i < highScoreNums.Length; i++)
+                highScoreNums[i] = 0;
+        }
+
+        string levelName = SceneManager.GetActiveScene().name;
+        int targetIndex = 0;
+
+        switch (levelName)
+        {
+            case "Level 1":
+                {
+                    targetIndex = 0;
+                    break;
+                }
+            case "Level 2":
+                {
+                    targetIndex = 1;
+                    break;
+                }
+            case "Level 3":
+                {
+                    targetIndex = 2;
+                    break;
+                }
+        }
+
+        float newHighScore = 0;
+        foreach (FinishedOrder f in finishedOrders)
+        {
+            newHighScore += f.Score;
+        }
+        
+        if(newHighScore > highScoreNums[targetIndex])
+        {
+            highScoreNums[targetIndex] = newHighScore;
+            highScores[targetIndex] = highScoreNums[targetIndex].ToString();
+
+            File.WriteAllLines(saveLoc, highScores);
         }
     }
 }
