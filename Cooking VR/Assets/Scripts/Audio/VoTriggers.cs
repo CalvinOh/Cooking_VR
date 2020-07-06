@@ -244,13 +244,99 @@ public class VoTriggers : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_vx_l_2", gameObject);
     }
+    private void Play_vx_l_3()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_3", gameObject);
+    }
+    private void Play_vx_l_4()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_4", gameObject);
+    }
+    private void Play_vx_l_5()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_5", gameObject);
+    }
     private void Play_vx_l_6()
     {
         AkSoundEngine.PostEvent("Play_vx_l_6", gameObject);
     }
+    private void Play_vx_l_7()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_7", gameObject);
+    }
     private void Play_vx_l_8()
     {
         AkSoundEngine.PostEvent("Play_vx_l_8", gameObject);
+    }
+    private void Play_vx_l_9()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_9", gameObject);
+    }
+    private void Play_vx_l_10()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_10", gameObject);
+    }
+    private void Play_vx_l_11()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_11", gameObject);
+    }
+    private void Play_vx_l_12()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_12", gameObject);
+    }
+    private void Play_vx_l_13()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_13", gameObject);
+    }
+    private void Play_vx_l_14()
+    {
+        AkSoundEngine.PostEvent("Play_vx_l_14", gameObject);
+    }
+
+    // VO index M
+    private void Play_vx_m_1()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_1", gameObject);
+    }
+    private void Play_vx_m_2()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_2", gameObject);
+    }
+    private void Play_vx_m_3()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_3", gameObject);
+    }
+    private void Play_vx_m_4()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_4", gameObject);
+    }
+    private void Play_vx_m_5()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_5", gameObject);
+    }
+    private void Play_vx_m_6()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_6", gameObject);
+    }
+    private void Play_vx_m_7()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_7", gameObject);
+    }
+    private void Play_vx_m_8()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_8", gameObject);
+    }
+    private void Play_vx_m_9()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_9", gameObject);
+    }
+    private void Play_vx_m_10()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_10", gameObject);
+    }
+    private void Play_vx_m_11()
+    {
+        AkSoundEngine.PostEvent("Play_vx_m_11", gameObject);
     }
 
 

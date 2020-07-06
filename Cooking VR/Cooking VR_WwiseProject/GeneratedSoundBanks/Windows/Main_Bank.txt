@@ -4,10 +4,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	803254130	Impact_Plate			\Default Work Unit\Impact_Plate	
 	822788948	Gianna_Clap			\Default Work Unit\Gianna_Clap	
 	996591275	Stack			\Default Work Unit\Stack	
+	1180447715	Impact_Mug			\Default Work Unit\Impact_Mug	
 	1240512178	Bell			\Default Work Unit\Bell	
 	1251402355	Grab_Bottle_Glass			\Default Work Unit\Grab_Bottle_Glass	
 	1278791036	Stove_On			\Default Work Unit\Stove_On	
-	1453273807	Impact_pan			\Default Work Unit\Impact_pan	
+	1453273807	Impact_Pan			\Default Work Unit\Impact_Pan	
+	1569332892	Play_vx_m_10			\Default Work Unit\VO\Play_vx_m_10	
+	1569332893	Play_vx_m_11			\Default Work Unit\VO\Play_vx_m_11	
 	1602377129	Play_vx_e_4			\Default Work Unit\VO\Play_vx_e_4	
 	1602377132	Play_vx_e_1			\Default Work Unit\VO\Play_vx_e_1	
 	1602377134	Play_vx_e_3			\Default Work Unit\VO\Play_vx_e_3	
@@ -39,6 +42,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2163080948	Burger_Cook_Stop			\Default Work Unit\Burger_Cook_Stop	
 	2236363231	Impact_Extinguisher			\Default Work Unit\Impact_Extinguisher	
 	2484277510	Use_Condiment			\Default Work Unit\Use_Condiment	
+	2487494075	Impact_Bottle_Glass			\Default Work Unit\Impact_Bottle_Glass	
 	2540397042	Impact_Silverware			\Default Work Unit\Impact_Silverware	
 	2552890829	Impact_Knife			\Default Work Unit\Impact_Knife	
 	2676291781	Play_vx_d_1			\Default Work Unit\VO\Play_vx_d_1	
@@ -47,10 +51,24 @@ Event	ID	Name			Wwise Object Path	Notes
 	2676438968	Play_vx_g_3			\Default Work Unit\VO\Play_vx_g_3	
 	2676438969	Play_vx_g_2			\Default Work Unit\VO\Play_vx_g_2	
 	2676438970	Play_vx_g_1			\Default Work Unit\VO\Play_vx_g_1	
+	2677424672	Play_vx_m_5			\Default Work Unit\VO\Play_vx_m_5	
+	2677424673	Play_vx_m_4			\Default Work Unit\VO\Play_vx_m_4	
+	2677424674	Play_vx_m_7			\Default Work Unit\VO\Play_vx_m_7	
+	2677424675	Play_vx_m_6			\Default Work Unit\VO\Play_vx_m_6	
+	2677424676	Play_vx_m_1			\Default Work Unit\VO\Play_vx_m_1	
+	2677424678	Play_vx_m_3			\Default Work Unit\VO\Play_vx_m_3	
+	2677424679	Play_vx_m_2			\Default Work Unit\VO\Play_vx_m_2	
+	2677424684	Play_vx_m_9			\Default Work Unit\VO\Play_vx_m_9	
+	2677424685	Play_vx_m_8			\Default Work Unit\VO\Play_vx_m_8	
 	2677571732	Play_vx_l_8			\Default Work Unit\VO\Play_vx_l_8	
+	2677571733	Play_vx_l_9			\Default Work Unit\VO\Play_vx_l_9	
+	2677571736	Play_vx_l_4			\Default Work Unit\VO\Play_vx_l_4	
+	2677571737	Play_vx_l_5			\Default Work Unit\VO\Play_vx_l_5	
 	2677571738	Play_vx_l_6			\Default Work Unit\VO\Play_vx_l_6	
+	2677571739	Play_vx_l_7			\Default Work Unit\VO\Play_vx_l_7	
 	2677571741	Play_vx_l_1			\Default Work Unit\VO\Play_vx_l_1	
 	2677571742	Play_vx_l_2			\Default Work Unit\VO\Play_vx_l_2	
+	2677571743	Play_vx_l_3			\Default Work Unit\VO\Play_vx_l_3	
 	2678116160	Play_vx_i_1			\Default Work Unit\VO\Play_vx_i_1	
 	2678116162	Play_vx_i_3			\Default Work Unit\VO\Play_vx_i_3	
 	2678116163	Play_vx_i_2			\Default Work Unit\VO\Play_vx_i_2	
@@ -70,8 +88,15 @@ Event	ID	Name			Wwise Object Path	Notes
 	2831748783	Knife_Cut_Generic			\Default Work Unit\Knife_Cut_Generic	
 	2932040671	Play_Music			\Default Work Unit\Play_Music	
 	3016745319	Stop_All_Except			\Default Work Unit\Stop_All_Except	
+	3024290838	Impact_Bottle_Glass_Liquid			\Default Work Unit\Impact_Bottle_Glass_Liquid	
 	3025511663	Pour_Bottle_Glass			\Default Work Unit\Pour_Bottle_Glass	
+	3180392800	Impact_Spatula			\Default Work Unit\Impact_Spatula	
 	3360486203	Impact_Meat			\Default Work Unit\Impact_Meat	
+	3658643219	Play_vx_l_14			\Default Work Unit\VO\Play_vx_l_14	
+	3658643220	Play_vx_l_13			\Default Work Unit\VO\Play_vx_l_13	
+	3658643221	Play_vx_l_12			\Default Work Unit\VO\Play_vx_l_12	
+	3658643222	Play_vx_l_11			\Default Work Unit\VO\Play_vx_l_11	
+	3658643223	Play_vx_l_10			\Default Work Unit\VO\Play_vx_l_10	
 	3968779560	Burger_Cook_Start			\Default Work Unit\Burger_Cook_Start	
 	3988014274	Teleport_item			\Default Work Unit\Teleport_item	
 
@@ -86,22 +111,27 @@ Switch	ID	Name	Switch Group			Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	9805013	vx_f_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_f_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_f_2		1147140
 	12409130	vx_c_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_c_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_c_1		1214108
+	27836312	vx_m_7	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_7		557796
 	29292050	vx_j_7_c	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_7_c_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_7\vx_j_7_c		47756
 	31563926	sx_impact_knife_Layer_1_C	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_knife_Layer_1_C_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Knife\impacts_knife_1\sx_impact_knife_Layer_1_C		83128
+	47360813	sx_impact_glassbottle_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_glassbottle_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_bottle_glass\sx_impact_glassbottle_1		85188
 	50696179	sx_impact_silverware_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_silverware_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_silverware\sx_impact_silverware_3		76488
 	52499773	vx_b_6	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_b_6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_b_6		381668
 	60957674	vx_l_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_1		368368
+	63047533	vx_l_12	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_12_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_12		561708
 	65981410	vx_j_2_c	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_2_c_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_2\vx_j_2_c		120476
 	78736221	vx_i_5_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_5_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_5\vx_i_5_b		679012
+	82295011	vx_m_6	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_6		508324
 	84462139	sx_impact_knife_Layer_2_B	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_knife_Layer_2_B_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Knife\impacts_knife_2\sx_impact_knife_Layer_2_B		92292
 	93227442	sx_ambi_kitchen	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_ambi_kitchen_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_ambi_kitchen		1760136
 	108253935	HYB_Lvl2_[LOOP]_05_07_20_v02	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\HYB_Lvl2_[LOOP]_05.07.20_v02_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music Switch\Level_2\HYB_Lvl2_[LOOP]_05_07_20_v02\HYB_Lvl2_[LOOP]_05_07_20_v02		5050008
 	109271278	vx_d_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_d_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_d_1		1084632
 	135099540	vx_b_7	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_b_7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_b_7		404936
 	135928796	sx_condiment_squirt_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_condiment_squirt_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\use_condiment\sx_condiment_squirt_3		82176
-	141457056	sx_int_glass_bottle_grab_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_bottle_glass\sx_int_glass_bottle_grab_4		42452
+	141457056	sx_int_glass_bottle_grab_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\splash_bottle_glass\sx_int_glass_bottle_grab_4		42452
 	142578265	vx_b_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_b_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_b_1		586068
 	145439059	sx_item_teleport	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_item_teleport_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_item_teleport		75752
+	145617971	vx_m_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_1		436316
 	163219809	sx_impact_plate_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_plate_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_plate\sx_impact_plate_3		45044
 	171099121	vx_b_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_b_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_b_5		1162868
 	202225013	sx_int_plate_grab_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_plate_grab_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_plate\sx_int_plate_grab_1		85128
@@ -113,9 +143,12 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	230967837	vx_g_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_g_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_g_2		500028
 	233327061	sx_burger_cook_start	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_burger_cook_start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_burger_cook_start		365312
 	242308609	sx_int_glass_bottle_pour_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_pour_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\pours_bottle_glass\sx_int_glass_bottle_pour_3		39116
+	261375903	vx_l_13	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_13_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_13		593936
 	269172882	vx_b_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_b_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_b_3		773412
 	272309235	vx_i_9_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_9_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_9\vx_i_9_a		153372
 	279788534	sx_int_plastic_bottle_grab_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_plastic_bottle_grab_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_bottle_plastic\sx_int_plastic_bottle_grab_2		58184
+	291257219	sx_impact_spatula_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_spatula_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_spatula\sx_impact_spatula_4		44964
+	292480851	sx_impact_glassbottle_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_glassbottle_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_bottle_glass\sx_impact_glassbottle_4		133864
 	293595938	vx_d_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_d_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_d_2		908496
 	303422960	vx_e_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_e_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_e_2		926448
 	309232918	vx_a_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_a_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_a_5		1803908
@@ -126,16 +159,22 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	320836404	vx_d_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_d_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_d_3		1235860
 	327731463	sx_impact_knife_Layer_2_C	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_knife_Layer_2_C_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Knife\impacts_knife_2\sx_impact_knife_Layer_2_C		86408
 	328395501	vx_i_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_1		386700
+	329178962	vx_l_10	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_10_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_10		695824
 	335643558	vx_b_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_b_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_b_2		510600
 	336770053	sx_clap_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_clap_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\claps\sx_clap_3		26888
 	343031953	vx_j_3_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_3_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_3\vx_j_3_b		463636
+	346466255	sx_impact_spatula_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_spatula_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_spatula\sx_impact_spatula_1		55740
+	349833069	sx_impact_glassbottle_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_glassbottle_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_bottle_glass\sx_impact_glassbottle_3		88872
 	352128800	sx_burger_cook_loop	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_burger_cook_loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_burger_cook_loop		1228268
+	353824211	vx_m_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_2		132828
 	354167258	vx_l_6	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_6_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_6		383840
 	356501855	vx_j_2_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_2_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_2\vx_j_2_b		84768
 	363414120	sx_impact_silverware_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_silverware_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_silverware\sx_impact_silverware_2		80272
 	363543208	vx_i_7_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_7_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_7\vx_i_7_b		75248
 	375737692	vx_i_7_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_7_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_7\vx_i_7_a		81516
 	378245175	sx_int_plastic_bottle_grab_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_plastic_bottle_grab_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_bottle_plastic\sx_int_plastic_bottle_grab_3		92184
+	389939091	vx_l_7	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_7_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_7		273660
+	391908583	vx_m_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_3		432292
 	401096079	vx_j_6_d	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_6_d_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_6\vx_j_6_d		87260
 	406437937	sx_int_glass_bottle_pour_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_pour_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\pours_bottle_glass\sx_int_glass_bottle_pour_4		29216
 	430869697	sx_impact_pan_stove_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_pan_stove_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_pan_stove\sx_impact_pan_stove_2		90120
@@ -145,10 +184,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	461070262	vx_j_1_d	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_1_d_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_1\vx_j_1_d		187248
 	472009487	sx_meat_impact_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_meat_impact_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_meat_impact_1		55436
 	474374849	vx_a_2_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_a_2_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_a_2_b		1913156
+	502471312	vx_l_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_3		815684
+	503139491	vx_m_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_4		401188
 	503534022	vx_j_1_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_1_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_1\vx_j_1_a		81988
 	510687302	vx_j_2_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_2_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_2\vx_j_2_a		115892
 	512838790	vx_j_5_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_5_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_5\vx_j_5_a		1492940
 	513087279	sx_condiment_squirt_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_condiment_squirt_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\use_condiment\sx_condiment_squirt_2		72560
+	513856556	sx_impact_mug_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_mug_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_mug\sx_impact_mug_2		27808
 	518395074	HYB_Lvl3_[LOOP]_MainTheme_05_07_20_v02	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\HYB_Lvl3_[LOOP]_MainTheme_05.07.20_v02_D79FB2B7.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music Switch\Level_3\HYB_Lvl3_[LOOP]_MainTheme_05_07_20_v02\HYB_Lvl3_[LOOP]_MainTheme_05_07_20_v02		10099868
 	522046043	vx_g_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_g_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_g_1		652276
 	524998403	sx_impact_silverware_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_silverware_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_silverware\sx_impact_silverware_1		87852
@@ -167,12 +209,14 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	612175400	vx_i_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_2		532212
 	612696344	vx_h_3_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_h_3_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_h_3\vx_h_3_b		293096
 	616589309	sx_timer_gaintime	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_timer_gaintime_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_timer_gaintime		99600
+	620051951	vx_m_9	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_9_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_9		1113696
 	629777204	sx_stove_ignite	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_stove_ignite_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_stove_ignite		83664
 	634934258	vx_h_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_h_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_h_1		757936
+	638066385	sx_impact_glassbottle_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_glassbottle_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_bottle_glass\sx_impact_glassbottle_2		93196
 	640329144	vx_i_5_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_5_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_5\vx_i_5_a		472080
 	650014327	sx_clap_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_clap_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\claps\sx_clap_1		26888
 	654708033	sx_int_glass_bottle_pour_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_pour_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\pours_bottle_glass\sx_int_glass_bottle_pour_2		49196
-	657838990	sx_int_glass_bottle_grab_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_bottle_glass\sx_int_glass_bottle_grab_5		64744
+	657838990	sx_int_glass_bottle_grab_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\splash_bottle_glass\sx_int_glass_bottle_grab_5		64744
 	714975463	vx_j_7_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_7_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_7\vx_j_7_a		37776
 	716783425	sx_int_plate_grab_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_plate_grab_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_plate\sx_int_plate_grab_4		85384
 	725862485	vx_f_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_f_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_f_1		881512
@@ -181,23 +225,29 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	743450891	sx_impact_pan_stove_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_pan_stove_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_pan_stove\sx_impact_pan_stove_3		88896
 	746895508	vx_c_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_c_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_c_3		601128
 	749957467	vx_j_5_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_5_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_5\vx_j_5_b		1485344
+	755445874	vx_m_11	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_11_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_11		1098440
+	761138355	vx_m_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_5		300764
 	775067451	vx_c_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_c_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_c_2		955928
 	775294745	vx_j_7_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_7_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_7\vx_j_7_b		37724
 	781602913	sx_env_fridge	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_env_fridge_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_env_fridge		1571564
 	794740313	sx_int_glass_bottle_pour_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_pour_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\pours_bottle_glass\sx_int_glass_bottle_pour_5		32476
 	806246708	vx_e_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_e_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_e_4		579320
+	807502247	sx_impact_spatula_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_spatula_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_spatula\sx_impact_spatula_2		29708
 	814098630	vx_a_4_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_a_4_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_a_4_b		365912
-	817823556	sx_int_glass_bottle_grab_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_bottle_glass\sx_int_glass_bottle_grab_3		62292
+	817823556	sx_int_glass_bottle_grab_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\splash_bottle_glass\sx_int_glass_bottle_grab_3		62292
+	828915768	vx_l_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_4		675036
 	837826000	vx_i_4	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_4		806776
-	838495242	sx_int_glass_bottle_grab_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_bottle_glass\sx_int_glass_bottle_grab_2		66904
+	838495242	sx_int_glass_bottle_grab_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\splash_bottle_glass\sx_int_glass_bottle_grab_2		66904
 	848107566	sx_impact_knife_Layer_1_A	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_knife_Layer_1_A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Knife\impacts_knife_1\sx_impact_knife_Layer_1_A		75872
 	854541657	vx_j_6_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_6_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_6\vx_j_6_b		81424
 	865520128	sx_condiment_squirt_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_condiment_squirt_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\use_condiment\sx_condiment_squirt_1		84044
+	872685066	vx_l_11	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_11_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_11		971948
 	874152463	sx_impact_plate_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_plate_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_plate\sx_impact_plate_2		33448
 	881847866	sx_impact_extinguisher	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_extinguisher_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_impact_extinguisher		82972
-	889619142	sx_int_glass_bottle_grab_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_bottle_glass\sx_int_glass_bottle_grab_1		89504
+	889619142	sx_int_glass_bottle_grab_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_grab_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\splash_bottle_glass\sx_int_glass_bottle_grab_1		89504
 	891193525	vx_j_3_c	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_3_c_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_3\vx_j_3_c		625172
 	900935680	vx_i_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_3		772036
+	904404201	sx_impact_spatula_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_spatula_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_spatula\sx_impact_spatula_3		26888
 	947404325	sx_knife_cut_generic	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_knife_cut_generic_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\sx_knife_cut_generic		67016
 	950755339	vx_j_4_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_4_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_4\vx_j_4_b		1952240
 	970089154	vx_j_5_c	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_5_c_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_5\vx_j_5_c		980500
@@ -206,9 +256,15 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	974650106	vx_i_8_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_i_8_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_i_8\vx_i_8_a		332016
 	975986493	vx_j_6_a	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_6_a_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_6\vx_j_6_a		83948
 	986648341	sx_int_plate_grab_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_plate_grab_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_plate\sx_int_plate_grab_2		132360
+	991473269	vx_l_5	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_5		329656
 	993571655	sx_impact_knife_Layer_2_A	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_knife_Layer_2_A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Knife\impacts_knife_2\sx_impact_knife_Layer_2_A		81064
 	999296791	sx_int_plate_grab_3	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_plate_grab_3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\grabs_plate\sx_int_plate_grab_3		86648
 	1001016546	vx_j_6_c	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_6_c_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_6\vx_j_6_c		203580
+	1001158662	vx_l_14	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_14_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_14		337264
+	1001262537	vx_m_8	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_8_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_8		590888
+	1003397660	sx_impact_mug_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_impact_mug_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\impacts_mug\sx_impact_mug_1		28628
+	1019899375	vx_m_10	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_m_10_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_m_10		534604
+	1030943139	vx_l_9	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_l_9_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_l_9		802520
 	1051743148	sx_int_glass_bottle_pour_1	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_int_glass_bottle_pour_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\pours_bottle_glass\sx_int_glass_bottle_pour_1		26888
 	1060264638	sx_clap_2	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\sx_clap_2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\claps\sx_clap_2		26888
 	1062525474	vx_j_1_b	D:\Documents\GitHub\Cooking_VR\Cooking VR\Cooking VR_WwiseProject\.cache\Windows\SFX\vx_j_1_b_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\VO\vx_j_1\vx_j_1_b		163912

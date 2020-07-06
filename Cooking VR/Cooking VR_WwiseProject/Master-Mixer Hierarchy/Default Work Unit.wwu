@@ -9,6 +9,40 @@
 							<ObjectRef Name="System" ID="{93BDCF4A-769D-4467-A3A4-74CBC5A60CF3}" WorkUnitID="{803459CC-FFD5-4371-9023-0FE99644ED27}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<RTPCList>
+										<RTPC Name="" ID="{FE1B8B26-95CC-46FA-9903-4C162D435E8E}" ShortID="797840297">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="SFX_Volume" ID="{E1C39B7E-E48D-4E85-88B3-A0CD43584F73}" WorkUnitID="{D563633D-60CE-41A0-ADE2-B6E09D2DFF36}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{3F66974F-5C3F-4D08-B737-1BFC687C9725}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+							</PropertyList>
+						</Bus>
+					</ChildrenList>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

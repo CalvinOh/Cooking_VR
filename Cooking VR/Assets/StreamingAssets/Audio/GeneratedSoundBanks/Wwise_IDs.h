@@ -21,13 +21,17 @@ namespace AK
         static const AkUniqueID GIANNA_CLAP = 822788948U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
+        static const AkUniqueID IMPACT_BOTTLE_GLASS = 2487494075U;
+        static const AkUniqueID IMPACT_BOTTLE_GLASS_LIQUID = 3024290838U;
         static const AkUniqueID IMPACT_BOTTLE_PLASTIC = 433980135U;
         static const AkUniqueID IMPACT_EXTINGUISHER = 2236363231U;
         static const AkUniqueID IMPACT_KNIFE = 2552890829U;
         static const AkUniqueID IMPACT_MEAT = 3360486203U;
+        static const AkUniqueID IMPACT_MUG = 1180447715U;
         static const AkUniqueID IMPACT_PAN = 1453273807U;
         static const AkUniqueID IMPACT_PLATE = 803254130U;
         static const AkUniqueID IMPACT_SILVERWARE = 2540397042U;
+        static const AkUniqueID IMPACT_SPATULA = 3180392800U;
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
@@ -77,8 +81,29 @@ namespace AK
         static const AkUniqueID PLAY_VX_J_7 = 2678557441U;
         static const AkUniqueID PLAY_VX_L_1 = 2677571741U;
         static const AkUniqueID PLAY_VX_L_2 = 2677571742U;
+        static const AkUniqueID PLAY_VX_L_3 = 2677571743U;
+        static const AkUniqueID PLAY_VX_L_4 = 2677571736U;
+        static const AkUniqueID PLAY_VX_L_5 = 2677571737U;
         static const AkUniqueID PLAY_VX_L_6 = 2677571738U;
+        static const AkUniqueID PLAY_VX_L_7 = 2677571739U;
         static const AkUniqueID PLAY_VX_L_8 = 2677571732U;
+        static const AkUniqueID PLAY_VX_L_9 = 2677571733U;
+        static const AkUniqueID PLAY_VX_L_10 = 3658643223U;
+        static const AkUniqueID PLAY_VX_L_11 = 3658643222U;
+        static const AkUniqueID PLAY_VX_L_12 = 3658643221U;
+        static const AkUniqueID PLAY_VX_L_13 = 3658643220U;
+        static const AkUniqueID PLAY_VX_L_14 = 3658643219U;
+        static const AkUniqueID PLAY_VX_M_1 = 2677424676U;
+        static const AkUniqueID PLAY_VX_M_2 = 2677424679U;
+        static const AkUniqueID PLAY_VX_M_3 = 2677424678U;
+        static const AkUniqueID PLAY_VX_M_4 = 2677424673U;
+        static const AkUniqueID PLAY_VX_M_5 = 2677424672U;
+        static const AkUniqueID PLAY_VX_M_6 = 2677424675U;
+        static const AkUniqueID PLAY_VX_M_7 = 2677424674U;
+        static const AkUniqueID PLAY_VX_M_8 = 2677424685U;
+        static const AkUniqueID PLAY_VX_M_9 = 2677424684U;
+        static const AkUniqueID PLAY_VX_M_10 = 1569332892U;
+        static const AkUniqueID PLAY_VX_M_11 = 1569332893U;
         static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
         static const AkUniqueID STACK = 996591275U;
         static const AkUniqueID STOP_ALL_EXCEPT = 3016745319U;
@@ -109,6 +134,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID GAMEPARAMETERINTENSITY = 964045659U;
+        static const AkUniqueID SFX_VOLUME = 1564184899U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -120,6 +146,7 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID SFX = 393239870U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES
