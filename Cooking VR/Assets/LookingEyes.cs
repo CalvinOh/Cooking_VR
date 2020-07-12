@@ -17,6 +17,9 @@ public class LookingEyes : MonoBehaviour
     [SerializeField]
     private GameObject ReyeSocket;
 
+    [SerializeField]
+    private List<string> LookTargetWhiteList;
+
     private GameObject Leye;
 
     private GameObject Reye;
@@ -29,7 +32,8 @@ public class LookingEyes : MonoBehaviour
     private Transform PlayerLHand;
     private Transform PlayerRHand;
 
-
+    private List<Transform> PotentialLookTargets;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -128,7 +132,7 @@ public class LookingEyes : MonoBehaviour
         }
         else if (decider > 10)
         {
-            //gianna llooks at random object in the kitchen
+            return PotentialLookTargets[Random.Range(0,PotentialLookTargets.Count)];
             return null;
         }
         else 
@@ -153,5 +157,24 @@ public class LookingEyes : MonoBehaviour
         yield return new WaitForSeconds(duration);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (LookTargetWhiteList.Contains(other.tag))
+        {
+            if (!PotentialLookTargets.Contains(other.transform))
+            {
+                PotentialLookTargets.Add(other.transform);
+            }
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (PotentialLookTargets.Contains(other.transform))
+        {
+            PotentialLookTargets.Remove(other.transform);
+        }
+    }
 
 }

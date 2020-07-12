@@ -2062,7 +2062,7 @@ Transform:
   m_GameObject: {fileID: 4377141800038885442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -11.662126, y: -3.235009, z: -4.1335964}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.32023358, y: 0.32023358, z: 0.32023358}
   m_Children:
   - {fileID: 5621865903150446884}
   - {fileID: 678388438}
@@ -3910,6 +3910,7 @@ GameObject:
   - component: {fileID: 2346061501367653470}
   - component: {fileID: 8673854371047361334}
   - component: {fileID: 8673854371753344552}
+  - component: {fileID: 1573391577473285322}
   m_Layer: 0
   m_Name: base
   m_TagString: Untagged
@@ -3982,7 +3983,22 @@ MonoBehaviour:
   RotateSpeed: 3
   LeyeSocket: {fileID: 1509669264}
   ReyeSocket: {fileID: 297028909}
+  LookTargetWhiteList:
+  - Item
   LookTarget: {fileID: 0}
+--- !u!135 &1573391577473285322
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8673854371047361335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.5
+  m_Center: {x: 0, y: 1.76, z: 6.37}
 --- !u!1 &8687480533628040154
 GameObject:
   m_ObjectHideFlags: 0
