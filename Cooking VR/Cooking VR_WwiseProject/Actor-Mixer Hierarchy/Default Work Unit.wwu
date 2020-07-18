@@ -716,6 +716,12 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Pitch" Type="int32">
 							<ModifierList>
 								<ModifierInfo>
@@ -728,18 +734,23 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
-							<Custom>
-								<Attenuation Name="Attenuation (Custom)" ID="{8BBFC848-CDC1-4DFF-B71D-09633D3B4500}" ShortID="219786969">
+							<Custom CreatedFrom="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}">
+								<Attenuation Name="Kitchen Object (Custom)" ID="{F5D6E1AD-844A-4D1E-AFB0-A95DFC713709}" ShortID="660110135">
 									<PropertyList>
-										<Property Name="RadiusMax" Type="Real64" Value="2"/>
+										<Property Name="RadiusMax" Type="Real64" Value="3"/>
 									</PropertyList>
 									<CurveUsageInfoList>
 										<VolumeDryUsage>
 											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
-												<Curve Name="VolumeDry" ID="{8452BF91-4DA5-4E07-B440-9C0739533D82}">
+												<Curve Name="VolumeDry" ID="{FE1A57E6-7161-4EC2-9EBC-BFE661EDBBC7}">
 													<PropertyList>
 														<Property Name="Flags" Type="int32" Value="3"/>
 													</PropertyList>
@@ -750,7 +761,7 @@
 															<Flags>5</Flags>
 														</Point>
 														<Point>
-															<XPos>2</XPos>
+															<XPos>3</XPos>
 															<YPos>-200</YPos>
 															<Flags>37</Flags>
 														</Point>

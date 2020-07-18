@@ -10,7 +10,6 @@ public class SelectiveSounds : MonoBehaviour
 
     public string WwiseEventName;
 
-    // Start is called before the first frame update
     void Start()
     {
         CheckPrefabName();
@@ -29,8 +28,21 @@ public class SelectiveSounds : MonoBehaviour
         }
     }
 
+    // detect type of object collided with and play appropriate sound
     private void OnCollisionEnter(Collision collision)
     {
-        AkSoundEngine.PostEvent(WwiseEventName, gameObject);
+        // if knife collides with cuttable object, play cut sound
+
+        if (this.gameObject.name == "kitchen_knife" && collision.gameObject.GetComponent<SoftDeleteCutable>())
+        {
+            AkSoundEngine.PostEvent("Knife_Cut_Generic", gameObject);
+        }
+
+        // if collision is with anything other than cuttable objects or slices, play impact sound
+
+        else if(!collision.gameObject.CompareTag("Slice") || !collision.gameObject.GetComponent<SoftDeleteCutable>())
+        {
+            AkSoundEngine.PostEvent(WwiseEventName, gameObject);
+        }
     }
 }
