@@ -6321,11 +6321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b70c80a9e831fcc4fafec0100a6ef8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsHeated: 0
-  CurrentPattyOnPan: {fileID: 0}
+  _IsHeated: 0
+  testHeated: 0
   isSnapped: 0
   bottomPanPositon: {fileID: 153725108}
-  wasGrabbed: 0
+  itemsInTrigger: []
 --- !u!65 &2021786598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7911,7 +7911,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 911345be5c111b34b90af73c0d4f22cb, type: 2}
+  - {fileID: 8924320844628161583, guid: 7defa5df06210a14fb01424dd1a8751c, type: 3}
   - {fileID: 2100000, guid: c93a1974e186e4e4d9e737232bb10956, type: 2}
   - {fileID: 2100000, guid: 5c839ba61d446a24e99d96d1854d2bdf, type: 2}
   m_StaticBatchInfo:
