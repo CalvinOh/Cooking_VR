@@ -40,7 +40,7 @@ public class SelectiveSounds : MonoBehaviour
 
         // if collision is with anything other than cuttable objects or slices, play impact sound
 
-        else if(!collision.gameObject.CompareTag("Slice") || !collision.gameObject.GetComponent<SoftDeleteCutable>())
+        else if(!collision.gameObject.CompareTag("Slice") && !collision.gameObject.GetComponent<SoftDeleteCutable>())
         {
             AkSoundEngine.PostEvent(WwiseEventName, gameObject);
         }
