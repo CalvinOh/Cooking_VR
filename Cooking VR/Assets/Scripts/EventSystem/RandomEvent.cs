@@ -21,7 +21,7 @@ public class RandomEvent : MonoBehaviour
 
     }
 
-    protected virtual void EndEvent()
+    public virtual void EndEvent()
     {
 
     }

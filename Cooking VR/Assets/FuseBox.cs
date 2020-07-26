@@ -9,8 +9,34 @@ public class FuseBox : MonoBehaviour
 
     [SerializeField]
     private GameObject Switch;
+    [SerializeField]
+    private GameObject FusePrefab;
 
+    public List<FuseSlot> Slots = new List<FuseSlot>(); //pulic for debugging
+    private LightsOuts LightsOutEventScript;
 
+    
+
+    private void Start()
+    {
+        LightsOutEventScript = FindObjectOfType<LightsOuts>();
+        foreach (FuseSlot a in GetComponentsInChildren<FuseSlot>())
+        {
+            Slots.Add(a);
+        }
+
+        SetUpBox();
+    }
+
+    private void SetUpBox()
+    {
+        foreach (FuseSlot a in Slots)
+        {
+            GameObject NewFuse = Instantiate(FusePrefab, a.transform.position, a.transform.rotation);
+            NewFuse.GetComponent<Fuse>().SlotIn(a);
+        }
+    }
+         
 
 
     public void TriggerEvent(int BrokenFuseNum)
@@ -46,7 +72,20 @@ public class FuseBox : MonoBehaviour
 
     public void AttemptFix()
     {
-        Switch.transform.parent = this.gameObject.transform;
+        if (CheckFuses())
+        {
+            LightsOutEventScript.EndEvent();
+        }
+    }
+
+    private bool CheckFuses()
+    {
+        foreach (FuseSlot a in Slots)
+        {
+            if (!a.CheckFuse())
+                return false;
+        }
+        return true;
     }
 
 }
