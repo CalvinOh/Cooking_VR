@@ -81,8 +81,6 @@ public class Clock : MonoBehaviour
 
             SetUITime();
         }
-        
-
     }
 
     public void SetUITime()
