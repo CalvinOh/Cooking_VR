@@ -43,7 +43,7 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
 
-    private void CheckIfSwitchVisual()
+    protected virtual void CheckIfSwitchVisual()
     {
         if (currentStage < (stageRefs.Length - 2)) // Check if reached final stage
         {
@@ -55,7 +55,7 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         //if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
         //{
