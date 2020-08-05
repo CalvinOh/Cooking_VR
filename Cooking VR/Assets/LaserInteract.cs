@@ -26,12 +26,12 @@ public class LaserInteract : MonoBehaviour
 
     private void PointerInteract(object sender, PointerEventArgs e)
     {
-        if(e.target.tag == "UIButton")
+        if(e.target.CompareTag("UIButton"))
         {
             button = e.target.GetComponent<Button>();
             button.onClick.Invoke();
         }
-        else if(e.target.tag == "UIToggle")
+        else if(e.target.CompareTag("UIToggle"))
         {
             toggle = e.target.GetComponent<Toggle>();
             toggle.isOn = true;
@@ -49,12 +49,12 @@ public class LaserInteract : MonoBehaviour
 
     public void PointerHover(object sender, PointerEventArgs e)
     {
-        if (e.target.tag == "UIButton")
+        if (e.target.CompareTag("UIButton"))
         {
             button = e.target.GetComponent<Button>();
             button.Select();
         }
-        if (e.target.tag == "UIToggle")
+        if (e.target.CompareTag("UIToggle"))
         {
             toggle = e.target.GetComponent<Toggle>();
             toggle.Select();
