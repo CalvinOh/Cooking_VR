@@ -1364,12 +1364,6 @@ MonoBehaviour:
   highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
---- !u!1 &284552688 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 330834905145249056, guid: 2516a52561afda148bb4c1d324ea3011,
-    type: 3}
-  m_PrefabInstance: {fileID: 7110583364979905324}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &287206878
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,6 +3123,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Giana Remy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377141800038885442, guid: 1300332599c2c5448885303f0560ed2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4377141800038885469, guid: 1300332599c2c5448885303f0560ed2b,
         type: 3}
@@ -5195,10 +5194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40ff07a51d771f4b988f0733b52e8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentlyActive: 0
   LightSources:
   - {fileID: 2069605873}
   - {fileID: 56346234}
-  LightsOutAmbientColor: {r: 0, g: 0, b: 0, a: 0}
+  LightsOutAmbientColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0.6509804}
+  AmountOfFusesThatCanBreak: 3
 --- !u!1 &1758926504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,7 +5578,7 @@ PrefabInstance:
     - target: {fileID: 1605030643570062008, guid: c3f330f37fbc31b4e9aa49b5bfab33a2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7018779382093761075, guid: c3f330f37fbc31b4e9aa49b5bfab33a2,
         type: 3}
@@ -11553,26 +11554,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1621772748378551901, guid: 2516a52561afda148bb4c1d324ea3011,
-        type: 3}
-      propertyPath: m_TagString
-      value: FuseSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 3487539363206551714, guid: 2516a52561afda148bb4c1d324ea3011,
-        type: 3}
-      propertyPath: m_TagString
-      value: FuseSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4396864594448475911, guid: 2516a52561afda148bb4c1d324ea3011,
-        type: 3}
-      propertyPath: m_TagString
-      value: FuseSlot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4396864594448475911, guid: 2516a52561afda148bb4c1d324ea3011,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7086668066545460004, guid: 2516a52561afda148bb4c1d324ea3011,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11633,73 +11614,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuseBox
       objectReference: {fileID: 0}
-    - target: {fileID: 8117991302746075880, guid: 2516a52561afda148bb4c1d324ea3011,
-        type: 3}
-      propertyPath: Switch
-      value: 
-      objectReference: {fileID: 284552688}
-    - target: {fileID: 8117991302746075880, guid: 2516a52561afda148bb4c1d324ea3011,
-        type: 3}
-      propertyPath: FusePrefab
-      value: 
-      objectReference: {fileID: 5057551610994360894, guid: 7a29e78cd1be4844ab3bffae6cf68ff5,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2516a52561afda148bb4c1d324ea3011, type: 3}
---- !u!1 &7110583364979905325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4396864594448475911, guid: 2516a52561afda148bb4c1d324ea3011,
-    type: 3}
-  m_PrefabInstance: {fileID: 7110583364979905324}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7110583364979905326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110583364979905325}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a4e8f54ea6dd1458d101faeee67a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &7110583364979905327 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3487539363206551714, guid: 2516a52561afda148bb4c1d324ea3011,
-    type: 3}
-  m_PrefabInstance: {fileID: 7110583364979905324}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7110583364979905328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1621772748378551901, guid: 2516a52561afda148bb4c1d324ea3011,
-    type: 3}
-  m_PrefabInstance: {fileID: 7110583364979905324}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7110583364979905329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110583364979905327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a4e8f54ea6dd1458d101faeee67a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7110583364979905330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7110583364979905328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a4e8f54ea6dd1458d101faeee67a5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &7247372415274553682
 MeshRenderer:
   m_ObjectHideFlags: 0

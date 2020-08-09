@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class FuseSlot : MonoBehaviour
 {
+    [SerializeField]
     private Fuse AttachedFuse;
 
     private Collider MyCollider;
+    private FuseBox MyFuseBox;
 
     private void Awake()
     {
         MyCollider = GetComponent<BoxCollider>();
+        MyFuseBox = GetComponentInParent<FuseBox>();
     }
 
 
@@ -27,6 +30,8 @@ public class FuseSlot : MonoBehaviour
         AttachedFuse = null;
         MyCollider.enabled = true;
         //AttachedFuse.MySlot = null;
+        if (!MyFuseBox.MyEventScript.CurrentlyActive)
+            MyFuseBox.MyEventScript.ManualTrigger();
     }
 
     public bool CheckFuse()
@@ -34,5 +39,11 @@ public class FuseSlot : MonoBehaviour
         if(AttachedFuse!=null)
         return !AttachedFuse.Broken;
         return false;
+    }
+
+    public void BreakFuse(bool Broken)
+    {
+        
+        AttachedFuse.Break(Broken);
     }
 }

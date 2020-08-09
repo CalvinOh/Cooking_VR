@@ -13,14 +13,23 @@ public class LightsOuts : RandomEvent
     private Color LightsOutAmbientColor;
     private Color DefaultAmbientColor;
 
+    [SerializeField]
+    private int AmountOfFusesThatCanBreak;
+
+    FuseBox Box;
 
 
-    private bool CurrentlyActive;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         DefaultAmbientColor = RenderSettings.ambientLight;
         CurrentlyActive = false;
+        Box = FindObjectOfType<FuseBox>();
+        Box.MyEventScript = this;
     }
 
     // Update is called once per frame
@@ -37,6 +46,8 @@ public class LightsOuts : RandomEvent
         }
         RenderSettings.ambientLight = LightsOutAmbientColor;
         CurrentlyActive = true;
+
+        Box.TriggerEvent(Random.Range(0,AmountOfFusesThatCanBreak));
     }
 
     public override void EndEvent()
@@ -47,5 +58,15 @@ public class LightsOuts : RandomEvent
         }
         RenderSettings.ambientLight = DefaultAmbientColor;
         CurrentlyActive = false;
+    }
+
+    public void ManualTrigger()
+    {
+        foreach (GameObject a in LightSources)
+        {
+            a.SetActive(false);
+        }
+        RenderSettings.ambientLight = LightsOutAmbientColor;
+        CurrentlyActive = true;
     }
 }

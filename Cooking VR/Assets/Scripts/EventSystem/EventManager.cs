@@ -18,6 +18,7 @@ public class EventManager : MonoBehaviour
     public static bool EventsEnabled;
 
     public int EventTriggeredTimes;
+    private List<RandomEvent> Events = new List<RandomEvent>();
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,10 @@ public class EventManager : MonoBehaviour
         EventsEnabled = true;
         StartCoroutine(ConstantRandomRoll(RandomRollInterval));
         EventTriggeredTimes = 0;
+        foreach (RandomEvent a in GetComponentsInChildren<RandomEvent>())
+        {
+            Events.Add(a);
+        }
     }
 
     // Update is called once per frame
@@ -54,6 +59,7 @@ public class EventManager : MonoBehaviour
     {
         if (Random.Range(0f, 1f) < RandomRollChance)
         {
+            TriggerRandomEvent();
             EventTriggeredTimes++;
             Debug.Log("EventRolled True");
             return true;
@@ -67,6 +73,9 @@ public class EventManager : MonoBehaviour
 
     private void TriggerRandomEvent()
     {
+        int decider = Random.Range(0, Events.Count);
+        if(!Events[decider].CurrentlyActive)
+            Events[decider].TriggerNow();
 
     }
 

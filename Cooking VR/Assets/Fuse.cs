@@ -36,6 +36,7 @@ public class Fuse : MonoBehaviour
 
     public void Break(bool broken)
     {
+        
         Broken = broken;
         BrokenCoil.SetActive(broken);
         IntactCoil.SetActive(!broken);

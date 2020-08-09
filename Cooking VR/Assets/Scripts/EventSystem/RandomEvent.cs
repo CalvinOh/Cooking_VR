@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RandomEvent : MonoBehaviour
 {
+    public bool CurrentlyActive;
     // Start is called before the first frame update
     void Start()
     {

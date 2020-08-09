@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class FuseBox : MonoBehaviour
 {
-
-    private List<Fuse> AttachedFuses;
+    [SerializeField]
+    private List<FuseSlot> AttachedFuseSlots;
 
     [SerializeField]
     private GameObject Switch;
     [SerializeField]
     private GameObject FusePrefab;
 
-    public List<FuseSlot> Slots = new List<FuseSlot>(); //pulic for debugging
     private LightsOuts LightsOutEventScript;
 
-    
+
+    public LightsOuts MyEventScript;
+    private PowerBoxSlider MySlider;
 
     private void Start()
     {
         LightsOutEventScript = FindObjectOfType<LightsOuts>();
         foreach (FuseSlot a in GetComponentsInChildren<FuseSlot>())
         {
-            Slots.Add(a);
+            AttachedFuseSlots.Add(a);
         }
 
         SetUpBox();
+        MySlider = GetComponentInChildren<PowerBoxSlider>();
     }
 
     private void SetUpBox()
     {
-        foreach (FuseSlot a in Slots)
+        foreach (FuseSlot a in AttachedFuseSlots)
         {
             GameObject NewFuse = Instantiate(FusePrefab, a.transform.position, a.transform.rotation);
             NewFuse.GetComponent<Fuse>().SlotIn(a);
@@ -41,46 +43,54 @@ public class FuseBox : MonoBehaviour
 
     public void TriggerEvent(int BrokenFuseNum)
     {
+        Debug.Log("Breaking "+ BrokenFuseNum + " Fuses");
+
         if (BrokenFuseNum == 0)
         {
+            return;
         }
-        if (BrokenFuseNum == 1)
+        else if (BrokenFuseNum == 1)
         {
-            AttachedFuses[Random.Range(0, 2)].Break(true);
+            
+            AttachedFuseSlots[Random.Range(0, 3)].BreakFuse(true);
         }
         else if (BrokenFuseNum == 2)
         {
-            foreach (Fuse a in AttachedFuses)
+           
+            foreach (FuseSlot a in AttachedFuseSlots)
             {
-                a.Break(true);
+                a.BreakFuse(true);
             }
-            AttachedFuses[Random.Range(0, 2)].Break(false);
+            AttachedFuseSlots[Random.Range(0, 3)].BreakFuse(false);
         }
         else
         {
-            foreach (Fuse a in AttachedFuses)
+            
+            foreach (FuseSlot a in AttachedFuseSlots)
             {
-                a.Break(true);
+                a.BreakFuse(true);
             }
         }
 
         //move switch to off position and prepare other things for evennt start
-
+        MySlider.ResetPosition();
 
 
     }
 
-    public void AttemptFix()
+    public bool AttemptFix()
     {
         if (CheckFuses())
         {
             LightsOutEventScript.EndEvent();
+            return true;
         }
+        return false;
     }
 
     private bool CheckFuses()
     {
-        foreach (FuseSlot a in Slots)
+        foreach (FuseSlot a in AttachedFuseSlots)
         {
             if (!a.CheckFuse())
                 return false;
