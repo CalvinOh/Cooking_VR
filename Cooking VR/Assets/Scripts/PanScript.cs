@@ -4,48 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class PanScript : MonoBehaviour, IGrabbable
+public class PanScript : Cooker, IGrabbable
 {
-    [SerializeField]
-    private bool _IsHeated;
-    public bool IsHeated
-    {
-        get
-        { 
-            return _IsHeated; 
-        } 
-        private set 
-        { 
-            _IsHeated = value; 
-            BroadcastBurner();
-        } 
-    }
-
-    public byte testHeated;
-
     [SerializeField]
     private bool isSnapped = false;
     
     [SerializeField]
     Transform bottomPanPositon;
-
-    [SerializeField]
-    private List<CookableFood> itemsInTrigger;
-
+    
     public Interactable interactable { get; set; }
 
     public bool wasGrabbed { get; set; }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         InitGrabbable();
 
         if (bottomPanPositon == null)
             bottomPanPositon = this.GetComponentInChildren<Transform>();// this.GetComponent<SphereCollider>().transform.position;
 
         Vector3 position = bottomPanPositon.TransformVector(bottomPanPositon.position);
-
-        itemsInTrigger = new List<CookableFood>();
     }
 
     public void InitGrabbable()
@@ -54,7 +33,7 @@ public class PanScript : MonoBehaviour, IGrabbable
         wasGrabbed = false;
     }
 
-    private void Update()
+    protected override void Update()
     {
         CheckGrabbed();
         //if(testHeated == 1)
@@ -87,52 +66,15 @@ public class PanScript : MonoBehaviour, IGrabbable
             this.wasGrabbed = false;
         }
     }
-
-    public void AddItemInTrigger(CookableFood item)
+    
+    protected override void OnTriggerEnter(Collider other)
     {
-        if(!itemsInTrigger.Contains(item))
-        {
-            itemsInTrigger.Add(item);
-            Debug.Log($"{item.gameObject.name} was added to the panScript's list of items in trigger");
-            if (this._IsHeated)
-            {
-                item.StartCook();
-                Debug.Log($"{item.gameObject.name} was told to start cooking");
-            }
-        }
-    }
+        base.OnTriggerEnter(other);
 
-    public void RemoveItemInTrigger(CookableFood item)
-    {
-        if (itemsInTrigger.Contains(item))
-        {
-            itemsInTrigger.Remove(item);
-            item.stopCook();
-        }
-        
-    }
-
-    public void BroadcastBurner()
-    {
-        foreach(var v in itemsInTrigger)
-        {
-            if (IsHeated)
-                v.StartCook();
-            else
-                v.stopCook();
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
         if(other.CompareTag("Burner") && !isSnapped)
         {
             isSnapped = true;
             SnapToBurner(other);
-        }
-        else if(other.TryGetComponent<CookableFood>(out CookableFood cf))
-        {
-            this.AddItemInTrigger(cf);
         }
     }
 
@@ -152,15 +94,12 @@ public class PanScript : MonoBehaviour, IGrabbable
         this.transform.position = new Vector3(this.transform.position.x + distanceToOffsetX, this.gameObject.transform.position.y + distanceToOffsetY, this.transform.position.z + distanceToOffsetZ);
     }
 
-    private void OnTriggerExit(Collider other)
+    protected override void OnTriggerExit(Collider other)
     {
+        base.OnTriggerExit(other);
         if (other.CompareTag("Burner"))
         {
             UnSnap();
-        }
-        else if (other.TryGetComponent<CookableFood>(out CookableFood cf))
-        {
-            this.RemoveItemInTrigger(cf);
         }
     }
 
@@ -169,15 +108,4 @@ public class PanScript : MonoBehaviour, IGrabbable
         isSnapped = false;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
     }
-
-    public void StartCooking()
-    {
-        IsHeated = true;
-    }
-
-    public void StopCooking()
-    {
-        IsHeated = false;
-    }
-
 }
