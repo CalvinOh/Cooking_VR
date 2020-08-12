@@ -29,8 +29,8 @@ public class FryerScript : Cooker
             {
                 if (v.currentStage == 1)
                     v.StartCook();
-                else if(v.currentStage == 0)
-                    v.GetComponent<CookableOnionRing>()
+                else if (v.currentStage == 0)
+                    v.GetComponent<CookableOnionRing>().StartCook();
             }
             else
                 v.stopCook();
