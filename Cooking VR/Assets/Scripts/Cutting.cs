@@ -16,7 +16,7 @@ namespace Valve.VR.InteractionSystem
         private float nextCut;
 
         [SerializeField]
-        private gameObject cutOnion;
+        private GameObject cutOnion;
 
         private void Start()
         {
