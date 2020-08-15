@@ -11,8 +11,9 @@ public class CookableOnionRing : CookableFood
     MeshRenderer meshRenderer;
 
     byte stage1 = 0;
-    byte stage2 = 10;
-    byte stage3 = 20;
+    byte stage2 = 0;
+    byte stage3 = 10;
+    byte stage4 = 20;
     
 
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class CookableOnionRing : CookableFood
         {
             this.meshRenderer = this.GetComponent<MeshRenderer>();
         }
+        AssignStageRefs();
     }
 
     // Update is called once per frame
@@ -47,14 +49,19 @@ public class CookableOnionRing : CookableFood
         }
     }
 
-    protected override void CheckIfSwitchVisual()
-    {
+    //protected override void CheckIfSwitchVisual()
+    //{
 
-    }
+    //}
 
     protected override void AssignStageRefs()
     {
-        base.AssignStageRefs();
-        this.stageRefs = new ushort[] { stage1, stage2, stage3 };
+        this.stageRefs = new ushort[] { stage1, stage2, stage3, stage4, stage4 };
+        this.stages = (byte)mats.Length;
+    }
+
+    protected override void SwitchVisualObject()
+    {
+        this.meshRenderer.material = mats[currentStage];
     }
 }
