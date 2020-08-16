@@ -76,7 +76,6 @@ public class EventManager : MonoBehaviour
         int decider = Random.Range(0, Events.Count);
         if(!Events[decider].CurrentlyActive)
             Events[decider].TriggerNow();
-
     }
 
 }
