@@ -92,13 +92,10 @@ public class PanScript : MonoBehaviour, IGrabbable
     {
         if(!itemsInTrigger.Contains(item))
         {
-            itemsInTrigger.Add(item);
-            Debug.Log($"{item.gameObject.name} was added to the panScript's list of items in trigger");
-            if (this._IsHeated)
-            {
-                item.StartCook();
-                Debug.Log($"{item.gameObject.name} was told to start cooking");
-            }
+            CurrentPattyOnPan.StopCooking();
+            CurrentPattyOnPan = other.GetComponent<PattyScript>();
+            if(IsHeated)
+            CurrentPattyOnPan.StartCooking();
         }
     }
 
