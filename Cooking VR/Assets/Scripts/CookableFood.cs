@@ -63,7 +63,7 @@ public abstract class CookableFood : MonoBehaviour
         //}
     }
 
-    public void StartCook()
+    virtual public void StartCook()
     {
         currentlyCooking = true;
         // play sound?

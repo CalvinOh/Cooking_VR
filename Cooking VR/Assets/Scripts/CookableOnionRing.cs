@@ -10,7 +10,7 @@ public class CookableOnionRing : CookableFood
     [SerializeField]
     MeshRenderer meshRenderer;
 
-    byte stage1 = 0;
+    byte stage1 = byte.MaxValue;
     byte stage2 = 0;
     byte stage3 = 10;
     byte stage4 = 20;
@@ -49,10 +49,11 @@ public class CookableOnionRing : CookableFood
         }
     }
 
-    //protected override void CheckIfSwitchVisual()
-    //{
-
-    //}
+    public override void StartCook()
+    {
+        base.StartCook();
+        // Call the sound effect for the fryer
+    }
 
     protected override void AssignStageRefs()
     {
