@@ -63,7 +63,7 @@ public abstract class CookableFood : MonoBehaviour
         //}
     }
 
-    public void StartCook()
+    virtual public void StartCook()
     {
         currentlyCooking = true;
         // play sound?
@@ -80,7 +80,7 @@ public abstract class CookableFood : MonoBehaviour
         this.stages = (byte)VisualObjects.Count;
     }
 
-    protected void SwitchVisualObject()
+    virtual protected void SwitchVisualObject()
     {
         foreach (GameObject VO in VisualObjects)
         {
