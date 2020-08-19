@@ -55,7 +55,7 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         //if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
         //{
