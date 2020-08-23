@@ -14,6 +14,7 @@ public class OrderManager : MonoBehaviour
         public float TimeIssued;
         public float TimeExpected;
         public List<Ingridents> Ingredents;
+        public List<Sides> OrderSides;
     }
 
     public class FinishedOrder
@@ -49,6 +50,14 @@ public class OrderManager : MonoBehaviour
         Plate = 14,
 
     }
+
+    public enum Sides
+    {
+        Fries,
+        OnionRings,
+    }
+
+
 
     private OrderCheck OrderChecker = new OrderCheck();
     private OrderSpawn OrderSpawner = new OrderSpawn();
