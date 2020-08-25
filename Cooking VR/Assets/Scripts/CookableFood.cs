@@ -72,7 +72,9 @@ public abstract class CookableFood : MonoBehaviour
     public void stopCook()
     {
         currentlyCooking = false;
+
         // stop play sound?
+
     }
 
     protected virtual void AssignStageRefs()
@@ -88,6 +90,4 @@ public abstract class CookableFood : MonoBehaviour
         }
         VisualObjects[currentStage].SetActive(true);
     }
-
-
 }

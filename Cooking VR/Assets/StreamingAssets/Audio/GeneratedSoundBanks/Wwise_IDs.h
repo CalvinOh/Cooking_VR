@@ -22,8 +22,6 @@ namespace AK
         static const AkUniqueID FLASHLIGHT_ON = 2033671033U;
         static const AkUniqueID FUZE_WRONG = 2724689895U;
         static const AkUniqueID GIANNA_CLAP = 822788948U;
-        static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
-        static const AkUniqueID GRAB_PLATE = 1863953098U;
         static const AkUniqueID IMPACT_BOTTLE_GLASS = 2487494075U;
         static const AkUniqueID IMPACT_BOTTLE_GLASS_LIQUID = 3024290838U;
         static const AkUniqueID IMPACT_BOTTLE_PLASTIC = 433980135U;
@@ -38,6 +36,8 @@ namespace AK
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
         static const AkUniqueID LIGHTSOUT_END = 3390569948U;
         static const AkUniqueID LIGHTSOUT_START = 422864511U;
+        static const AkUniqueID OIL_FRY_START = 1834722074U;
+        static const AkUniqueID OIL_FRY_STOP = 3907856562U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
         static const AkUniqueID PLAY_VX_A_2 = 1603068619U;
@@ -115,8 +115,6 @@ namespace AK
         static const AkUniqueID STOVE_OFF = 1902865914U;
         static const AkUniqueID STOVE_ON = 1278791036U;
         static const AkUniqueID TELEPORT_ITEM = 3988014274U;
-        static const AkUniqueID TIMER_BEEP = 630201347U;
-        static const AkUniqueID TIMER_GAINTIME = 1679284313U;
         static const AkUniqueID USE_CONDIMENT = 2484277510U;
     } // namespace EVENTS
 
@@ -151,7 +149,9 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MUSIC___ENVIRONMENT = 2118419115U;
         static const AkUniqueID SFX = 393239870U;
+        static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

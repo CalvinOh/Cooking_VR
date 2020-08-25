@@ -1222,6 +1222,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Oil_Fry_Stop" ID="{30DEA537-3B5A-4932-88E5-EB3A61824FC9}">
+					<ChildrenList>
+						<Action Name="" ID="{F02025FB-F255-487C-9AD8-F875101B5BEE}" ShortID="397572883">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_oilfryer_loop" ID="{75D27BFA-0259-4DC2-9135-E58F2818CFC2}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

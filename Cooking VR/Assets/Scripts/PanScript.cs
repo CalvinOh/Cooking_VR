@@ -101,6 +101,9 @@ public class PanScript : Cooker, IGrabbable
         //Debug.Log($"Distance is {distanceToOffsetZ}");
 
         this.transform.position = new Vector3(this.transform.position.x + distanceToOffsetX, this.gameObject.transform.position.y + distanceToOffsetY, this.transform.position.z + distanceToOffsetZ);
+
+        // audio
+        AkSoundEngine.PostEvent("Impact_Pan", gameObject);
     }
 
     protected override void OnTriggerExit(Collider other)

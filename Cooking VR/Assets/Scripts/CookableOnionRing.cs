@@ -49,10 +49,21 @@ public class CookableOnionRing : CookableFood
         }
     }
 
+    // audio
+    protected void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Fryer")
+        {
+            AkSoundEngine.PostEvent("Oil_Fry_Stop", gameObject);
+        }
+    }
+
     public override void StartCook()
     {
         base.StartCook();
-        // Call the sound effect for the fryer
+
+        //audio
+        AkSoundEngine.PostEvent("Oil_Fry_Start", gameObject);
     }
 
     protected override void AssignStageRefs()

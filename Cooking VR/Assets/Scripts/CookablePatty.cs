@@ -33,6 +33,8 @@ public class CookablePatty : CookableFood
     public override void StartCook()
     {
         base.StartCook();
-        // Call the sound effect for the patty cooking
+
+        //audio
+        AkSoundEngine.PostEvent("Burger_Cook_Start", gameObject);
     }
 }
