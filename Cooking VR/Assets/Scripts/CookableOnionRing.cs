@@ -34,7 +34,7 @@ public class CookableOnionRing : CookableFood
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Batter" && this.currentStage <= 1)
+        if (other.tag == "Batter" && this.currentStage == 0)
         {
             this.currentStage = 1;
             this.meshRenderer.material = mats[currentStage];
@@ -51,7 +51,13 @@ public class CookableOnionRing : CookableFood
 
     public override void StartCook()
     {
-        base.StartCook();
+        if(this.currentStage > 0)
+            base.StartCook();
+        else if(this.currentStage == 0)
+        {
+            this.currentStage = 4;
+            this.meshRenderer.material = mats[3];
+        }
         // Call the sound effect for the fryer
     }
 
