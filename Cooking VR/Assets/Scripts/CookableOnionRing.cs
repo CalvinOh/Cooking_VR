@@ -34,7 +34,7 @@ public class CookableOnionRing : CookableFood
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Batter")
+        if (other.tag == "Batter" && this.currentStage <= 1)
         {
             this.currentStage = 1;
             this.meshRenderer.material = mats[currentStage];
