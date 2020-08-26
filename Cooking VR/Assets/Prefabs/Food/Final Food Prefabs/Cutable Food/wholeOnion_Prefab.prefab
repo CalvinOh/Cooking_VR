@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -1504981713932161579}
   - component: {fileID: 4596205242739369761}
   - component: {fileID: 7436070059152292376}
+  - component: {fileID: 3150428018545037112}
+  - component: {fileID: 7464079494841611370}
   m_Layer: 0
   m_Name: wholeOnion_Prefab
   m_TagString: Onion
@@ -203,3 +205,30 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   interactable: {fileID: 0}
+--- !u!64 &3150428018545037112
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670595218508619693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 5283197924642485434, guid: 955e26717a88db248a71c51e3e98d98f, type: 3}
+--- !u!135 &7464079494841611370
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670595218508619693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.45
+  m_Center: {x: 0.00000035762784, y: -0.0000115633, z: 0.000008702277}

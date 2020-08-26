@@ -48,7 +48,9 @@ public class OrderManager : MonoBehaviour
         BottomBun = 13,
         Plate = 14,
         OnionRing = 15,
-        Lettuce = 16
+        Lettuce = 16,
+        OnionRaw = 17,
+        FrenchFries = 18
 
     }
 
