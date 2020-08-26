@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class VoTriggers : MonoBehaviour
 {
+    public bool isSpeaking = false;
+
     // these methods will play voice lines in 3D space from whatever gameObject this script is attached to
     // 
     // the syntax for calling a voice line is: "Play_vx_(index letter)_(index number)();"
@@ -15,6 +17,9 @@ public class VoTriggers : MonoBehaviour
     // VO index A
     private void Play_vx_a_1()
     {
+        isSpeaking = true;
+
+        //AkSoundEngine.PostEvent("Play_vx_a_1", gameObject, (uint) AKCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse(), gameObject);
         AkSoundEngine.PostEvent("Play_vx_a_1", gameObject);
     }
 
@@ -364,4 +369,18 @@ public class VoTriggers : MonoBehaviour
         TutorialVO.VOTrigger -= PlayVoiceClip;
     }
 
+    //void MakeIsSpeakingFalse(object in_cookie, AkCallbackType in_type, object in_info)
+    //{
+    //    if (in_type == AK_EndOfEvent)
+    //    {
+    //        AkEventCallbackInfo info = (AkEventCallbackInfo)in_info;
+
+    //        isSpeaking = false;
+    //    }
+    //}
+
+    //void Update()
+    //{
+    //    UnityEngine.Debug.Log($"isSpeaking = {isSpeaking}");
+    //}
 }
