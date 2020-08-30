@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Reflection;
 using UnityEngine;
 
 public class VoTriggers : MonoBehaviour
 {
-    public bool isSpeaking = false;
+    public bool isSpeaking;
 
     // these methods will play voice lines in 3D space from whatever gameObject this script is attached to
     // 
@@ -13,14 +14,23 @@ public class VoTriggers : MonoBehaviour
     //
     // for example: "Play_vx_a_4();" or "Play_vx_f_1();"
 
+    public AK.Wwise.Event wPlay_vx_a_1;
+    public AK.Wwise.Event wPlay_vx_h_2;
+
+    void Start()
+    {
+        isSpeaking = false;
+        Play_vx_h_2();
+    }
 
     // VO index A
     private void Play_vx_a_1()
     {
         isSpeaking = true;
 
-        //AkSoundEngine.PostEvent("Play_vx_a_1", gameObject, (uint) AKCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse(), gameObject);
-        AkSoundEngine.PostEvent("Play_vx_a_1", gameObject);
+        wPlay_vx_a_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+        //AkSoundEngine.PostEvent("Play_vx_a_1", (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse, gameObject);
+        //AkSoundEngine.PostEvent("Play_vx_a_1", gameObject);
     }
 
     private void Play_vx_a_2()
@@ -164,10 +174,16 @@ public class VoTriggers : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Play_vx_h_1", gameObject);
     }
+
     private void Play_vx_h_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_h_2", gameObject);
+        isSpeaking = true;
+        UnityEngine.Debug.Log("IT SHOULD BE HAPPENING");
+
+        wPlay_vx_h_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+        //AkSoundEngine.PostEvent("Play_vx_h_2", gameObject);
     }
+
     private void Play_vx_h_3()
     {
         AkSoundEngine.PostEvent("Play_vx_h_3", gameObject);
@@ -369,18 +385,16 @@ public class VoTriggers : MonoBehaviour
         TutorialVO.VOTrigger -= PlayVoiceClip;
     }
 
-    //void MakeIsSpeakingFalse(object in_cookie, AkCallbackType in_type, object in_info)
-    //{
-    //    if (in_type == AK_EndOfEvent)
-    //    {
-    //        AkEventCallbackInfo info = (AkEventCallbackInfo)in_info;
+    void MakeIsSpeakingFalse(object in_cookie, AkCallbackType in_type, object in_info)
+    {
+        if (in_type == AkCallbackType.AK_EndOfEvent)
+        {
+            isSpeaking = false;
+        }
+    }
 
-    //        isSpeaking = false;
-    //    }
-    //}
-
-    //void Update()
-    //{
-    //    UnityEngine.Debug.Log($"isSpeaking = {isSpeaking}");
-    //}
+    void Update()
+    {
+        UnityEngine.Debug.Log($"isSpeaking = {isSpeaking}");
+    }
 }
