@@ -61,6 +61,38 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1126494853" Name="Flashlight_Off" ObjectPath="\Events\Default Work Unit\Flashlight_Off" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.152063">
+					<IncludedMemoryFiles>
+						<File Id="148436918" Language="SFX">
+							<ShortName>sx_flashlight_off.wav</ShortName>
+							<Path>SFX\sx_flashlight_off_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2033671033" Name="Flashlight_On" ObjectPath="\Events\Default Work Unit\Flashlight_On" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.152063">
+					<IncludedMemoryFiles>
+						<File Id="357264130" Language="SFX">
+							<ShortName>sx_flashlight_on.wav</ShortName>
+							<Path>SFX\sx_flashlight_on_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2724689895" Name="Fuze_Wrong" ObjectPath="\Events\Default Work Unit\Fuze_Wrong" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.255805" DurationMax="0.298254">
+					<IncludedMemoryFiles>
+						<File Id="42084411" Language="SFX">
+							<ShortName>sx_fuze_wrong_3.wav</ShortName>
+							<Path>SFX\sx_fuze_wrong_3_10C4C929.wem</Path>
+						</File>
+						<File Id="418125769" Language="SFX">
+							<ShortName>sx_fuze_wrong_1.wav</ShortName>
+							<Path>SFX\sx_fuze_wrong_1_10C4C929.wem</Path>
+						</File>
+						<File Id="662773377" Language="SFX">
+							<ShortName>sx_fuze_wrong_2.wav</ShortName>
+							<Path>SFX\sx_fuze_wrong_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="822788948" Name="Gianna_Clap" ObjectPath="\Events\Default Work Unit\Gianna_Clap" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.143446" DurationMax="0.152063">
 					<IncludedMemoryFiles>
 						<File Id="336770053" Language="SFX">
@@ -334,6 +366,22 @@
 						<File Id="947404325" Language="SFX">
 							<ShortName>sx_knife_cut_generic.wav</ShortName>
 							<Path>SFX\sx_knife_cut_generic_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3390569948" Name="Lightsout_End" ObjectPath="\Events\Default Work Unit\Lightsout_End" DurationType="OneShot" DurationMin="9.196417" DurationMax="9.196417">
+					<IncludedMemoryFiles>
+						<File Id="216537069" Language="SFX">
+							<ShortName>sx_event_lightsout_end.wav</ShortName>
+							<Path>SFX\sx_event_lightsout_end_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="422864511" Name="Lightsout_Start" ObjectPath="\Events\Default Work Unit\Lightsout_Start" DurationType="OneShot" DurationMin="9.204921" DurationMax="9.204921">
+					<IncludedMemoryFiles>
+						<File Id="7806239" Language="SFX">
+							<ShortName>sx_event_lightsout_start.wav</ShortName>
+							<Path>SFX\sx_event_lightsout_start_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

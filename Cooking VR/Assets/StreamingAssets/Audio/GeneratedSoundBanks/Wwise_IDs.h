@@ -18,6 +18,9 @@ namespace AK
         static const AkUniqueID BURGER_COOK_START = 3968779560U;
         static const AkUniqueID BURGER_COOK_STOP = 2163080948U;
         static const AkUniqueID ENV_FRIDGE = 2806512798U;
+        static const AkUniqueID FLASHLIGHT_OFF = 1126494853U;
+        static const AkUniqueID FLASHLIGHT_ON = 2033671033U;
+        static const AkUniqueID FUZE_WRONG = 2724689895U;
         static const AkUniqueID GIANNA_CLAP = 822788948U;
         static const AkUniqueID GRAB_BOTTLE_GLASS = 1251402355U;
         static const AkUniqueID GRAB_PLATE = 1863953098U;
@@ -33,6 +36,8 @@ namespace AK
         static const AkUniqueID IMPACT_SILVERWARE = 2540397042U;
         static const AkUniqueID IMPACT_SPATULA = 3180392800U;
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
+        static const AkUniqueID LIGHTSOUT_END = 3390569948U;
+        static const AkUniqueID LIGHTSOUT_START = 422864511U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
         static const AkUniqueID PLAY_VX_A_2 = 1603068619U;

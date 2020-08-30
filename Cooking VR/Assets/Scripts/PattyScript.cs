@@ -81,23 +81,6 @@ public class PattyScript : MonoBehaviour
         VisualObjects[currentStage].SetActive(true);
     }
 
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("CookBox"))
-        {
-            currentlyCooking = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("CookBox"))
-        {
-            currentlyCooking = false;
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         // Ground Beef joke

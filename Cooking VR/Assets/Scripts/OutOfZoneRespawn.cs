@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,8 +17,6 @@ public class OutOfZoneRespawn : MonoBehaviour
     private float timeSpentOnGround;
     [SerializeField]
     private float timerOnGround;
-
-    public static event Action<bool> KnifeDrop;
 
     private void Start()
     {
@@ -70,9 +67,6 @@ public class OutOfZoneRespawn : MonoBehaviour
             grounded = true;
             timeSpentOnGround = Time.time + timerOnGround;
             //RespawnOnGround(collision.gameObject, true);
-
-            if (this.CompareTag("Knife"))
-                KnifeDrop.Invoke(true);
         }
 
     }

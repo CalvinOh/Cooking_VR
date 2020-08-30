@@ -29,4 +29,10 @@ public class CookablePatty : CookableFood
         base.AssignStageRefs();
         this.stageRefs = new ushort[] { stage1, stage2, stage3, stage4, stage5};
     }
+
+    public override void StartCook()
+    {
+        base.StartCook();
+        // Call the sound effect for the patty cooking
+    }
 }

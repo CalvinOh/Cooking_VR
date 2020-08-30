@@ -7,6 +7,9 @@ using Valve.VR.InteractionSystem;
 public class PanScript : Cooker, IGrabbable
 {
     [SerializeField]
+    private string tagToSnapTo;
+
+    [SerializeField]
     private bool isSnapped = false;
     
     [SerializeField]
@@ -25,6 +28,9 @@ public class PanScript : Cooker, IGrabbable
             bottomPanPositon = this.GetComponentInChildren<Transform>();// this.GetComponent<SphereCollider>().transform.position;
 
         Vector3 position = bottomPanPositon.TransformVector(bottomPanPositon.position);
+
+        if (tagToSnapTo == null)
+            tagToSnapTo = "Burner";
     }
 
     public void InitGrabbable()
@@ -71,10 +77,13 @@ public class PanScript : Cooker, IGrabbable
     {
         base.OnTriggerEnter(other);
 
-        if(other.CompareTag("Burner") && !isSnapped)
+        if(other.CompareTag(tagToSnapTo) && !isSnapped)
         {
             isSnapped = true;
             SnapToBurner(other);
+
+            if (tagToSnapTo == "Fryer")
+                this.StartCooking();
         }
     }
 
@@ -97,7 +106,7 @@ public class PanScript : Cooker, IGrabbable
     protected override void OnTriggerExit(Collider other)
     {
         base.OnTriggerExit(other);
-        if (other.CompareTag("Burner"))
+        if (other.CompareTag(tagToSnapTo))
         {
             UnSnap();
         }
@@ -107,5 +116,8 @@ public class PanScript : Cooker, IGrabbable
     {
         isSnapped = false;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
+        if (tagToSnapTo == "Fryer")
+            this.StopCooking();
     }
 }

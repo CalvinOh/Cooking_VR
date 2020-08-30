@@ -25,28 +25,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Grab_Plate" ID="{805F0B8B-D23F-4E9A-95B6-06DFC9DC3BCB}">
-					<ChildrenList>
-						<Action Name="" ID="{E7458392-1934-4646-A822-555774F58084}" ShortID="1010049540">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="grabs_plate" ID="{99FA1F93-C213-4170-95E0-AF775E8064AA}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Grab_Bottle_Glass" ID="{7ABCD792-50AD-4A2A-AAA7-AC50603B0033}">
-					<ChildrenList>
-						<Action Name="" ID="{7C7FDC54-50E1-4644-9EB4-E1DB515D8474}" ShortID="49645698">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="splash_bottle_glass" ID="{3310585D-3D10-421B-8DE6-1BCD31AF57A5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Impact_Plate" ID="{173634A9-6485-480C-8531-ECEA6D7C33CF}">
 					<ChildrenList>
 						<Action Name="" ID="{AC6FBA84-37DF-42CE-B795-8AB88C11476F}" ShortID="399401236">
@@ -1047,28 +1025,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Timer_GainTime" ID="{CBADD613-279F-4DC7-8CD4-70323044C877}">
-					<ChildrenList>
-						<Action Name="" ID="{DB1251D5-05AB-4A09-A691-6ADE1D75D62E}" ShortID="907480625">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="sx_timer_gaintime" ID="{7A89AA0E-CB9A-4D9A-83F9-7B071E2E0293}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Timer_Beep" ID="{746C6C75-AD3D-4F09-82EA-8D3F49419664}">
-					<ChildrenList>
-						<Action Name="" ID="{03A86FDA-28C4-4FC6-BA86-46122DD1F0A7}" ShortID="717362968">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="sx_timer_beep_standard" ID="{4EE50780-3D70-408D-9894-05BAFD915A9B}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Gianna_Clap" ID="{85AB5412-99DF-4082-A3AA-F4C01EE0036A}">
 					<ChildrenList>
 						<Action Name="" ID="{0401ECA5-CF84-4EA4-B770-26241900664E}" ShortID="581515880">
@@ -1195,6 +1151,26 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{98CC56EC-0050-4416-A8D7-58EE9755740D}" ShortID="759207642">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_ambi_kitchen" ID="{C931FEA7-815F-4D36-B1AB-87EFCE9B3AA5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{33FC533E-DD7E-4333-BCD5-83D31501B1C6}" ShortID="701550341">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="7"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_env_fridge" ID="{9BA1DCF4-F46B-426D-A14C-81BD26EADA58}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Lightsout_End" ID="{1CDB710A-FA43-4FCA-82A4-4F65F672EAE0}">
@@ -1203,6 +1179,44 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sx_event_lightsout_end" ID="{1517BB6C-2C0C-464E-8A5E-DD424265A521}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{EF1C00F0-56B2-4002-A50E-2E4D062C1A70}" ShortID="178015256">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_env_fridge" ID="{9BA1DCF4-F46B-426D-A14C-81BD26EADA58}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6ACD56E1-6C4D-446C-980D-B5C22CCD3C3D}" ShortID="398817103">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="9"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_ambi_kitchen" ID="{C931FEA7-815F-4D36-B1AB-87EFCE9B3AA5}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Oil_Fry_Start" ID="{0A60D26E-D0C3-490E-9770-BCA89557825E}">
+					<ChildrenList>
+						<Action Name="" ID="{480A60C4-2410-45F3-8AEC-EA526EE91577}" ShortID="353409691">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_oilfryer_start" ID="{81EA1445-4187-435D-99C6-2B3E9DE78F1C}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C797DC93-7D33-4263-B09D-F8E270107AEB}" ShortID="387633268">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_oilfryer_loop" ID="{75D27BFA-0259-4DC2-9135-E58F2818CFC2}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

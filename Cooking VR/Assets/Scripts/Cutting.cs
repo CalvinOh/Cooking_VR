@@ -15,6 +15,9 @@ namespace Valve.VR.InteractionSystem
         [SerializeField]
         private float nextCut;
 
+        [SerializeField]
+        private GameObject cutOnion;
+
         private void Start()
         {
             isCutting = false;
@@ -67,6 +70,12 @@ namespace Valve.VR.InteractionSystem
 
                     other.gameObject.transform.GetChild(temp - 1).GetComponent<Rigidbody>().isKinematic = false;
                     other.gameObject.transform.GetChild(temp - 1).transform.parent = null;
+                }
+                else if(other.gameObject.CompareTag("Onion"))
+                {
+                    Instantiate(cutOnion, other.gameObject.transform.position, other.gameObject.transform.rotation);
+
+                    Destroy(other.gameObject);
                 }
             }
         }
