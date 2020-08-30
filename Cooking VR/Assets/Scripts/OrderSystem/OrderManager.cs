@@ -27,6 +27,9 @@ public class OrderManager : MonoBehaviour
         public int IncorrectPlacement;
         public int ExtraItems;
         public int MissingItems;
+        public int SidesScore;
+        public int ExtraSides;
+        public int MissingSides;
         public string Notes;
         public Order OriginalOrder;
 
@@ -49,7 +52,8 @@ public class OrderManager : MonoBehaviour
         BottomBun = 13,
         Plate = 14,
         OnionRing = 15,
-        Lettuce = 16
+        Lettuce = 16,
+        Fries = 17
 
     }
 
