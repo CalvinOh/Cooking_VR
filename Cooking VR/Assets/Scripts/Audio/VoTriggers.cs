@@ -13,15 +13,118 @@ public class VoTriggers : MonoBehaviour
     // the syntax for calling a voice line is: "Play_vx_(index letter)_(index number)();"
     //
     // for example: "Play_vx_a_4();" or "Play_vx_f_1();"
+    //
+    // they also turn "isSpeaking" True when the voice event is playing and False at the end of the event
+    // via Wwise "callbacks"
 
+
+    // EVENT DECLARATIONS //////////////////////////////////////////////////////////////
+    // A
     public AK.Wwise.Event wPlay_vx_a_1;
+    public AK.Wwise.Event wPlay_vx_a_2;
+    public AK.Wwise.Event wPlay_vx_a_3;
+    public AK.Wwise.Event wPlay_vx_a_4;
+    public AK.Wwise.Event wPlay_vx_a_5;
+
+    // B
+    public AK.Wwise.Event wPlay_vx_b_1;
+    public AK.Wwise.Event wPlay_vx_b_2;
+    public AK.Wwise.Event wPlay_vx_b_3;
+    public AK.Wwise.Event wPlay_vx_b_4;
+    public AK.Wwise.Event wPlay_vx_b_5;
+    public AK.Wwise.Event wPlay_vx_b_6;
+    public AK.Wwise.Event wPlay_vx_b_7;
+
+    // C
+    public AK.Wwise.Event wPlay_vx_c_1;
+    public AK.Wwise.Event wPlay_vx_c_2;
+    public AK.Wwise.Event wPlay_vx_c_3;
+
+    // D
+    public AK.Wwise.Event wPlay_vx_d_1;
+    public AK.Wwise.Event wPlay_vx_d_2;
+    public AK.Wwise.Event wPlay_vx_d_3;
+
+    // E
+    public AK.Wwise.Event wPlay_vx_e_1;
+    public AK.Wwise.Event wPlay_vx_e_2;
+    public AK.Wwise.Event wPlay_vx_e_3;
+    public AK.Wwise.Event wPlay_vx_e_4;
+
+    // F
+    public AK.Wwise.Event wPlay_vx_f_1;
+    public AK.Wwise.Event wPlay_vx_f_2;
+
+    // G
+    public AK.Wwise.Event wPlay_vx_g_1;
+    public AK.Wwise.Event wPlay_vx_g_2;
+    public AK.Wwise.Event wPlay_vx_g_3;
+
+    // H
+    public AK.Wwise.Event wPlay_vx_h_1;
     public AK.Wwise.Event wPlay_vx_h_2;
+    public AK.Wwise.Event wPlay_vx_h_3;
+
+    // I
+    public AK.Wwise.Event wPlay_vx_i_1;
+    public AK.Wwise.Event wPlay_vx_i_2;
+    public AK.Wwise.Event wPlay_vx_i_3;
+    public AK.Wwise.Event wPlay_vx_i_4;
+    public AK.Wwise.Event wPlay_vx_i_5;
+    // there is no i_6
+    public AK.Wwise.Event wPlay_vx_i_7;
+    public AK.Wwise.Event wPlay_vx_i_8;
+    public AK.Wwise.Event wPlay_vx_i_9;
+
+    // J
+    public AK.Wwise.Event wPlay_vx_j_1;
+    public AK.Wwise.Event wPlay_vx_j_2;
+    public AK.Wwise.Event wPlay_vx_j_3;
+    public AK.Wwise.Event wPlay_vx_j_4;
+    public AK.Wwise.Event wPlay_vx_j_5;
+    public AK.Wwise.Event wPlay_vx_j_6;
+    public AK.Wwise.Event wPlay_vx_j_7;
+
+    // There is no K in-game; these were promotional lines for the trailer.
+
+    // L
+    public AK.Wwise.Event wPlay_vx_l_1;
+    public AK.Wwise.Event wPlay_vx_l_2;
+    public AK.Wwise.Event wPlay_vx_l_3;
+    public AK.Wwise.Event wPlay_vx_l_4;
+    public AK.Wwise.Event wPlay_vx_l_5;
+    public AK.Wwise.Event wPlay_vx_l_6;
+    public AK.Wwise.Event wPlay_vx_l_7;
+    public AK.Wwise.Event wPlay_vx_l_8;
+    public AK.Wwise.Event wPlay_vx_l_9;
+    public AK.Wwise.Event wPlay_vx_l_10;
+    public AK.Wwise.Event wPlay_vx_l_11;
+    public AK.Wwise.Event wPlay_vx_l_12;
+    public AK.Wwise.Event wPlay_vx_l_13;
+    public AK.Wwise.Event wPlay_vx_l_14;
+
+    // M
+    public AK.Wwise.Event wPlay_vx_m_1;
+    public AK.Wwise.Event wPlay_vx_m_2;
+    public AK.Wwise.Event wPlay_vx_m_3;
+    public AK.Wwise.Event wPlay_vx_m_4;
+    public AK.Wwise.Event wPlay_vx_m_5;
+    public AK.Wwise.Event wPlay_vx_m_6;
+    public AK.Wwise.Event wPlay_vx_m_7;
+    public AK.Wwise.Event wPlay_vx_m_8;
+    public AK.Wwise.Event wPlay_vx_m_9;
+    public AK.Wwise.Event wPlay_vx_m_10;
+    public AK.Wwise.Event wPlay_vx_m_11;
+    // END OF EVENT DECLARATIONS //////////////////////////////////////////////////////////////
+
 
     void Start()
     {
         isSpeaking = false;
-        Play_vx_h_2();
     }
+
+
+    // WWISE EVENT METHODS ////////////////////////////////////////////////////////////////////
 
     // VO index A
     private void Play_vx_a_1()
@@ -29,338 +132,456 @@ public class VoTriggers : MonoBehaviour
         isSpeaking = true;
 
         wPlay_vx_a_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
-        //AkSoundEngine.PostEvent("Play_vx_a_1", (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse, gameObject);
-        //AkSoundEngine.PostEvent("Play_vx_a_1", gameObject);
     }
-
     private void Play_vx_a_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_a_2", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_a_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_a_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_a_3", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_a_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_a_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_a_4", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_a_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_a_5()
     {
-        AkSoundEngine.PostEvent("Play_vx_a_5", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_a_5.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index B
     private void Play_vx_b_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_b_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_b_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_2", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_b_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_b_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_3", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_b_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_b_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_4", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_b_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_b_5()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_5", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_b_5.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_b_6()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_6", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_b_6.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_b_7()
     {
-        AkSoundEngine.PostEvent("Play_vx_b_7", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_b_7.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index C
     private void Play_vx_c_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_c_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_c_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_c_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_c_2", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_c_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_c_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_c_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_c_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index D
     private void Play_vx_d_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_d_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_d_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_d_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_d_2", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_d_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_d_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_d_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_d_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index E
     private void Play_vx_e_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_e_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_e_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_e_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_e_2", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_e_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_e_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_e_3", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_e_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_e_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_e_4", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_e_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index F
     private void Play_vx_f_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_f_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_f_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_f_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_f_2", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_f_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index G
     private void Play_vx_g_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_g_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_g_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_g_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_g_2", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_g_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_g_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_g_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_g_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index H
     private void Play_vx_h_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_h_1", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_h_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
     private void Play_vx_h_2()
     {
         isSpeaking = true;
-        UnityEngine.Debug.Log("IT SHOULD BE HAPPENING");
 
         wPlay_vx_h_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
-        //AkSoundEngine.PostEvent("Play_vx_h_2", gameObject);
     }
 
     private void Play_vx_h_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_h_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_h_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index I
     private void Play_vx_i_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_1", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_i_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_2", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_i_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_i_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_4", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_i_5()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_5", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_5.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
-    private void Play_vx_i_6()
-    {
-        AkSoundEngine.PostEvent("Play_vx_i_6", gameObject);
-    }
+    // there is no i_6
     private void Play_vx_i_7()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_7", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_7.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_i_8()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_8", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_8.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_i_9()
     {
-        AkSoundEngine.PostEvent("Play_vx_i_9", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_i_9.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index J
     private void Play_vx_j_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_1", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_j_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_2", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_j_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_j_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_4", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_j_5()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_5", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_5.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_j_6()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_6", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_6.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_j_7()
     {
-        AkSoundEngine.PostEvent("Play_vx_j_7", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_j_7.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index L
     private void Play_vx_l_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_1", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_2", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_4", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_5()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_5", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_5.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_6()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_6", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_6.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_7()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_7", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_7.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_8()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_8", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_8.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_9()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_9", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_9.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_10()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_10", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_10.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_11()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_11", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_11.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_12()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_12", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_12.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_13()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_13", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_13.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_l_14()
     {
-        AkSoundEngine.PostEvent("Play_vx_l_14", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_l_14.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
 
     // VO index M
     private void Play_vx_m_1()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_1", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_1.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_2()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_2", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_2.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_3()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_3", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_3.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_4()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_4", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_4.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_5()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_5", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_5.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_6()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_6", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_6.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_7()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_7", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_7.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_8()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_8", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_8.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_9()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_9", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_9.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_10()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_10", gameObject);
+        isSpeaking = true;
+
+        wPlay_vx_m_10.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
     }
     private void Play_vx_m_11()
     {
-        AkSoundEngine.PostEvent("Play_vx_m_11", gameObject);
-    }
+        isSpeaking = true;
 
+        wPlay_vx_m_11.Post(gameObject, (uint)AkCallbackType.AK_EndOfEvent, MakeIsSpeakingFalse);
+    }
+    // END OF WWISE EVENT METHODS /////////////////////////////////////////////////////////////
+
+
+    // this method makes "isSpeaking" false again at the end of a voice event
+    void MakeIsSpeakingFalse(object in_cookie, AkCallbackType in_type, object in_info)
+    {
+        if (in_type == AkCallbackType.AK_EndOfEvent)
+        {
+            isSpeaking = false;
+        }
+    }
 
     private void PlayVoiceClip(string ClipName, float Delay)
     {
@@ -385,16 +606,9 @@ public class VoTriggers : MonoBehaviour
         TutorialVO.VOTrigger -= PlayVoiceClip;
     }
 
-    void MakeIsSpeakingFalse(object in_cookie, AkCallbackType in_type, object in_info)
-    {
-        if (in_type == AkCallbackType.AK_EndOfEvent)
-        {
-            isSpeaking = false;
-        }
-    }
-
+    // use this to make sure the bool is being toggled properly
     void Update()
     {
-        UnityEngine.Debug.Log($"isSpeaking = {isSpeaking}");
+        //UnityEngine.Debug.Log($"isSpeaking = {isSpeaking}");
     }
 }
