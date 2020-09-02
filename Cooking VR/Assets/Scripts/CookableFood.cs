@@ -43,7 +43,7 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
 
-    protected virtual void CheckIfSwitchVisual()
+    private void CheckIfSwitchVisual()
     {
         if (currentStage < (stageRefs.Length - 2)) // Check if reached final stage
         {
@@ -63,7 +63,7 @@ public abstract class CookableFood : MonoBehaviour
         //}
     }
 
-    public void StartCook()
+    virtual public void StartCook()
     {
         currentlyCooking = true;
         // play sound?
@@ -72,7 +72,9 @@ public abstract class CookableFood : MonoBehaviour
     public void stopCook()
     {
         currentlyCooking = false;
+
         // stop play sound?
+
     }
 
     protected virtual void AssignStageRefs()
@@ -80,7 +82,7 @@ public abstract class CookableFood : MonoBehaviour
         this.stages = (byte)VisualObjects.Count;
     }
 
-    protected void SwitchVisualObject()
+    virtual protected void SwitchVisualObject()
     {
         foreach (GameObject VO in VisualObjects)
         {
@@ -88,6 +90,4 @@ public abstract class CookableFood : MonoBehaviour
         }
         VisualObjects[currentStage].SetActive(true);
     }
-
-
 }
