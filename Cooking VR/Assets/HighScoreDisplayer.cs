@@ -11,11 +11,25 @@ public class HighScoreDisplayer : MonoBehaviour
     Text[] levelTextBoxes;
 
     string[] readNums;
+    bool set = false;
     
+    private void Awake()
+    {
+        SetReadHighScores();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        SetReadHighScores();
+        if (!set)
+            SetReadHighScores();
+    }
+
+
+    private void OnEnable()
+    {
+        if(!set)
+            SetReadHighScores();
     }
 
     private void SetReadHighScores()
@@ -23,10 +37,12 @@ public class HighScoreDisplayer : MonoBehaviour
         try
         {
             readNums = File.ReadAllLines(OrderManager.saveLoc);
+            set = true;
         }
         catch(Exception e)
         {
             readNums = new string[0];
+            set = false;
         }
 
         for (int i = 0; i < readNums.Length; i++)
