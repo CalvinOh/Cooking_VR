@@ -74,7 +74,7 @@ public class OrderManager : MonoBehaviour
     public static List<Order> Orders = new List<Order>();
     public static bool LastOrderSpawned;
     public static int NextSceneToLoad;
-    private string saveLoc = AppDomain.CurrentDomain.DynamicDirectory + "HighScores.txt";
+    public static string saveLoc = AppDomain.CurrentDomain.DynamicDirectory + "HighScores.txt";
 
     // Start is called before the first frame update
     void Start()
@@ -143,7 +143,7 @@ public class OrderManager : MonoBehaviour
         }
         catch (Exception e)
         {
-            highScores = new string[3];
+            highScores = new string[5];
             highScoreNums = new float[highScores.Length];
             for (int i = 0; i < highScoreNums.Length; i++)
                 highScoreNums[i] = 0;
@@ -167,6 +167,16 @@ public class OrderManager : MonoBehaviour
             case "Level 3":
                 {
                     targetIndex = 2;
+                    break;
+                }
+            case "Level 4":
+                {
+                    targetIndex = 3;
+                    break;
+                }
+            case "Level 5":
+                {
+                    targetIndex = 4;
                     break;
                 }
         }
