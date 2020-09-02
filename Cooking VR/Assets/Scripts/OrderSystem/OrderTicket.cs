@@ -19,6 +19,9 @@ public class OrderTicket : MonoBehaviour
     [SerializeField]
     private UnityEngine.UI.Text Note;
 
+    [SerializeField]
+    private UnityEngine.UI.Text SidesBody;
+
     private List<string> FunnyNotes = new List<string>();
     public OrderManager.Order MyOrder;
 
@@ -43,6 +46,7 @@ public class OrderTicket : MonoBehaviour
         IntTime = (int)MyOrder.TimeExpected;
         TimeExpected.text = "Time Expected: " + IntTime / 60 + ":" + IntTime % 60;
         Body.text = "";
+        SidesBody.text = "";
         foreach (OrderManager.Ingridents a in MyOrder.Ingredents)
         {
             string Temp = a.ToString();
@@ -58,11 +62,21 @@ public class OrderTicket : MonoBehaviour
             Body.text += Temp + "\n";
 
         }
-            
 
-        
+        foreach (OrderManager.Sides a in MyOrder.OrderSides)
+        {
+            string Temp = a.ToString();
+            for (int i = 1; i < Temp.Length; i++)//skips first letter in string
+            {
+                if (char.IsUpper(Temp[i]))
+                {
+                    Temp = Temp.Insert(i, " ");
+                    i += 2;
 
-
+                }
+            }
+            SidesBody.text += Temp + "\n";
+        }
     }
 
 
@@ -93,7 +107,5 @@ public class OrderTicket : MonoBehaviour
         FunnyNotes.Add("Now FDA approved");
         FunnyNotes.Add("You're the chief here, not chief microwave");
         FunnyNotes.Add("I'll have the fire department on stand by");
-
-
     }
 }
