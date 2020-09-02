@@ -405,7 +405,7 @@ GameObject:
   - component: {fileID: 8550027380373170974}
   - component: {fileID: 2666688687196310486}
   - component: {fileID: 2690535474677168803}
-  - component: {fileID: 3442252781225642402}
+  - component: {fileID: 4148239370252373509}
   m_Layer: 0
   m_Name: FakePatty2
   m_TagString: Patty
@@ -593,20 +593,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
-  topStackPoint: {x: 0, y: 0, z: 0}
-  bottomStackPoint: {x: 0, y: 0, z: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 0
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.02
   scaleRatio: 1
-  verDistanceOffset: 0
   TestDrop: 1
   falling: 0
---- !u!114 &3442252781225642402
+  canStack: 0
+--- !u!114 &4148239370252373509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -615,14 +613,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8713728912392120430}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e66f650049ce444bd2151ea931dfee, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f70f768223d65e40a0408c681803a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCookAmount: 0
-  currentlyCooking: 0
+  cookedTime: 0
+  ingridentName: 0
+  currentStage: 0
+  stages: 0
+  stageRefs: 
   VisualObjects:
   - {fileID: 6603475891553284149}
   - {fileID: 1057960238141492233}
   - {fileID: 2828311496538876301}
   - {fileID: 469263682594616598}
-  - {fileID: 850212008800846304}

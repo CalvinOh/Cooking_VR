@@ -1,44 +1,65 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class PanScript : MonoBehaviour
+public class PanScript : Cooker, IGrabbable
 {
     [SerializeField]
-    private bool IsHeated;
-
-    [SerializeField]//serialized for debugging
-    private PattyScript CurrentPattyOnPan;
+    private string tagToSnapTo;
 
     [SerializeField]
     private bool isSnapped = false;
     
     [SerializeField]
     Transform bottomPanPositon;
+    
+    public Interactable interactable { get; set; }
 
-    Interactable interactable;
+    public bool wasGrabbed { get; set; }
 
-    public bool wasGrabbed = false;
-
-    private void Start()
+    protected override void Start()
     {
-        this.interactable = this.GetComponent<Interactable>();
+        base.Start();
+        InitGrabbable();
 
         if (bottomPanPositon == null)
             bottomPanPositon = this.GetComponentInChildren<Transform>();// this.GetComponent<SphereCollider>().transform.position;
 
         Vector3 position = bottomPanPositon.TransformVector(bottomPanPositon.position);
 
-        Debug.Log($"bottom pan position: {position.ToString()}");
+        if (tagToSnapTo == null)
+            tagToSnapTo = "Burner";
     }
 
-    private void Update()
+    public void InitGrabbable()
+    {
+        this.interactable = this.GetComponent<Interactable>();
+        wasGrabbed = false;
+    }
+
+    protected override void Update()
     {
         CheckGrabbed();
+        //if(testHeated == 1)
+        //{
+        //    //"just turned it on"
+        //    StartCooking();
+        //    testHeated++;
+
+        //}
+        //else if (testHeated == 2)
+        //{
+        //    // stayed on
+        //}
+        //else if(testHeated == 0)
+        //{
+        //    StopCooking();
+        //}
     }
 
-    private void CheckGrabbed()
+    public void CheckGrabbed()
     {
         if (this.interactable.attachedToHand)
         {
@@ -51,20 +72,18 @@ public class PanScript : MonoBehaviour
             this.wasGrabbed = false;
         }
     }
-
-    private void OnTriggerEnter(Collider other)
+    
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Patty"))
-        {
-            CurrentPattyOnPan = other.GetComponent<PattyScript>();
-            if(IsHeated)
-            CurrentPattyOnPan.StartCooking();
-        }
-        else if(other.CompareTag("Burner") && !isSnapped)
+        base.OnTriggerEnter(other);
+
+        if(other.CompareTag(tagToSnapTo) && !isSnapped)
         {
             isSnapped = true;
-            Debug.Log($"is snapped = {isSnapped.ToString()}");
             SnapToBurner(other);
+
+            if (tagToSnapTo == "Fryer")
+                this.StartCooking();
         }
     }
 
@@ -81,25 +100,18 @@ public class PanScript : MonoBehaviour
         //Vector3.Distance(this.gameObject.transform.position, bottomPanPositon);
         //Debug.Log($"Distance is {distanceToOffsetZ}");
 
-        Debug.Log($"Collider position: {other.transform.position.ToString()}");
-        Debug.Log($"bottom pan position: {bottomPanPositon.position.ToString()}");
-
         this.transform.position = new Vector3(this.transform.position.x + distanceToOffsetX, this.gameObject.transform.position.y + distanceToOffsetY, this.transform.position.z + distanceToOffsetZ);
 
-        Debug.Log($"frying pan position: {this.transform.position.ToString()}");
+        // audio
+        AkSoundEngine.PostEvent("Impact_Pan", gameObject);
     }
 
-    private void OnTriggerExit(Collider other)
+    protected override void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Patty"))
-        {
-            CurrentPattyOnPan.StopCooking();
-            CurrentPattyOnPan = null;
-        }
-        else if (other.CompareTag("Burner"))
+        base.OnTriggerExit(other);
+        if (other.CompareTag(tagToSnapTo))
         {
             UnSnap();
-            Debug.Log($"is snapped = {isSnapped.ToString()}");
         }
     }
 
@@ -107,20 +119,8 @@ public class PanScript : MonoBehaviour
     {
         isSnapped = false;
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-    }
 
-    public void StartCooking()
-    {
-        IsHeated = true;
-        if(CurrentPattyOnPan!=null)
-        CurrentPattyOnPan.StartCooking();
+        if (tagToSnapTo == "Fryer")
+            this.StopCooking();
     }
-
-    public void StopCooking()
-    {
-        IsHeated = false;
-        if (CurrentPattyOnPan != null)
-            CurrentPattyOnPan.StopCooking();
-    }
-
 }

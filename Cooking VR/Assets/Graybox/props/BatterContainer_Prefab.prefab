@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 6359996573237986392}
   - component: {fileID: -5178661895559278292}
   - component: {fileID: -1504981713932161579}
+  - component: {fileID: 8243911917760346985}
+  - component: {fileID: 6885430909520835667}
   m_Layer: 0
   m_Name: BatterContainer_Prefab
-  m_TagString: Untagged
+  m_TagString: Batter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,3 +80,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8243911917760346985
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076439973496620738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 2090313185186746640, guid: eadbf7320cc41014fa704380648fb1a4, type: 3}
+--- !u!65 &6885430909520835667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076439973496620738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.75, y: 5.255729, z: 12.5}
+  m_Center: {x: 0, y: 0, z: 0}

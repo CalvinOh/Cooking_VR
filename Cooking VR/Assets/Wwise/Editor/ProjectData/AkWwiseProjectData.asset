@@ -14,24 +14,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AcousticTextureWwu:
   - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: d9b5ba3d70a48348ba09d19d012112d9
     GuidInternal: 
-    m_lastTime: -8586147182461964100
+    m_lastTime: -8586115684092076372
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: a17dab3cd2aa894baaacc9e1f94ac24c
     GuidInternal: 
-    m_lastTime: -8586147182462926316
-    List: []
+    m_lastTime: -8586040080408289656
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
+    - name: Music & Environment
+      guid: 937b5a95be0a7a4ebbb6ec6f98e89023
+      id: 2118419115
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music & Environment
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\Music & Environment
+    - name: SFX
+      guid: 06b54ce9c8add8479048cfbfb21032c2
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: SFX
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\SFX
+    - name: VO
+      guid: 2f09fca7de60174f8070e9ff9eda3eab
+      id: 1534528548
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: VO
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus\VO
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586120971446847784
+    m_lastTime: -8586032236782182178
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -47,7 +89,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586120972021489399
+    m_lastTime: -8586033933490423706
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -109,42 +151,90 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: -1
       minDuration: -1
-    - name: Grab_Bottle_Glass
-      guid: 92d7bc7aad502a4aaaa7ac50603b0033
-      id: 1251402355
+    - name: Flashlight_Off
+      guid: eff8e47cf95f4d4ba3f5f11a9357a3e3
+      id: 1126494853
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Grab_Bottle_Glass
+      - ElementName: Flashlight_Off
         ObjectType: 3
-      Path: Default Work Unit\Grab_Bottle_Glass
-      maxAttenuation: 0
-      maxDuration: 0.507029
-      minDuration: 0.240295
-    - name: Grab_Bottle_Plastic
+      Path: Default Work Unit\Flashlight_Off
+      maxAttenuation: 3
+      maxDuration: 0.152063
+      minDuration: 0.152063
+    - name: Flashlight_On
+      guid: dfd7be6b4d83444e8e6e93c693b0a662
+      id: 2033671033
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Flashlight_On
+        ObjectType: 3
+      Path: Default Work Unit\Flashlight_On
+      maxAttenuation: 3
+      maxDuration: 0.152063
+      minDuration: 0.152063
+    - name: Fuze_Wrong
+      guid: 853315982c82394e9fc7c09268b890fe
+      id: 2724689895
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Fuze_Wrong
+        ObjectType: 3
+      Path: Default Work Unit\Fuze_Wrong
+      maxAttenuation: 3
+      maxDuration: 0.298254
+      minDuration: 0.255805
+    - name: Gianna_Clap
+      guid: 1254ab85df998240a3aaf4c01ee0036a
+      id: 822788948
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Gianna_Clap
+        ObjectType: 3
+      Path: Default Work Unit\Gianna_Clap
+      maxAttenuation: 3
+      maxDuration: 0.152063
+      minDuration: 0.143446
+    - name: Impact_Bottle_Glass
+      guid: 3977ad9e077525418082a23eb955d74d
+      id: 2487494075
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Bottle_Glass
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Bottle_Glass
+      maxAttenuation: 3
+      maxDuration: 0.758503
+      minDuration: 0.482562
+    - name: Impact_Bottle_Glass_Liquid
+      guid: 5b9a3a8bb92319439930249025e17bb8
+      id: 3024290838
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Bottle_Glass_Liquid
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Bottle_Glass_Liquid
+      maxAttenuation: 3
+      maxDuration: 0.758503
+      minDuration: 0.482562
+    - name: Impact_Bottle_Plastic
       guid: 6b709fa1ca69da48a0182a62faab8710
-      id: 2416875919
+      id: 433980135
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Grab_Bottle_Plastic
+      - ElementName: Impact_Bottle_Plastic
         ObjectType: 3
-      Path: Default Work Unit\Grab_Bottle_Plastic
-      maxAttenuation: 0
+      Path: Default Work Unit\Impact_Bottle_Plastic
+      maxAttenuation: 3
       maxDuration: 0.563673
       minDuration: 0.329478
-    - name: Grab_Plate
-      guid: 8b0b5f803fd29a4e95b606dfc9dc3bcb
-      id: 1863953098
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Grab_Plate
-        ObjectType: 3
-      Path: Default Work Unit\Grab_Plate
-      maxAttenuation: 0
-      maxDuration: 0.689042
-      minDuration: 0.443042
     - name: Impact_Extinguisher
       guid: a9a3449887a09e4786875ca01aecd403
       id: 2236363231
@@ -181,6 +271,30 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: 0.288396
       minDuration: 0.288396
+    - name: Impact_Mug
+      guid: 79aee0e3f91e2f43be9b20d8e81e6ffd
+      id: 1180447715
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Mug
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Mug
+      maxAttenuation: 3
+      maxDuration: 0.161927
+      minDuration: 0.142569
+    - name: Impact_Pan
+      guid: 05b40c6d67647d45995353eb291fc32c
+      id: 1453273807
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Pan
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Pan
+      maxAttenuation: 3
+      maxDuration: 0.510522
+      minDuration: 0.261266
     - name: Impact_Plate
       guid: a934361785640c488531ecea6d7c33cf
       id: 803254130
@@ -205,6 +319,18 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: 0.511111
       minDuration: 0.397285
+    - name: Impact_Spatula
+      guid: a0acf4a17aba784399c6b5f92e226a97
+      id: 3180392800
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Impact_Spatula
+        ObjectType: 3
+      Path: Default Work Unit\Impact_Spatula
+      maxAttenuation: 3
+      maxDuration: 0.315624
+      minDuration: 0.139282
     - name: Knife_Cut_Generic
       guid: d98af6638ea9ff4e9d007de248cb8bd9
       id: 2831748783
@@ -214,9 +340,57 @@ MonoBehaviour:
       - ElementName: Knife_Cut_Generic
         ObjectType: 3
       Path: Default Work Unit\Knife_Cut_Generic
-      maxAttenuation: 2
+      maxAttenuation: 3
       maxDuration: 0.379546
       minDuration: 0.348046
+    - name: Lightsout_End
+      guid: 0a71db1c43faca4f82a44f65f672eae0
+      id: 3390569948
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lightsout_End
+        ObjectType: 3
+      Path: Default Work Unit\Lightsout_End
+      maxAttenuation: 0
+      maxDuration: 9.196417
+      minDuration: 9.196417
+    - name: Lightsout_Start
+      guid: a1c7a0257af6c745866343a12471f1ca
+      id: 422864511
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Lightsout_Start
+        ObjectType: 3
+      Path: Default Work Unit\Lightsout_Start
+      maxAttenuation: 0
+      maxDuration: 9.204921
+      minDuration: 9.204921
+    - name: Oil_Fry_Start
+      guid: 6ed2600ac3d00e499770bca89557825e
+      id: 1834722074
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Oil_Fry_Start
+        ObjectType: 3
+      Path: Default Work Unit\Oil_Fry_Start
+      maxAttenuation: 3
+      maxDuration: -1
+      minDuration: -1
+    - name: Oil_Fry_Stop
+      guid: 37a5de305a3b324988e5eb3a61824fc9
+      id: 3907856562
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Oil_Fry_Stop
+        ObjectType: 3
+      Path: Default Work Unit\Oil_Fry_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Music
       guid: fd99cfe1ca8be040b4eb31cc6adaa79f
       id: 2932040671
@@ -240,7 +414,7 @@ MonoBehaviour:
       - ElementName: Play_vx_a_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_a_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 15.639206
       minDuration: 15.639206
     - name: Play_vx_a_2
@@ -254,7 +428,7 @@ MonoBehaviour:
       - ElementName: Play_vx_a_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_a_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 10.845193
       minDuration: 10.845193
     - name: Play_vx_a_3
@@ -268,7 +442,7 @@ MonoBehaviour:
       - ElementName: Play_vx_a_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_a_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 10.080476
       minDuration: 10.080476
     - name: Play_vx_a_4
@@ -282,7 +456,7 @@ MonoBehaviour:
       - ElementName: Play_vx_a_4
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_a_4
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.073968
       minDuration: 2.073968
     - name: Play_vx_a_5
@@ -296,7 +470,7 @@ MonoBehaviour:
       - ElementName: Play_vx_a_5
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_a_5
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 10.225873
       minDuration: 10.225873
     - name: Play_vx_b_1
@@ -310,7 +484,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.322018
       minDuration: 3.322018
     - name: Play_vx_b_2
@@ -324,7 +498,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.894195
       minDuration: 2.894195
     - name: Play_vx_b_3
@@ -338,7 +512,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.384059
       minDuration: 4.384059
     - name: Play_vx_b_4
@@ -352,7 +526,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_4
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_4
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.135692
       minDuration: 4.135692
     - name: Play_vx_b_5
@@ -366,7 +540,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_5
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_5
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 6.591859
       minDuration: 6.591859
     - name: Play_vx_b_6
@@ -380,7 +554,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_6
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_6
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.163288
       minDuration: 2.163288
     - name: Play_vx_b_7
@@ -394,7 +568,7 @@ MonoBehaviour:
       - ElementName: Play_vx_b_7
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_b_7
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.295193
       minDuration: 2.295193
     - name: Play_vx_c_1
@@ -408,7 +582,7 @@ MonoBehaviour:
       - ElementName: Play_vx_c_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_c_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 6.882336
       minDuration: 6.882336
     - name: Play_vx_c_2
@@ -422,7 +596,7 @@ MonoBehaviour:
       - ElementName: Play_vx_c_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_c_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 5.41873
       minDuration: 5.41873
     - name: Play_vx_c_3
@@ -436,7 +610,7 @@ MonoBehaviour:
       - ElementName: Play_vx_c_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_c_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.407392
       minDuration: 3.407392
     - name: Play_vx_d_1
@@ -450,7 +624,7 @@ MonoBehaviour:
       - ElementName: Play_vx_d_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_d_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 6.148345
       minDuration: 6.148345
     - name: Play_vx_d_2
@@ -464,7 +638,7 @@ MonoBehaviour:
       - ElementName: Play_vx_d_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_d_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 5.149841
       minDuration: 5.149841
     - name: Play_vx_d_3
@@ -478,7 +652,7 @@ MonoBehaviour:
       - ElementName: Play_vx_d_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_d_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 7.005646
       minDuration: 7.005646
     - name: Play_vx_e_1
@@ -492,7 +666,7 @@ MonoBehaviour:
       - ElementName: Play_vx_e_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_e_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.34703
       minDuration: 4.34703
     - name: Play_vx_e_2
@@ -506,7 +680,7 @@ MonoBehaviour:
       - ElementName: Play_vx_e_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_e_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 5.25161
       minDuration: 5.25161
     - name: Play_vx_e_3
@@ -520,7 +694,7 @@ MonoBehaviour:
       - ElementName: Play_vx_e_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_e_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.200567
       minDuration: 4.200567
     - name: Play_vx_e_4
@@ -534,7 +708,7 @@ MonoBehaviour:
       - ElementName: Play_vx_e_4
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_e_4
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.283764
       minDuration: 3.283764
     - name: Play_vx_f_1
@@ -548,7 +722,7 @@ MonoBehaviour:
       - ElementName: Play_vx_f_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_f_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.996871
       minDuration: 4.996871
     - name: Play_vx_f_2
@@ -562,7 +736,7 @@ MonoBehaviour:
       - ElementName: Play_vx_f_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_f_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 6.502698
       minDuration: 6.502698
     - name: Play_vx_g_1
@@ -576,7 +750,7 @@ MonoBehaviour:
       - ElementName: Play_vx_g_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_g_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.697347
       minDuration: 3.697347
     - name: Play_vx_g_2
@@ -590,7 +764,7 @@ MonoBehaviour:
       - ElementName: Play_vx_g_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_g_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.834263
       minDuration: 2.834263
     - name: Play_vx_g_3
@@ -604,7 +778,7 @@ MonoBehaviour:
       - ElementName: Play_vx_g_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_g_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 0.949274
       minDuration: 0.949274
     - name: Play_vx_h_1
@@ -618,7 +792,7 @@ MonoBehaviour:
       - ElementName: Play_vx_h_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_h_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.296327
       minDuration: 4.296327
     - name: Play_vx_h_2
@@ -632,7 +806,7 @@ MonoBehaviour:
       - ElementName: Play_vx_h_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_h_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.548435
       minDuration: 2.548435
     - name: Play_vx_h_3
@@ -646,7 +820,7 @@ MonoBehaviour:
       - ElementName: Play_vx_h_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_h_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 1.661179
       minDuration: 1.393016
     - name: Play_vx_i_1
@@ -660,7 +834,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.191814
       minDuration: 2.191814
     - name: Play_vx_i_2
@@ -674,7 +848,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.016712
       minDuration: 3.016712
     - name: Play_vx_i_3
@@ -688,7 +862,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.376258
       minDuration: 4.376258
     - name: Play_vx_i_4
@@ -702,7 +876,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_4
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_4
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.573197
       minDuration: 4.573197
     - name: Play_vx_i_5
@@ -716,7 +890,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_5
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_5
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.848912
       minDuration: 2.675828
     - name: Play_vx_i_7
@@ -730,7 +904,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_7
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_7
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 0.461746
       minDuration: 0.426213
     - name: Play_vx_i_8
@@ -744,7 +918,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_8
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_8
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 1.881814
       minDuration: 0.989252
     - name: Play_vx_i_9
@@ -758,7 +932,7 @@ MonoBehaviour:
       - ElementName: Play_vx_i_9
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_i_9
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 0.869093
       minDuration: 0.793787
     - name: Play_vx_j_1
@@ -772,7 +946,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 1.061134
       minDuration: 0.464422
     - name: Play_vx_j_2
@@ -786,7 +960,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 0.715737
       minDuration: 0.480181
     - name: Play_vx_j_3
@@ -800,7 +974,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_3
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_3
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 3.543696
       minDuration: 2.627959
     - name: Play_vx_j_4
@@ -814,7 +988,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_4
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_4
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 11.066757
       minDuration: 8.232835
     - name: Play_vx_j_5
@@ -828,7 +1002,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_5
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_5
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 8.463016
       minDuration: 5.558027
     - name: Play_vx_j_6
@@ -842,7 +1016,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_6
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_6
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 1.153719
       minDuration: 0.461224
     - name: Play_vx_j_7
@@ -856,7 +1030,7 @@ MonoBehaviour:
       - ElementName: Play_vx_j_7
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_j_7
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 0.270363
       minDuration: 0.213492
     - name: Play_vx_l_1
@@ -870,9 +1044,79 @@ MonoBehaviour:
       - ElementName: Play_vx_l_1
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_l_1
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.087891
       minDuration: 2.087891
+    - name: Play_vx_l_10
+      guid: e3f05231dfb94c4db2f7268bdd398b37
+      id: 3658643223
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_10
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_10
+      maxAttenuation: 5
+      maxDuration: 3.944218
+      minDuration: 3.944218
+    - name: Play_vx_l_11
+      guid: 04e02ece89dd9b49b30a059c507c795a
+      id: 3658643222
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_11
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_11
+      maxAttenuation: 5
+      maxDuration: 5.509546
+      minDuration: 5.509546
+    - name: Play_vx_l_12
+      guid: 5d25c5acc4e23a4c8cb6e475997ff1ad
+      id: 3658643221
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_12
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_12
+      maxAttenuation: 5
+      maxDuration: 3.183923
+      minDuration: 3.183923
+    - name: Play_vx_l_13
+      guid: 529105abe405ac4a905dd9ed67b68d97
+      id: 3658643220
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_13
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_13
+      maxAttenuation: 5
+      maxDuration: 3.366621
+      minDuration: 3.366621
+    - name: Play_vx_l_14
+      guid: c218cf469a83e2458b7bcd22f2ad3602
+      id: 3658643219
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_14
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_14
+      maxAttenuation: 5
+      maxDuration: 1.911565
+      minDuration: 1.911565
     - name: Play_vx_l_2
       guid: 9d7dc424094ae44ea6dece9eeb6c6c5c
       id: 2677571742
@@ -884,9 +1128,51 @@ MonoBehaviour:
       - ElementName: Play_vx_l_2
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_l_2
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.053243
       minDuration: 2.053243
+    - name: Play_vx_l_3
+      guid: 74faf44b2c4b314ca348e58ec48deab0
+      id: 2677571743
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_3
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_3
+      maxAttenuation: 5
+      maxDuration: 4.623696
+      minDuration: 4.623696
+    - name: Play_vx_l_4
+      guid: 807f2ca37769134293f3b9c9746a8daf
+      id: 2677571736
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_4
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_4
+      maxAttenuation: 5
+      maxDuration: 3.826372
+      minDuration: 3.826372
+    - name: Play_vx_l_5
+      guid: 287555a42463374193c6f630ba816e0e
+      id: 2677571737
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_5
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_5
+      maxAttenuation: 5
+      maxDuration: 1.868435
+      minDuration: 1.868435
     - name: Play_vx_l_6
       guid: 52c6c015244f1a40a412414f09860f8b
       id: 2677571738
@@ -898,9 +1184,23 @@ MonoBehaviour:
       - ElementName: Play_vx_l_6
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_l_6
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 2.175601
       minDuration: 2.175601
+    - name: Play_vx_l_7
+      guid: ee14483f844fcc459cf7b28d2a852033
+      id: 2677571739
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_7
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_7
+      maxAttenuation: 5
+      maxDuration: 1.550998
+      minDuration: 1.550998
     - name: Play_vx_l_8
       guid: 96e63d78a5aa0542b73d4808e8715459
       id: 2677571732
@@ -912,9 +1212,177 @@ MonoBehaviour:
       - ElementName: Play_vx_l_8
         ObjectType: 3
       Path: Default Work Unit\VO\Play_vx_l_8
-      maxAttenuation: 0
+      maxAttenuation: 5
       maxDuration: 4.257098
       minDuration: 4.257098
+    - name: Play_vx_l_9
+      guid: 7e93073a92487347ad24125f2accf607
+      id: 2677571733
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_l_9
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_l_9
+      maxAttenuation: 5
+      maxDuration: 4.54907
+      minDuration: 4.54907
+    - name: Play_vx_m_1
+      guid: 345f84e034b7354c9ca5fd8424e26cec
+      id: 2677424676
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_1
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_1
+      maxAttenuation: 5
+      maxDuration: 2.473084
+      minDuration: 2.473084
+    - name: Play_vx_m_10
+      guid: d85b3ca56161b94184c93929b01e02b5
+      id: 1569332892
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_10
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_10
+      maxAttenuation: 5
+      maxDuration: 3.030272
+      minDuration: 3.030272
+    - name: Play_vx_m_11
+      guid: 564019d26064dc44bd3068fb42d49220
+      id: 1569332893
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_11
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_11
+      maxAttenuation: 5
+      maxDuration: 6.226621
+      minDuration: 6.226621
+    - name: Play_vx_m_2
+      guid: cfdf40a5d2c28d4cb00f24af9fa3702f
+      id: 2677424679
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_2
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_2
+      maxAttenuation: 5
+      maxDuration: 0.75263
+      minDuration: 0.75263
+    - name: Play_vx_m_3
+      guid: 602165b4fd84204499013d93cfa09427
+      id: 2677424678
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_3
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_3
+      maxAttenuation: 5
+      maxDuration: 2.450272
+      minDuration: 2.450272
+    - name: Play_vx_m_4
+      guid: ffefa5878febcf4587bb0793864d426d
+      id: 2677424673
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_4
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_4
+      maxAttenuation: 5
+      maxDuration: 2.273946
+      minDuration: 2.273946
+    - name: Play_vx_m_5
+      guid: 910186daaadf3e46aa4539f58dc7cfae
+      id: 2677424672
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_5
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_5
+      maxAttenuation: 5
+      maxDuration: 1.704648
+      minDuration: 1.704648
+    - name: Play_vx_m_6
+      guid: 0f0fc2f41a29ab48a8a670335d13942d
+      id: 2677424675
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_6
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_6
+      maxAttenuation: 5
+      maxDuration: 2.881293
+      minDuration: 2.881293
+    - name: Play_vx_m_7
+      guid: c16f02b79122364ea01856f0e2369540
+      id: 2677424674
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_7
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_7
+      maxAttenuation: 5
+      maxDuration: 3.161746
+      minDuration: 3.161746
+    - name: Play_vx_m_8
+      guid: e4e321919f31904da975c41411822de6
+      id: 2677424685
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_8
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_8
+      maxAttenuation: 5
+      maxDuration: 3.349342
+      minDuration: 3.349342
+    - name: Play_vx_m_9
+      guid: 035163d1c5636143b4d13850b08ba1cb
+      id: 2677424684
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO
+        ObjectType: 4
+      - ElementName: Play_vx_m_9
+        ObjectType: 3
+      Path: Default Work Unit\VO\Play_vx_m_9
+      maxAttenuation: 5
+      maxDuration: 6.313107
+      minDuration: 6.313107
     - name: Pour_Bottle_Glass
       guid: ac06c6ca3265244794982ca9d5134534
       id: 3025511663
@@ -939,6 +1407,18 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: 0.152083
       minDuration: 0.152083
+    - name: Stop_All_Except
+      guid: 98d2e75fb26a04469b9a3897ec4b03a3
+      id: 3016745319
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Stop_All_Except
+        ObjectType: 3
+      Path: Default Work Unit\Stop_All_Except
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stove_Off
       guid: 9a563b5e67531e4bb63adb95a12c16ff
       id: 1902865914
@@ -963,6 +1443,18 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: -1
       minDuration: -1
+    - name: Teleport_item
+      guid: e376217be29f904abd948248181ad975
+      id: 3988014274
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Teleport_item
+        ObjectType: 3
+      Path: Default Work Unit\Teleport_item
+      maxAttenuation: 3
+      maxDuration: 0.42907
+      minDuration: 0.393005
     - name: Use_Condiment
       guid: 4ae352af53a4654a9bf815b1a5e96336
       id: 2484277510
@@ -994,7 +1486,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3d6363d5ce60a041ade2b6e09d2dff36
     GuidInternal: 
-    m_lastTime: -8586120978310960600
+    m_lastTime: -8586040080422332832
     List:
     - name: GameParameterIntensity
       guid: e5ffca10bc0da841b9f3fc1df08f2e04
@@ -1005,19 +1497,28 @@ MonoBehaviour:
       - ElementName: GameParameterIntensity
         ObjectType: 13
       Path: Default Work Unit\GameParameterIntensity
+    - name: SFX_Volume
+      guid: 7e9bc3e18de4854e88b3a0cd43584f73
+      id: 1564184899
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX_Volume
+        ObjectType: 13
+      Path: Default Work Unit\SFX_Volume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: f3d7bd6077ed6f48b927fcbc87305ffa
     GuidInternal: 
-    m_lastTime: -8586147182462757201
+    m_lastTime: -8586115684092086380
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPath: Default Work Unit
     guid: 0d1c53af911cf344af2d5cddd2060317
     GuidInternal: 
-    m_lastTime: -8586120921095645480
+    m_lastTime: -8586115684092076372
     List:
     - name: Intensity
       guid: f8e9661ec2179d48ab29430ec5291603
@@ -1052,10 +1553,10 @@ MonoBehaviour:
       valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
-    ParentPath: 
-    guid: 00000000000000000000000000000000
+    ParentPath: Default Work Unit
+    guid: 0d065cb3686f85499960a1d647686265
     GuidInternal: 
-    m_lastTime: -8586147182462103736
+    m_lastTime: -8586115684092076372
     List: []
   ExpandedItems:
   - /Cooking VR_WwiseProject
