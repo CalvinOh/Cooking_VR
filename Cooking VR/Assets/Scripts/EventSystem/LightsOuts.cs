@@ -18,11 +18,6 @@ public class LightsOuts : RandomEvent
 
     FuseBox Box;
 
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {

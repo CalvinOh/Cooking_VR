@@ -65,6 +65,16 @@
 							</DuckingList>
 						</Bus>
 						<Bus Name="Music &amp; Environment" ID="{955A7B93-0ABE-4E7A-BBB6-EC6F98E89023}"/>
+						<AuxBus Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}">
+							<PropertyList>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Room_Medium_Tiled" ID="{0C0A3A92-A571-4FDB-AB40-ACFED04E0217}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>
