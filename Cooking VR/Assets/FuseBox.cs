@@ -28,6 +28,7 @@ public class FuseBox : MonoBehaviour
 
         SetUpBox();
         MySlider = GetComponentInChildren<PowerBoxSlider>();
+        MyEventScript = FindObjectOfType<LightsOuts>();
     }
 
     private void SetUpBox()

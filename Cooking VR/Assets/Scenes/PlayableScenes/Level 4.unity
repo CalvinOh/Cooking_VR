@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -843,6 +843,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9206657024009581975, guid: 5f209a285231f1044a90a3b12d9b8877,
+        type: 3}
+      propertyPath: MyEventScript
+      value: 
+      objectReference: {fileID: 1840874354}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f209a285231f1044a90a3b12d9b8877, type: 3}
 --- !u!1001 &171264322
@@ -5561,6 +5566,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1840874354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7908785184566279746, guid: 5f209a285231f1044a90a3b12d9b8877,
+    type: 3}
+  m_PrefabInstance: {fileID: 156634998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40ff07a51d771f4b988f0733b52e8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1843691110
 GameObject:
   m_ObjectHideFlags: 0
