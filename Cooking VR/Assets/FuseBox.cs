@@ -74,8 +74,6 @@ public class FuseBox : MonoBehaviour
 
         //move switch to off position and prepare other things for evennt start
         MySlider.ResetPosition();
-
-
     }
 
     public bool AttemptFix()
@@ -85,6 +83,8 @@ public class FuseBox : MonoBehaviour
             LightsOutEventScript.EndEvent();
             return true;
         }
+
+        // sound
         return false;
     }
 
@@ -95,7 +95,8 @@ public class FuseBox : MonoBehaviour
             if (!a.CheckFuse())
                 return false;
         }
+
+        // sound come back on
         return true;
     }
-
 }
