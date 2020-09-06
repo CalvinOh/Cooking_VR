@@ -44,13 +44,14 @@ public class OrderSpawn : MonoBehaviour
 
     }
     
-    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder,string OrderNum)
+    public void SpawnPredeterminedOrder(List<OrderManager.Ingridents> NewOrder,string OrderNum,List<OrderManager.Sides> SidesForOrder)
     {
         OrderSpawnedEvent.Invoke(true);
 
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
         SpawnedOrder.OrderNum = OrderNum;
         SpawnedOrder.Ingredents = NewOrder;
+        SpawnedOrder.OrderSides = SidesForOrder;
 
         SpawnedOrder.TimeIssued = Time.fixedTime;
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
@@ -64,15 +65,19 @@ public class OrderSpawn : MonoBehaviour
 
         OrderManager.Orders.Add(SpawnedOrder);
         SpawnLocationNumber++;
+
     }
     
-    public void SpawnRandomOrder(int Burgersize)
+    public void SpawnRandomOrder(int Burgersize, int SideSize)
     {
+
+        //needs to spawn sides
         OrderSpawnedEvent.Invoke(true);
 
         OrderManager.Order SpawnedOrder = new OrderManager.Order();
 
         SpawnedOrder.Ingredents = RandomBurger(Burgersize);
+        SpawnedOrder.OrderSides = RandomSides(SideSize);
 
         SpawnedOrder.TimeIssued = Time.fixedTime;
         SpawnedOrder.TimeExpected = SpawnedOrder.TimeIssued + SpawnedOrder.Ingredents.Count * 20 + 10;
@@ -86,6 +91,22 @@ public class OrderSpawn : MonoBehaviour
         OrderManager.Orders.Add(SpawnedOrder);
         SpawnLocationNumber++;
 
+    }
+
+    List<OrderManager.Sides> RandomSides(int SideCount)
+    {
+
+        List<OrderManager.Sides> RandomSide = new List<OrderManager.Sides>();
+        for (int i = 0; i < SideCount; i++)
+        {
+            if (UnityEngine.Random.Range(0, 2) == 0)
+                RandomSide.Add(OrderManager.Sides.Fries);
+            else
+                RandomSide.Add(OrderManager.Sides.OnionRings);
+        }
+
+
+        return RandomSide;
     }
 
     List<OrderManager.Ingridents> RandomBurger(int AmountOfLayer)

@@ -11,12 +11,18 @@ public class OrderCheck : MonoBehaviour
     [SerializeField]
     private Transform TicketCheck;
     [SerializeField]
+    private Transform SideCheck;
+
+
+    [SerializeField]
     private GameObject bell;
 
     [SerializeField]
     float BurgerCheckRadius = 0.3f;
     [SerializeField]
     float TicketCheckRadius = 0.1f;
+    [SerializeField]
+    float SideCheckRadius = 0.2f;
 
     private float finalOrderScore;
 
@@ -48,7 +54,7 @@ public class OrderCheck : MonoBehaviour
         Debug.DrawRay(TicketCheck.position, this.transform.forward*TicketCheckRadius, Color.red);
     }
 
-    OrderManager.FinishedOrder ArchiveOrder(List<OrderManager.Ingridents> SubmittedFood,OrderManager.Order OrderToServe)
+    OrderManager.FinishedOrder ArchiveOrder(List<OrderManager.Ingridents> SubmittedFood,OrderManager.Order OrderToServe, List<CookableFood> Sides)
     {
         burgerPartsForVO.Clear();
         //this function returns a completed order to be achived for the end of the game
@@ -57,7 +63,7 @@ public class OrderCheck : MonoBehaviour
         OrderManager.Order OrderToGoWithArchive = OrderToServe;
         OrderToArchive.OriginalOrder = OrderToGoWithArchive;
         OrderToArchive.TimeTaken = Time.fixedTime - OrderToServe.TimeIssued;
-        OrderToArchive.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents);
+        OrderToArchive.Score = CompareFoodToOrder(SubmittedFood, OrderToServe.Ingredents)+CompareSides(Sides,OrderToServe.OrderSides);
         OrderToArchive.OrderNum = OrderToServe.OrderNum;
 
         if (OrderToArchive.TimeTaken > .65f * (OrderToServe.TimeExpected - OrderToServe.TimeIssued))
@@ -90,6 +96,84 @@ public class OrderCheck : MonoBehaviour
         OrderManager.Orders.Remove(OrderToServe);
         burgerPartsForVO.Clear();
         return OrderToArchive;
+    }
+
+    int CompareSides(List<CookableFood> SubmittedSides, List<OrderManager.Sides> OrderSides)
+    {
+        int TempScore = OrderSides.Count*100;
+        int MissingSides = 0;
+        int ExtraSides = 0;
+        List<OrderManager.Sides> CopiedOrderSides = new List<OrderManager.Sides>();
+        List<CookableFood> CopiedSubmittedSides = new List<CookableFood>();
+
+        foreach (OrderManager.Sides a in OrderSides)
+        {
+            CopiedOrderSides.Add(a);
+        }
+        foreach (CookableFood a in SubmittedSides)
+        {
+            CopiedSubmittedSides.Add(a);
+        }
+
+        while (CopiedOrderSides.Count > 0)
+        {
+            CookableFood TempCF = null;
+
+            if (CopiedOrderSides[0] == OrderManager.Sides.Fries)
+            {
+                foreach (CookableFood a in CopiedSubmittedSides)
+                {
+                    if (a.ingridentName == OrderManager.Ingridents.Fries)
+                        TempCF = a;
+                }
+            }
+            else if (CopiedOrderSides[0] == OrderManager.Sides.OnionRings)
+            {
+                foreach (CookableFood a in CopiedSubmittedSides)
+                {
+                    if (a.ingridentName == OrderManager.Ingridents.OnionRing)
+                        TempCF = a;
+                }
+            }
+
+            if (TempCF == null)
+            {
+                //didn't find side of tyme, mark as missing side
+                MissingSides++;
+                CopiedOrderSides.Remove(CopiedOrderSides[0]);
+            }
+            else
+            {
+                //found side of type, look at doneness
+                if (TempCF.currentStage == 3)
+                {
+                    //intentionally left blank, perfect side deducts not points
+                }
+                else if (TempCF.currentStage == 0)
+                {
+                    //completely raw side gives nothing
+                    TempScore -= 100;
+                }
+                else
+                {
+                    //burnt or undercooked deducts 50 points
+                    TempScore -= 50;
+                }
+
+                CopiedOrderSides.Remove(CopiedOrderSides[0]);
+                CopiedSubmittedSides.Remove(TempCF);
+            }
+        }
+
+
+        OrderToArchive.ExtraSides = ExtraSides;
+        OrderToArchive.MissingSides = MissingSides;
+
+        TempScore -= MissingSides * 100;
+        TempScore -= ExtraSides * 50;
+
+        OrderToArchive.SidesScore = TempScore;
+        return TempScore;
     }
 
     private void OrderGrade()
@@ -221,6 +305,8 @@ public class OrderCheck : MonoBehaviour
         Debug.Log("Bell rung");
         GameObject Burger = null;
         GameObject Ticket = null;
+        List<GameObject> Sides = new List<GameObject>();
+
         PlaySoundBell();
 
         Collider[] BurgerCheckColliderHitResults = Physics.OverlapSphere(BurgerCheck.position, BurgerCheckRadius);
@@ -242,16 +328,45 @@ public class OrderCheck : MonoBehaviour
             }
         }
 
+        Collider[] SideCheckColliderHitResults = Physics.OverlapSphere(SideCheck.position, SideCheckRadius);
+        foreach (Collider SideC in SideCheckColliderHitResults)
+        {
+            if (SideC.CompareTag("Basket"))
+            {
+                Sides.Add(SideC.gameObject);
+            }
+        }
+
+
         Debug.Log("Burger check: "+Burger.name);
         Debug.Log("Ticket check: "+Ticket.name);
+        Debug.Log("Sides check: "+Sides.Count+" sides");
+
+
+
+
+
 
         if (Burger != null && Ticket != null)
         {
             ManualStack BurgerS = Burger.GetComponent<ManualStack>();
             OrderTicket TicketS = Ticket.GetComponent<OrderTicket>();
 
+            List<CookableFood> SideS = new List<CookableFood>();
+
+            foreach (GameObject a in Sides)
+            {
+                foreach (CookableFood b in a.GetComponentsInChildren<CookableFood>())
+                {
+                    SideS.Add(b);
+                }
+            }
+
+
+
+
             List<OrderManager.Ingridents> SubmittedBurger = StackableToListOfIngridents(BurgerS);
-            OrderManager.finishedOrders.Add(ArchiveOrder(SubmittedBurger, TicketS.MyOrder));
+            OrderManager.finishedOrders.Add(ArchiveOrder(SubmittedBurger, TicketS.MyOrder,SideS));
             MyOrderSpawn.SpawnArchivedOrder(OrderManager.finishedOrders[OrderManager.finishedOrders.Count-1]);
 
             Destroy(Burger);
@@ -313,6 +428,7 @@ public class OrderCheck : MonoBehaviour
     {
         Gizmos.DrawWireSphere(BurgerCheck.position, BurgerCheckRadius);
         Gizmos.DrawWireSphere(TicketCheck.position, TicketCheckRadius);
+        Gizmos.DrawWireSphere(SideCheck.position, SideCheckRadius);
     }
 
     private void PlaySoundBell()
