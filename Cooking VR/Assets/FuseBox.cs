@@ -84,8 +84,10 @@ public class FuseBox : MonoBehaviour
         if (CheckFuses())
         {
             LightsOutEventScript.EndEvent();
+
             return true;
         }
+
         return false;
     }
 
