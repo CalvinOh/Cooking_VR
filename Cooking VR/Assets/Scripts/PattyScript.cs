@@ -115,4 +115,12 @@ public class PattyScript : MonoBehaviour
     {
         AkSoundEngine.PostEvent("Burger_Cook_Stop", gameObject);
     }
+
+    public void BurnPatty()
+    {
+        currentCookAmount = maxCookAmount;
+        MyStackScript.ingredientName = OrderManager.Ingridents.BurntPatty;
+        currentStage = 4;
+        SwitchVisualObject();
+    }
 }

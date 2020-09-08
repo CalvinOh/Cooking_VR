@@ -13,6 +13,8 @@ public class StoveScript : MonoBehaviour
     [SerializeField]
     private GameObject Fire;
 
+    private PattyScript CurrentPattyOnStove;
+
     private void Start()
     {
         CurrentPanOnStove = null;
@@ -27,15 +29,36 @@ public class StoveScript : MonoBehaviour
             if(StoveIsOn)
             CurrentPanOnStove.StartCooking();
         }
+        else if (other.CompareTag("Patty"))
+        {
+            StopAllCoroutines();
+            CurrentPattyOnStove = other.GetComponent<PattyScript>();
+            StartCoroutine(BurnPatty());
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Pan"))
         {
-            
+
             CurrentPanOnStove.StopCooking();
             CurrentPanOnStove = null;
+        }
+        else if (other.CompareTag("Patty"))
+        {
+            CurrentPattyOnStove = null;
+        }
+
+    }
+
+    private IEnumerator BurnPatty()
+    {
+        PattyScript holder = CurrentPattyOnStove;
+        yield return new WaitForSeconds(2f);
+        if (CurrentPattyOnStove == holder)
+        {
+            holder.BurnPatty();
         }
     }
 
