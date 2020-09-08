@@ -173,6 +173,7 @@ MonoBehaviour:
   isCutting: 0
   cutTime: 0
   nextCut: 0
+  cutOnion: {fileID: 0}
 --- !u!114 &8351917765846160167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,8 +366,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2213591181932911725}
-  m_LocalRotation: {x: 0.03132263, y: -0.96287227, z: -0.02020128, w: -0.2673718}
-  m_LocalPosition: {x: 0.8992696, y: 3.4208686, z: -2.33997}
+  m_LocalRotation: {x: -0.34154314, y: 0.630143, z: -0.5688179, w: -0.40337864}
+  m_LocalPosition: {x: -0.38613766, y: 2.834588, z: -1.4586351}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 2144559456994467131}
@@ -431,7 +432,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

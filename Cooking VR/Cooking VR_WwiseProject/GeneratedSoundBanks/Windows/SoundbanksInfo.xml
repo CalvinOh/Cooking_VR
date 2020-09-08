@@ -61,6 +61,38 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="1126494853" Name="Flashlight_Off" ObjectPath="\Events\Default Work Unit\Flashlight_Off" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.152063">
+					<IncludedMemoryFiles>
+						<File Id="148436918" Language="SFX">
+							<ShortName>sx_flashlight_off.wav</ShortName>
+							<Path>SFX\sx_flashlight_off_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2033671033" Name="Flashlight_On" ObjectPath="\Events\Default Work Unit\Flashlight_On" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.152063">
+					<IncludedMemoryFiles>
+						<File Id="357264130" Language="SFX">
+							<ShortName>sx_flashlight_on.wav</ShortName>
+							<Path>SFX\sx_flashlight_on_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2724689895" Name="Fuze_Wrong" ObjectPath="\Events\Default Work Unit\Fuze_Wrong" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.255805" DurationMax="0.298254">
+					<IncludedMemoryFiles>
+						<File Id="42084411" Language="SFX">
+							<ShortName>sx_fuze_wrong_3.wav</ShortName>
+							<Path>SFX\sx_fuze_wrong_3_10C4C929.wem</Path>
+						</File>
+						<File Id="418125769" Language="SFX">
+							<ShortName>sx_fuze_wrong_1.wav</ShortName>
+							<Path>SFX\sx_fuze_wrong_1_10C4C929.wem</Path>
+						</File>
+						<File Id="662773377" Language="SFX">
+							<ShortName>sx_fuze_wrong_2.wav</ShortName>
+							<Path>SFX\sx_fuze_wrong_2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="822788948" Name="Gianna_Clap" ObjectPath="\Events\Default Work Unit\Gianna_Clap" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.143446" DurationMax="0.152063">
 					<IncludedMemoryFiles>
 						<File Id="336770053" Language="SFX">
@@ -74,50 +106,6 @@
 						<File Id="1060264638" Language="SFX">
 							<ShortName>sx_clap_2.wav</ShortName>
 							<Path>SFX\sx_clap_2_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1251402355" Name="Grab_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Grab_Bottle_Glass" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.240295" DurationMax="0.507029">
-					<IncludedMemoryFiles>
-						<File Id="141457056" Language="SFX">
-							<ShortName>sx_int_glass_bottle_grab_4.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_grab_4_10C4C929.wem</Path>
-						</File>
-						<File Id="657838990" Language="SFX">
-							<ShortName>sx_int_glass_bottle_grab_5.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_grab_5_10C4C929.wem</Path>
-						</File>
-						<File Id="817823556" Language="SFX">
-							<ShortName>sx_int_glass_bottle_grab_3.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_grab_3_10C4C929.wem</Path>
-						</File>
-						<File Id="838495242" Language="SFX">
-							<ShortName>sx_int_glass_bottle_grab_2.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_grab_2_10C4C929.wem</Path>
-						</File>
-						<File Id="889619142" Language="SFX">
-							<ShortName>sx_int_glass_bottle_grab_1.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_grab_1_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1863953098" Name="Grab_Plate" ObjectPath="\Events\Default Work Unit\Grab_Plate" DurationType="OneShot" DurationMin="0.443042" DurationMax="0.689042">
-					<IncludedMemoryFiles>
-						<File Id="202225013" Language="SFX">
-							<ShortName>sx_int_plate_grab_1.wav</ShortName>
-							<Path>SFX\sx_int_plate_grab_1_10C4C929.wem</Path>
-						</File>
-						<File Id="716783425" Language="SFX">
-							<ShortName>sx_int_plate_grab_4.wav</ShortName>
-							<Path>SFX\sx_int_plate_grab_4_10C4C929.wem</Path>
-						</File>
-						<File Id="986648341" Language="SFX">
-							<ShortName>sx_int_plate_grab_2.wav</ShortName>
-							<Path>SFX\sx_int_plate_grab_2_10C4C929.wem</Path>
-						</File>
-						<File Id="999296791" Language="SFX">
-							<ShortName>sx_int_plate_grab_3.wav</ShortName>
-							<Path>SFX\sx_int_plate_grab_3_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -337,6 +325,35 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="3390569948" Name="Lightsout_End" ObjectPath="\Events\Default Work Unit\Lightsout_End" DurationType="OneShot" DurationMin="9.196417" DurationMax="9.196417">
+					<IncludedMemoryFiles>
+						<File Id="216537069" Language="SFX">
+							<ShortName>sx_event_lightsout_end.wav</ShortName>
+							<Path>SFX\sx_event_lightsout_end_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="422864511" Name="Lightsout_Start" ObjectPath="\Events\Default Work Unit\Lightsout_Start" DurationType="OneShot" DurationMin="9.204921" DurationMax="9.204921">
+					<IncludedMemoryFiles>
+						<File Id="7806239" Language="SFX">
+							<ShortName>sx_event_lightsout_start.wav</ShortName>
+							<Path>SFX\sx_event_lightsout_start_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1834722074" Name="Oil_Fry_Start" ObjectPath="\Events\Default Work Unit\Oil_Fry_Start" MaxAttenuation="3.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="46855837" Language="SFX">
+							<ShortName>sx_oilfryer_start.wav</ShortName>
+							<Path>SFX\sx_oilfryer_start_10C4C929.wem</Path>
+						</File>
+						<File Id="491930404" Language="SFX">
+							<ShortName>sx_oilfryer_loop.wav</ShortName>
+							<Path>SFX\sx_oilfryer_loop_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3907856562" Name="Oil_Fry_Stop" ObjectPath="\Events\Default Work Unit\Oil_Fry_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="108253935" Language="SFX">
@@ -1073,22 +1090,6 @@
 						<File Id="145439059" Language="SFX">
 							<ShortName>sx_item_teleport.wav</ShortName>
 							<Path>SFX\sx_item_teleport_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="630201347" Name="Timer_Beep" ObjectPath="\Events\Default Work Unit\Timer_Beep" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.152063">
-					<IncludedMemoryFiles>
-						<File Id="535249554" Language="SFX">
-							<ShortName>sx_timer_beep_standard.wav</ShortName>
-							<Path>SFX\sx_timer_beep_standard_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="1679284313" Name="Timer_GainTime" ObjectPath="\Events\Default Work Unit\Timer_GainTime" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="0.564263" DurationMax="0.564263">
-					<IncludedMemoryFiles>
-						<File Id="616589309" Language="SFX">
-							<ShortName>sx_timer_gaintime.wav</ShortName>
-							<Path>SFX\sx_timer_gaintime_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

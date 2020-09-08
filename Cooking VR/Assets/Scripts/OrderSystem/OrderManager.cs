@@ -14,6 +14,7 @@ public class OrderManager : MonoBehaviour
         public float TimeIssued;
         public float TimeExpected;
         public List<Ingridents> Ingredents;
+        public List<Sides> OrderSides;
     }
 
     public class FinishedOrder
@@ -26,6 +27,9 @@ public class OrderManager : MonoBehaviour
         public int IncorrectPlacement;
         public int ExtraItems;
         public int MissingItems;
+        public int SidesScore;
+        public int ExtraSides;
+        public int MissingSides;
         public string Notes;
         public Order OriginalOrder;
 
@@ -47,8 +51,20 @@ public class OrderManager : MonoBehaviour
         TopBun = 12,
         BottomBun = 13,
         Plate = 14,
+        OnionRing = 15,
+        Lettuce = 16,
+        OnionRaw = 17,
+        Fries = 18
 
     }
+
+    public enum Sides
+    {
+        Fries,
+        OnionRings,
+    }
+
+
 
     private OrderCheck OrderChecker = new OrderCheck();
     private OrderSpawn OrderSpawner = new OrderSpawn();

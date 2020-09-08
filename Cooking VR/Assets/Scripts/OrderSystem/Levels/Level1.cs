@@ -10,15 +10,14 @@ public class Level1 : ILevels
 
         //burger 1
         List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
+        List<OrderManager.Sides> TempSides = new List<OrderManager.Sides>();
 
         TempBurger.Add(OrderManager.Ingridents.TopBun);
         TempBurger.Add(OrderManager.Ingridents.Cheese);
         TempBurger.Add(OrderManager.Ingridents.MediumPatty);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(2);
-        PredeterminedOrders.Add(TempBurger);
-
+        AddOrder(2,TempBurger, TempSides);
         //burger 2
         
         TempBurger = new List<OrderManager.Ingridents>();
@@ -28,8 +27,7 @@ public class Level1 : ILevels
         TempBurger.Add(OrderManager.Ingridents.MediumPatty);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(10);
-        PredeterminedOrders.Add(TempBurger);
+        AddOrder(10,TempBurger, TempSides);
 
         //burger 3
         TempBurger = new List<OrderManager.Ingridents>();
@@ -39,8 +37,7 @@ public class Level1 : ILevels
         TempBurger.Add(OrderManager.Ingridents.RarePatty);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(15);
-        PredeterminedOrders.Add(TempBurger);
+        AddOrder(15,TempBurger, TempSides);
 
         //burger 2
         TempBurger = new List<OrderManager.Ingridents>();
@@ -51,9 +48,8 @@ public class Level1 : ILevels
         TempBurger.Add(OrderManager.Ingridents.WellDonePatty);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
 
-        base.WaitTimes.Add(20);
-        PredeterminedOrders.Add(TempBurger);
+        AddOrder(20,TempBurger, TempSides);
 
-    
+
     }
 }

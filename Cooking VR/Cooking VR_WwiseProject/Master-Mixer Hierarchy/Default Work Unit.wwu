@@ -42,6 +42,29 @@
 								</Property>
 							</PropertyList>
 						</Bus>
+						<Bus Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music &amp; Environment" ID="{955A7B93-0ABE-4E7A-BBB6-EC6F98E89023}"/>
+									<DuckingParam>
+										<Volume>-4</Volume>
+										<FadeInTime>0.5</FadeInTime>
+										<FadeOutTime>0.5</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+								<DuckItem>
+									<BusRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}"/>
+									<DuckingParam>
+										<Volume>-4</Volume>
+										<FadeInTime>0.5</FadeInTime>
+										<FadeOutTime>0.5</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="Music &amp; Environment" ID="{955A7B93-0ABE-4E7A-BBB6-EC6F98E89023}"/>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

@@ -55,7 +55,7 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         //if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
         //{
@@ -63,7 +63,7 @@ public abstract class CookableFood : MonoBehaviour
         //}
     }
 
-    public void StartCook()
+    virtual public void StartCook()
     {
         currentlyCooking = true;
         // play sound?
@@ -72,7 +72,9 @@ public abstract class CookableFood : MonoBehaviour
     public void stopCook()
     {
         currentlyCooking = false;
+
         // stop play sound?
+
     }
 
     protected virtual void AssignStageRefs()
@@ -80,7 +82,7 @@ public abstract class CookableFood : MonoBehaviour
         this.stages = (byte)VisualObjects.Count;
     }
 
-    protected void SwitchVisualObject()
+    virtual protected void SwitchVisualObject()
     {
         foreach (GameObject VO in VisualObjects)
         {
@@ -88,6 +90,4 @@ public abstract class CookableFood : MonoBehaviour
         }
         VisualObjects[currentStage].SetActive(true);
     }
-
-
 }

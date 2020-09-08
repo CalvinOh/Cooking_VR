@@ -20,19 +20,8 @@ public class CharacterTriggers : MonoBehaviour
     //this is the buffer that will be randomized between 20-35 seconds for when idle VO will be spoken
     private float VOBuffer;
 
-    [SerializeField]
-    [Tooltip("Upper and Lower bounds for time between Gianna's Dialogue, in seconds.")]
-    private int maxVOBuffer, minVOBuffer;
-
-
     //stores last time a line was spoken and also adds the VOBuffer to get the time the next line will be spoken.
-    [SerializeField]
-    [Tooltip("Initial Dialogue Buffer")]
     private float VOTimer;
-
-    [SerializeField]
-    [Tooltip("Average length of a voice line, in seconds.")]
-    private float avgLength;
 
     //this shall be the queue of the dialogue that is to be spoken.
     private List<int> VOQueue = new List<int>();
@@ -66,7 +55,7 @@ public class CharacterTriggers : MonoBehaviour
 
     private void IdleDialogue()
     {
-        int rndLine = rnd.Next(0, 9);
+        int rndLine = rnd.Next(0, 5);
         //adds a random voice line to be played at the end of the queue, if something else more important has come up to be mentioned than it shall be inserted at the beginning of VOQueue.
         VOQueue.Add(rndLine); //0 through 5 are lines that require no prerequisite to be spoken.
         switch (VOQueue[0])
@@ -91,20 +80,26 @@ public class CharacterTriggers : MonoBehaviour
                 VOTrigger.Invoke("Play_vx_j_5", 0);
                 break;
             case 6:
+                // when a bad move is made
+                VOTrigger.Invoke("Play_vx_b_6", 0);
+                break;
+            case 7:
+                // when a bad move is made
+                VOTrigger.Invoke("Play_vx_b_7", 0);
+                MyAnimator.PlayDisappointed();
+                break;
+            case 8:
+                // when a good move is made
+                VOTrigger.Invoke("Play_vx_h_1", 0);
+                MyAnimator.Face.Smile(4.5f, 70);
+                break;
+            case 9:
+                // when a good move is made
                 VOTrigger.Invoke("Play_vx_h_2", 0);
                 MyAnimator.Face.Smile(4.5f, 70);
                 break;
-            case 7:
-                VOTrigger.Invoke("Play_vx_m_2", 0);
-                break;
-            case 8:
-                VOTrigger.Invoke("Play_vx_m_4", 0);
-                break;
-            case 9:
-                VOTrigger.Invoke("Play_vx_l_1", 0);
-                break;
             case 10:
-                // when the place is messy, needs to be implemented
+                // when the place is messy
                 VOTrigger.Invoke("Play_vx_i_3", 0);
                 MyAnimator.Face.Question(4.5f, 100);
                 break;
@@ -116,29 +111,20 @@ public class CharacterTriggers : MonoBehaviour
                 MyAnimator.Face.Neutral(4.5f, 100);
                 break;
             case 12:
-                //Dropped Knife
-                VOTrigger.Invoke("Play_vx_b_6", 0);
+                // when the top bun is stacked
+                VOTrigger.Invoke("Play_vx_i_7", 0);
                 break;
             case 13:
                 // when a new ticket spawns
-                int i = rnd.Next(0, 1);
-                if (i == 0)
-                    VOTrigger.Invoke("Play_vx_i_9", 0);
-                else
-                    VOTrigger.Invoke("Play_vx_m_1",0);
+                VOTrigger.Invoke("Play_vx_i_9", 0);
                 break;
-            case 14:
-                VOTrigger.Invoke("Play_vx_m_3", 0);
-                //when the order is running late, needs to be implemented
-                break;
-
         }
         VOQueue.RemoveAt(0);
     }
 
     private void AddBuffer(float extraTime)
     {
-        VOBuffer = rnd.Next(minVOBuffer, maxVOBuffer);
+        VOBuffer = rnd.Next(20, 35);
         VOTimer = Time.time + VOBuffer + extraTime;
     }
 
@@ -174,32 +160,31 @@ public class CharacterTriggers : MonoBehaviour
     {
         if (!isTutorialScene)
         {
-            float rndLine = rnd.Next(0, 3);
+            float rndLine = rnd.Next(0, 2);
             if (isEarly)
             {
                 VOTrigger.Invoke("Play_vx_g_1", continuousBuffer);
-                continuousBuffer += avgLength;
+                continuousBuffer += 5;
             }
             else if (isLate)
             {
                 VOTrigger.Invoke("Play_vx_f_1", continuousBuffer);
-                continuousBuffer += avgLength;
+                continuousBuffer += 5;
             }
             if (isRaw)
             {
                 MyAnimator.PlayAngry(continuousBuffer);
                 VOTrigger.Invoke("Play_vx_b_4", continuousBuffer);
-                continuousBuffer += avgLength;
+                continuousBuffer += 5;
             }
             else if (isBurnt)
             {
                 MyAnimator.PlayAngry(continuousBuffer);
                 VOTrigger.Invoke("Play_vx_b_3", continuousBuffer);
-                continuousBuffer += avgLength;
+                continuousBuffer += 5;
             }
             if (grade == 0)
             {
-                continuousBuffer += avgLength;
                 switch (rndLine)
                 {
                     case 0:
@@ -214,15 +199,10 @@ public class CharacterTriggers : MonoBehaviour
                         VOTrigger.Invoke("Play_vx_e_3", continuousBuffer);
                         MyAnimator.PlaySassy(continuousBuffer);
                         break;
-                    case 3:
-                        VOTrigger.Invoke("Play_vx_b_7", 0);
-                        MyAnimator.PlayDisappointed();
-                        break;
                 }
             }
             else if (grade == 1)
             {
-                continuousBuffer += avgLength;
                 switch (rndLine)
                 {
                     case 0:
@@ -235,14 +215,10 @@ public class CharacterTriggers : MonoBehaviour
                     case 2:
                         VOTrigger.Invoke("Play_vx_c_3", continuousBuffer);
                         break;
-                    case 3:
-                        VOTrigger.Invoke("Play_vx_i_7", 0); //Might switch Take later
-                        break;
                 }
             }
             else if (grade == 2)
             {
-                continuousBuffer += avgLength;
                 switch (rndLine)
                 {
                     case 0:
@@ -255,13 +231,12 @@ public class CharacterTriggers : MonoBehaviour
                         break;
                     case 2:
                         VOTrigger.Invoke("Play_vx_d_3", continuousBuffer);
-                        break;
-                    case 3:
-                        VOTrigger.Invoke("Play_vx_h_1", 0);
-                        MyAnimator.Face.Smile(4.5f, 70);
+
                         break;
                 }
             }
+
+
 
             //this is where the lines will be sequenced and said in the order we desire. if it's early/late then raw or burnt and finally the grade.
             AddBuffer(continuousBuffer);
@@ -271,29 +246,15 @@ public class CharacterTriggers : MonoBehaviour
 
     private void OrderSpawned(bool obj)
     {
-        if(!VOQueue.Contains(13))
-            VOQueue.Insert(0, 13);
+        VOQueue.Insert(0, 9);
     }
 
-    private void KnifeDrop(bool obj)
-    {
-        if (!VOQueue.Contains(12))
-            VOQueue.Insert(0, 12);
-    }
-
-    private void Idle(bool obj)
-    {
-        if (!VOQueue.Contains(11))
-            VOQueue.Insert(0, 11);
-    }
 
     private void OnEnable()
     {
         OrderCheck.giveToGianna += RecieveFinalBurgerParts;
         OrderCheck.orderComplete += BurgerComplete;
         OrderSpawn.OrderSpawnedEvent += OrderSpawned;
-        OutOfZoneRespawn.KnifeDrop += KnifeDrop;
-        IdleCheck.Idle += Idle;
     }
 
     private void OnDisable()
@@ -301,7 +262,5 @@ public class CharacterTriggers : MonoBehaviour
         OrderCheck.giveToGianna -= RecieveFinalBurgerParts;
         OrderCheck.orderComplete -= BurgerComplete;
         OrderSpawn.OrderSpawnedEvent -= OrderSpawned;
-        OutOfZoneRespawn.KnifeDrop -= KnifeDrop;
-        IdleCheck.Idle -= Idle;
     }
 }

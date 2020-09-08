@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{84395917-4692-4544-A5FD-F66E5DE94F33}" SchemaVersion="97">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{84395917-4692-4544-A5FD-F66E5DE94F33}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{84395917-4692-4544-A5FD-F66E5DE94F33}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="New Soundcaster Session" ID="{27EC5BC0-070E-4409-A225-FA104E02D45B}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Oil_Fry_Start" ID="{0A60D26E-D0C3-490E-9770-BCA89557825E}" WorkUnitID="{95409A04-03F1-43C4-BF41-898D997BDD57}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Burger_Cook_Start" ID="{25BF5F49-CBE0-49DF-B4AF-F1C6A326EE7C}" WorkUnitID="{95409A04-03F1-43C4-BF41-898D997BDD57}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Oil_Fry_Stop" ID="{30DEA537-3B5A-4932-88E5-EB3A61824FC9}" WorkUnitID="{95409A04-03F1-43C4-BF41-898D997BDD57}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Burger_Cook_Stop" ID="{039FDDBF-DB14-4765-84F6-1806D6163429}" WorkUnitID="{95409A04-03F1-43C4-BF41-898D997BDD57}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="GameParameterIntensity" ID="{10CAFFE5-0DBC-41A8-B9F3-FC1DF08F2E04}"/>
+							<Value>1</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_Master" ID="{FBC3131F-BC8F-43BA-961A-146E61792E70}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_Music" ID="{0F938D4A-2D13-4ADE-A315-DE0B8F365D1C}"/>
+							<Value>50</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="SFX_Volume" ID="{E1C39B7E-E48D-4E85-88B3-A0CD43584F73}"/>
+							<Value>49.861</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Level_1" ID="{4E7F316C-B27C-4209-8AB0-8395AC865741}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>
