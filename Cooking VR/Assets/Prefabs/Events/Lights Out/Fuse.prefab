@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 3220973756738321509}
   - component: {fileID: 7451850702944222352}
   - component: {fileID: 3220973756738321508}
+  - component: {fileID: 6096806048655475682}
   m_Layer: 0
   m_Name: Fuse
   m_TagString: Untagged
@@ -296,7 +297,7 @@ SphereCollider:
   m_GameObject: {fileID: 5057551610994360894}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.06
   m_Center: {x: 0, y: 0, z: 0}
@@ -436,6 +437,20 @@ MonoBehaviour:
   highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
+--- !u!136 &6096806048655475682
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057551610994360894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.015
+  m_Height: 0.099
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6229906136967600609
 GameObject:
   m_ObjectHideFlags: 0
