@@ -41,7 +41,7 @@ public class HighScoreDisplayer : MonoBehaviour
         }
         catch(Exception e)
         {
-            readNums = new string[0];
+            readNums = new string[levelTextBoxes.Length];
             set = false;
         }
 
