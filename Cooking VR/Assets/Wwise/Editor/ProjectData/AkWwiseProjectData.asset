@@ -24,8 +24,21 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a17dab3cd2aa894baaacc9e1f94ac24c
     GuidInternal: 
-    m_lastTime: -8586040080408289656
+    m_lastTime: -8586021021904634917
     List:
+    - name: Kitchen_Verb
+      guid: 584e3af2b1f6e440ac58cc55ba73ef1f
+      id: 3155437225
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      - ElementName: Music & Environment
+        ObjectType: 2
+      - ElementName: Kitchen_Verb
+        ObjectType: 1
+      Path: Default Work Unit\Master Audio Bus\Music & Environment\Kitchen_Verb
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -73,7 +86,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586032236782182178
+    m_lastTime: -8586021039896908901
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -89,7 +102,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586033933490423706
+    m_lastTime: -8586021042736201999
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -259,18 +272,6 @@ MonoBehaviour:
       maxAttenuation: 3
       maxDuration: 0.522834
       minDuration: 0.409086
-    - name: Impact_Meat
-      guid: a79b4b1d2d9b614d9f4b42087331926d
-      id: 3360486203
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Impact_Meat
-        ObjectType: 3
-      Path: Default Work Unit\Impact_Meat
-      maxAttenuation: 3
-      maxDuration: 0.288396
-      minDuration: 0.288396
     - name: Impact_Mug
       guid: 79aee0e3f91e2f43be9b20d8e81e6ffd
       id: 1180447715
@@ -403,6 +404,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_sx_lettuce_impact
+      guid: 34d751f57ec5ff43bfde7accea49c5f6
+      id: 4069198885
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_sx_lettuce_impact
+        ObjectType: 3
+      Path: Default Work Unit\Play_sx_lettuce_impact
+      maxAttenuation: 3
+      maxDuration: 0.288396
+      minDuration: 0.288396
     - name: Play_vx_a_1
       guid: 9782f120b836f84f95e01d835ac75fb5
       id: 1603068616
@@ -1383,18 +1396,6 @@ MonoBehaviour:
       maxAttenuation: 5
       maxDuration: 6.313107
       minDuration: 6.313107
-    - name: Pour_Bottle_Glass
-      guid: ac06c6ca3265244794982ca9d5134534
-      id: 3025511663
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Pour_Bottle_Glass
-        ObjectType: 3
-      Path: Default Work Unit\Pour_Bottle_Glass
-      maxAttenuation: 0
-      maxDuration: 0.278526
-      minDuration: 0.152063
     - name: Stack
       guid: 9d5fad1e159ddc42b118de4e3f01296e
       id: 996591275
@@ -1486,7 +1487,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3d6363d5ce60a041ade2b6e09d2dff36
     GuidInternal: 
-    m_lastTime: -8586040080422332832
+    m_lastTime: -8586027885086617273
     List:
     - name: GameParameterIntensity
       guid: e5ffca10bc0da841b9f3fc1df08f2e04
@@ -1506,6 +1507,24 @@ MonoBehaviour:
       - ElementName: SFX_Volume
         ObjectType: 13
       Path: Default Work Unit\SFX_Volume
+    - name: Volume_Master
+      guid: 1f13c3fb8fbcba43961a146e61792e70
+      id: 3695994288
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Master
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Master
+    - name: Volume_Music
+      guid: 4a8d930f132dde4aa315de0b8f365d1c
+      id: 3891337659
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_Music
+        ObjectType: 13
+      Path: Default Work Unit\Volume_Music
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPath: Default Work Unit
@@ -1560,7 +1579,10 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Cooking VR_WwiseProject
-  - /Cooking VR_WwiseProject/Events
-  - /Cooking VR_WwiseProject/Events/Default Work Unit
+  - /Cooking VR_WwiseProject/Auxiliary Busses
+  - /Cooking VR_WwiseProject/Auxiliary Busses/Default Work Unit
+  - /Cooking VR_WwiseProject/Auxiliary Busses/Default Work Unit/Master Audio Bus
+  - /Cooking VR_WwiseProject/Auxiliary Busses/Default Work Unit/Master Audio Bus/Music
+    & Environment
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

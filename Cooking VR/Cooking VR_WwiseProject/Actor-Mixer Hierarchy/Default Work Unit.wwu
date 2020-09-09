@@ -3,7 +3,7 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{77186F3F-5F61-4F97-9717-AFB5402A314F}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="sx_meat_impact_1" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" ShortID="1049513861">
+				<Sound Name="sx_lettuce_impact" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" ShortID="1049513861">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="MaxSoundPerInstance" Type="int16">
@@ -18,6 +18,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -63,6 +64,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-12</Value>
@@ -149,6 +151,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -284,141 +287,6 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
-				<RandomSequenceContainer Name="pours_bottle_glass" ID="{18AB7BED-1677-43A3-903A-9B0BCB5D3F59}" ShortID="585518877">
-					<PropertyList>
-						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-						</Property>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="sx_int_glass_bottle_pour_1" ID="{5F69A835-9AD2-4BF3-9EB1-417EE008C22F}" ShortID="422404875">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_1" ID="{50830F3D-D635-4341-8C4B-92702EE4E34B}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="1051743148"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_1" ID="{50830F3D-D635-4341-8C4B-92702EE4E34B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_2" ID="{BD01DFF9-E3C2-4B22-9561-1219DBB2D395}" ShortID="645712838">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_2" ID="{0EB6A5D8-6D6A-495D-8996-3B77E53DAD46}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="654708033"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_2" ID="{0EB6A5D8-6D6A-495D-8996-3B77E53DAD46}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_3" ID="{95C667E4-6A03-49EA-89A3-48B59B4F177D}" ShortID="429921660">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_3" ID="{F958E8F7-E657-4504-8FEF-008733186D23}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="242308609"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_3" ID="{F958E8F7-E657-4504-8FEF-008733186D23}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_4" ID="{4FCDCC76-466A-414A-AB94-8A71F37C55B8}" ShortID="211673113">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_4" ID="{2BC54B4D-4229-46D1-9ECE-30EC88172128}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="406437937"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_4" ID="{2BC54B4D-4229-46D1-9ECE-30EC88172128}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_5" ID="{DD262F9C-C8AF-4F8E-8D33-F88DD38D08C5}" ShortID="86379564">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_5" ID="{EA4593C7-9105-4F9E-9FCD-B63B29E254F2}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_5.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="794740313"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_5" ID="{EA4593C7-9105-4F9E-9FCD-B63B29E254F2}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="impacts_bottle_plastic" ID="{AB1FD09F-BA54-4520-A878-32C7C7A18960}" ShortID="464529359">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -433,6 +301,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -549,6 +418,7 @@
 				<Sound Name="sx_bell" ID="{C5617843-32DE-4970-AF82-901DDA2C2CFB}" ShortID="859205109">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-6</Value>
@@ -612,6 +482,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -715,6 +586,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -819,6 +691,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -952,6 +825,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1038,6 +912,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1153,6 +1028,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1191,6 +1067,7 @@
 				<Sound Name="sx_stove_ignite" ID="{D48DC43A-C73C-4FF6-94EC-D44D4CACD4BE}" ShortID="725189082">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-2</Value>
@@ -1282,6 +1159,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1369,6 +1247,7 @@
 						<Sound Name="vx_a_1" ID="{BA9A1FB9-ADD8-4FF1-9C82-A651D5D5EB57}" ShortID="206311348">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1397,6 +1276,7 @@
 						<Sound Name="vx_a_5" ID="{4870B7B6-8193-4C84-9E14-FE38B13B2059}" ShortID="161393641">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1425,6 +1305,7 @@
 						<Sound Name="vx_b_1" ID="{A3F8A189-3862-4B87-BEC8-24F889C524B3}" ShortID="608521518">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1453,6 +1334,7 @@
 						<Sound Name="vx_b_2" ID="{16B311C6-0337-4283-9A94-117F932488EE}" ShortID="3279421">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1481,6 +1363,7 @@
 						<Sound Name="vx_b_3" ID="{E93E38C4-7B60-4AB8-8CAE-BE88AE5DD9C1}" ShortID="500677816">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1509,6 +1392,7 @@
 						<Sound Name="vx_b_4" ID="{4E702B9D-3C0A-40DA-A508-E148E45F86FB}" ShortID="1009677570">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1537,6 +1421,7 @@
 						<Sound Name="vx_b_5" ID="{59B2CA5C-9561-4C9D-B861-5A75B0B50F3D}" ShortID="193638784">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1565,6 +1450,7 @@
 						<Sound Name="vx_b_6" ID="{D45B5704-D9BC-4957-98E8-AC52FA0702B5}" ShortID="730471960">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1593,6 +1479,7 @@
 						<Sound Name="vx_b_7" ID="{C2C8EDBD-D0DD-4D88-9B54-C1D4C3323A05}" ShortID="344207999">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1621,6 +1508,7 @@
 						<Sound Name="vx_c_1" ID="{B8B60B13-1055-4D7F-914F-6B0AFB3444D4}" ShortID="280677454">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1649,6 +1537,7 @@
 						<Sound Name="vx_c_2" ID="{AFA8DECB-64B6-4855-B249-14EE8EF3A483}" ShortID="860586782">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1677,6 +1566,7 @@
 						<Sound Name="vx_c_3" ID="{C6E86333-02A9-4265-B311-294E61E05499}" ShortID="1064470029">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1705,6 +1595,7 @@
 						<Sound Name="vx_d_1" ID="{983A8AAC-C35B-48C7-8640-1995C0973E49}" ShortID="103070126">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1733,6 +1624,7 @@
 						<Sound Name="vx_d_2" ID="{F68F8235-F12E-43B9-96FD-AE5EB7132098}" ShortID="291947806">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1761,6 +1653,7 @@
 						<Sound Name="vx_d_3" ID="{ABCB6714-7D61-445B-81ED-B3C5DA28DF87}" ShortID="242311803">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1789,6 +1682,7 @@
 						<Sound Name="vx_e_1" ID="{6E1A8FBF-0AF6-4745-B774-A4DA4961E0FF}" ShortID="610507906">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-4</Value>
@@ -1822,6 +1716,7 @@
 						<Sound Name="vx_e_2" ID="{42092731-E727-431F-9665-CB5BC07ADBBA}" ShortID="279881820">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1850,6 +1745,7 @@
 						<Sound Name="vx_e_3" ID="{4EAE6FF7-B7A8-47AE-B246-FEB5D201FC96}" ShortID="478575093">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1878,6 +1774,7 @@
 						<Sound Name="vx_f_1" ID="{E6BB3B97-5BF7-4BA1-915C-F1EC6519FA03}" ShortID="231817509">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1906,6 +1803,7 @@
 						<Sound Name="vx_f_2" ID="{8166B93D-FACE-4808-B203-4284DC088857}" ShortID="542535827">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1934,6 +1832,7 @@
 						<Sound Name="vx_g_1" ID="{9AB54853-A6F0-4ABF-9074-021998F4F54B}" ShortID="1047570436">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1962,6 +1861,7 @@
 						<Sound Name="vx_g_2" ID="{70593104-CF7F-4682-82BE-1FDA4D2EE12C}" ShortID="860296457">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -1990,6 +1890,7 @@
 						<Sound Name="vx_g_3" ID="{58FC814D-4FAC-4DF3-9FBE-966B2EBCA9D1}" ShortID="592473838">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2018,6 +1919,7 @@
 						<Sound Name="vx_h_1" ID="{8EF0B750-7225-4FE0-8D93-73B436D940E2}" ShortID="683064835">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2046,6 +1948,7 @@
 						<Sound Name="vx_h_2" ID="{0C809AD1-E6F9-46B5-B1EA-25BD700E1B8F}" ShortID="827030840">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2074,6 +1977,7 @@
 						<Sound Name="vx_i_1" ID="{E564125E-0D16-483A-89E1-E14317B5A4D9}" ShortID="164526498">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2102,6 +2006,7 @@
 						<Sound Name="vx_i_2" ID="{BCCEF235-9C96-4335-8F1E-BBD73A45F6AA}" ShortID="238701388">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2130,6 +2035,7 @@
 						<Sound Name="vx_i_3" ID="{41A758FF-B37D-49D6-9A00-FCA61B186500}" ShortID="789780700">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2158,6 +2064,7 @@
 						<Sound Name="vx_i_4" ID="{9BA81D13-A330-4E63-B71C-F88DFA5E6183}" ShortID="141571706">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2186,6 +2093,7 @@
 						<Sound Name="vx_l_1" ID="{8885E74D-49C2-42A2-89DF-4E90439D189B}" ShortID="158213034">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2214,6 +2122,7 @@
 						<Sound Name="vx_l_2" ID="{2105970E-7B1F-4F1E-8EE2-D9244AFF3020}" ShortID="663210945">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2242,6 +2151,7 @@
 						<Sound Name="vx_l_6" ID="{71AC4223-9006-4B41-86F0-B16714FBACC6}" ShortID="324909295">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2270,6 +2180,7 @@
 						<Sound Name="vx_l_8" ID="{1CC40B9A-82DB-4C25-9397-C9795A1AF888}" ShortID="796107608">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2298,6 +2209,7 @@
 						<Sound Name="vx_a_2_b" ID="{41D59312-23A7-4B8C-9ACF-C738B1C9211D}" ShortID="466963155">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2326,6 +2238,7 @@
 						<Sound Name="vx_a_3_b" ID="{56D79498-816F-44C0-BD66-104DA7EDEA6B}" ShortID="76196436">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2354,6 +2267,7 @@
 						<Sound Name="vx_a_4_b" ID="{2B11C7F8-F607-4952-A579-626A1234344E}" ShortID="341768484">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2382,6 +2296,7 @@
 						<Sound Name="vx_e_4" ID="{52C9BC77-3477-4805-BD14-E56742A04450}" ShortID="568087313">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2410,6 +2325,7 @@
 						<RandomSequenceContainer Name="vx_h_3" ID="{2FBBA016-619C-4486-9FF3-DA5B453D6554}" ShortID="86630712">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2472,6 +2388,7 @@
 						<RandomSequenceContainer Name="vx_i_5" ID="{91306734-27E3-4AD7-8149-BB6753BB5303}" ShortID="468180180">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2586,6 +2503,7 @@
 						<RandomSequenceContainer Name="vx_i_7" ID="{E7524622-8359-4E52-8300-DE5399FC3CEC}" ShortID="185442022">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2714,6 +2632,7 @@
 						<RandomSequenceContainer Name="vx_i_8" ID="{3E2077C2-D0CF-4036-88D5-96339194A22B}" ShortID="42083659">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2828,6 +2747,7 @@
 						<RandomSequenceContainer Name="vx_i_9" ID="{C69325E5-9B40-4232-950F-BA83E3716266}" ShortID="436662261">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -2942,6 +2862,7 @@
 						<RandomSequenceContainer Name="vx_j_1" ID="{EC3F5836-485C-48B3-B977-293547A6BE9F}" ShortID="488068251">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -3105,6 +3026,7 @@
 						<RandomSequenceContainer Name="vx_j_2" ID="{44785251-91FA-4825-AD60-0FAFA6D84E2A}" ShortID="651949468">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -3268,6 +3190,7 @@
 						<RandomSequenceContainer Name="vx_j_3" ID="{BE34B629-ACCB-4C3C-8674-837F0BC275AE}" ShortID="471698919">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-5</Value>
@@ -3416,6 +3339,7 @@
 						<RandomSequenceContainer Name="vx_j_4" ID="{BA0B8C22-A6EB-4E88-BE1C-0E656DF51C56}" ShortID="827532973">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -3557,6 +3481,7 @@
 						<RandomSequenceContainer Name="vx_j_5" ID="{6EBFB2EC-B029-4438-80AB-9448B7F8A388}" ShortID="948251561">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -3698,6 +3623,7 @@
 						<RandomSequenceContainer Name="vx_j_6" ID="{F46D63EE-1930-4467-9834-8E6B5098873C}" ShortID="966766594">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -3878,6 +3804,7 @@
 						<RandomSequenceContainer Name="vx_j_7" ID="{481DBFC6-247B-4B8D-9B34-BA380277EB06}" ShortID="727520529">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-2</Value>
@@ -4019,6 +3946,7 @@
 						<Sound Name="vx_l_3" ID="{BA7CDF26-568E-4C45-B301-A18481A8A3F1}" ShortID="943287396">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4047,6 +3975,7 @@
 						<Sound Name="vx_l_4" ID="{5BEF2263-E5A5-45A4-BEA3-17C997801868}" ShortID="972314066">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4075,6 +4004,7 @@
 						<Sound Name="vx_l_5" ID="{2A6DE6A3-FD4E-42F1-8461-EB7BE702BE16}" ShortID="848310598">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4103,6 +4033,7 @@
 						<Sound Name="vx_l_7" ID="{98CE83FF-03BD-4E19-8302-53CE28EA2007}" ShortID="383113457">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4131,6 +4062,7 @@
 						<Sound Name="vx_l_9" ID="{7A310D28-8A82-4AE3-8FFB-1798DA6D317C}" ShortID="746609746">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4159,6 +4091,7 @@
 						<Sound Name="vx_l_10" ID="{5DD3D1DF-B69E-44CF-A1CF-8E4A3A33DD98}" ShortID="486464884">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4187,6 +4120,7 @@
 						<Sound Name="vx_l_11" ID="{D22C2775-0943-43F1-95C5-69F2F8E65FF3}" ShortID="1025233144">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4215,6 +4149,7 @@
 						<Sound Name="vx_l_12" ID="{2D015B35-81B3-4F6E-8C28-1FAD597160C2}" ShortID="575996047">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4243,6 +4178,7 @@
 						<Sound Name="vx_l_13" ID="{D697E00B-ECC2-4201-909C-10C60E4A96DD}" ShortID="1018262128">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4271,6 +4207,7 @@
 						<Sound Name="vx_l_14" ID="{1237D8E5-BA4D-485C-BDDF-6AD70A87C062}" ShortID="281010311">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4299,6 +4236,7 @@
 						<Sound Name="vx_m_1" ID="{077F3E55-9EBE-499B-A9B3-AFA3E4BB8C67}" ShortID="470470169">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4327,6 +4265,7 @@
 						<Sound Name="vx_m_2" ID="{6D8D6CE8-A0C7-47E9-9987-90B8E263926C}" ShortID="1018772942">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4355,6 +4294,7 @@
 						<Sound Name="vx_m_3" ID="{2E627B10-F917-4A9C-967F-185E256B11A6}" ShortID="473339913">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4383,6 +4323,7 @@
 						<Sound Name="vx_m_4" ID="{32754FF9-7A72-4838-951F-6C88756437B9}" ShortID="963317759">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4411,6 +4352,7 @@
 						<Sound Name="vx_m_5" ID="{8DDF6DBA-C8FC-4B52-A895-FC9639113584}" ShortID="854416526">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4439,6 +4381,7 @@
 						<Sound Name="vx_m_6" ID="{F9F7EDEE-57D9-499A-8195-9E10F032C88E}" ShortID="200380891">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4467,6 +4410,7 @@
 						<Sound Name="vx_m_7" ID="{295C2A17-FFD0-434C-9EE2-91666C674B28}" ShortID="595011639">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4495,6 +4439,7 @@
 						<Sound Name="vx_m_8" ID="{03D09BFF-3772-442D-A489-E39B3AE2EA09}" ShortID="619980894">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4523,6 +4468,7 @@
 						<Sound Name="vx_m_9" ID="{E8A36A2A-B40A-4B37-A5EA-CF6718F0AB49}" ShortID="491964934">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4551,6 +4497,7 @@
 						<Sound Name="vx_m_10" ID="{525F0813-7854-4F58-9EC1-67DD59C34FC3}" ShortID="727988694">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4579,6 +4526,7 @@
 						<Sound Name="vx_m_11" ID="{73F1D29D-BE3A-4D94-8A6C-304C8AFD17C8}" ShortID="165853094">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -4758,6 +4706,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -4918,6 +4867,7 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
@@ -5043,6 +4993,7 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
@@ -5176,6 +5127,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-6</Value>
@@ -5295,6 +5247,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5406,6 +5359,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-4</Value>
@@ -5458,6 +5412,7 @@
 							</ModifierList>
 						</Property>
 						<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5560,6 +5515,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5704,6 +5660,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5821,6 +5778,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5932,6 +5890,7 @@
 				<Sound Name="sx_flashlight_off" ID="{1CD0292D-8179-41E3-8646-BBEF065C1D27}" ShortID="911827986">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -5960,6 +5919,7 @@
 				<Sound Name="sx_flashlight_on" ID="{C0F82475-D99D-46B8-977C-38B3AF04A32B}" ShortID="428992049">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -6038,6 +5998,7 @@
 				<RandomSequenceContainer Name="fuze_wrong" ID="{03FF5D52-4CC7-4848-809E-C66F3E5851AD}" ShortID="539380944">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -6129,6 +6090,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -6173,6 +6135,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>

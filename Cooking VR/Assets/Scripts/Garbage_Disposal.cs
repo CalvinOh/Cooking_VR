@@ -54,11 +54,9 @@ public class Garbage_Disposal : MonoBehaviour
                         Debug.Log("KNOW YOUR PLACE TRASH!");
                         DeleteItem(true);
                     }
-                }
-                    
+                }    
             }
         }
-        
     }
 
     void DeleteItem(bool isFull = false)

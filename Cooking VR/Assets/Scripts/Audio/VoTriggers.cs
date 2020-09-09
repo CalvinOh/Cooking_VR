@@ -117,7 +117,6 @@ public class VoTriggers : MonoBehaviour
     public AK.Wwise.Event wPlay_vx_m_11;
     // END OF EVENT DECLARATIONS //////////////////////////////////////////////////////////////
 
-
     void Start()
     {
         isSpeaking = false;
