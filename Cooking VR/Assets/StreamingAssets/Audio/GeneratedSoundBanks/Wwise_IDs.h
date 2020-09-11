@@ -109,7 +109,6 @@ namespace AK
         static const AkUniqueID PLAY_VX_M_9 = 2677424684U;
         static const AkUniqueID PLAY_VX_M_10 = 1569332892U;
         static const AkUniqueID PLAY_VX_M_11 = 1569332893U;
-        static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
         static const AkUniqueID STACK = 996591275U;
         static const AkUniqueID STOP_ALL_EXCEPT = 3016745319U;
         static const AkUniqueID STOVE_OFF = 1902865914U;
@@ -138,6 +137,8 @@ namespace AK
     {
         static const AkUniqueID GAMEPARAMETERINTENSITY = 964045659U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;
+        static const AkUniqueID VOLUME_MASTER = 3695994288U;
+        static const AkUniqueID VOLUME_MUSIC = 3891337659U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
