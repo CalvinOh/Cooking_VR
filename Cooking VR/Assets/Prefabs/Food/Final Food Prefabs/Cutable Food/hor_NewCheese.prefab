@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2624513895808835506}
-  - component: {fileID: 6114493969522971534}
   - component: {fileID: 569567595114835831}
   - component: {fileID: 156481293896947245}
   - component: {fileID: 3423944398698125867}
@@ -46,14 +45,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6114493969522971534
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 156481293896947244}
-  m_Mesh: {fileID: -3207889606529482681, guid: 271a3887e1581d34187b6e95f6508586, type: 3}
 --- !u!23 &569567595114835831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -317,7 +308,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,10 +477,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.01
@@ -573,7 +564,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -742,10 +733,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.014
@@ -829,7 +820,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -998,10 +989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
@@ -1085,7 +1076,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1254,10 +1245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
@@ -1341,7 +1332,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1510,10 +1501,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015
@@ -1597,7 +1588,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1766,10 +1757,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.014
@@ -1853,7 +1844,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2022,10 +2013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.009
@@ -2109,7 +2100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 963434bbbae922744a56e1dae3bd8dad, type: 2}
+  - {fileID: 2100000, guid: bd2d742ee2ce7a740ae0cf992a38be74, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2278,10 +2269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14e0ab44e8af644a81670834f10adc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parent: {fileID: 0}
+  StackParent: {fileID: 0}
   ChildrenGameObjects: []
   ingredientName: 11
-  IsMasterParent: 0
+  IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
   thickness: 0.015

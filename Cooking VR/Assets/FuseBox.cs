@@ -28,6 +28,7 @@ public class FuseBox : MonoBehaviour
 
         SetUpBox();
         MySlider = GetComponentInChildren<PowerBoxSlider>();
+        MyEventScript = FindObjectOfType<LightsOuts>();
     }
 
     private void SetUpBox()
@@ -81,6 +82,7 @@ public class FuseBox : MonoBehaviour
         if (CheckFuses())
         {
             LightsOutEventScript.EndEvent();
+
             return true;
         }
 
