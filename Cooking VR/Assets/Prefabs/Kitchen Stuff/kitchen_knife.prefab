@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 861876457}
   - component: {fileID: 4663960936234578987}
   - component: {fileID: 2261211030623014041}
-  - component: {fileID: 8921278809756735083}
+  - component: {fileID: 8747272950575900678}
   m_Layer: 0
   m_Name: kitchen_knife
   m_TagString: Item
@@ -308,36 +308,19 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &8921278809756735083
+--- !u!114 &8747272950575900678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1273475172883463189}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc6e6051cbd485540a1511f3a8049727, type: 3}
+  m_Script: {fileID: 11500000, guid: a2aabb2ddf1087640b75f5551a54d0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: d1bbb3b5
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0057e80888f3107498b6cb4d9327ae75,
-      type: 2}
-  useCallbacks: 0
-  Callbacks: []
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  eventIdInternal: 0
-  valueGuidInternal: 
-  m_callbackDataInternal: {fileID: 0}
+  WwiseEventName: 
 --- !u!1 &2076464806705708978
 GameObject:
   m_ObjectHideFlags: 0
