@@ -31,7 +31,7 @@ public class Garbage_Disposal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!garbage.Contains(other.gameObject))
+        if(!garbage.Contains(other.gameObject) && !other.CompareTag("Reverb Zone"))
         {
             garbage.Add(other.gameObject);
             //Debug.Log("Trash has entered the field");

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TemporarySfxMute : MonoBehaviour
 {
     // audio
-    // this script sets volume of collide-able objects to 0 for the first second after loading a level
+    // this script sets volume of collide-able objects & the reverb bus to 0 for the first second after loading a level
     // this avoids playing all collision sounds at once when the scene loads and objects detect their first collision with the environment
 
     [SerializeField]

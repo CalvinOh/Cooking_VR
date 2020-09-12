@@ -30,7 +30,6 @@ namespace AK
         static const AkUniqueID IMPACT_MUG = 1180447715U;
         static const AkUniqueID IMPACT_PAN = 1453273807U;
         static const AkUniqueID IMPACT_PLATE = 803254130U;
-        static const AkUniqueID IMPACT_SILVERWARE = 2540397042U;
         static const AkUniqueID IMPACT_SPATULA = 3180392800U;
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
         static const AkUniqueID LIGHTSOUT_END = 3390569948U;

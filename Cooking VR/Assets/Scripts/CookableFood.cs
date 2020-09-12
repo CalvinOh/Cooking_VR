@@ -66,15 +66,15 @@ public abstract class CookableFood : MonoBehaviour
     virtual public void StartCook()
     {
         currentlyCooking = true;
-        // play sound?
+        // sound triggers in CookablePatty/OnionRing scripts
     }
 
     public void stopCook()
     {
         currentlyCooking = false;
 
-        // stop play sound?
-
+        AkSoundEngine.PostEvent("Burger_Cook_Stop", gameObject);
+        AkSoundEngine.PostEvent("Oil_Fry_Stop", gameObject);
     }
 
     protected virtual void AssignStageRefs()

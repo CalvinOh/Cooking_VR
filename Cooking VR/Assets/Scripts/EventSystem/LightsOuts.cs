@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class LightsOuts : RandomEvent
 {
-
-
     [SerializeField]
     private List<GameObject> LightSources = new List<GameObject>();
 
@@ -45,7 +43,7 @@ public class LightsOuts : RandomEvent
         Box.TriggerEvent(Random.Range(0,AmountOfFusesThatCanBreak));
 
         //audio
-        AkSoundEngine.PostEvent("Lightsout_Start", null);
+        AkSoundEngine.PostEvent("Lightsout_Start", gameObject);
     }
 
     public override void EndEvent()
@@ -58,7 +56,7 @@ public class LightsOuts : RandomEvent
         CurrentlyActive = false;
 
         //audio
-        AkSoundEngine.PostEvent("Lightsout_End", null);
+        AkSoundEngine.PostEvent("Lightsout_End", gameObject);
     }
 
     public void ManualTrigger()
@@ -71,6 +69,6 @@ public class LightsOuts : RandomEvent
         CurrentlyActive = true;
 
         //audio
-        AkSoundEngine.PostEvent("Lightsout_Start", null);
+        AkSoundEngine.PostEvent("Lightsout_Start", gameObject);
     }
 }

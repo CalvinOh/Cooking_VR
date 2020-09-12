@@ -71,7 +71,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -960,17 +960,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Impact_Silverware" ID="{4769CBB5-6CA8-4C1C-A009-AAEA35D66F19}">
-					<ChildrenList>
-						<Action Name="" ID="{1EF4F7EF-E922-4D41-A8E0-FF6A432FD90D}" ShortID="772115611">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="impacts_silverware" ID="{8F286FBE-72D6-4090-85CC-95222A7BF74C}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Play_Music" ID="{E1CF99FD-8BCA-40E0-B4EB-31CC6ADAA79F}">
 					<ChildrenList>
 						<Action Name="" ID="{BD58C1D6-95BD-4BEC-863C-578CD2911A81}" ShortID="260383224">
@@ -1208,7 +1197,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">

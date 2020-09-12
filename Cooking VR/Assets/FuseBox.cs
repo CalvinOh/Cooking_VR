@@ -86,7 +86,9 @@ public class FuseBox : MonoBehaviour
             return true;
         }
 
-        // sound
+        // audio
+        AkSoundEngine.PostEvent("Fuze_Wrong", gameObject);
+
         return false;
     }
 
@@ -98,7 +100,9 @@ public class FuseBox : MonoBehaviour
                 return false;
         }
 
-        // sound come back on
+        //audio
+        AkSoundEngine.PostEvent("Lightsout_End", gameObject);
+
         return true;
     }
 }
