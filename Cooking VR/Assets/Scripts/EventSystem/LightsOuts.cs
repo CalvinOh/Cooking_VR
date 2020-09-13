@@ -42,7 +42,7 @@ public class LightsOuts : RandomEvent
 
         Box.TriggerEvent(Random.Range(0,AmountOfFusesThatCanBreak));
 
-        //audio
+        // audio
         AkSoundEngine.PostEvent("Lightsout_Start", gameObject);
     }
 
@@ -53,10 +53,14 @@ public class LightsOuts : RandomEvent
             a.SetActive(true);
         }
         RenderSettings.ambientLight = DefaultAmbientColor;
-        CurrentlyActive = false;
 
-        //audio
-        AkSoundEngine.PostEvent("Lightsout_End", gameObject);
+        // audio
+        if (CurrentlyActive)
+        {
+            AkSoundEngine.PostEvent("Lightsout_End", gameObject);
+        }
+
+        CurrentlyActive = false;
     }
 
     public void ManualTrigger()
@@ -68,7 +72,7 @@ public class LightsOuts : RandomEvent
         RenderSettings.ambientLight = LightsOutAmbientColor;
         CurrentlyActive = true;
 
-        //audio
+        // audio
         AkSoundEngine.PostEvent("Lightsout_Start", gameObject);
     }
 }

@@ -14,7 +14,6 @@ public class FuseBox : MonoBehaviour
 
     private LightsOuts LightsOutEventScript;
 
-
     public LightsOuts MyEventScript;
     private PowerBoxSlider MySlider;
 
@@ -39,8 +38,6 @@ public class FuseBox : MonoBehaviour
             NewFuse.GetComponent<Fuse>().SlotIn(a);
         }
     }
-         
-
 
     public void TriggerEvent(int BrokenFuseNum)
     {
@@ -99,9 +96,6 @@ public class FuseBox : MonoBehaviour
             if (!a.CheckFuse())
                 return false;
         }
-
-        //audio
-        AkSoundEngine.PostEvent("Lightsout_End", gameObject);
 
         return true;
     }
