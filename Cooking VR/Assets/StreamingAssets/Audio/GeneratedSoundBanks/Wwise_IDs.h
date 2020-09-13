@@ -37,6 +37,7 @@ namespace AK
         static const AkUniqueID OIL_FRY_START = 1834722074U;
         static const AkUniqueID OIL_FRY_STOP = 3907856562U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
+        static const AkUniqueID PLAY_SX_FUSE_INSERT = 3280746755U;
         static const AkUniqueID PLAY_SX_LETTUCE_IMPACT = 4069198885U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
         static const AkUniqueID PLAY_VX_A_2 = 1603068619U;
@@ -136,6 +137,7 @@ namespace AK
     {
         static const AkUniqueID GAMEPARAMETERINTENSITY = 964045659U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;
+        static const AkUniqueID VO_VOLUME = 2295491857U;
         static const AkUniqueID VOLUME_MASTER = 3695994288U;
         static const AkUniqueID VOLUME_MUSIC = 3891337659U;
     } // namespace GAME_PARAMETERS

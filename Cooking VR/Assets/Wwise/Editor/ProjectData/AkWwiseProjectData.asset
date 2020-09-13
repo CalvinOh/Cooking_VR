@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a17dab3cd2aa894baaacc9e1f94ac24c
     GuidInternal: 
-    m_lastTime: -8586017382823502408
+    m_lastTime: -8586015838551430645
     List:
     - name: Kitchen_Verb
       guid: 584e3af2b1f6e440ac58cc55ba73ef1f
@@ -86,7 +86,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586017431175203903
+    m_lastTime: -8586015867906015531
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -102,7 +102,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586017390855059188
+    m_lastTime: -8586015867308702097
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -392,6 +392,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_sx_fuse_insert
+      guid: e11a92e6186aee43891ad5d095c92150
+      id: 3280746755
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_sx_fuse_insert
+        ObjectType: 3
+      Path: Default Work Unit\Play_sx_fuse_insert
+      maxAttenuation: 3
+      maxDuration: 0.152073
+      minDuration: 0.152073
     - name: Play_sx_lettuce_impact
       guid: 34d751f57ec5ff43bfde7accea49c5f6
       id: 4069198885
@@ -1475,7 +1487,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3d6363d5ce60a041ade2b6e09d2dff36
     GuidInternal: 
-    m_lastTime: -8586027885086617273
+    m_lastTime: -8586015810831018000
     List:
     - name: GameParameterIntensity
       guid: e5ffca10bc0da841b9f3fc1df08f2e04
@@ -1495,6 +1507,15 @@ MonoBehaviour:
       - ElementName: SFX_Volume
         ObjectType: 13
       Path: Default Work Unit\SFX_Volume
+    - name: VO_Volume
+      guid: 74ae32493d5a0241bbe7c15654a47ebd
+      id: 2295491857
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: VO_Volume
+        ObjectType: 13
+      Path: Default Work Unit\VO_Volume
     - name: Volume_Master
       guid: 1f13c3fb8fbcba43961a146e61792e70
       id: 3695994288
@@ -1567,5 +1588,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Cooking VR_WwiseProject
+  - /Cooking VR_WwiseProject/Events
+  - /Cooking VR_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
