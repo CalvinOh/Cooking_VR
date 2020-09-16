@@ -6,8 +6,9 @@ using UnityEngine;
 public abstract class CookableFood : MonoBehaviour
 {
     protected bool currentlyCooking;
+    protected bool burnt = false;
     public float cookedTime = 0;
-    private ManualStack manualStack;
+    protected ManualStack manualStack;
     public OrderManager.Ingridents ingridentName
     {
         get
@@ -19,7 +20,7 @@ public abstract class CookableFood : MonoBehaviour
             manualStack.ingredientName = value;
         }
     }
-    
+
     public byte currentStage = 0;
     public byte stages;
     public ushort[] stageRefs;
@@ -30,7 +31,6 @@ public abstract class CookableFood : MonoBehaviour
     protected virtual void Start()
     {
         manualStack = this.GetComponent<ManualStack>();
-        this.ingridentName = manualStack.ingredientName;
         if (VisualObjects.Count == 0)
             VisualObjects = new List<GameObject>();
     }
@@ -47,7 +47,7 @@ public abstract class CookableFood : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(currentlyCooking)
+        if(currentlyCooking && !burnt)
         {
             cookedTime += Time.deltaTime;
             CheckIfSwitchVisual();

@@ -69,6 +69,7 @@ public class CookableFry : CookableFood
     protected override void SwitchVisualObject()
     {
         this.meshRenderer.material = mats[currentStage];
-        
+        if (currentStage == 2)
+            burnt = true;
     }
 }
