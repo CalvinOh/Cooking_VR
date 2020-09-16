@@ -82,6 +82,9 @@ public class Fuse : MonoBehaviour
         transform.position = SlotToSlotInto.transform.position;
         transform.rotation = SlotToSlotInto.transform.rotation;
         MyRigidbody.isKinematic = true;
+
+        // audio
+        AkSoundEngine.PostEvent("Play_sx_fuse_insert", gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

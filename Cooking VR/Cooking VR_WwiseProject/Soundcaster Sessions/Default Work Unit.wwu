@@ -21,8 +21,16 @@
 							<ObjectRef Name="Burger_Cook_Stop" ID="{039FDDBF-DB14-4765-84F6-1806D6163429}" WorkUnitID="{95409A04-03F1-43C4-BF41-898D997BDD57}"/>
 							<Position X="1" Y="1"/>
 						</Module>
+						<Module>
+							<ObjectRef Name="Impact_Pan" ID="{6D0CB405-6467-457D-9953-53EB291FC32C}" WorkUnitID="{95409A04-03F1-43C4-BF41-898D997BDD57}"/>
+							<Position X="2" Y="1"/>
+						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="VO_Volume" ID="{4932AE74-5A3D-4102-BBE7-C15654A47EBD}"/>
+							<Value>-48</Value>
+						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="GameParameterIntensity" ID="{10CAFFE5-0DBC-41A8-B9F3-FC1DF08F2E04}"/>
 							<Value>1</Value>
@@ -37,7 +45,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="SFX_Volume" ID="{E1C39B7E-E48D-4E85-88B3-A0CD43584F73}"/>
-							<Value>49.861</Value>
+							<Value>36.4737522302625</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>

@@ -27,11 +27,9 @@ namespace AK
         static const AkUniqueID IMPACT_BOTTLE_PLASTIC = 433980135U;
         static const AkUniqueID IMPACT_EXTINGUISHER = 2236363231U;
         static const AkUniqueID IMPACT_KNIFE = 2552890829U;
-        static const AkUniqueID IMPACT_MEAT = 3360486203U;
         static const AkUniqueID IMPACT_MUG = 1180447715U;
         static const AkUniqueID IMPACT_PAN = 1453273807U;
         static const AkUniqueID IMPACT_PLATE = 803254130U;
-        static const AkUniqueID IMPACT_SILVERWARE = 2540397042U;
         static const AkUniqueID IMPACT_SPATULA = 3180392800U;
         static const AkUniqueID KNIFE_CUT_GENERIC = 2831748783U;
         static const AkUniqueID LIGHTSOUT_END = 3390569948U;
@@ -39,6 +37,8 @@ namespace AK
         static const AkUniqueID OIL_FRY_START = 1834722074U;
         static const AkUniqueID OIL_FRY_STOP = 3907856562U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
+        static const AkUniqueID PLAY_SX_FUSE_INSERT = 3280746755U;
+        static const AkUniqueID PLAY_SX_LETTUCE_IMPACT = 4069198885U;
         static const AkUniqueID PLAY_VX_A_1 = 1603068616U;
         static const AkUniqueID PLAY_VX_A_2 = 1603068619U;
         static const AkUniqueID PLAY_VX_A_3 = 1603068618U;
@@ -109,7 +109,6 @@ namespace AK
         static const AkUniqueID PLAY_VX_M_9 = 2677424684U;
         static const AkUniqueID PLAY_VX_M_10 = 1569332892U;
         static const AkUniqueID PLAY_VX_M_11 = 1569332893U;
-        static const AkUniqueID POUR_BOTTLE_GLASS = 3025511663U;
         static const AkUniqueID STACK = 996591275U;
         static const AkUniqueID STOP_ALL_EXCEPT = 3016745319U;
         static const AkUniqueID STOVE_OFF = 1902865914U;
@@ -138,6 +137,9 @@ namespace AK
     {
         static const AkUniqueID GAMEPARAMETERINTENSITY = 964045659U;
         static const AkUniqueID SFX_VOLUME = 1564184899U;
+        static const AkUniqueID VO_VOLUME = 2295491857U;
+        static const AkUniqueID VOLUME_MASTER = 3695994288U;
+        static const AkUniqueID VOLUME_MUSIC = 3891337659U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -153,6 +155,11 @@ namespace AK
         static const AkUniqueID SFX = 393239870U;
         static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID KITCHEN_VERB = 3155437225U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

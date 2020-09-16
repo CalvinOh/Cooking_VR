@@ -15,6 +15,9 @@
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="3155437225" Name="Kitchen_Verb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Kitchen_Verb"/>
+			</IncludedAuxBusses>
 			<GameParameters>
 				<GameParameter Id="1564184899" Name="SFX_Volume" ObjectPath="\Game Parameters\Default Work Unit\SFX_Volume"/>
 			</GameParameters>
@@ -225,14 +228,6 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3360486203" Name="Impact_Meat" ObjectPath="\Events\Default Work Unit\Impact_Meat" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.288396" DurationMax="0.288396">
-					<IncludedMemoryFiles>
-						<File Id="472009487" Language="SFX">
-							<ShortName>sx_meat_impact_1.wav</ShortName>
-							<Path>SFX\sx_meat_impact_1_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
 				<Event Id="1180447715" Name="Impact_Mug" ObjectPath="\Events\Default Work Unit\Impact_Mug" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.142569" DurationMax="0.161927">
 					<IncludedMemoryFiles>
 						<File Id="513856556" Language="SFX">
@@ -274,26 +269,6 @@
 						<File Id="874152463" Language="SFX">
 							<ShortName>sx_impact_plate_2.wav</ShortName>
 							<Path>SFX\sx_impact_plate_2_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="2540397042" Name="Impact_Silverware" ObjectPath="\Events\Default Work Unit\Impact_Silverware" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.397285" DurationMax="0.511111">
-					<IncludedMemoryFiles>
-						<File Id="50696179" Language="SFX">
-							<ShortName>sx_impact_silverware_3.wav</ShortName>
-							<Path>SFX\sx_impact_silverware_3_10C4C929.wem</Path>
-						</File>
-						<File Id="363414120" Language="SFX">
-							<ShortName>sx_impact_silverware_2.wav</ShortName>
-							<Path>SFX\sx_impact_silverware_2_10C4C929.wem</Path>
-						</File>
-						<File Id="444163542" Language="SFX">
-							<ShortName>sx_impact_silverware_4.wav</ShortName>
-							<Path>SFX\sx_impact_silverware_4_10C4C929.wem</Path>
-						</File>
-						<File Id="524998403" Language="SFX">
-							<ShortName>sx_impact_silverware_1.wav</ShortName>
-							<Path>SFX\sx_impact_silverware_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -386,6 +361,22 @@
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
+				</Event>
+				<Event Id="3280746755" Name="Play_sx_fuse_insert" ObjectPath="\Events\Default Work Unit\Play_sx_fuse_insert" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.152073" DurationMax="0.152073">
+					<IncludedMemoryFiles>
+						<File Id="399811820" Language="SFX">
+							<ShortName>sx_fuze_insert.wav</ShortName>
+							<Path>SFX\sx_fuze_insert_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4069198885" Name="Play_sx_lettuce_impact" ObjectPath="\Events\Default Work Unit\Play_sx_lettuce_impact" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.288396" DurationMax="0.288396">
+					<IncludedMemoryFiles>
+						<File Id="472009487" Language="SFX">
+							<ShortName>sx_meat_impact_1.wav</ShortName>
+							<Path>SFX\sx_meat_impact_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="1603068616" Name="Play_vx_a_1" ObjectPath="\Events\Default Work Unit\VO\Play_vx_a_1" MaxAttenuation="5.000000" DurationType="OneShot" DurationMin="15.639206" DurationMax="15.639206">
 					<IncludedMemoryFiles>
@@ -1036,30 +1027,6 @@
 						<File Id="620051951" Language="SFX">
 							<ShortName>vx_m_9.wav</ShortName>
 							<Path>SFX\vx_m_9_10C4C929.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
-				<Event Id="3025511663" Name="Pour_Bottle_Glass" ObjectPath="\Events\Default Work Unit\Pour_Bottle_Glass" DurationType="OneShot" DurationMin="0.152063" DurationMax="0.278526">
-					<IncludedMemoryFiles>
-						<File Id="242308609" Language="SFX">
-							<ShortName>sx_int_glass_bottle_pour_3.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_pour_3_10C4C929.wem</Path>
-						</File>
-						<File Id="406437937" Language="SFX">
-							<ShortName>sx_int_glass_bottle_pour_4.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_pour_4_10C4C929.wem</Path>
-						</File>
-						<File Id="654708033" Language="SFX">
-							<ShortName>sx_int_glass_bottle_pour_2.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_pour_2_10C4C929.wem</Path>
-						</File>
-						<File Id="794740313" Language="SFX">
-							<ShortName>sx_int_glass_bottle_pour_5.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_pour_5_10C4C929.wem</Path>
-						</File>
-						<File Id="1051743148" Language="SFX">
-							<ShortName>sx_int_glass_bottle_pour_1.wav</ShortName>
-							<Path>SFX\sx_int_glass_bottle_pour_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

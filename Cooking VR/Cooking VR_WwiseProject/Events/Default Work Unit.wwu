@@ -14,17 +14,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Pour_Bottle_Glass" ID="{CAC606AC-6532-4724-9498-2CA9D5134534}">
-					<ChildrenList>
-						<Action Name="" ID="{C6B11D3C-036B-40CE-B383-F5094D454204}" ShortID="971532235">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="pours_bottle_glass" ID="{18AB7BED-1677-43A3-903A-9B0BCB5D3F59}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Impact_Plate" ID="{173634A9-6485-480C-8531-ECEA6D7C33CF}">
 					<ChildrenList>
 						<Action Name="" ID="{AC6FBA84-37DF-42CE-B795-8AB88C11476F}" ShortID="399401236">
@@ -82,7 +71,7 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -942,17 +931,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Impact_Meat" ID="{1D4B9BA7-9B2D-4D61-9F4B-42087331926D}">
-					<ChildrenList>
-						<Action Name="" ID="{97D6D90F-7708-4F43-AF33-CDF104A53378}" ShortID="685632910">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="sx_meat_impact_1" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Impact_Extinguisher" ID="{9844A3A9-A087-479E-8687-5CA01AECD403}">
 					<ChildrenList>
 						<Action Name="" ID="{D17B7AE2-965D-480C-8F10-A274FFA853E6}" ShortID="507331990">
@@ -977,17 +955,6 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="impacts_knife_2" ID="{505A012C-F310-4DF5-B9E6-A57234C88912}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="Impact_Silverware" ID="{4769CBB5-6CA8-4C1C-A009-AAEA35D66F19}">
-					<ChildrenList>
-						<Action Name="" ID="{1EF4F7EF-E922-4D41-A8E0-FF6A432FD90D}" ShortID="772115611">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="impacts_silverware" ID="{8F286FBE-72D6-4090-85CC-95222A7BF74C}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -1230,11 +1197,33 @@
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="2"/>
 								<Property Name="FadeOutCurve" Type="int16" Value="7"/>
-								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="FadeTime" Type="Real64" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="sx_oilfryer_loop" ID="{75D27BFA-0259-4DC2-9135-E58F2818CFC2}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_sx_lettuce_impact" ID="{F551D734-C57E-43FF-BFDE-7ACCEA49C5F6}">
+					<ChildrenList>
+						<Action Name="" ID="{4F058D79-C507-493C-B607-03679431D6C8}" ShortID="258955494">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_lettuce_impact" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_sx_fuse_insert" ID="{E6921AE1-6A18-43EE-891A-D5D095C92150}">
+					<ChildrenList>
+						<Action Name="" ID="{76D6967B-0F77-4AC0-920D-3E71F0691DF2}" ShortID="39743249">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sx_fuse_insert" ID="{3B9D1BD2-C56E-479C-BC85-311DB3285B1A}" WorkUnitID="{77186F3F-5F61-4F97-9717-AFB5402A314F}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

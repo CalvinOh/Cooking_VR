@@ -3,9 +3,14 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{77186F3F-5F61-4F97-9717-AFB5402A314F}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="sx_meat_impact_1" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" ShortID="1049513861">
+				<Sound Name="sx_lettuce_impact" ID="{D458FA81-E5BB-44B6-8E95-4159AEC12711}" ShortID="1049513861">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>32</Value>
+							</ValueList>
+						</Property>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -18,6 +23,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -25,7 +31,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>7</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -63,9 +69,10 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-12</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -149,6 +156,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -156,7 +164,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-14</Value>
+								<Value>-3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -284,141 +292,6 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
-				<RandomSequenceContainer Name="pours_bottle_glass" ID="{18AB7BED-1677-43A3-903A-9B0BCB5D3F59}" ShortID="585518877">
-					<PropertyList>
-						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-						</Property>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="sx_int_glass_bottle_pour_1" ID="{5F69A835-9AD2-4BF3-9EB1-417EE008C22F}" ShortID="422404875">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_1" ID="{50830F3D-D635-4341-8C4B-92702EE4E34B}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="1051743148"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_1" ID="{50830F3D-D635-4341-8C4B-92702EE4E34B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_2" ID="{BD01DFF9-E3C2-4B22-9561-1219DBB2D395}" ShortID="645712838">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_2" ID="{0EB6A5D8-6D6A-495D-8996-3B77E53DAD46}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="654708033"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_2" ID="{0EB6A5D8-6D6A-495D-8996-3B77E53DAD46}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_3" ID="{95C667E4-6A03-49EA-89A3-48B59B4F177D}" ShortID="429921660">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_3" ID="{F958E8F7-E657-4504-8FEF-008733186D23}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="242308609"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_3" ID="{F958E8F7-E657-4504-8FEF-008733186D23}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_4" ID="{4FCDCC76-466A-414A-AB94-8A71F37C55B8}" ShortID="211673113">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_4" ID="{2BC54B4D-4229-46D1-9ECE-30EC88172128}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="406437937"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_4" ID="{2BC54B4D-4229-46D1-9ECE-30EC88172128}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_int_glass_bottle_pour_5" ID="{DD262F9C-C8AF-4F8E-8D33-F88DD38D08C5}" ShortID="86379564">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_int_glass_bottle_pour_5" ID="{EA4593C7-9105-4F9E-9FCD-B63B29E254F2}">
-									<Language>SFX</Language>
-									<AudioFile>sx_int_glass_bottle_pour_5.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="794740313"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_int_glass_bottle_pour_5" ID="{EA4593C7-9105-4F9E-9FCD-B63B29E254F2}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="impacts_bottle_plastic" ID="{AB1FD09F-BA54-4520-A878-32C7C7A18960}" ShortID="464529359">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -433,6 +306,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -440,7 +314,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-7</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -549,9 +423,10 @@
 				<Sound Name="sx_bell" ID="{C5617843-32DE-4970-AF82-901DDA2C2CFB}" ShortID="859205109">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-6</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -612,6 +487,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -715,9 +591,15 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -819,6 +701,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -826,7 +709,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-11</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -952,6 +835,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1038,6 +922,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1045,7 +930,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-11</Value>
+								<Value>-1</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1153,6 +1038,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1160,7 +1046,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-4</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1191,9 +1077,10 @@
 				<Sound Name="sx_stove_ignite" ID="{D48DC43A-C73C-4FF6-94EC-D44D4CACD4BE}" ShortID="725189082">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-2</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1282,6 +1169,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -1289,7 +1177,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-21</Value>
+								<Value>-30</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -1380,6 +1268,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_a_1" ID="{03DEA15C-00F7-49A2-8336-0D89E9022E46}">
@@ -1407,6 +1298,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1436,6 +1330,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_b_1" ID="{A3BF5CC8-4CAD-4645-9B8D-C3E5ABDE2F12}">
@@ -1463,6 +1360,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1492,6 +1392,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_b_3" ID="{6D64464C-5BBE-4811-B78A-CA63B2B8D6F7}">
@@ -1519,6 +1422,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1548,6 +1454,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_b_5" ID="{A46F3EDE-4652-449C-98B5-5CB014A52CF3}">
@@ -1575,6 +1484,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1604,6 +1516,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_b_7" ID="{E7B21214-C714-4786-9670-6425BDE2C210}">
@@ -1631,6 +1546,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1660,6 +1578,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_c_2" ID="{AFFBA25D-23C3-41D9-A760-666110F4295E}">
@@ -1687,6 +1608,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1716,6 +1640,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_d_1" ID="{7D2D0B9D-AAD1-44F1-8A91-4B24AB54D636}">
@@ -1744,6 +1671,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_d_2" ID="{E2B77835-8687-43BC-B4D5-436A440CF719}">
@@ -1771,6 +1701,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1805,6 +1738,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_e_1" ID="{95ECE390-8F13-4154-B394-9B223403AD6A}">
@@ -1832,6 +1768,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1861,6 +1800,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_e_3" ID="{BFB0FED3-77EB-47FF-B95E-F40F240D0100}">
@@ -1888,6 +1830,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1917,6 +1862,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_f_2" ID="{23170372-61B0-44CC-A702-B100255D8199}">
@@ -1944,6 +1892,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -1973,6 +1924,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_g_2" ID="{99ABCD74-C882-4D0B-8BF8-E7849AE9D351}">
@@ -2000,6 +1954,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2029,6 +1986,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_h_1" ID="{81D36D15-2720-4C86-99FE-84E5158F5A6D}">
@@ -2056,6 +2016,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2085,6 +2048,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_i_1" ID="{C61C092A-9A11-4E95-9971-A5E15E4BFCE2}">
@@ -2112,6 +2078,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2141,6 +2110,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_i_3" ID="{33321217-6B82-4EA8-86B7-8402D7B517C4}">
@@ -2168,6 +2140,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2197,6 +2172,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_1" ID="{B89B80D5-4EA3-4C90-B41B-FA1210134435}">
@@ -2224,6 +2202,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2253,6 +2234,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_6" ID="{16392990-FD7E-47F5-B6EA-D68FFC928524}">
@@ -2280,6 +2264,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2309,6 +2296,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_a_2_b" ID="{B80FFC4A-9118-430E-BA7F-DF19B7FA2CF9}">
@@ -2336,6 +2326,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2365,6 +2358,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_a_4_b" ID="{F5C83E1A-F63E-40EA-88A6-D8EAD9D9F3BB}">
@@ -2393,6 +2389,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_e_4" ID="{09261465-27F6-41C8-BD21-E82E45E86A1C}">
@@ -2420,6 +2419,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2535,6 +2537,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_i_5_a" ID="{11C6F690-32D6-4B05-81BB-ECC88F77A449}" ShortID="1056498376">
@@ -2648,6 +2653,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -2777,6 +2785,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_i_8_a" ID="{407A915D-8518-4F9D-9CC3-B624CA5D852D}" ShortID="1024363646">
@@ -2890,6 +2901,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -3009,6 +3023,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -3173,6 +3190,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_j_2_a" ID="{3B22C743-32EC-420E-859A-CFD44B76109A}" ShortID="925342341">
@@ -3336,6 +3356,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_j_3_a" ID="{E637B8EA-73F2-4E2E-B6C1-A58DFB5EEF45}" ShortID="812422399">
@@ -3484,6 +3507,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_j_4_a" ID="{8350FBC2-C2E2-4B72-8FA1-863F822182D9}" ShortID="314692430">
@@ -3625,6 +3651,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_j_5_a" ID="{E469554C-9509-498B-B67E-8A38C3C5F740}" ShortID="1048796404">
@@ -3760,6 +3789,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -3946,6 +3978,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="vx_j_7_a" ID="{EDE7B4CE-65D8-44B8-AF3C-3EA362B9310A}" ShortID="223132641">
@@ -4030,6 +4065,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_3" ID="{21CC4138-0C30-402F-A68A-6E633EBCF626}">
@@ -4057,6 +4095,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4086,6 +4127,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_5" ID="{8BD998CB-D04E-41B7-985C-C71CB3177F86}">
@@ -4113,6 +4157,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4142,6 +4189,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_9" ID="{419E5B0E-DEFF-4A35-8BE9-15936FFA862F}">
@@ -4169,6 +4219,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4198,6 +4251,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_11" ID="{F08233C6-3AD5-47BD-B5EF-989CD700F883}">
@@ -4225,6 +4281,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4254,6 +4313,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_l_13" ID="{AEEFB098-6DB5-4665-8963-A7019CFD9C81}">
@@ -4281,6 +4343,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4310,6 +4375,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_m_1" ID="{ED5D95F3-5960-4149-99B7-5ADD1FB66ED1}">
@@ -4337,6 +4405,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4366,6 +4437,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_m_3" ID="{B6A554FB-1B3E-4CF4-BFA6-64D343D61AF3}">
@@ -4393,6 +4467,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4422,6 +4499,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_m_5" ID="{5340C171-735F-4B5E-AD48-56C7F93372C1}">
@@ -4449,6 +4529,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4478,6 +4561,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_m_7" ID="{C6170B15-BF0C-4AB1-93AE-44709274F648}">
@@ -4505,6 +4591,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4534,6 +4623,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_m_9" ID="{A0DB6675-C4BA-41D8-9F56-AC32B2CFE3D3}">
@@ -4562,6 +4654,9 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="vx_m_10" ID="{DB6F4978-A064-40A0-8140-91EF56F74A42}">
@@ -4589,6 +4684,9 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="VO" ID="{A7FC092F-60DE-4F17-8070-E9FF9EDA3EAB}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Kitchen_Verb" ID="{F23A4E58-F6B1-40E4-AC58-CC55BA73EF1F}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -4621,7 +4719,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-30</Value>
+								<Value>-32</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -4662,7 +4760,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-20</Value>
+								<Value>-23</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -4737,164 +4835,6 @@
 						<ActiveSource Name="sx_env_fridge" ID="{464868A5-7CC0-4BFA-8452-39769ED25CBD}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<RandomSequenceContainer Name="impacts_silverware" ID="{8F286FBE-72D6-4090-85CC-95222A7BF74C}" ShortID="829017507">
-					<PropertyList>
-						<Property Name="3DSpatialization" Type="int16" Value="1"/>
-						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
-						<Property Name="MaxSoundPerInstance" Type="int16">
-							<ValueList>
-								<Value>1</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ModifierList>
-								<ModifierInfo>
-									<Modifier Name="" ID="{6618998A-85BE-4DCB-AE01-0F7458549D44}">
-										<PropertyList>
-											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="150"/>
-										</PropertyList>
-									</Modifier>
-								</ModifierInfo>
-							</ModifierList>
-						</Property>
-						<Property Name="UseMaxSoundPerInstance" Type="bool">
-							<ValueList>
-								<Value>True</Value>
-							</ValueList>
-						</Property>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-5</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Attenuation">
-							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
-						</Reference>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="sx_impact_silverware_1" ID="{D16E8BF9-8773-42BB-87D5-D256A9D53142}" ShortID="290587518">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_impact_silverware_1" ID="{2196E022-3755-4A94-8FF7-B507B516E7DF}">
-									<Language>SFX</Language>
-									<AudioFile>sx_impact_silverware_1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="524998403"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_impact_silverware_1" ID="{2196E022-3755-4A94-8FF7-B507B516E7DF}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_impact_silverware_2" ID="{6577F853-750C-40D6-A8C1-E77BC74DE315}" ShortID="32450252">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_impact_silverware_2" ID="{11A4FAA1-E2D1-41B1-B5A4-8B53A09F0A55}">
-									<Language>SFX</Language>
-									<AudioFile>sx_impact_silverware_2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="363414120"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_impact_silverware_2" ID="{11A4FAA1-E2D1-41B1-B5A4-8B53A09F0A55}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_impact_silverware_3" ID="{72C87A86-3FBB-4A01-88CF-14EB1222CECE}" ShortID="117069927">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_impact_silverware_3" ID="{0CBAC7D5-AB7D-4F03-BD1E-525AEF89E975}">
-									<Language>SFX</Language>
-									<AudioFile>sx_impact_silverware_3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="50696179"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_impact_silverware_3" ID="{0CBAC7D5-AB7D-4F03-BD1E-525AEF89E975}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="sx_impact_silverware_4" ID="{F12550BA-4924-4260-99DC-DF1E7B12950B}" ShortID="868967648">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Attenuation">
-									<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
-								</Reference>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sx_impact_silverware_4" ID="{84D93B6E-D8BD-4FB4-BAE0-41AEAF5F83A9}">
-									<Language>SFX</Language>
-									<AudioFile>sx_impact_silverware_4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="444163542"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sx_impact_silverware_4" ID="{84D93B6E-D8BD-4FB4-BAE0-41AEAF5F83A9}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</RandomSequenceContainer>
 				<Folder Name="Knife" ID="{AFB235E4-63AB-43AB-967E-4BF819E49755}" ShortID="383643353">
 					<ChildrenList>
 						<RandomSequenceContainer Name="impacts_knife_1" ID="{54FAB98A-B625-453A-938C-4AE7319839E0}" ShortID="620015535">
@@ -4918,9 +4858,15 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -5043,9 +4989,15 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -5176,9 +5128,10 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-6</Value>
+								<Value>3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5295,6 +5248,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5302,7 +5256,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-3</Value>
+								<Value>2</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5406,9 +5360,10 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-4</Value>
+								<Value>4</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5458,6 +5413,7 @@
 							</ModifierList>
 						</Property>
 						<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5465,7 +5421,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>4</Value>
+								<Value>11</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5560,6 +5516,7 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -5567,7 +5524,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>12</Value>
+								<Value>8</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5704,9 +5661,15 @@
 								</ModifierInfo>
 							</ModifierList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5821,9 +5784,15 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -5884,6 +5853,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="sx_impact_glassbottle_3" ID="{0CFDD785-82E6-42CC-9951-FA3F0C41F73A}" ShortID="1021246759">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
@@ -5906,6 +5882,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="sx_impact_glassbottle_4" ID="{9DFCF4EF-3C20-4851-8562-6F14F34F2FB2}" ShortID="439014823">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
@@ -5932,6 +5915,12 @@
 				<Sound Name="sx_flashlight_off" ID="{1CD0292D-8179-41E3-8646-BBEF065C1D27}" ShortID="911827986">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>6</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -5960,6 +5949,12 @@
 				<Sound Name="sx_flashlight_on" ID="{C0F82475-D99D-46B8-977C-38B3AF04A32B}" ShortID="428992049">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -5988,6 +5983,17 @@
 				<Sound Name="sx_event_lightsout_end" ID="{1517BB6C-2C0C-464E-8A5E-DD424265A521}" ShortID="178410930">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -6013,6 +6019,17 @@
 				<Sound Name="sx_event_lightsout_start" ID="{40D9BA9F-D9AA-4C89-B40F-DA0781621566}" ShortID="843606513">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -6038,6 +6055,23 @@
 				<RandomSequenceContainer Name="fuze_wrong" ID="{03FF5D52-4CC7-4848-809E-C66F3E5851AD}" ShortID="539380944">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>8</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
@@ -6129,6 +6163,7 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
@@ -6136,7 +6171,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-4</Value>
+								<Value>-11</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -6173,9 +6208,15 @@
 								<Value>1</Value>
 							</ValueList>
 						</Property>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
 						<Property Name="UseMaxSoundPerInstance" Type="bool">
 							<ValueList>
 								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>1</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -6201,6 +6242,35 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="sx_oilfryer_start" ID="{C41EB226-0603-4FA7-952F-A88EBB6B4332}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="sx_fuse_insert" ID="{3B9D1BD2-C56E-479C-BC85-311DB3285B1A}" ShortID="491698711">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Kitchen Object" ID="{B84602B9-278A-44FF-AB0A-3D0A7B34C653}" WorkUnitID="{C4B8A5E8-C11F-4AE5-A09C-726A446D797B}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{889FFF0C-2A08-41C2-B337-7EB25A2B8E99}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{E94CB506-ADC8-47D8-9048-CFBFB21032C2}" WorkUnitID="{3CAB7DA1-AAD2-4B89-AAAC-C9E1F94AC24C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="sx_fuze_insert" ID="{D165BE8B-B67D-489B-A456-E20A23702539}">
+							<Language>SFX</Language>
+							<AudioFile>sx_fuze_insert.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="399811820"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="sx_fuze_insert" ID="{D165BE8B-B67D-489B-A456-E20A23702539}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

@@ -14,7 +14,6 @@ public class FuseBox : MonoBehaviour
 
     private LightsOuts LightsOutEventScript;
 
-
     public LightsOuts MyEventScript;
     private PowerBoxSlider MySlider;
 
@@ -28,6 +27,7 @@ public class FuseBox : MonoBehaviour
 
         SetUpBox();
         MySlider = GetComponentInChildren<PowerBoxSlider>();
+        MyEventScript = FindObjectOfType<LightsOuts>();
     }
 
     private void SetUpBox()
@@ -38,8 +38,6 @@ public class FuseBox : MonoBehaviour
             NewFuse.GetComponent<Fuse>().SlotIn(a);
         }
     }
-         
-
 
     public void TriggerEvent(int BrokenFuseNum)
     {
@@ -74,8 +72,6 @@ public class FuseBox : MonoBehaviour
 
         //move switch to off position and prepare other things for evennt start
         MySlider.ResetPosition();
-
-
     }
 
     public bool AttemptFix()
@@ -83,8 +79,13 @@ public class FuseBox : MonoBehaviour
         if (CheckFuses())
         {
             LightsOutEventScript.EndEvent();
+
             return true;
         }
+
+        // audio
+        AkSoundEngine.PostEvent("Fuze_Wrong", gameObject);
+
         return false;
     }
 
@@ -95,7 +96,7 @@ public class FuseBox : MonoBehaviour
             if (!a.CheckFuse())
                 return false;
         }
+
         return true;
     }
-
 }
