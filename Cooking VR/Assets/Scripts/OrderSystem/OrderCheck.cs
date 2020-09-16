@@ -221,7 +221,7 @@ public class OrderCheck : MonoBehaviour
                 }
                 else if ((int)Order[i] <= 4 && (int)SubmittedFood[j] <= 4)//didn't find exact ingrident, goes for meat checking
                 {
-                    score -= CheckMeat(SubmittedFood[i], Order[j]);
+                    score -= CheckMeat(SubmittedFood[j], Order[i]);
                     if (i != j)
                         IncorrectPositions++;
 
