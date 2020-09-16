@@ -120,39 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &98833279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4779803157402192367, guid: c8920e3c944fc3445bac373989873338,
-    type: 3}
-  m_PrefabInstance: {fileID: 8951534766561441424}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &98833282 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4779803157402192365, guid: c8920e3c944fc3445bac373989873338,
-    type: 3}
-  m_PrefabInstance: {fileID: 8951534766561441424}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98833279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &98833285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98833279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a129256053813547b756c460f0c58b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SetTime: 0.5
-  burner: {fileID: 1875415608}
-  interactable: {fileID: 98833282}
 --- !u!108 &282920587 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 8951534766833348635, guid: c8920e3c944fc3445bac373989873338,
@@ -228,18 +195,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3de4c03c7138fe4d8b509fda3c660e6, type: 3}
---- !u!114 &1875415608 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8103043230260786762, guid: c8920e3c944fc3445bac373989873338,
-    type: 3}
-  m_PrefabInstance: {fileID: 8951534766561441424}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22107065bc61aba40ab886aa1410c213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8951534766561441424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -287,8 +242,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Scene
       objectReference: {fileID: 0}
-    - target: {fileID: 4779803157402192366, guid: c8920e3c944fc3445bac373989873338,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
