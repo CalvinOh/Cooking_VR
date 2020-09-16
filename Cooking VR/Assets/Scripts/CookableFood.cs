@@ -8,7 +8,18 @@ public abstract class CookableFood : MonoBehaviour
     protected bool currentlyCooking;
     public float cookedTime = 0;
     private ManualStack manualStack;
-    public OrderManager.Ingridents ingridentName;
+    public OrderManager.Ingridents ingridentName
+    {
+        get
+        {
+            return manualStack.ingredientName;
+        }
+        protected set
+        {
+            manualStack.ingredientName = value;
+        }
+    }
+    
     public byte currentStage = 0;
     public byte stages;
     public ushort[] stageRefs;

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4656579303511390588}
   - component: {fileID: 4656579303511390589}
   - component: {fileID: 4656579303511390590}
+  - component: {fileID: 892038455680477002}
   m_Layer: 0
   m_Name: onionSlices_Prefab
   m_TagString: Untagged
@@ -234,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StackParent: {fileID: 0}
   ChildrenGameObjects: []
-  ingredientName: 0
+  ingredientName: 17
   IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
@@ -256,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookedTime: 0
-  ingridentName: 17
   currentStage: 0
   stages: 4
   stageRefs: 
@@ -267,3 +267,16 @@ MonoBehaviour:
   - {fileID: 2100000, guid: dd6bdbd82ff25e0469db27b51b35ef65, type: 2}
   - {fileID: 2100000, guid: f8ce1496ecb15b34dbf1aa97a5b1d177, type: 2}
   meshRenderer: {fileID: 0}
+--- !u!135 &892038455680477002
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085515645916507771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3.4
+  m_Center: {x: 0, y: 0, z: 0}
