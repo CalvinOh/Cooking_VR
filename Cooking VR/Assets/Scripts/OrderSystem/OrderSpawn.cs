@@ -93,7 +93,7 @@ public class OrderSpawn : MonoBehaviour
 
     }
 
-    List<OrderManager.Sides> RandomSides(int SideCount)
+    public List<OrderManager.Sides> RandomSides(int SideCount)
     {
 
         List<OrderManager.Sides> RandomSide = new List<OrderManager.Sides>();
@@ -109,7 +109,7 @@ public class OrderSpawn : MonoBehaviour
         return RandomSide;
     }
 
-    List<OrderManager.Ingridents> RandomBurger(int AmountOfLayer)
+    public List<OrderManager.Ingridents> RandomBurger(int AmountOfLayer)
     {
         List<OrderManager.Ingridents> TempBurger = new List<OrderManager.Ingridents>();
         
