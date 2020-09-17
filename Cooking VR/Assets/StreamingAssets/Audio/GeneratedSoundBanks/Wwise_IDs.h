@@ -36,6 +36,7 @@ namespace AK
         static const AkUniqueID LIGHTSOUT_START = 422864511U;
         static const AkUniqueID OIL_FRY_START = 1834722074U;
         static const AkUniqueID OIL_FRY_STOP = 3907856562U;
+        static const AkUniqueID PLAY_IMPACT_FUSE = 2275355588U;
         static const AkUniqueID PLAY_MUSIC = 2932040671U;
         static const AkUniqueID PLAY_SX_FUSE_INSERT = 3280746755U;
         static const AkUniqueID PLAY_SX_LETTUCE_IMPACT = 4069198885U;
