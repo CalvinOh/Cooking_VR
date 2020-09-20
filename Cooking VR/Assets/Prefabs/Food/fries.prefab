@@ -33,8 +33,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938967774416102275}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.014, y: 2.123, z: -5.718}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 76a68312d2cb46e4daf5ac8c8712dd5f, type: 2}
+  - {fileID: 2100000, guid: 7e772f5a6db9ff64a960aea7398b02e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StackParent: {fileID: 0}
   ChildrenGameObjects: []
-  ingredientName: 0
+  ingredientName: 18
   IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
@@ -270,13 +270,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookedTime: 0
-  ingridentName: 18
   currentStage: 0
   stages: 0
   stageRefs: 
   VisualObjects: []
   mats:
-  - {fileID: 2100000, guid: 76a68312d2cb46e4daf5ac8c8712dd5f, type: 2}
-  - {fileID: -2823261523466854278, guid: f173d3018aa76bf42bccc984a94bc892, type: 3}
-  - {fileID: 2100000, guid: f0ae8df8674ce15428aa902df1aa06b5, type: 2}
+  - {fileID: 2100000, guid: 7e772f5a6db9ff64a960aea7398b02e2, type: 2}
+  - {fileID: 2100000, guid: 3409e925772ec7a4e98d48dbdaa8cca9, type: 2}
+  - {fileID: 2100000, guid: 43aa77c66da6f444fb34766be6a69774, type: 2}
   meshRenderer: {fileID: 0}
