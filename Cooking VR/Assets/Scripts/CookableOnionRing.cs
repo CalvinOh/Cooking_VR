@@ -81,8 +81,11 @@ public class CookableOnionRing : CookableFood
     protected override void SwitchVisualObject()
     {
         this.meshRenderer.material = mats[currentStage];
+        
+        if (this.currentStage == 2)
+            this.manualStack.ingredientName = OrderManager.Ingridents.OnionRing;
+        else if (this.currentStage == 3)
+            this.burnt = true;
 
-        if (this.currentStage == 2 || this.currentStage == 3)
-            this.ingridentName = OrderManager.Ingridents.OnionRing;
     }
 }

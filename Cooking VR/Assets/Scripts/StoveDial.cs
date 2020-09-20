@@ -17,8 +17,11 @@ namespace Valve.VR.InteractionSystem
         [SerializeField]
         float SetTime;
 
+        [SerializeField]
+        StoveScript burner;
+
         public Interactable interactable;
-        public float CountdownTime;
+        private float CountdownTime;
         EDialState DialState;
         EDialState PreviousState;
 
@@ -38,8 +41,9 @@ namespace Valve.VR.InteractionSystem
         // Update is called once per frame
         void Update()
         {
-            if (interactable.attachedToHand)
+            if (interactable.isHovering)
             {
+
                 if (CountdownTime <= 0.0f)
                 {
                     if (SteamVR_Actions._default.GrabPinch.GetStateDown(SteamVR_Input_Sources.Any))
@@ -63,11 +67,13 @@ namespace Valve.VR.InteractionSystem
             {
                 if(DialState == EDialState.EDS_Off)
                 {
-                    this.gameObject.transform.Rotate(0, 0, 0);
+                    this.gameObject.transform.rotation = Quaternion.identity;
+                    burner.TurnOff();
                 }
                 else if(DialState == EDialState.EDS_On)
                 {
-                    this.gameObject.transform.Rotate(0, 0, 90);
+                    this.gameObject.transform.rotation = Quaternion.Euler(0,0,90);
+                    burner.TurnOn();
                 }
             }
         }
