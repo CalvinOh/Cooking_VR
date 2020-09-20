@@ -33,9 +33,19 @@ namespace Valve.VR.InteractionSystem
         private void Turn(bool on)
         {
             if (on)
+            {
                 IsOn = true;
+
+                // audio
+                AkSoundEngine.PostEvent("Flashlight_On", gameObject);
+            }
             else
+            {
                 IsOn = false;
+
+                // audio
+                AkSoundEngine.PostEvent("Flashlight_Off", gameObject);
+            }
 
             MyLight.enabled = IsOn;
         }

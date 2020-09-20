@@ -20,6 +20,7 @@
 			</IncludedAuxBusses>
 			<GameParameters>
 				<GameParameter Id="1564184899" Name="SFX_Volume" ObjectPath="\Game Parameters\Default Work Unit\SFX_Volume"/>
+				<GameParameter Id="3695994288" Name="Volume_Master" ObjectPath="\Game Parameters\Default Work Unit\Volume_Master"/>
 			</GameParameters>
 		</SoundBank>
 		<SoundBank Id="3989171651" Language="SFX">
@@ -329,6 +330,22 @@
 					</IncludedMemoryFiles>
 				</Event>
 				<Event Id="3907856562" Name="Oil_Fry_Stop" ObjectPath="\Events\Default Work Unit\Oil_Fry_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="2275355588" Name="Play_impact_fuse" ObjectPath="\Events\Default Work Unit\Play_impact_fuse" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.147668" DurationMax="0.152083">
+					<IncludedMemoryFiles>
+						<File Id="547225778" Language="SFX">
+							<ShortName>sx_impact_fuse_2.wav</ShortName>
+							<Path>SFX\sx_impact_fuse_2_10C4C929.wem</Path>
+						</File>
+						<File Id="889514619" Language="SFX">
+							<ShortName>sx_impact_fuse_1.wav</ShortName>
+							<Path>SFX\sx_impact_fuse_1_10C4C929.wem</Path>
+						</File>
+						<File Id="992739792" Language="SFX">
+							<ShortName>sx_impact_fuse_3.wav</ShortName>
+							<Path>SFX\sx_impact_fuse_3_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="2932040671" Name="Play_Music" ObjectPath="\Events\Default Work Unit\Play_Music" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="108253935" Language="SFX">
@@ -370,11 +387,19 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4069198885" Name="Play_sx_lettuce_impact" ObjectPath="\Events\Default Work Unit\Play_sx_lettuce_impact" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.288396" DurationMax="0.288396">
+				<Event Id="4069198885" Name="Play_sx_lettuce_impact" ObjectPath="\Events\Default Work Unit\Play_sx_lettuce_impact" MaxAttenuation="3.000000" DurationType="OneShot" DurationMin="0.221742" DurationMax="0.288396">
 					<IncludedMemoryFiles>
 						<File Id="472009487" Language="SFX">
 							<ShortName>sx_meat_impact_1.wav</ShortName>
 							<Path>SFX\sx_meat_impact_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3219570561" Name="Play_sx_oilbubble_loop" ObjectPath="\Events\Default Work Unit\Play_sx_oilbubble_loop" MaxAttenuation="3.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="29519793" Language="SFX">
+							<ShortName>sx_oilbubble_loop.wav</ShortName>
+							<Path>SFX\sx_oilbubble_loop_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

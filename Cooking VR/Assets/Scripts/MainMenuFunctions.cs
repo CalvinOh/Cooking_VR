@@ -27,6 +27,11 @@ public class MainMenuFunctions : MonoBehaviour
     [SerializeField]
     private GameObject creditSwitch2;
 
+    // audio
+    // this should stay between 0 - 100
+    [SerializeField]
+    private float masterVolume;
+
     public void GoToScene(int sceneNum)
     {
         // audio
@@ -73,5 +78,16 @@ public class MainMenuFunctions : MonoBehaviour
     {
         Application.OpenURL("http://hellyeahburgers.com/");
         linkText2.text = "Link Opened on Desktop.";
+    }
+
+    // audio
+    void VolumeSliderStuff()
+    {
+        // sets Wwise's Master Volume to the value of "masterVolume" between 0 and 100.
+        // 0 is the lowest, 100 is the max
+        AkSoundEngine.SetRTPCValue("Volume_Master", masterVolume);
+
+        // use this after the volume is changed to play a spatula impact sound globally (in the listener's head, not 3D space)
+        AkSoundEngine.PostEvent("Impact_Spatula", null);
     }
 }

@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: a17dab3cd2aa894baaacc9e1f94ac24c
     GuidInternal: 
-    m_lastTime: -8586015751389552373
+    m_lastTime: -8586012968016979056
     List:
     - name: Kitchen_Verb
       guid: 584e3af2b1f6e440ac58cc55ba73ef1f
@@ -86,7 +86,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 9406f5248d25dd4ab331669d951f0dac
     GuidInternal: 
-    m_lastTime: -8586015867906015531
+    m_lastTime: -8586012996298826821
     List:
     - name: Main_Bank
       guid: c7a602ec80a39445adc02196e1e17418
@@ -102,7 +102,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 049a4095f103c443bf41898d997bdd57
     GuidInternal: 
-    m_lastTime: -8586015867308702097
+    m_lastTime: -8586012996299026868
     List:
     - name: Ambience_Kitchen
       guid: b891e9927bb6fa4faf476023e266611a
@@ -380,6 +380,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_impact_fuse
+      guid: 83395774cdb9cc4aa73ec658de6cf669
+      id: 2275355588
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_impact_fuse
+        ObjectType: 3
+      Path: Default Work Unit\Play_impact_fuse
+      maxAttenuation: 3
+      maxDuration: 0.152083
+      minDuration: 0.147668
     - name: Play_Music
       guid: fd99cfe1ca8be040b4eb31cc6adaa79f
       id: 2932040671
@@ -415,7 +427,19 @@ MonoBehaviour:
       Path: Default Work Unit\Play_sx_lettuce_impact
       maxAttenuation: 3
       maxDuration: 0.288396
-      minDuration: 0.288396
+      minDuration: 0.221742
+    - name: Play_sx_oilbubble_loop
+      guid: 04084d5d2ba9dd40af36318b4c995af4
+      id: 3219570561
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_sx_oilbubble_loop
+        ObjectType: 3
+      Path: Default Work Unit\Play_sx_oilbubble_loop
+      maxAttenuation: 3
+      maxDuration: -1
+      minDuration: -1
     - name: Play_vx_a_1
       guid: 9782f120b836f84f95e01d835ac75fb5
       id: 1603068616
@@ -1487,7 +1511,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 3d6363d5ce60a041ade2b6e09d2dff36
     GuidInternal: 
-    m_lastTime: -8586015810831018000
+    m_lastTime: -8586012968016789014
     List:
     - name: GameParameterIntensity
       guid: e5ffca10bc0da841b9f3fc1df08f2e04
