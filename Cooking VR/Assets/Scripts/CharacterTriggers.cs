@@ -50,8 +50,10 @@ public class CharacterTriggers : MonoBehaviour
             MyAnimator = GetComponentInChildren<GiannaAnimator>();
         VOTimer = 5;
 
-       // VOTrigger.Invoke("Play_vx_b_6", 3);
+        // VOTrigger.Invoke("Play_vx_b_6", 3);
         //MyAnimator.PlayAngry(3);
+
+        MyAnimator.PlayImpressed(continuousBuffer);
     }
     private void FixedUpdate()
     {
@@ -121,7 +123,6 @@ public class CharacterTriggers : MonoBehaviour
                 break;
             case 13:
                 // when a new ticket spawns
-                VOTrigger.Invoke("Play_vx_i_9", 0);
                 int i = rnd.Next(0, 1);
                 if (i == 0)
                     VOTrigger.Invoke("Play_vx_i_9", 0);
