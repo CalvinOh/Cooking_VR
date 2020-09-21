@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1763344642919581114, guid: 45ec2e2aa82197b44a8b0f3ef2ad338b, type: 3}
+  - {fileID: 2100000, guid: 9cb45e0b8dff9704d89a36cea93cfe20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   snapAttachEaseInCompleted: 0
   skeletonPoser: {fileID: 0}
   handFollowTransform: 1
-  highlightOnHover: 1
+  highlightOnHover: 0
   hideHighlight: []
   hoverPriority: 0
 --- !u!114 &8783833276358076249
@@ -224,7 +224,7 @@ MonoBehaviour:
   IsStacked: 0
   isHeld: 0
   vec3offset: {x: 0, y: -0.54, z: 0}
-  thickness: 0
+  thickness: 0.01
   scaleRatio: 0
   TestDrop: 0
   falling: 0
