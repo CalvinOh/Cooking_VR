@@ -60,14 +60,14 @@ public class CharacterTriggers : MonoBehaviour
         // VOTrigger.Invoke("Play_vx_b_6", 3);
         //MyAnimator.PlayAngry(3);
 
-        MyAnimator.PlayImpressed(continuousBuffer);
-    }
-    private void FixedUpdate()
-    {
-        if(sceneNum == 5)
+        if (sceneNum == 5)
         {
             SideTutorial();
         }
+    }
+    private void FixedUpdate()
+    {
+        
         if(Time.time >= VOTimer && !isTutorialScene && powerOn)
         {
             IdleDialogue();
