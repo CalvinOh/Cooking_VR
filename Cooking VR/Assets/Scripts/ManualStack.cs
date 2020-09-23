@@ -36,6 +36,7 @@ public class ManualStack : MonoBehaviour
     public bool IsStacked;
 
     public int isHeld = 0; //0 = notHeld, 1 = rightHandHolding, 2 = leftHandHolding
+    [SerializeField]
     private float lastHeld; // the last time the object was held (measured as seconds since play)
     private float stackWindowLength; // How long the object should check since it was let go to stack. Measusred in seconds.
 
