@@ -117,13 +117,6 @@ public class ManualStack : MonoBehaviour
         {
             canStack = false;
         }
-
-        //if (this.interactable.attachedToHand.currentAttachedObject.Equals(this.gameObject))
-        //{
-        //    // being grabbed
-        //    this.Parent.GetComponent<ManualStack>().RemoveChild(this.gameObject);
-        //    this.UnassignParent();
-        //}
     }
 
     private void CheckLetGo()
@@ -189,27 +182,6 @@ public class ManualStack : MonoBehaviour
         {
             canStack = true;
 
-            // Check if this is the held item, should be child.
-            //Hand hand;
-            //if (this.transform.parent == leftHand.transform)
-            //{
-            //    hand = leftHand;
-            //}
-            //else if (this.transform.parent = rightHand.transform)
-            //{
-            //    hand = rightHand;
-            //}
-
-
-
-            //foreach (Hand h in this.interactable.hoveringHands)
-            //{
-            //    if (h.currentAttachedObject.Equals(this.gameObject))
-            //    {
-            //        this.AssignParent(other.gameObject);
-            //    }
-            //}
-
             if ((TestDrop && falling))
             {
                 if(ms.StackParent != this.gameObject) // || (canStack && (Time.time <= lastHeld + stackWindowLength)) || 
@@ -218,16 +190,22 @@ public class ManualStack : MonoBehaviour
                 }
             }
         }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.TryGetComponent(out ManualStack ms) && canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
+        if(canStack && (Time.time <= lastHeld + stackWindowLength))
         {
-            if(this.StackParent != other.gameObject && this.StackParent != this.gameObject)
+            if (this.StackParent != other.gameObject && this.StackParent != this.gameObject)
                 this.AssignParent(other.gameObject);
         }
     }
+
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject.TryGetComponent(out ManualStack ms) && canStack && (Time.time <= lastHeld + stackWindowLength)) // and let go
+    //    {
+    //        if(this.StackParent != other.gameObject && this.StackParent != this.gameObject)
+    //            this.AssignParent(other.gameObject);
+    //    }
+    //}
 
     private void OnTriggerExit(Collider other)
     {
@@ -282,10 +260,7 @@ public class ManualStack : MonoBehaviour
 
         this.Rb.isKinematic = true;
 
-        //this.verDistanceOffset += parent.GetComponent<ManualStack>().verDistanceOffset;
-        //parent.GetComponent<ManualStack>().verDistanceOffset += this.thickness;
-        //Vector3 vec3offset = new Vector3(0, parent.GetComponent<ManualStack>().verDistanceOffset, 0);
-        if(this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
+        if (this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Count > 0)
         {
             vec3offset = new Vector3(0, this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Last().GetComponent<ManualStack>().thickness + this.thickness, 0);
             Debug.Log($"{this.gameObject.name} is stacking to {this.StackParent.GetComponent<ManualStack>().ChildrenGameObjects.Last().gameObject.name}");

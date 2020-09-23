@@ -16,8 +16,9 @@ public class CookableFry : CookableFood
     byte stage4 = byte.MaxValue;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         if (this.meshRenderer == null)
         {
             this.meshRenderer = this.GetComponent<MeshRenderer>();
@@ -25,23 +26,6 @@ public class CookableFry : CookableFood
         AssignStageRefs();
         this.currentStage = 0;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        base.Update();
-    }
-
-    //protected override void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Fryer")
-    //    {
-    //        if (this.meshRenderer.material == mats[0])
-    //        {
-
-    //        }
-    //    }
-    //}
 
     // audio
     protected void OnTriggerExit(Collider other)

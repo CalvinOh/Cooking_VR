@@ -66,14 +66,6 @@ public abstract class CookableFood : MonoBehaviour
         }
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
-    {
-        //if(other.gameObject.TryGetComponent<PanScript>(out PanScript ps))
-        //{
-        //    other.gameObject.GetComponent<PanScript>().AddItemInTrigger(this);
-        //}
-    }
-
     virtual public void StartCook()
     {
         currentlyCooking = true;

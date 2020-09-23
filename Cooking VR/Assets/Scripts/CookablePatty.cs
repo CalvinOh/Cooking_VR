@@ -18,12 +18,6 @@ public class CookablePatty : CookableFood
         AssignStageRefs();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        base.Update();
-    }
-
     protected override void AssignStageRefs()
     {
         base.AssignStageRefs();
