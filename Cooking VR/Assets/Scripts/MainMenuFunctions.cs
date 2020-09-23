@@ -49,13 +49,9 @@ public class MainMenuFunctions : MonoBehaviour
         settingsManager.ResetPosition();
     }
 
-    public void SettingSize(int _characterSize)
+    public void SaveSizeSettings(int _characterSize)
     {
         characterSize = _characterSize;
-    }
-
-    public void SaveSettings()
-    {
         SettingsManager settingsManager = (SettingsManager)FindObjectOfType(typeof(SettingsManager));
         settingsManager.characterSize = characterSize;
         settingsManager.ApplySettings();
@@ -81,10 +77,30 @@ public class MainMenuFunctions : MonoBehaviour
     }
 
     // audio
-    void VolumeSliderStuff()
+    public void VolumeSliderStuff(int volumeIndex)
     {
+        //volumeIndex 0 = 0%, 1 = 25%, 2 = 50%, 3 = 75%, 4 = 100%
         // sets Wwise's Master Volume to the value of "masterVolume" between 0 and 100.
         // 0 is the lowest, 100 is the max
+        switch (volumeIndex)
+        {
+            case 0:
+                masterVolume = 0;
+                break;
+            case 1:
+                masterVolume = 25;
+                break;
+            case 2:
+                masterVolume = 50;
+                break;
+            case 3:
+                masterVolume = 75;
+                break;
+            case 4:
+                masterVolume = 100;
+                break;
+        }
+
         AkSoundEngine.SetRTPCValue("Volume_Master", masterVolume);
 
         // use this after the volume is changed to play a spatula impact sound globally (in the listener's head, not 3D space)
