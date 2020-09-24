@@ -62,21 +62,22 @@ public class OrderTicket : MonoBehaviour
             Body.text += Temp + "\n";
 
         }
-
-        foreach (OrderManager.Sides a in MyOrder.OrderSides)
-        {
-            string Temp = a.ToString();
-            for (int i = 1; i < Temp.Length; i++)//skips first letter in string
+        Debug.Log("Ticket Sides: " + MyOrder.OrderSides.Count);
+        if (MyOrder.OrderSides.Count>0)
+            foreach (OrderManager.Sides a in MyOrder.OrderSides)
             {
-                if (char.IsUpper(Temp[i]))
+                string Temp = a.ToString();
+                for (int i = 1; i < Temp.Length; i++)//skips first letter in string
                 {
-                    Temp = Temp.Insert(i, " ");
-                    i += 2;
+                    if (char.IsUpper(Temp[i]))
+                    {
+                        Temp = Temp.Insert(i, " ");
+                        i += 2;
 
+                    }
                 }
+                SidesBody.text += Temp + "\n";
             }
-            SidesBody.text += Temp + "\n";
-        }
     }
 
 

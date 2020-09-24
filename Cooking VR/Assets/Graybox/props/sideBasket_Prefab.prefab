@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2199863334172181783}
   m_Layer: 0
   m_Name: sideBasket_Prefab
-  m_TagString: Untagged
+  m_TagString: Basket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,10 +223,11 @@ MonoBehaviour:
   ingredientName: 14
   IsStacked: 0
   isHeld: 0
+  lastHeld: 0
   vec3offset: {x: 0, y: -0.54, z: 0}
   thickness: 0.01
   scaleRatio: 0
-  TestDrop: 0
+  TestDrop: 1
   falling: 0
   canStack: 0
 --- !u!135 &4163859994740286187

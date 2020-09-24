@@ -371,6 +371,10 @@ public class OrderCheck : MonoBehaviour
 
             Destroy(Burger);
             Destroy(Ticket);
+            foreach(GameObject a in Sides)
+            {
+                Destroy(a);
+            }
             Debug.Log("Judged");
         }
     }
