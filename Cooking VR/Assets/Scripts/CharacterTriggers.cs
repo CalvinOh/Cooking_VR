@@ -366,6 +366,8 @@ public class CharacterTriggers : MonoBehaviour
         OrderSpawn.OrderSpawnedEvent += OrderSpawned;
         OutOfZoneRespawn.KnifeDrop += KnifeDrop;
         IdleCheck.Idle += Idle;
+        LightsOuts.lightsOn += PowerOn;
+        LightsOuts.lightsOut += PowerOff;
     }
 
     private void OnDisable()
@@ -375,5 +377,7 @@ public class CharacterTriggers : MonoBehaviour
         OrderSpawn.OrderSpawnedEvent -= OrderSpawned;
         OutOfZoneRespawn.KnifeDrop -= KnifeDrop;
         IdleCheck.Idle -= Idle;
+        LightsOuts.lightsOn -= PowerOn;
+        LightsOuts.lightsOut -= PowerOff;
     }
 }
