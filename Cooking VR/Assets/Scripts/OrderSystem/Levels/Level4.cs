@@ -18,10 +18,11 @@ public class Level4 : ILevels
         TempBurger.Add(OrderManager.Ingridents.MediumPatty);
         TempBurger.Add(OrderManager.Ingridents.Cheese);
         TempBurger.Add(OrderManager.Ingridents.BottomBun);
-
+        Debug.Log("Sides: "+TempSides.Count);
         base.AddOrder(1, TempBurger, TempSides);
-
+        Debug.Log("Sides: " + TempSides.Count);
         //burger 2
+        TempSides = new List<OrderManager.Sides>();
         TempBurger = new List<OrderManager.Ingridents>();
 
         TempBurger.Add(OrderManager.Ingridents.TopBun);

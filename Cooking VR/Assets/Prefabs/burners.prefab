@@ -466,6 +466,7 @@ GameObject:
   - component: {fileID: 6366866333700266548}
   - component: {fileID: 2204818444931266211}
   - component: {fileID: 2204818444931266208}
+  - component: {fileID: 1761121311570899816}
   m_Layer: 0
   m_Name: Stove_Knob_2
   m_TagString: Untagged
@@ -646,6 +647,21 @@ MonoBehaviour:
   dbgPathLimit: 50
   debugText: {fileID: 0}
   outAngle: 0
+--- !u!114 &1761121311570899816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2204818444931266209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a129256053813547b756c460f0c58b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SetTime: 0.5
+  burner: {fileID: 6352059625797581950}
+  interactable: {fileID: 2204818444931266211}
 --- !u!1 &5978920218988234108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,15 +1915,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 706d025689a8baf4d84bd9b01f8b00ef, type: 3}
---- !u!4 &1607029041536520054 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3404450527180483381, guid: 706d025689a8baf4d84bd9b01f8b00ef,
-    type: 3}
-  m_PrefabInstance: {fileID: 4139469764298712131}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607029041536520055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3404450527180483380, guid: 706d025689a8baf4d84bd9b01f8b00ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 4139469764298712131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1607029041536520054 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3404450527180483381, guid: 706d025689a8baf4d84bd9b01f8b00ef,
     type: 3}
   m_PrefabInstance: {fileID: 4139469764298712131}
   m_PrefabAsset: {fileID: 0}

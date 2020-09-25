@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -237,6 +237,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Scene
       objectReference: {fileID: 0}
+    - target: {fileID: 4615570701131553327, guid: c8920e3c944fc3445bac373989873338,
+        type: 3}
+      propertyPath: SetTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910805202070623095, guid: c8920e3c944fc3445bac373989873338,
+        type: 3}
+      propertyPath: SetTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5215491844347872262, guid: c8920e3c944fc3445bac373989873338,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -301,6 +311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8455980384648145007, guid: c8920e3c944fc3445bac373989873338,
+        type: 3}
+      propertyPath: SetTime
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8965473813967610691, guid: c8920e3c944fc3445bac373989873338,
         type: 3}

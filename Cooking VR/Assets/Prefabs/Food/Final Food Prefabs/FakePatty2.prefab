@@ -422,7 +422,7 @@ Transform:
   m_GameObject: {fileID: 8713728912392120430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.0075, y: 0.01, z: 0.0075}
   m_Children:
   - {fileID: 8738676588781146139}
   - {fileID: 1781374694307513700}
@@ -598,8 +598,9 @@ MonoBehaviour:
   ingredientName: 0
   IsStacked: 0
   isHeld: 0
+  lastHeld: 0
   vec3offset: {x: 0, y: 0, z: 0}
-  thickness: 0.02
+  thickness: 0.023
   scaleRatio: 1
   TestDrop: 1
   falling: 0
@@ -617,7 +618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cookedTime: 0
-  ingridentName: 0
   currentStage: 0
   stages: 0
   stageRefs: 

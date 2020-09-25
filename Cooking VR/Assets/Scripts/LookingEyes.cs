@@ -38,6 +38,7 @@ public class LookingEyes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PotentialLookTargets = new List<Transform>();
         Leye = LeyeSocket.transform.GetChild(0).gameObject;
         Reye = ReyeSocket.transform.GetChild(0).gameObject;
         FindPlayerObjects();

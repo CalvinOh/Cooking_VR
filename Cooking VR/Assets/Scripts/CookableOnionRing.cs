@@ -17,8 +17,9 @@ public class CookableOnionRing : CookableFood
     
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         if(this.meshRenderer == null)
         {
             this.meshRenderer = this.GetComponent<MeshRenderer>();
@@ -26,13 +27,7 @@ public class CookableOnionRing : CookableFood
         AssignStageRefs();
     }
 
-    // Update is called once per frame
-    protected override void Update()
-    {
-        base.Update();
-    }
-
-    protected override void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Batter" && this.currentStage == 0)
         {
@@ -81,8 +76,11 @@ public class CookableOnionRing : CookableFood
     protected override void SwitchVisualObject()
     {
         this.meshRenderer.material = mats[currentStage];
+        
+        if (this.currentStage == 2)
+            this.manualStack.ingredientName = OrderManager.Ingridents.OnionRing;
+        else if (this.currentStage == 3)
+            this.burnt = true;
 
-        if (this.currentStage == 2 || this.currentStage == 3)
-            this.ingridentName = OrderManager.Ingridents.OnionRing;
     }
 }

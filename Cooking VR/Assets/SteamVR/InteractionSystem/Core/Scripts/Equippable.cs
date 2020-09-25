@@ -33,7 +33,6 @@ namespace Valve.VR.InteractionSystem
         public WhichHand defaultHand = WhichHand.Right;
 
         private Vector3 initialScale;
-        private Quaternion initialRotation;
 
         private Interactable interactable;
 
@@ -51,16 +50,26 @@ namespace Valve.VR.InteractionSystem
 
         private void Start()
         {
-            initialRotation.eulerAngles = transform.eulerAngles;
             interactable = GetComponent<Interactable>();
+
+            interactable.onAttachedToHand += OnAttach;
+
         }
+
+        public void OnAttach(Hand hand)
+        {
+            //print("Attached to hand working function");
+        }
+        
 
         private void Update()
         {
             if (interactable.attachedToHand)
             {
+
+            
                 Vector3 flipScale = initialScale;
-                Quaternion flipRotation = initialRotation;
+
                 if ((attachedHandType == SteamVR_Input_Sources.RightHand && defaultHand == WhichHand.Right) || (attachedHandType == SteamVR_Input_Sources.LeftHand && defaultHand == WhichHand.Left))
                 {
                     //flipScale.x *= 1;
@@ -78,7 +87,7 @@ namespace Valve.VR.InteractionSystem
                     }
                 }
                 //transform.localScale = flipScale;
-                transform.rotation = flipRotation;
+                
             }
         }
     }

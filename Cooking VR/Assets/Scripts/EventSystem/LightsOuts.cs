@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ public class LightsOuts : RandomEvent
     private int AmountOfFusesThatCanBreak;
 
     FuseBox Box;
+
+    public static event Action<bool> lightsOut;
+    public static event Action<bool> lightsOn;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +43,8 @@ public class LightsOuts : RandomEvent
         }
         RenderSettings.ambientLight = LightsOutAmbientColor;
         CurrentlyActive = true;
-
-        Box.TriggerEvent(Random.Range(0,AmountOfFusesThatCanBreak));
+        lightsOut.Invoke(true);
+        Box.TriggerEvent(UnityEngine.Random.Range(0,AmountOfFusesThatCanBreak));
 
         // audio
         AkSoundEngine.PostEvent("Lightsout_Start", gameObject);
@@ -57,6 +61,7 @@ public class LightsOuts : RandomEvent
         // audio
         if (CurrentlyActive)
         {
+            lightsOn.Invoke(true);
             AkSoundEngine.PostEvent("Lightsout_End", gameObject);
         }
 
