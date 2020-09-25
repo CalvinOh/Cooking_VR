@@ -4,8 +4,13 @@
 //
 //=============================================================================
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Security.AccessControl;
+using System.Security.Cryptography;
 using UnityEngine;
 
 namespace Valve.VR.InteractionSystem
@@ -28,6 +33,8 @@ namespace Valve.VR.InteractionSystem
         public WhichHand defaultHand = WhichHand.Right;
 
         private Vector3 initialScale;
+        private Quaternion initialRotation;
+
         private Interactable interactable;
 
         [HideInInspector]
@@ -44,7 +51,7 @@ namespace Valve.VR.InteractionSystem
 
         private void Start()
         {
-            initialScale = transform.localScale;
+            initialRotation.eulerAngles = transform.eulerAngles;
             interactable = GetComponent<Interactable>();
         }
 
@@ -53,9 +60,10 @@ namespace Valve.VR.InteractionSystem
             if (interactable.attachedToHand)
             {
                 Vector3 flipScale = initialScale;
+                Quaternion flipRotation = initialRotation;
                 if ((attachedHandType == SteamVR_Input_Sources.RightHand && defaultHand == WhichHand.Right) || (attachedHandType == SteamVR_Input_Sources.LeftHand && defaultHand == WhichHand.Left))
                 {
-                    flipScale.x *= 1;
+                    //flipScale.x *= 1;
                     for (int transformIndex = 0; transformIndex < antiFlip.Length; transformIndex++)
                     {
                         antiFlip[transformIndex].localScale = new Vector3(1, 1, 1);
@@ -63,13 +71,14 @@ namespace Valve.VR.InteractionSystem
                 }
                 else
                 {
-                    flipScale.x *= -1;
+                    //flipScale.x *= -1;
                     for (int transformIndex = 0; transformIndex < antiFlip.Length; transformIndex++)
                     {
                         antiFlip[transformIndex].localScale = new Vector3(-1, 1, 1);
                     }
                 }
-                transform.localScale = flipScale;
+                //transform.localScale = flipScale;
+                transform.rotation = flipRotation;
             }
         }
     }
