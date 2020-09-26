@@ -76,6 +76,7 @@ public class FuseBox : MonoBehaviour
 
     public bool AttemptFix()
     {
+        Debug.Log("Attempt Fix");
         if (CheckFuses())
         {
             LightsOutEventScript.EndEvent();

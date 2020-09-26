@@ -45,7 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentlyActive: 0
-  LightSources: []
+  LightSources:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   LightsOutAmbientColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0.6509804}
   AmountOfFusesThatCanBreak: 3
 --- !u!1 &7908785185844324740
@@ -72,7 +81,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7908785185844324740}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -103,6 +112,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7908785184566279747}
     m_Modifications:
+    - target: {fileID: 1346463647843614718, guid: 2516a52561afda148bb4c1d324ea3011,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -1.17
+      objectReference: {fileID: 0}
     - target: {fileID: 7086668066545460004, guid: 2516a52561afda148bb4c1d324ea3011,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -163,6 +177,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FuseBox
       objectReference: {fileID: 0}
+    - target: {fileID: 8117991302746075880, guid: 2516a52561afda148bb4c1d324ea3011,
+        type: 3}
+      propertyPath: MyEventScript
+      value: 
+      objectReference: {fileID: 7908785184566279746}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2516a52561afda148bb4c1d324ea3011, type: 3}
 --- !u!4 &7869086882038686811 stripped

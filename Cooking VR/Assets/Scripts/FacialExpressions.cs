@@ -8,7 +8,8 @@ public class FacialExpressions : MonoBehaviour
     private float ExpressionChangeSpeed = 8;
     [SerializeField]
     private float BlinkSpeed = 40;
-
+    [SerializeField]
+    private VoTriggers MyVOTrigger;
 
     private SkinnedMeshRenderer MySkin;
 
@@ -40,10 +41,10 @@ public class FacialExpressions : MonoBehaviour
         Blink = true;
         StartCoroutine(ConstantBlink());
 
-        /*
+        
         Talking = true;
         StartCoroutine(Talk());
-        */
+        
         BlendShapeSize = MySkin.sharedMesh.blendShapeCount;
         SetStates = new float[BlendShapeSize];
 
@@ -116,13 +117,16 @@ public class FacialExpressions : MonoBehaviour
     }
 
 
+
     public IEnumerator Talk()
     {
-        while (Talking)
+        while (true)
         {
-            StartCoroutine(TalkOnce());
+            if(MyVOTrigger.isSpeaking)
+                StartCoroutine(TalkOnce());
             yield return new WaitForSeconds(0.7f);
         }
+        
     }
 
     private IEnumerator TalkOnce()
