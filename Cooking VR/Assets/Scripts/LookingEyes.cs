@@ -31,16 +31,28 @@ public class LookingEyes : MonoBehaviour
     private Transform Player;
     private Transform PlayerLHand;
     private Transform PlayerRHand;
-
+    private bool ShouldBeLookingAtPlayer;
+    private bool InVR;
+    [SerializeField]
     private List<Transform> PotentialLookTargets;
+
+    [SerializeField]
+    private float LookAroundInterval =2;
+    [Range(0,1)]
+    [SerializeField]
+    private float LookAroundChance = 0.5f;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        InVR = true;
         PotentialLookTargets = new List<Transform>();
         Leye = LeyeSocket.transform.GetChild(0).gameObject;
         Reye = ReyeSocket.transform.GetChild(0).gameObject;
+
+        ShouldBeLookingAtPlayer = false;
+        StartCoroutine(LookAround());
         FindPlayerObjects();
     }
 
@@ -60,11 +72,18 @@ public class LookingEyes : MonoBehaviour
 
     void Look()
     {
-        if (InLookCone(LookTarget))
+
+        if (LookTarget == null)
+            LookTarget = FindNewLookingTarget();
+        else
         {
-            LookAtTarget(LookTarget.position, Leye);
-            LookAtTarget(LookTarget.position, Reye);
+            if (InLookCone(LookTarget))
+            {
+                LookAtTarget(LookTarget.position, Leye);
+                LookAtTarget(LookTarget.position, Reye);
+            }
         }
+        
     }
 
     bool InLookCone(Transform CheckTarget)
@@ -100,46 +119,71 @@ public class LookingEyes : MonoBehaviour
 
     private void FindPlayerObjects()
     {
-        Player =  GameObject.Find("VRCamera").transform;
-        PlayerLHand = GameObject.Find("LeftHand").transform;
-        PlayerRHand = GameObject.Find("RightHand").transform;
-        if (Player == null)
+        InVR = false;
+        if (GameObject.Find("VRCamera").transform != null)
         {
-            Debug.Log("Gianna Looking eyes cannot find player");
+            Player = GameObject.Find("VRCamera").transform;
+            PlayerLHand = GameObject.Find("LeftHand").transform;
+            PlayerRHand = GameObject.Find("RightHand").transform;
+            if (Player == null)
+            {
+                Debug.Log("Gianna Looking eyes cannot find player");
+            }
+            if (PlayerLHand == null)
+            {
+                Debug.Log("Gianna Looking eyes cannot find LeftHand");
+            }
+            if (PlayerRHand == null)
+            {
+                Debug.Log("Gianna Looking eyes cannot find RightHand");
+            }
+            Debug.Log("Looking Eyes finishing finding player objects");
+            InVR = true;
         }
-        if (PlayerLHand == null)
+        else
         {
-            Debug.Log("Gianna Looking eyes cannot find LeftHand");
+            
+            Debug.Log("Looking Eyes Detect Not in VR");
         }
-        if (PlayerRHand == null) 
+    }
+
+
+    private IEnumerator LookAround()
+    {
+        while (true)
         {
-            Debug.Log("Gianna Looking eyes cannot find RightHand");
+            //Debug.Log("Lookaround cycle");
+        if (Random.Range(0f, 1f) > LookAroundChance && !ShouldBeLookingAtPlayer)
+            LookTarget = FindNewLookingTarget();
+        yield return new WaitForSeconds(LookAroundInterval);
         }
     }
 
     public Transform FindNewLookingTarget()
     {
-        float decider = Random.Range(0,100);
-        if (decider > 70)
+        Debug.Log("Finding New Look Target");
+        if (InVR)
         {
-            return Player;
-        }
-        else if (decider > 50)
-        {
-            if (Random.Range(0, 10) > 5)
-                return PlayerLHand;
+            float decider = Random.Range(0, 100);
+            if (decider > 70)
+                return Player;
+            else if (decider > 50)
+            {
+                if (Random.Range(0, 10) > 5)
+                    return PlayerLHand;
+                else
+                    return PlayerRHand;
+            }
             else
-                return PlayerRHand;
+                return PotentialLookTargets[Random.Range(0, PotentialLookTargets.Count)];
+
+
         }
-        else if (decider > 10)
+        else
         {
-            return PotentialLookTargets[Random.Range(0,PotentialLookTargets.Count)];
-            return null;
+            return PotentialLookTargets[Random.Range(0, PotentialLookTargets.Count)];
         }
-        else 
-        {
-            return LookTarget;
-        }
+
     }
 
     public void LookAtPlayer(float duration)
@@ -154,8 +198,10 @@ public class LookingEyes : MonoBehaviour
 
     private IEnumerator LookAtPlayerForDuration(float duration)
     {
+        ShouldBeLookingAtPlayer = true;
         LookTarget = Player;
         yield return new WaitForSeconds(duration);
+        ShouldBeLookingAtPlayer = false;
     }
 
     private void OnTriggerEnter(Collider other)
