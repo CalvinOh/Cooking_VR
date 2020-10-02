@@ -36,15 +36,35 @@ public class MusicSystem : MonoBehaviour
                 AkSoundEngine.SetSwitch("Intensity", "Level_1", gameObject);
                 break;
 
+            case "Tutorial":
+                AkSoundEngine.SetSwitch("Intensity", "Level_1", gameObject);
+                break;
+
             case "Level 1":
                 AkSoundEngine.SetSwitch("Intensity", "Level_1", gameObject);
                 break;
 
             case "Level 2":
-                AkSoundEngine.SetSwitch("Intensity", "Level_2", gameObject);
+                AkSoundEngine.SetSwitch("Intensity", "Level_1", gameObject);
                 break;
 
             case "Level 3":
+                AkSoundEngine.SetSwitch("Intensity", "Level_2", gameObject);
+                break;
+
+            case "Level 4":
+                AkSoundEngine.SetSwitch("Intensity", "Level_2", gameObject);
+                break;
+
+            case "Level 5":
+                AkSoundEngine.SetSwitch("Intensity", "Level_2", gameObject);
+                break;
+
+            case "Level 6":
+                AkSoundEngine.SetSwitch("Intensity", "Level_3", gameObject);
+                break;
+
+            case "Level 7":
                 AkSoundEngine.SetSwitch("Intensity", "Level_3", gameObject);
                 break;
 
